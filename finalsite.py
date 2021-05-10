@@ -124,89 +124,89 @@ def get_content(web_page, splitter):
 	print(web_page)
 
 	# if web_page != '#':
-	# try:
-	web_link = requests.get(web_page, timeout=10).content
-	web_soup = BeautifulSoup(page, 'html.parser')
+	try:
+		web_link = requests.get(web_page, timeout=10).content
+		web_soup = BeautifulSoup(page, 'html.parser')
 
-	if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
-		meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
+		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
+			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
 
-	if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
-		meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
+		if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
+			meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
 
-	if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
-		meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
+		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
+			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-	if web_soup.find(id='midcontainer').find_all('form') != []:
-		form = 'form'
+		if web_soup.find(id='midcontainer').find_all('form') != []:
+			form = 'form'
 
-	if web_soup.find(id='midcontainer').find_all('embed') != []:
-		embed = 'embed'
+		if web_soup.find(id='midcontainer').find_all('embed') != []:
+			embed = 'embed'
 
-	if web_soup.find(id='midcontainer').find_all('iframe') != []:
-		iframe = 'iframe'
+		if web_soup.find(id='midcontainer').find_all('iframe') != []:
+			iframe = 'iframe'
 
-	if web_soup.find(id='midcontainer').find_all(id='calendar_titlebar') != []:
-		calendar = 'calendar'
+		if web_soup.find(id='midcontainer').find_all(id='calendar_titlebar') != []:
+			calendar = 'calendar'
 
-	if web_soup.find(id='midcontainer').find_all(class_='fsDirEntryName') != []:
-		staff = 'staff'
+		if web_soup.find(id='midcontainer').find_all(class_='fsDirEntryName') != []:
+			staff = 'staff'
 
-	if web_soup.find(id='midcontainer').find_all(id='newscon') != []:
-		news = 'news'
+		if web_soup.find(id='midcontainer').find_all(id='newscon') != []:
+			news = 'news'
 
-	# if web_soup.find(class_='col-md-3') != None:
-	# 	page_nav = web_soup.find(class_='col-sm-4').find_all('a')
+		# if web_soup.find(class_='col-md-3') != None:
+		# 	page_nav = web_soup.find(class_='col-sm-4').find_all('a')
 
-	# First column
-	if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
-		col1 = web_soup.find(id='contentdiv')
-		col1 = get_column(col1, splitter)
-	else:
-		issue_pages_counter = 1
+		# First column
+		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
+			col1 = web_soup.find(id='contentdiv')
+			col1 = get_column(col1, splitter)
+		else:
+			issue_pages_counter = 1
 
-	# Second Column
-	if web_soup.find(id='rightbanner') != None and web_soup.find(id='rightbanner') != '':
-		col4 = web_soup.find(id='rightbanner')
-		col4 = get_column(col4, splitter)
+		# Second Column
+		if web_soup.find(id='rightbanner') != None and web_soup.find(id='rightbanner') != '':
+			col4 = web_soup.find(id='rightbanner')
+			col4 = get_column(col4, splitter)
 
-	col1 = str(col1)
-	col4 = str(col2) + str(col3) + str(col4)
+		col1 = str(col1)
+		col4 = str(col2) + str(col3) + str(col4)
 
-	if len(col1) > 150000:
-		col1 = 'Flagged'
-		col2 = 'This page has too much content'
-		col3 = ''
-		col4 = ''
-		col_num = '2'
-		issue_pages_counter = 1
-	elif len(col1) > 100000:
-		col2 = col1[50000:100000]
-		col3 = col1[100000:]
-		col1 = col1[:50000]
-		col_num = '3'
-	elif len(col1) > 50000:
-		col2 = col1[50000:]
-		col1 = col1[:50000]
-		col_num = '2'
+		if len(col1) > 150000:
+			col1 = 'Flagged'
+			col2 = 'This page has too much content'
+			col3 = ''
+			col4 = ''
+			col_num = '2'
+			issue_pages_counter = 1
+		elif len(col1) > 100000:
+			col2 = col1[50000:100000]
+			col3 = col1[100000:]
+			col1 = col1[:50000]
+			col_num = '3'
+		elif len(col1) > 50000:
+			col2 = col1[50000:]
+			col1 = col1[:50000]
+			col_num = '2'
 
-	if len(col4) > 50000:
-		col1 = 'Flagged'
-		col2 = 'This page has too much content'
-		col3 = ''
-		col4 = ''
-		col_num = '2'
-		issue_pages_counter = 1
-	elif len(col4) > 0:
-		col_num = '4'
+		if len(col4) > 50000:
+			col1 = 'Flagged'
+			col2 = 'This page has too much content'
+			col3 = ''
+			col4 = ''
+			col_num = '2'
+			issue_pages_counter = 1
+		elif len(col4) > 0:
+			col_num = '4'
 
-	return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
+		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
 	# else:
-	# except:
-	# 	issue_pages_counter = 1
-	#
-	# 	return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
+	except:
+		issue_pages_counter = 1
+
+		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
 
 if __name__ == '__main__':
@@ -229,7 +229,7 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# sitemap = soup.find(id='top_level_list')
-			list_items = soup.select('u#top_level_list > li')
+			list_items = soup.select('ul#top_level_list > li')
 			school = soup.find(class_='site-name').get_text()
 
 			if len(school) > 30:
@@ -243,7 +243,7 @@ if __name__ == '__main__':
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-				for item in list_items[1:]:
+				for item in list_items[2:]:
 					group_links = item.find_all('a')
 
 					for link in group_links:

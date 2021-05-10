@@ -36,6 +36,7 @@ def remove_tags(text):
 	text = font.sub('', text)
 	text = fonte.sub('', text)
 	text = fontc.sub('', text)
+	text = re.sub('<!--|-->', '', text)
 
 	return text.strip()
 
@@ -100,7 +101,7 @@ def get_column(col, splitter):
 		except:
 			print('Anchor:', anchor)
 
-	col = remove_tags(re.sub('<!--|-->', '', str(col)))
+	col = remove_tags(str(col))
 
 	return col
 
@@ -228,7 +229,7 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# sitemap = soup.find(id='top_level_list')
-			list_items = soup.select('ul#top_level_list > li')
+			list_items = soup.select('u#top_level_list > li')
 			school = soup.find(class_='site-name').get_text()
 
 			if len(school) > 30:

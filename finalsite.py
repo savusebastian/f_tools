@@ -136,22 +136,22 @@ def get_content(web_page, splitter):
 	if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 		meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all('form') != []:
+	if web_soup.find(id='midcontainer').find_all('form') != []:
 		form = 'form'
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all('embed') != []:
+	if web_soup.find(id='midcontainer').find_all('embed') != []:
 		embed = 'embed'
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all('iframe') != []:
+	if web_soup.find(id='midcontainer').find_all('iframe') != []:
 		iframe = 'iframe'
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all(id='calendar') != []:
+	if web_soup.find(id='midcontainer').find_all(id='calendar_titlebar') != []:
 		calendar = 'calendar'
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staff-directory') != []:
+	if web_soup.find(id='midcontainer').find_all(class_='fsDirEntryName') != []:
 		staff = 'staff'
 
-	if web_soup.find(id='sw-content-layout-wrapper').find_all(id='news-list') != []:
+	if web_soup.find(id='midcontainer').find_all(id='newscon') != []:
 		news = 'news'
 
 	# if web_soup.find(class_='col-md-3') != None:

@@ -100,7 +100,7 @@ def get_column(col, splitter):
 		except:
 			print('Anchor:', anchor)
 
-	col = remove_tags(str(col))
+	col = remove_tags(re.sub('<!--|-->', '', str(col)))
 
 	return col
 
@@ -125,7 +125,7 @@ def get_content(web_page, splitter):
 	# if web_page != '#':
 	# try:
 	web_link = requests.get(web_page, timeout=10).content
-	web_soup = BeautifulSoup(re.sub(bytes('<!--|-->', 'utf-8'), '', page), 'html.parser')
+	web_soup = BeautifulSoup(page, 'html.parser')
 
 	if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 		meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))

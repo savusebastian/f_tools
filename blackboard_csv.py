@@ -145,13 +145,13 @@ def get_content(web_page, splitter):
 		if web_soup.find(id='sw-content-layout-wrapper').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='calendar') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staffdirectorydiv') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='news-list') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='headlines') != []:
 			news = 'news'
 
 		if web_soup.find(class_='section-navigation') != None:

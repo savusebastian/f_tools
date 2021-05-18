@@ -154,8 +154,8 @@ def get_content(web_page, splitter):
 		# if web_soup.find(id='page').find_all(id='news-list') != []:
 		# 	news = 'news'
 
-		# if web_soup.find(class_='cs-side-nav-t1') != None:
-		# 	page_nav = web_soup.find(class_='cs-side-nav-t1').find_all('a')
+		# if web_soup.find(id='nav-box') != None:
+		# 	page_nav = web_soup.find(id='nav-box').find_all('a')
 
 		# First column
 		if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
@@ -208,17 +208,35 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'http://www.lockhartisd.org',
-		'http://abs.lockhartisd.org',
-		'http://bes.lockhartisd.org',
-		'http://cfes.lockhartisd.org',
-		'http://ck.lockhartisd.org',
-		'http://dmc.lockhartisd.org',
-		'http://lhs.lockhartisd.org',
-		'http://ljh.lockhartisd.org',
-		'http://nes.lockhartisd.org',
-		'http://ples.lockhartisd.org',
-		'http://phs.lockhartisd.org',
+		'https://burleyglenwood.skschools.org',
+		'https://cedarheights.skschools.org',
+		'https://discovery.skschools.org',
+		'https://eastportorchard.skschools.org',
+		'https://explorer.skschools.org',
+		'https://hiddencreek.skschools.org',
+		'https://johnsedgwick.skschools.org',
+		'https://manchester.skschools.org',
+		'https://marcuswhitman.skschools.org',
+		'https://mullenixridge.skschools.org',
+		'https://olalla.skschools.org',
+		'https://orchardheights.skschools.org',
+		'https://sidneyglen.skschools.org',
+		'https://southcolby.skschools.org',
+		'https://skhs.skschools.org',
+		'https://sunnyslope.skschools.org',
+
+		# 'http://www.lockhartisd.org',
+		# 'http://abs.lockhartisd.org',
+		# 'http://bes.lockhartisd.org',
+		# 'http://cfes.lockhartisd.org',
+		# 'http://ck.lockhartisd.org',
+		# 'http://dmc.lockhartisd.org',
+		# 'http://lhs.lockhartisd.org',
+		# 'http://ljh.lockhartisd.org',
+		# 'http://nes.lockhartisd.org',
+		# 'http://ples.lockhartisd.org',
+		# 'http://phs.lockhartisd.org',
+
 		# 'https://cantiague.jerichoschools.org',
 		# 'https://jackson.jerichoschools.org',
 		# 'https://hs.jerichoschools.org',

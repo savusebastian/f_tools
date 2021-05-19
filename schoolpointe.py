@@ -36,6 +36,7 @@ def remove_tags(text):
 	text = font.sub('', text)
 	text = fonte.sub('', text)
 	text = fontc.sub('', text)
+	text = re.sub('<!--|-->', '', text)
 
 	return text.strip()
 
@@ -125,7 +126,7 @@ def get_content(web_page, splitter):
 	# if web_page != '#':
 	try:
 		web_link = requests.get(web_page, timeout=10).content
-		web_soup = BeautifulSoup(re.sub('<!--|-->', '', page), 'html.parser')
+		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -136,37 +137,37 @@ def get_content(web_page, splitter):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='body-content-container').find_all('form') != []:
+		if web_soup.find(id='site-body').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='body-content-container').find_all('embed') != []:
+		if web_soup.find(id='site-body').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='body-content-container').find_all('iframe') != []:
+		if web_soup.find(id='site-body').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='body-content-container').find_all(id='calendar') != []:
+		if web_soup.find(id='site-body').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='body-content-container').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='site-body').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='body-content-container').find_all(id='news-list') != []:
+		if web_soup.find(id='site-body').find_all(id='news-list') != []:
 			news = 'news'
 
-		# if web_soup.find(class_='col-md-3') != None:
-		# 	page_nav = web_soup.find(class_='col-sm-4').find_all('a')
+		if web_soup.find(id='quicklinks') != None:
+			page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# First column
-		if web_soup.find(class_='body-content-container').find_all(class_='col-xs-12')[0] != None and web_soup.find(class_='body-content-container').find_all(class_='col-xs-12')[0] != '':
-			col1 = web_soup.find(class_='body-content-container').find_all(class_='col-xs-12')[0]
+		if web_soup.find(id='site-body').find_all(class_='maincontentsection')[0] != None and web_soup.find(id='site-body').find_all(class_='maincontentsection')[0] != '':
+			col1 = web_soup.find(id='site-body').find_all(class_='maincontentsection')[0]
 			col1 = get_column(col1, splitter)
 		else:
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(class_='body-content-container').find(class_='col-md-3') != None and web_soup.find(class_='body-content-container').find(class_='col-md-3') != '':
-			col4 = web_soup.find(class_='body-content-container').find(class_='col-md-3')
+		if web_soup.find(id='site-body').find(class_='col-xs-12 col-sm-3') != None and web_soup.find(id='site-body').find(class_='col-xs-12 col-sm-3') != '':
+			col4 = web_soup.find(id='site-body').find(class_='col-xs-12 col-sm-3')
 			col4 = get_column(col4, splitter)
 
 		col1 = str(col1)
@@ -211,11 +212,12 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.ecschools.net',
-		'https://www.ecschools.net/2/home',
-		'https://www.ecschools.net/3/home',
-		'https://www.ecschools.net/4/home',
-		'https://www.ecschools.net/5/home',
+		'https://www.masoncoschools.com',
+		'http://masoncoschools.com/1/home',
+		'https://www.masoncoschools.com/2/home',
+		'https://www.masoncoschools.com/3/home',
+		'https://www.masoncoschools.com/4/home',
+		'https://www.masoncoschools.com/9/home',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -232,9 +234,11 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
-			sitemap = soup.find(class_='district-top-nav-links')
-			list_items = sitemap.select('ul > li')
-			school = soup.find(id='ctl00_ctl00_header_header_ctl00_lnkSchoolHome2').get_text()
+			sitemap = soup.find_all(id='MainNav')
+			list_items1 = sitemap[0].select('ul > li')
+			list_items2 = sitemap[1].select('ul > li')
+			list_items = [*list_items1, *list_items2]
+			school = soup.find(id='ctl00_ctl00_header_ctl00_MobileName').get_text()
 
 			if len(school) > 30:
 				school_name = str(school[:30]).lower().replace(' ', '_').replace('.', '')
@@ -252,7 +256,7 @@ if __name__ == '__main__':
 
 					for link in group_links:
 						external_link = False
-						
+
 						if link.get('href')[0] == '#':
 							page_link = '#'
 						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':

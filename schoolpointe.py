@@ -237,7 +237,8 @@ if __name__ == '__main__':
 			list_items = sitemap.select('ul > li')
 			# list_items2 = sitemap[1].select('ul > li')
 			# list_items = [*list_items1, *list_items2]
-			school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
+			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
+			school = site
 
 			if len(school) > 30:
 				school_name = str(school[:30]).lower().replace(' ', '_').replace('.', '')

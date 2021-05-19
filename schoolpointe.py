@@ -137,37 +137,37 @@ def get_content(web_page, splitter):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='masterC alignment-stretch').find_all('form') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='masterC alignment-stretch').find_all('embed') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='masterC alignment-stretch').find_all('iframe') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='masterC alignment-stretch').find_all(id='calendar') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='masterC alignment-stretch').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='masterC alignment-stretch').find_all(id='news-list') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
 			news = 'news'
 
 		if web_soup.find(class_='quicklinks') != None:
 			page_nav = web_soup.find(class_='quicklinks').find_all('a')
 
 		# First column
-		if web_soup.find(id='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != None and web_soup.find(id='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != '':
-			col1 = web_soup.find(id='masterC alignment-stretch').find_all(class_='maincontentsection')[0]
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != None and web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != '':
+			col1 = web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0]
 			col1 = get_column(col1, splitter)
 		else:
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(id='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != None and web_soup.find(id='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != '':
-			col4 = web_soup.find(id='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent')
+		if web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != None and web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != '':
+			col4 = web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent')
 			col4 = get_column(col4, splitter)
 
 		col1 = str(col1)

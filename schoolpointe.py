@@ -155,8 +155,8 @@ def get_content(web_page, splitter):
 		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if len(web_soup.find_all(class_='hidden-xs col-sm-3')) > 1:
-			page_nav = web_soup.find_all(class_='hidden-xs col-sm-3')[0].find_all('a')
+		if len(web_soup.find(class_='sf-vertical')) != None:
+			page_nav = web_soup.find(class_='sf-vertical').find_all('a')
 
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
@@ -166,8 +166,8 @@ def get_content(web_page, splitter):
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != None and web_soup.find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != '':
-			col4 = web_soup.find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent')
+		if web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
+			col4 = web_soup.find(class_='col-xs-12 col-sm-3')
 			col4 = get_column(col4, splitter)
 		# elif web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
 		# 	col4 = web_soup.find(class_='col-xs-12 col-sm-3')
@@ -215,25 +215,36 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.laurel.k12.ky.us',
-		'https://www.laurel.k12.ky.us/5/Home',
-		'https://www.laurel.k12.ky.us/6/Home',
-		'https://www.laurel.k12.ky.us/7/Home',
-		'https://www.laurel.k12.ky.us/8/Home',
-		'https://www.laurel.k12.ky.us/9/Home',
-		'https://www.laurel.k12.ky.us/10/Home',
-		'https://www.laurel.k12.ky.us/11/Home',
-		'https://www.laurel.k12.ky.us/12/Home',
-		'https://www.laurel.k12.ky.us/13/Home',
-		'https://www.laurel.k12.ky.us/14/Home',
-		'https://www.laurel.k12.ky.us/15/Home',
-
-		'https://www.laurel.k12.ky.us/1/Home',
-		'https://www.laurel.k12.ky.us/3/Home',
-		'https://www.laurel.k12.ky.us/4/Home',
-
-		'https://www.laurel.k12.ky.us/2/Home',
-		'https://www.laurel.k12.ky.us/19/home',
+		'https://www.warrencountyschools.org',
+		'https://www.warrencountyschools.org/greenwood/home',
+		'https://www.warrencountyschools.org/CTE/home',
+		'https://www.warrencountyschools.org/lostriver/home',
+		'https://www.warrencountyschools.org/natcher/home',
+		'https://www.warrencountyschools.org/northwarren/home',
+		'https://www.warrencountyschools.org/oakland/home',
+		'https://www.warrencountyschools.org/plano/home',
+		'https://www.warrencountyschools.org/richpond/home',
+		'https://www.warrencountyschools.org/richardsville/home',
+		'https://www.warrencountyschools.org/rockfield/home',
+		'https://www.warrencountyschools.org/22/home',
+		'https://www.warrencountyschools.org/24/home',
+		'https://www.warrencountyschools.org/25/home',
+		'https://www.warrencountyschools.org/27/home',
+		'https://www.warrencountyschools.org/28/home',
+		'https://www.warrencountyschools.org/29/home',
+		'https://www.warrencountyschools.org/31/home',
+		'https://www.warrencountyschools.org/32/home',
+		'https://www.warrencountyschools.org/jenningscreek/home',
+		'https://www.warrencountyschools.org/swhs/home',
+		'https://www.warrencountyschools.org/3/home',
+		'https://www.warrencountyschools.org/warreneasthigh/home',
+		'https://www.warrencountyschools.org/dcms/home',
+		'https://www.warrencountyschools.org/henrymossmiddle/home',
+		'https://www.warrencountyschools.org/swms/home',
+		'https://www.warrencountyschools.org/WEMS/home',
+		'https://www.warrencountyschools.org/alvaton/home',
+		'https://www.warrencountyschools.org/briarwood/home',
+		'https://www.warrencountyschools.org/bristow/home',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -252,10 +263,11 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
-			sitemap = soup.find(id='MainNav')
-			list_items = sitemap.select('ul > li')
-			# list_items2 = sitemap[1].select('ul > li')
-			# list_items = [*list_items1, *list_items2]
+			sitemap = soup.find(id='header-mainNav')
+			list_items1 = sitemap.select('ul > li')
+			sitemap2 = soup.find(id='header-resources')
+			list_items2 = sitemap.select('ul > li')
+			list_items = [*list_items1, *list_items2]
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'school_{m}'
 

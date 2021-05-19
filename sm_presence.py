@@ -36,6 +36,7 @@ def remove_tags(text):
 	text = font.sub('', text)
 	text = fonte.sub('', text)
 	text = fontc.sub('', text)
+	text = re.sub('<!--|-->', '', text)
 
 	return text.strip()
 
@@ -124,7 +125,7 @@ def get_content(web_page, splitter):
 
 	try:
 		web_link = requests.get(web_page, timeout=10).content
-		web_soup = BeautifulSoup(re.sub('<!--|-->', '', page), 'html.parser')
+		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -153,12 +154,15 @@ def get_content(web_page, splitter):
 		# if web_soup.find(id='page').find_all(id='news-list') != []:
 		# 	news = 'news'
 
-		# if web_soup.find(class_='cs-side-nav-t1') != None:
-		# 	page_nav = web_soup.find(class_='cs-side-nav-t1').find_all('a')
+		if web_soup.find(id='nav-box') != None:
+			page_nav = web_soup.find(id='nav-box').find_all('a')
 
 		# First column
-		if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
-			col1 = web_soup.find(class_='pageContent')
+		# if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
+		# 	col1 = web_soup.find(class_='pageContent')
+		# 	col1 = get_column(col1, splitter)
+		if web_soup.find(class_='subpage-content') != None and web_soup.find(class_='pageContent') != '':
+			col1 = web_soup.find(class_='subpage-content')
 			col1 = get_column(col1, splitter)
 		# elif web_soup.find(id='subpage_right_sidebar') != None:
 		# 	col1 = web_soup.find(id='subpage_right_sidebar')
@@ -207,17 +211,36 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'http://www.lockhartisd.org',
-		'http://abs.lockhartisd.org',
-		'http://bes.lockhartisd.org',
-		'http://cfes.lockhartisd.org',
-		'http://ck.lockhartisd.org',
-		'http://dmc.lockhartisd.org',
-		'http://lhs.lockhartisd.org',
-		'http://ljh.lockhartisd.org',
-		'http://nes.lockhartisd.org',
-		'http://ples.lockhartisd.org',
-		'http://phs.lockhartisd.org',
+		'https://www.skschools.org',
+		# 'https://burleyglenwood.skschools.org',
+		# 'https://cedarheights.skschools.org',
+		# 'https://discovery.skschools.org',
+		# 'https://eastportorchard.skschools.org',
+		# 'https://explorer.skschools.org',
+		# 'https://hiddencreek.skschools.org',
+		# 'https://johnsedgwick.skschools.org',
+		# 'https://manchester.skschools.org',
+		# 'https://marcuswhitman.skschools.org',
+		# 'https://mullenixridge.skschools.org',
+		# 'https://olalla.skschools.org',
+		# 'https://orchardheights.skschools.org',
+		# 'https://sidneyglen.skschools.org',
+		# 'https://southcolby.skschools.org',
+		# 'https://skhs.skschools.org',
+		# 'https://sunnyslope.skschools.org',
+
+		# 'http://www.lockhartisd.org',
+		# 'http://abs.lockhartisd.org',
+		# 'http://bes.lockhartisd.org',
+		# 'http://cfes.lockhartisd.org',
+		# 'http://ck.lockhartisd.org',
+		# 'http://dmc.lockhartisd.org',
+		# 'http://lhs.lockhartisd.org',
+		# 'http://ljh.lockhartisd.org',
+		# 'http://nes.lockhartisd.org',
+		# 'http://ples.lockhartisd.org',
+		# 'http://phs.lockhartisd.org',
+
 		# 'https://cantiague.jerichoschools.org',
 		# 'https://jackson.jerichoschools.org',
 		# 'https://hs.jerichoschools.org',
@@ -326,8 +349,10 @@ if __name__ == '__main__':
 			splitter = site.split('/')
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='rmRootGroup')
-			list_items = sitemap.select('li.rmItem')
+			# sitemap = soup.find(class_='rmRootGroup')
+			# list_items = sitemap.select('li.rmItem')
+			sitemap = soup.find(class_='nav-menu')
+			list_items = sitemap.select('li')
 			school = site.split('/')[-1].split('.')[0]
 
 			if len(school) > 30:
@@ -346,7 +371,7 @@ if __name__ == '__main__':
 
 					for link in group_links:
 						external_link = False
-						
+
 						if link.get('href')[0] == '#':
 							page_link = '#'
 						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':

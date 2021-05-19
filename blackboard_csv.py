@@ -36,6 +36,7 @@ def remove_tags(text):
 	text = font.sub('', text)
 	text = fonte.sub('', text)
 	text = fontc.sub('', text)
+	text = re.sub('<!--|-->', '', text)
 
 	return text.strip()
 
@@ -124,7 +125,7 @@ def get_content(web_page, splitter):
 
 	try:
 		web_link = requests.get(web_page, timeout=10).content
-		web_soup = BeautifulSoup(re.sub('<!--|-->', '', page), 'html.parser')
+		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -144,13 +145,13 @@ def get_content(web_page, splitter):
 		if web_soup.find(id='sw-content-layout-wrapper').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='calendar') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staffdirectorydiv') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='news-list') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='headlines') != []:
 			news = 'news'
 
 		if web_soup.find(class_='section-navigation') != None:

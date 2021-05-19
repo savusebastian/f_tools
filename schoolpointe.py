@@ -137,37 +137,37 @@ def get_content(web_page, splitter):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
+		if web_soup.find(class_='maincontentsection').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
+		if web_soup.find(class_='maincontentsection').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
+		if web_soup.find(class_='maincontentsection').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
+		if web_soup.find(class_='maincontentsection').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='maincontentsection').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
+		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if web_soup.find(class_='quicklinks') != None:
-			page_nav = web_soup.find(class_='quicklinks').find_all('a')
+		if web_soup.find(id='quick-links') != None:
+			page_nav = web_soup.find(id='quick-links').find_all('a')
 
 		# First column
-		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != None and web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0] != '':
-			col1 = web_soup.find(class_='masterC alignment-stretch').find_all(class_='maincontentsection')[0]
+		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
+			col1 = web_soup.find_all(class_='maincontentsection')[0]
 			col1 = get_column(col1, splitter)
 		else:
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != None and web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent') != '':
-			col4 = web_soup.find(class_='masterC alignment-stretch').find(id='ctl00_ctl00_MasterContent_ContentColumnRight_divSecondaryContent')
+		if web_soup.find(class_='small-12 medium-3 large-3 columns three') != None and web_soup.find(class_='small-12 medium-3 large-3 columns three') != '':
+			col4 = web_soup.find(class_='small-12 medium-3 large-3 columns three')
 			col4 = get_column(col4, splitter)
 
 		col1 = str(col1)
@@ -212,11 +212,10 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.buckeyevalley.k12.oh.us',
-		'https://www.buckeyevalley.k12.oh.us/1/Home',
-		'https://www.buckeyevalley.k12.oh.us/2/Home',
-		'https://www.buckeyevalley.k12.oh.us/3/Home',
-		'https://www.buckeyevalley.k12.oh.us/5/Home',
+		'https://www.jacksonmilton.k12.oh.us',
+		'https://www.jacksonmilton.k12.oh.us/1/Home',
+		'https://www.jacksonmilton.k12.oh.us/2/Home',
+		'https://www.jacksonmilton.k12.oh.us/3/Home',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -235,7 +234,7 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
-			sitemap = soup.find(id='bs-example-navbar-collapse-1')
+			sitemap = soup.find(class_='top-bar-section')
 			list_items = sitemap.select('ul > li')
 			# list_items2 = sitemap[1].select('ul > li')
 			# list_items = [*list_items1, *list_items2]

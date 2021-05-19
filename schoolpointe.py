@@ -224,8 +224,10 @@ if __name__ == '__main__':
 
 	with open('../f_web_interface/static/files/' + mainfolder + '/report.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
+		m = 0
 
 		for site in all_sites:
+			m += 1
 			page_counter = 0
 			issue_pages_counter = 0
 
@@ -238,7 +240,7 @@ if __name__ == '__main__':
 			# list_items2 = sitemap[1].select('ul > li')
 			# list_items = [*list_items1, *list_items2]
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
-			school = site
+			school = f'school_{m}'
 
 			if len(school) > 30:
 				school_name = str(school[:30]).lower().replace(' ', '_').replace('.', '')

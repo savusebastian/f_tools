@@ -155,8 +155,8 @@ def get_content(web_page, splitter):
 		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if web_soup.find(id='quick-links') != None:
-			page_nav = web_soup.find(id='quick-links').find_all('a')
+		if web_soup.find_all(class_='hidden-xs col-sm-3')[1] != None:
+			page_nav = web_soup.find_all(class_='hidden-xs col-sm-3')[1].find_all('a')
 
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
@@ -166,8 +166,11 @@ def get_content(web_page, splitter):
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(class_='small-12 medium-3 large-3 columns three') != None and web_soup.find(class_='small-12 medium-3 large-3 columns three') != '':
-			col4 = web_soup.find(class_='small-12 medium-3 large-3 columns three')
+		if web_soup.find(class_='col-xs-12 col-sm-4') != None and web_soup.find(class_='col-xs-12 col-sm-4') != '':
+			col4 = web_soup.find(class_='col-xs-12 col-sm-4')
+			col4 = get_column(col4, splitter)
+		elif web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
+			col4 = web_soup.find(class_='col-xs-12 col-sm-3')
 			col4 = get_column(col4, splitter)
 
 		col1 = str(col1)
@@ -212,10 +215,11 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.jacksonmilton.k12.oh.us',
-		'https://www.jacksonmilton.k12.oh.us/1/Home',
-		'https://www.jacksonmilton.k12.oh.us/2/Home',
-		'https://www.jacksonmilton.k12.oh.us/3/Home',
+		'https://www.mathisisd.org',
+		'https://www.mathisisd.org/1/Home',
+		'https://www.mathisisd.org/2/Home',
+		'https://www.mathisisd.org/3/Home',
+		'https://www.mathisisd.org/4/Home',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -234,7 +238,7 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
-			sitemap = soup.find(class_='top-bar-section')
+			sitemap = soup.find(class_='topBar')
 			list_items = sitemap.select('ul > li')
 			# list_items2 = sitemap[1].select('ul > li')
 			# list_items = [*list_items1, *list_items2]

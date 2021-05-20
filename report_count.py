@@ -12,32 +12,35 @@ while True:
 	except OverflowError:
 		max_int = int(max_int / 10)
 
-files = glob.glob('*.csv')
+files = glob.glob('../f_web_interface/static/files/buckeyevalley/*.csv')
 pages = 0
 issues = 0
-images = 0
-docs = 0
-size_limit_pages = 0
+t1 = []
+t2 = []
+t3 = []
 
 for file in files:
 	with open(file, 'r', encoding='utf-8') as csv_file:
 		csv_reader = csv.reader(csv_file)
-		holder = []
+		pages += len(csv_reader) - 1
 
 		for row in csv_reader:
-			if len(row) > 0 and len(row[1]) < 6:
-				holder.append(row[1])
+			if len(row) > 0 :
+				if not row[1] in t1:
+					t1.append(row[1])
 
-			if len(row) > 10 and len(row[7]) > 0:
-				size_limit_pages += 1
+				if not row[2] in t2 and len(row[2]) > 0:
+					t2.append(row[2])
 
-		pages += int(holder[-4])
-		issues += int(holder[-3])
-		images += int(holder[-2])
-		docs += int(holder[-1])
+				if not row[3] in t3 and len(row[3]) > 0:
+					t3.append(row[3])
+
+				if not row[6] in t3 and row[6] == 'Flagged':
+					issues += 1
+
 
 print('Pages:', pages)
 print('Issues:', issues)
-print('Images:', images)
-print('Docs:', docs)
-print('Size limit pages:', size_limit_pages)
+print('T1:', t1)
+print('T2:', t2)
+print('T3:', t3)

@@ -2,6 +2,7 @@ from pathlib import Path
 from time import time
 import csv
 import glob
+import itertools
 import re
 
 from bs4 import BeautifulSoup
@@ -155,8 +156,8 @@ def get_content(web_page, splitter):
 		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if len(web_soup.find(class_='sf-vertical')) != None:
-			page_nav = web_soup.find(class_='sf-vertical').find_all('a')
+		if len(web_soup.find(class_='quicklinks')) != None:
+			page_nav = web_soup.find(class_='quicklinks').find_all('a')
 
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
@@ -166,8 +167,8 @@ def get_content(web_page, splitter):
 			issue_pages_counter = 1
 
 		# Second Column
-		if web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
-			col4 = web_soup.find(class_='col-xs-12 col-sm-3')
+		if web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor') != None and web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor') != '':
+			col4 = web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor')
 			col4 = get_column(col4, splitter)
 		# elif web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
 		# 	col4 = web_soup.find(class_='col-xs-12 col-sm-3')
@@ -215,7 +216,7 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		# 'https://www.warrencountyschools.org',
+		'https://www.perry.kyschools.us',
 		# 'https://www.warrencountyschools.org/greenwood/home',
 		# 'https://www.warrencountyschools.org/CTE/home',
 		# 'https://www.warrencountyschools.org/lostriver/home',
@@ -263,11 +264,11 @@ if __name__ == '__main__':
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
-			sitemap = soup.find(id='header-mainNav')
-			list_items1 = sitemap.select('ul > li')
-			sitemap2 = soup.find(id='header-resources')
-			list_items2 = sitemap.select('ul > li')
-			list_items = [*list_items1, *list_items2]
+			sitemap = soup.find(id='bs-example-navbar-collapse-1')
+			list_items = sitemap.select('ul > li')
+			# sitemap2 = soup.find(id='header-resources')
+			# list_items2 = sitemap.select('ul > li')
+			# list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'school_{m}'
 

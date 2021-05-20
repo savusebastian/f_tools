@@ -129,7 +129,7 @@ def get_content(web_page):
 	web_soup = BeautifulSoup(web_link, 'html.parser')
 	# with open('x.txt', 'w', encoding='utf-8') as target:
 	# 	target.write(str(web_soup))
-	print(web_soup)
+	# print(web_soup)
 
 	col1 = web_soup.find(class_='articleContentWrapper')
 	col1 = get_column(col1)

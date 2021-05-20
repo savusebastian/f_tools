@@ -1,5 +1,6 @@
 import csv
 import glob
+import itertools
 import sys
 
 
@@ -12,20 +13,19 @@ while True:
 	except OverflowError:
 		max_int = int(max_int / 10)
 
-folder = '../f_web_interface/static/files/masoncoschools/'
+folder = '/home/sebastian/Downloads/csvs/'
 files = glob.glob(f'{folder}*.csv')
-# print(files)
-files.remove(f'{folder}report.csv')
 pages = 0
 issues = 0
 t1 = 0
 t2 = 0
 t3 = 0
-t1_arr = []
-t2_arr = []
-t3_arr = []
 
 for file in files:
+	t1_arr = []
+	t2_arr = []
+	t3_arr = []
+
 	with open(file, 'r', encoding='utf-8') as csv_file:
 		csv_reader = csv.reader(csv_file)
 
@@ -45,13 +45,15 @@ for file in files:
 				if row[6] == 'Flagged':
 					issues += 1
 
-	t1 += len(t1_arr)
-	t2 += len(t2_arr)
-	t3 += len(t3_arr)
+	t1 += len(t1_arr) - 1
+	t2 += len(t2_arr) - 1
+	t3 += len(t3_arr) - 1
 
 
-print('Pages:', pages - len(files))
-print('Issues:', issues)
+print('District:', 'Yes' if len(files) > 1 else 'No')
+print('Schools:', len(files) - 1)
 print('T1:', t1)
 print('T2:', t2)
 print('T3:', t3)
+print('Pages:', pages - len(files))
+print('Issues:', issues)

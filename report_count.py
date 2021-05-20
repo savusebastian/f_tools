@@ -13,6 +13,7 @@ while True:
 		max_int = int(max_int / 10)
 
 files = glob.glob('../f_web_interface/static/files/buckeyevalley/*.csv')
+files.remove('report.csv')
 pages = 0
 issues = 0
 t1 = []
@@ -22,9 +23,10 @@ t3 = []
 for file in files:
 	with open(file, 'r', encoding='utf-8') as csv_file:
 		csv_reader = csv.reader(csv_file)
-		pages += len(csv_reader) - 1
 
 		for row in csv_reader:
+			pages += 1
+
 			if len(row) > 0 :
 				if not row[1] in t1:
 					t1.append(row[1])
@@ -39,7 +41,7 @@ for file in files:
 					issues += 1
 
 
-print('Pages:', pages)
+print('Pages:', pages - len(files))
 print('Issues:', issues)
 print('T1:', t1)
 print('T2:', t2)

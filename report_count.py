@@ -42,7 +42,7 @@ for file in files:
 				if not row[3] in t3_arr and len(row[3]) > 0:
 					t3_arr.append(row[3])
 
-				if not row[6] in t3 and row[6] == 'Flagged':
+				if row[6] == 'Flagged':
 					issues += 1
 
 	t1 += len(t1_arr)

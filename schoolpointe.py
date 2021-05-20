@@ -288,13 +288,13 @@ if __name__ == '__main__':
 					for link in group_links:
 						external_link = False
 
-						if len(nav_link.get('href')) > 0 and link.get('href')[0] == '#':
+						if len(link.get('href')) > 0 and link.get('href')[0] == '#':
 							page_link = '#'
 						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':
 							page_link = splitter[0] + link.get('href')
-						elif len(nav_link.get('href')) > 0 and link.get('href')[0] == '/':
+						elif len(link.get('href')) > 0 and link.get('href')[0] == '/':
 							page_link = splitter[0] + '//' + splitter[2] + link.get('href')
-						elif len(nav_link.get('href')) > 4 and link.get('href')[:4] == 'http':
+						elif len(link.get('href')) > 4 and link.get('href')[:4] == 'http':
 							page_link = link.get('href')
 
 							if link.get('href').find(splitter[2].split('.')[1]) == -1:

@@ -217,35 +217,15 @@ if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
 		'https://www.perry.kyschools.us',
-		# 'https://www.warrencountyschools.org/greenwood/home',
-		# 'https://www.warrencountyschools.org/CTE/home',
-		# 'https://www.warrencountyschools.org/lostriver/home',
-		# 'https://www.warrencountyschools.org/natcher/home',
-		# 'https://www.warrencountyschools.org/northwarren/home',
-		# 'https://www.warrencountyschools.org/oakland/home',
-		# 'https://www.warrencountyschools.org/plano/home',
-		# 'https://www.warrencountyschools.org/richpond/home',
-		# 'https://www.warrencountyschools.org/richardsville/home',
-		# 'https://www.warrencountyschools.org/rockfield/home',
-		# 'https://www.warrencountyschools.org/22/home',
-		# 'https://www.warrencountyschools.org/24/home',
-		# 'https://www.warrencountyschools.org/25/home',
-		# 'https://www.warrencountyschools.org/27/home',
-		# 'https://www.warrencountyschools.org/28/home',
-		# 'https://www.warrencountyschools.org/29/home',
-		# 'https://www.warrencountyschools.org/31/home',
-		# 'https://www.warrencountyschools.org/32/home',
-		# 'https://www.warrencountyschools.org/jenningscreek/home',
-		# 'https://www.warrencountyschools.org/swhs/home',
-		# 'https://www.warrencountyschools.org/3/home',
-		# 'https://www.warrencountyschools.org/warreneasthigh/home',
-		# 'https://www.warrencountyschools.org/dcms/home',
-		# 'https://www.warrencountyschools.org/henrymossmiddle/home',
-		# 'https://www.warrencountyschools.org/swms/home',
-		'https://www.warrencountyschools.org/WEMS/home',
-		'https://www.warrencountyschools.org/alvaton/home',
-		'https://www.warrencountyschools.org/briarwood/home',
-		'https://www.warrencountyschools.org/bristow/home',
+		'https://www.perry.kyschools.us/1/Home',
+		'https://www.perry.kyschools.us/3/home',
+		'https://www.perry.kyschools.us/5/Home',
+		'https://www.perry.kyschools.us/6/Home',
+		'https://www.perry.kyschools.us/13/Home',
+		'https://www.perry.kyschools.us/9/Home',
+		'https://www.perry.kyschools.us/10/Home',
+		'https://www.perry.kyschools.us/14/Home',
+		'https://www.perry.kyschools.us/15/home',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -261,7 +241,7 @@ if __name__ == '__main__':
 			issue_pages_counter = 0
 
 			splitter = site.split('/')
-			page = requests.get(site).content
+			page = requests.get(site, timeout=10).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')

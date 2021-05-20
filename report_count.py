@@ -45,6 +45,6 @@ for file in files:
 
 print('Pages:', pages - len(files))
 print('Issues:', issues)
-print('T1:', t1)
-print('T2:', t2)
-print('T3:', t3)
+print('T1:', len(t1))
+print('T2:', len(t2))
+print('T3:', len(t3))

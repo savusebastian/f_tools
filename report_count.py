@@ -12,9 +12,10 @@ while True:
 	except OverflowError:
 		max_int = int(max_int / 10)
 
-files = glob.glob('../f_web_interface/static/files/buckeyevalley/*.csv')
-print(files)
-files.remove('report.csv')
+folder = '../f_web_interface/static/files/buckeyevalley/'
+files = glob.glob(f'{folder}*.csv')
+# print(files)
+files.remove(f'{folder}report.csv')
 pages = 0
 issues = 0
 t1 = []

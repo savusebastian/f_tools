@@ -288,13 +288,13 @@ if __name__ == '__main__':
 					for link in group_links:
 						external_link = False
 
-						if link.get('href')[0] == '#':
+						if len(nav_link.get('href')) > 0 and link.get('href')[0] == '#':
 							page_link = '#'
 						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':
 							page_link = splitter[0] + link.get('href')
-						elif link.get('href')[0] == '/':
+						elif len(nav_link.get('href')) > 0 and link.get('href')[0] == '/':
 							page_link = splitter[0] + '//' + splitter[2] + link.get('href')
-						elif link.get('href')[:4] == 'http':
+						elif len(nav_link.get('href')) > 4 and link.get('href')[:4] == 'http':
 							page_link = link.get('href')
 
 							if link.get('href').find(splitter[2].split('.')[1]) == -1:
@@ -319,13 +319,13 @@ if __name__ == '__main__':
 								for nav_link in nav_sec:
 									external_link = False
 
-									if nav_link.get('href')[0] == '#':
+									if len(nav_link.get('href')) > 0 and nav_link.get('href')[0] == '#':
 										page_link = '#'
 									elif len(nav_link.get('href')) > 1 and nav_link.get('href')[:2] == '//':
 										page_link = splitter[0] + nav_link.get('href')
-									elif nav_link.get('href')[0] == '/':
+									elif len(nav_link.get('href')) > 0 and nav_link.get('href')[0] == '/':
 										page_link = splitter[0] + '//' + splitter[2] + nav_link.get('href')
-									elif nav_link.get('href')[:4] == 'http':
+									elif len(nav_link.get('href')) > 4 and  nav_link.get('href')[:4] == 'http':
 										page_link = nav_link.get('href')
 
 										if nav_link.get('href').find(splitter[2].split('.')[1]) == -1:

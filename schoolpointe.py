@@ -156,8 +156,8 @@ def get_content(web_page, splitter):
 		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if len(web_soup.find(class_='quicklinks')) != None:
-			page_nav = web_soup.find(class_='quicklinks').find_all('a')
+		if len(web_soup.find(id='quicklinks')) != None:
+			page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
@@ -216,17 +216,19 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.perry.kyschools.us',
-		'https://www.perry.kyschools.us/1/Home',
-		'https://www.perry.kyschools.us/3/home',
-		'https://www.perry.kyschools.us/5/Home',
-		'https://www.perry.kyschools.us/6/Home',
-		'https://www.perry.kyschools.us/13/Home',
-		'https://www.perry.kyschools.us/9/Home',
-		'https://www.perry.kyschools.us/10/Home',
-		'https://www.perry.kyschools.us/14/Home',
-		'https://www.perry.kyschools.us/15/home',
+		'https://www.gcsd9.net',
+		'https://www.gcsd9.net/1/Home',
+		'https://www.gcsd9.net/2/home',
+		'https://www.gcsd9.net/3/Home',
+		'https://www.gcsd9.net/4/Home',
+		'https://www.gcsd9.net/10/Home',
+		'https://www.gcsd9.net/5/Home',
+		'https://www.gcsd9.net/6/Home',
+		'https://www.gcsd9.net/7/Home',
+		'https://www.gcsd9.net/8/home',
 	]
+	# pfd to test
+	# https://www.gcsd9.net/userfiles/-4/my%20files/studentdresscode.pdf?id=20
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)

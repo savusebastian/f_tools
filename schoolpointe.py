@@ -126,7 +126,7 @@ def get_content(web_page, splitter):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=10).content
+		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -241,7 +241,7 @@ if __name__ == '__main__':
 			issue_pages_counter = 0
 
 			splitter = site.split('/')
-			page = requests.get(site, timeout=10).content
+			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')

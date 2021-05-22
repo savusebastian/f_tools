@@ -167,8 +167,8 @@ def get_content(web_page):
 		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
 			news = 'news'
 
-		if web_soup.find(id='quicklinks') != None:
-			page_nav = web_soup.find(id='quicklinks').find_all('a')
+		# if web_soup.find(id='quicklinks') != None:
+		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
@@ -259,11 +259,11 @@ if __name__ == '__main__':
 			soup = BeautifulSoup(page, 'html.parser')
 			# list_items = soup.find_all(class_='without-image')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
-			list_items = sitemap.select('ul > li')
-			# list_items1 = sitemap.select('ul > li')
-			# sitemap2 = soup.find(id='header-resources')
-			# list_items2 = sitemap.select('ul > li')
-			# list_items = itertools.chain(list_items1, list_items2)
+			# list_items = sitemap.select('ul > li')
+			list_items1 = sitemap.select('ul > li')
+			sitemap2 = soup.find(class_='header-elements')
+			list_items2 = sitemap.select('ul#quicklinksDropDown > li')
+			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'
 
@@ -278,8 +278,7 @@ if __name__ == '__main__':
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-				# for item in list_items: # For itertools.chain
-				for item in list_items[1:]:
+				for item in list_items:
 					group_links = item.find_all('a')
 
 					for link in group_links:

@@ -287,7 +287,7 @@ if __name__ == '__main__':
 						if href.find('.pdf') > -1:
 							csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 						else:
-							if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) > -1:
+							if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
 								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
 							else:
 								page_counter += 1
@@ -320,7 +320,7 @@ if __name__ == '__main__':
 										if href.find('.pdf') > -1:
 											csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 										else:
-											if href.find('http') > -1 and href.find(split_dot[1]) > -1:
+											if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
 												csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
 											else:
 												page_counter += 1

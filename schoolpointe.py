@@ -133,7 +133,7 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	print(web_page)
+	# print(web_page)
 
 	# if web_page != '#':
 	try:

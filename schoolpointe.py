@@ -148,51 +148,51 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='maincontentsection').find_all('form') != []:
+		if web_soup.find(class_='body-content-container').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='maincontentsection').find_all('embed') != []:
+		if web_soup.find(class_='body-content-container').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='maincontentsection').find_all('iframe') != []:
+		if web_soup.find(class_='body-content-container').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='maincontentsection').find_all(id='calendar') != []:
+		if web_soup.find(class_='body-content-container').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='maincontentsection').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='body-content-container').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='maincontentsection').find_all(id='news-list') != []:
+		if web_soup.find(class_='body-content-container').find_all(id='news-list') != []:
 			news = 'news'
 
-		# if web_soup.find(id='quicklinks') != None:
+		if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
+			page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
+		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
-		# First column
-		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
-			col1 = web_soup.find_all(class_='maincontentsection')[0]
+		# Content
+		if web_soup.find(class_='body-content-container') != None and web_soup.find(class_='body-content-container') != '':
+			col1 = web_soup.find(class_='body-content-container')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
 
-		# Second Column
-		if web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor') != None and web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor') != '':
-			col4 = web_soup.find(class_='col-xs-12 col-sm-12 col-md-3 col-lg-3 backgroundcolor')
-			col4 = get_column(col4)
-		# elif web_soup.find(class_='col-xs-12 col-sm-3') != None and web_soup.find(class_='col-xs-12 col-sm-3') != '':
-		# 	col4 = web_soup.find(class_='col-xs-12 col-sm-3')
-		# 	col4 = get_column(col4)
-
 		col1 = str(col1)
-		col4 = str(col2) + str(col3) + str(col4)
 
-		if len(col1) > 150000:
+		if len(col1) > 200000:
 			col1 = 'Flagged'
 			col2 = 'This page has too much content'
 			col3 = ''
 			col4 = ''
 			col_num = '2'
+			issue_pages_counter = 1
+		elif len(col1) > 150000:
+			col2 = col1[50000:100000]
+			col3 = col1[100000:150000]
+			col4 = col1[150000:]
+			col1 = col1[:50000]
+			col_num = '4'
 			issue_pages_counter = 1
 		elif len(col1) > 100000:
 			col2 = col1[50000:100000]

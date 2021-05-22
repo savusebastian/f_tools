@@ -279,7 +279,7 @@ if __name__ == '__main__':
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
-					t1 = str(group_links[0].get_text()) if len(group_links[0].get_text()) > 0 else f'No tier {i}'
+					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
 					for link in group_links:
 						href = link.get('href')
@@ -347,4 +347,4 @@ if __name__ == '__main__':
 
 			print('Finished:', site)
 
-	print('Finished:', round((time() - start_time) / 3600, 2), 'h')
+	print('Finished:', round((time() - start_time) / 60, 2), 'm')

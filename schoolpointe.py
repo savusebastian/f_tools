@@ -122,7 +122,7 @@ def get_content(web_page, splitter):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	print(web_page)
+	# print(web_page)
 
 	# if web_page != '#':
 	try:
@@ -271,6 +271,7 @@ if __name__ == '__main__':
 					for link in group_links:
 						external_link = False
 						href = link.get('href')
+						print(href, href.find('.pdf'))
 
 						if href.find('.pdf') == -1:
 							if len(href) > 0 and href[0] == '#':

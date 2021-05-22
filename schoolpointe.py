@@ -227,16 +227,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.gcsd9.net',
-		'https://www.gcsd9.net/1/Home',
-		'https://www.gcsd9.net/2/home',
-		'https://www.gcsd9.net/3/Home',
-		'https://www.gcsd9.net/4/Home',
-		'https://www.gcsd9.net/10/Home',
-		'https://www.gcsd9.net/5/Home',
-		'https://www.gcsd9.net/6/Home',
-		'https://www.gcsd9.net/7/Home',
-		'https://www.gcsd9.net/8/home',
+		'https://www.ashland.k12.ky.us',
+		'https://www.ashland.k12.ky.us/10/Home' # ahsp
+		'https://www.ashland.k12.ky.us/3/Home' # cres
+		'https://www.ashland.k12.ky.us/4/Home' # ces
+		'https://www.ashland.k12.ky.us/5/Home' # hes
+		'https://www.ashland.k12.ky.us/7/Home' # oes
+		'https://www.ashland.k12.ky.us/8/home' # pes
+		'https://www.ashland.k12.ky.us/2/home' # ams
+		'https://www.ashland.k12.ky.us/1/Home' # pgbhs
+		'https://www.ashland.k12.ky.us/12/Home' # gtp
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -257,12 +257,11 @@ if __name__ == '__main__':
 
 			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
-			# list_items = soup.find_all(class_='without-image')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 			sitemap2 = soup.find(class_='header-elements')
-			list_items2 = sitemap.select('ul#quicklinksDropDown > li')
+			list_items2 = sitemap.select('ul.quicklinks > li')
 			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'

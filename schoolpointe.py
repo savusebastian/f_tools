@@ -255,13 +255,13 @@ if __name__ == '__main__':
 			split_mixed = site.split('/')[2].split('.')
 
 			page = requests.get(site, timeout=5).content
-			print(site)
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
+
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 			sitemap2 = soup.find(class_='header-elements')
-			list_items2 = sitemap.select('ul.quicklinks > li')
+			list_items2 = sitemap2.select('ul.quicklinks > li')
 			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'

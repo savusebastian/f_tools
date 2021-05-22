@@ -13,6 +13,7 @@ def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()
 
+		print(tag.contents)
 		if tag.contents == []:
 			tag.decompose()
 
@@ -47,6 +48,7 @@ def get_column(col):
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
+	print(col)
 
 	while col.link != None:
 		col.link.decompose()
@@ -163,7 +165,6 @@ def get_content(web_page):
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
 			col1 = web_soup.find_all(class_='maincontentsection')[0]
 			col1 = get_column(col1)
-			print(col1)
 		else:
 			issue_pages_counter = 1
 

@@ -277,8 +277,9 @@ if __name__ == '__main__':
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-				for item in list_items:
+				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
+					t1 = str(group_links[0].get_text()) if len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
 					for link in group_links:
 						href = link.get('href')
@@ -293,19 +294,19 @@ if __name__ == '__main__':
 							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
 						if href.find('.pdf') > -1:
-							csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+							csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 						else:
 							if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+								csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
 							else:
 								page_counter += 1
 								col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 								issue_pages_counter += content_ipc
 
 								if group_links[0].get_text() != link.get_text():
-									csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+									csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 								else:
-									csv_writer.writerow([str(page_link), str(group_links[0].get_text()), '', '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+									csv_writer.writerow([str(page_link), t1, '', '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
 								if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 									csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
@@ -324,15 +325,15 @@ if __name__ == '__main__':
 											page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
 										if href.find('.pdf') > -1:
-											csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 										else:
 											if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-												csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
 											else:
 												page_counter += 1
 												nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 												issue_pages_counter += content_ipc
-												csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
 
 												if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 													csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])

@@ -59,7 +59,7 @@ def get_column(col):
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
-
+	print('>>', 1)
 	while col.link != None:
 		col.link.decompose()
 
@@ -71,7 +71,7 @@ def get_column(col):
 
 	while col.nav != None:
 		col.nav.decompose()
-
+	print('>>', 2)
 	for image in col_images:
 		try:
 			if image.get('src') != None and image.get('src') != '':
@@ -114,7 +114,7 @@ def get_column(col):
 		except:
 			print('Anchor:', anchor)
 
-	print('>>', 1)
+	print('>>', 3)
 	col = remove_tags(str(col))
 	print('>>', col)
 

@@ -83,8 +83,8 @@ def get_column(col):
 			image['style'] = ''
 			image['width'] = '250'
 
-		except:
-			print('Image:', image)
+		# except:
+		# 	print('Image:', image)
 
 	for anchor in col_anchors:
 		try:

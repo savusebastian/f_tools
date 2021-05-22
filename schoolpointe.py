@@ -45,7 +45,7 @@ def remove_tags(text):
 def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
-	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
+	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
 
 	while col.link != None:
@@ -122,10 +122,10 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	# print(web_page)
+	print(web_page)
 
-	# if web_page != '#':
-	try:
+	if web_page != '#':
+	# try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -162,6 +162,7 @@ def get_content(web_page):
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
 			col1 = web_soup.find_all(class_='maincontentsection')[0]
+			print(col1)
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -206,8 +207,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	# else:
-	except:
+	else:
+	# except:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter

@@ -133,7 +133,6 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	# print(web_page)
 
 	# if web_page != '#':
 	try:
@@ -256,6 +255,7 @@ if __name__ == '__main__':
 			split_mixed = site.split('/')[2].split('.')
 
 			page = requests.get(site, timeout=5).content
+			print(site)
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			# list_items = sitemap.select('ul > li')

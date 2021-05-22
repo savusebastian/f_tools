@@ -126,7 +126,7 @@ def get_content(web_page, splitter):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, allow_redirects=False, timeout=5).content
+		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -288,6 +288,7 @@ if __name__ == '__main__':
 							else:
 								page_link = splitter[0] + '//' + splitter[2] + '/' + href
 
+							print()
 							if not external_link:
 								page_counter += 1
 								col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)

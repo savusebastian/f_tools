@@ -228,7 +228,7 @@ if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
 		'https://www.ashland.k12.ky.us',
-		'https://www.ashland.k12.ky.us/10/Home' # ahsp
+		# 'https://www.ashland.k12.ky.us/10/Home' # ahsp
 		'https://www.ashland.k12.ky.us/3/Home' # cres
 		'https://www.ashland.k12.ky.us/4/Home' # ces
 		'https://www.ashland.k12.ky.us/5/Home' # hes
@@ -259,7 +259,7 @@ if __name__ == '__main__':
 			page = requests.get(site, headers=headers, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
-			
+
 			list_items = sitemap.select('ul > li')
 			# list_items1 = sitemap.select('ul > li')
 			# sitemap2 = soup.find(class_='header-elements')

@@ -21,6 +21,7 @@ def remove_tags(text):
 	div = re.compile(r'<div[^>]+>')
 	dive = re.compile(r'<div+>')
 	divc = re.compile(r'</div+>')
+	link = re.compile(r'<link[^>]+>')
 	section = re.compile(r'<section[^>]+>')
 	sectione = re.compile(r'<section+>')
 	sectionc = re.compile(r'</section+>')
@@ -37,6 +38,7 @@ def remove_tags(text):
 	text = div.sub('', text)
 	text = dive.sub('', text)
 	text = divc.sub('', text)
+	text = link.sub('', text)
 	text = section.sub('', text)
 	text = sectione.sub('', text)
 	text = sectionc.sub('', text)
@@ -59,9 +61,6 @@ def get_column(col):
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
-	print('>>', col)
-	while col.link != None:
-		col.link.decompose()
 
 	while col.script != None:
 		col.script.decompose()
@@ -71,7 +70,6 @@ def get_column(col):
 
 	while col.nav != None:
 		col.nav.decompose()
-	print('>>', col)
 
 	for image in col_images:
 		try:
@@ -115,7 +113,6 @@ def get_column(col):
 		except:
 			print('Anchor:', anchor)
 
-	# print('>>', 3)
 	col = remove_tags(str(col))
 
 	return col

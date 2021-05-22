@@ -45,7 +45,7 @@ def remove_tags(text):
 def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
-	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
+	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
 
 	while col.link != None:
@@ -97,7 +97,7 @@ def get_column(col):
 				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
 				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
-					anchor.string = 'INTERNAL LINK ' + anchor.string
+					anchor.string = f'INTERNAL LINK {anchor.string}'
 
 		except:
 			print('Anchor:', anchor)
@@ -227,13 +227,12 @@ if __name__ == '__main__':
 		'https://www.gcsd9.net/7/Home',
 		'https://www.gcsd9.net/8/home',
 	]
-	# pfd to test
-	# https://www.gcsd9.net/userfiles/-4/my%20files/studentdresscode.pdf?id=20
+
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open('../f_web_interface/static/files/' + mainfolder + '/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 		s = 0
 
@@ -250,6 +249,7 @@ if __name__ == '__main__':
 			# list_items = soup.find_all(class_='without-image')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			list_items = sitemap.select('ul > li')
+			# list_items1 = sitemap.select('ul > li')
 			# sitemap2 = soup.find(id='header-resources')
 			# list_items2 = sitemap.select('ul > li')
 			# list_items = itertools.chain(list_items1, list_items2)
@@ -263,18 +263,17 @@ if __name__ == '__main__':
 
 			csv_report.writerow(['School name', school_name])
 
-			with open('../f_web_interface/static/files/' + mainfolder + '/' + school_name + '.csv', 'w', encoding='utf-8') as csv_main:
+			with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
+				# for item in list_items: # For itertools.chain
 				for item in list_items[1:]:
 					group_links = item.find_all('a')
 
 					for link in group_links:
 						href = link.get('href')
 
-						# if len(href) > 0 and href[0] == '#':
-						# 	page_link = '#'
 						if len(href) > 1 and href[:2] == '//':
 							page_link = f'{split_slash[0]}{href}'
 						elif len(href) > 0 and href[0] == '/':
@@ -306,8 +305,6 @@ if __name__ == '__main__':
 									for nav_link in nav_sec:
 										href = nav_link.get('href')
 
-										# if len(href) > 0 and href[0] == '#':
-										# 	page_link = '#'
 										if len(href) > 1 and href[:2] == '//':
 											page_link = f'{split_slash[0]}{href}'
 										elif len(href) > 0 and href[0] == '/':

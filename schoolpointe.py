@@ -136,7 +136,8 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=5).content
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -254,7 +255,8 @@ if __name__ == '__main__':
 			split_dot = site.split('.')
 			split_mixed = site.split('/')[2].split('.')
 
-			page = requests.get(site, timeout=5).content
+			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+			page = requests.get(site, headers=headers, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			print(soup)

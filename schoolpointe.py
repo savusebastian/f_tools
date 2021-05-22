@@ -162,8 +162,8 @@ def get_content(web_page):
 		# First column
 		if web_soup.find_all(class_='maincontentsection')[0] != None and web_soup.find_all(class_='maincontentsection')[0] != '':
 			col1 = web_soup.find_all(class_='maincontentsection')[0]
-			print(col1)
 			col1 = get_column(col1)
+			print(col1)
 		else:
 			issue_pages_counter = 1
 

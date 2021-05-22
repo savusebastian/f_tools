@@ -13,7 +13,7 @@ def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()
 
-		if tag.contents == [] or (len(tag.contents < 2 and tag.contents[0] == '\xa0')):
+		if tag.contents == [] or (len(tag.contents) < 2 and tag.contents[0] == '\xa0')):
 			tag.decompose()
 
 

@@ -114,8 +114,9 @@ def get_column(col):
 		except:
 			print('Anchor:', anchor)
 
+	print('>>', 1)
 	col = remove_tags(str(col))
-	print(col)
+	print('>>', col)
 
 	return col
 

@@ -126,7 +126,7 @@ def get_content(web_page, splitter):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=5).content
+		web_link = requests.get(web_page, allow_redirects=False, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:

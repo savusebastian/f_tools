@@ -59,7 +59,7 @@ def get_column(col):
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
-
+	print('>>', col)
 	while col.link != None:
 		col.link.decompose()
 

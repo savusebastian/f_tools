@@ -13,8 +13,7 @@ def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()
 
-		print(tag.contents)
-		if tag.contents == []:
+		if tag.contents == [] or (len(tag.contents < 2 and tag.contents[0] == '\xa0')):
 			tag.decompose()
 
 
@@ -22,6 +21,12 @@ def remove_tags(text):
 	div = re.compile(r'<div[^>]+>')
 	dive = re.compile(r'<div+>')
 	divc = re.compile(r'</div+>')
+	section = re.compile(r'<section[^>]+>')
+	sectione = re.compile(r'<section+>')
+	sectionc = re.compile(r'</section+>')
+	article = re.compile(r'<article[^>]+>')
+	articlee = re.compile(r'<article+>')
+	articlec = re.compile(r'</article+>')
 	span = re.compile(r'<span+>')
 	spane = re.compile(r'<span[^>]+>')
 	spanc = re.compile(r'</span+>')
@@ -32,6 +37,12 @@ def remove_tags(text):
 	text = div.sub('', text)
 	text = dive.sub('', text)
 	text = divc.sub('', text)
+	text = section.sub('', text)
+	text = sectione.sub('', text)
+	text = sectionc.sub('', text)
+	text = article.sub('', text)
+	text = article.sub('', text)
+	text = articlec.sub('', text)
 	text = span.sub('', text)
 	text = spane.sub('', text)
 	text = spanc.sub('', text)
@@ -48,7 +59,6 @@ def get_column(col):
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
-	print(col)
 
 	while col.link != None:
 		col.link.decompose()
@@ -105,6 +115,7 @@ def get_column(col):
 			print('Anchor:', anchor)
 
 	col = remove_tags(str(col))
+	print(col)
 
 	return col
 

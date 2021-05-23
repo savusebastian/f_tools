@@ -148,22 +148,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='body-content-container').find_all('form') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='body-content-container').find_all('embed') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='body-content-container').find_all('iframe') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='body-content-container').find_all(id='calendar') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='body-content-container').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='body-content-container').find_all(id='news-list') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -172,8 +172,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='body-content-container') != None and web_soup.find(class_='body-content-container') != '':
-			col1 = web_soup.find(class_='body-content-container')
+		if web_soup.find(class_='masterC alignment-stretch') != None and web_soup.find(class_='masterC alignment-stretch') != '':
+			col1 = web_soup.find(class_='masterC alignment-stretch')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -225,7 +225,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.krhs.net'
+	district = 'https://www.english.cienaguas.org'
 	all_sites = [
 		f'{district}',
 		# f'{district}/1/Home',
@@ -269,14 +269,14 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='quicklinksDropDown')
+			sitemap2 = soup.find(class_='hidden-xs col-sm-4 col-md-3 col-lg-3 backgroundcolor qlLeft')
 			list_items2 = sitemap2.select('ul > li')
 
-			sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
-			list_items3 = sitemap3.select('ul.very-top-nav > li')
+			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
+			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			# list_items = itertools.chain(list_items1, list_items2)
-			list_items = itertools.chain(list_items1, list_items2, list_items3)
+			list_items = itertools.chain(list_items1, list_items2)
+			# list_items = itertools.chain(list_items1, list_items2, list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])

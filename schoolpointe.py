@@ -226,20 +226,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.barnwell19.k12.sc.us',
-		'https://www.barnwell19.k12.sc.us/6/Home', # lbs
-		'https://www.barnwell19.k12.sc.us/8/Home', # rebs
-		'https://www.barnwell19.k12.sc.us/4/Home', # hefs
-		'https://www.barnwell19.k12.sc.us/5/Home', # jbks
-		'https://www.barnwell19.k12.sc.us/1/Home', # ljhs
-		'https://www.barnwell19.k12.sc.us/7/home', # rgms
-		'https://www.barnwell19.k12.sc.us/2/Home', # fbms
-		'https://www.barnwell19.k12.sc.us/3/home', # ejts
-		# 'https://www.barnwell19.k12.sc.us/10/Home', # sles
-		# 'https://www.barnwell19.k12.sc.us/BTRLA/Home', # jetes
-		# 'https://www.barnwell19.k12.sc.us/9/Home', # ses
-		# 'https://www.barnwell19.k12.sc.us/10/Home', # sps
-		# 'https://www.barnwell19.k12.sc.us/11/Home', # vges
+		'https://www.burbankschdst.il.schools.bz',
+		'https://www.burbankschdst.il.schools.bz/6/Home', # lbs
+		'https://www.burbankschdst.il.schools.bz/8/Home', # rebs
+		'https://www.burbankschdst.il.schools.bz/4/Home', # hefs
+		'https://www.burbankschdst.il.schools.bz/5/Home', # jbks
+		'https://www.burbankschdst.il.schools.bz/1/Home', # ljhs
+		'https://www.burbankschdst.il.schools.bz/7/home', # rgms
+		'https://www.burbankschdst.il.schools.bz/2/Home', # fbms
+		'https://www.burbankschdst.il.schools.bz/3/home', # ejts
+		# 'https://www.burbankschdst.il.schools.bz/10/Home', # sles
+		# 'https://www.burbankschdst.il.schools.bz/BTRLA/Home', # jetes
+		# 'https://www.burbankschdst.il.schools.bz/9/Home', # ses
+		# 'https://www.burbankschdst.il.schools.bz/10/Home', # sps
+		# 'https://www.burbankschdst.il.schools.bz/11/Home', # vges
 	]
 
 	mainfolder = all_sites[0].split('.')[1]

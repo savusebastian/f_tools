@@ -166,8 +166,8 @@ def get_content(web_page):
 		if web_soup.find(class_='body-content-container').find_all(id='news-list') != []:
 			news = 'news'
 
-		if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
-			page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
+		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
+		# 	page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
@@ -258,12 +258,12 @@ if __name__ == '__main__':
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 
-			list_items = sitemap.select('ul > li')
-			# list_items1 = sitemap.select('ul > li')
-			# sitemap2 = soup.find(class_='header-elements')
-			# list_items2 = sitemap2.select('ul.quicklinks > li')
-			# list_items = itertools.chain(list_items1, list_items2)
-			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
+			# list_items = sitemap.select('ul > li')
+			list_items1 = sitemap.select('ul > li')
+			sitemap2 = soup.find(class_='col-xs-12 col-sm-12 col-md-3 backgroundcolor')
+			list_items2 = sitemap2.select('ul.quicklinks > li')
+			list_items = itertools.chain(list_items1, list_items2)
+			school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'
 
 			if len(school) > 30:

@@ -263,6 +263,7 @@ if __name__ == '__main__':
 			sitemap = soup.find(class_='top-nav hidden-xs')
 
 			list_items = sitemap.select('ul > li')
+			print(list_items)
 			# list_items1 = sitemap.select('ul > li')
 			# sitemap2 = soup.find(class_='quicklinks')
 			# list_items2 = sitemap2.select('ul > li')

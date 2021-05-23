@@ -225,27 +225,50 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.cienaguas.org'
+	district = 'https://www.daviesskyschools.org'
 	all_sites = [
 		f'{district}',
-		# f'{district}/1/Home',
-		# f'{district}/2/Home',
-		# f'{district}/3/Home',
-		# f'{district}/5/Home',
-		# f'{district}/1/Home',
-		# f'{district}/7/home',
-		# f'{district}/2/Home',
-		'https://www.english.cienaguas.org'
+		f'{district}/7/Home',
+		f'{district}/8/Home',
+		f'{district}/10/Home',
+		f'{district}/12/Home',
+		f'{district}/13/Home',
+		f'{district}/14/home',
+		f'{district}/15/Home',
+		f'{district}/16/Home',
+		f'{district}/17/Home',
+		f'{district}/18/Home',
+		f'{district}/21/Home',
+		f'{district}/19/Home',
+		f'{district}/20/home',
+		f'{district}/4/Home',
+		f'{district}/5/Home',
+		f'{district}/6/Home',
+		f'{district}/1/Home',
+		f'{district}/2/Home',
+		f'{district}/3/Home',
 	]
 	schools = [
 		'district',
-		'english',
-		# 'tms',
-		# 'tes',
-		# 'jbks',
-		# 'ljhs',
-		# 'rgms',
-		# 'fbms',
+		'audubon',
+		'burnses',
+		'ce',
+		'dp',
+		'ev',
+		'highland',
+		'ml',
+		'sorgho',
+		'so',
+		'tamarack',
+		'vsk12es',
+		'wl',
+		'whitesville',
+		'burnsms',
+		'cv',
+		'dc',
+		'apollo',
+		'dc',
+		'hp',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -270,7 +293,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='hidden-xs col-sm-4 col-md-3 col-lg-3 backgroundcolor qlLeft')
+			sitemap2 = soup.find(class_='hidden-xs col-sm-4 col-md-3 col-lg-3 backgroundcolor')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

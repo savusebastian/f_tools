@@ -270,9 +270,9 @@ if __name__ == '__main__':
 			list_items1 = sitemap.select('ul > li')
 			sitemap2 = soup.find(class_='hidden-xs hidden-sm col-md-3 col-lg-3  quicklinkscolumn')
 			list_items2 = sitemap2.select('ul.quicklinks > li')
-			sitemap2 = soup.find(id='bs-example-navbar-collapse-1')
-			list_items2 = sitemap2.select('ul.very-top-nav > li')
-			list_items = itertools.chain(list_items1, list_items2)
+			sitemap3 = soup.find(id='bs-example-navbar-collapse-1')
+			list_items3 = sitemap3.select('ul.very-top-nav > li')
+			list_items = itertools.chain(list_items1, list_items2, list_items3)
 			school_name = f'{split_dot[1]}_{schools[s]}'
 
 			csv_report.writerow(['School name', school_name])

@@ -225,7 +225,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.mtarlingtonk8.org/'
+	district = 'https://www.mtarlingtonk8.org'
 	all_sites = [
 		f'{district}',
 		# f'{district}/1/Home',

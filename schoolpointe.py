@@ -226,20 +226,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.burbankschdst.il.schools.bz',
-		'https://www.burbankschdst.il.schools.bz/6/Home', # lbs
-		'https://www.burbankschdst.il.schools.bz/8/Home', # rebs
-		'https://www.burbankschdst.il.schools.bz/4/Home', # hefs
-		'https://www.burbankschdst.il.schools.bz/5/Home', # jbks
-		'https://www.burbankschdst.il.schools.bz/1/Home', # ljhs
-		'https://www.burbankschdst.il.schools.bz/7/home', # rgms
-		'https://www.burbankschdst.il.schools.bz/2/Home', # fbms
-		'https://www.burbankschdst.il.schools.bz/3/home', # ejts
-		# 'https://www.burbankschdst.il.schools.bz/10/Home', # sles
-		# 'https://www.burbankschdst.il.schools.bz/BTRLA/Home', # jetes
-		# 'https://www.burbankschdst.il.schools.bz/9/Home', # ses
-		# 'https://www.burbankschdst.il.schools.bz/10/Home', # sps
-		# 'https://www.burbankschdst.il.schools.bz/11/Home', # vges
+		'https://www.woodscharter.org',
+		# 'https://www.woodscharter.org/6/Home',
+		# 'https://www.woodscharter.org/8/Home',
+		# 'https://www.woodscharter.org/4/Home',
+		# 'https://www.woodscharter.org/5/Home',
+		# 'https://www.woodscharter.org/1/Home',
+		# 'https://www.woodscharter.org/7/home',
+		# 'https://www.woodscharter.org/2/Home',
+	]
+	schools = [
+		'district',
+		# 'lbs',
+		# 'rebs',
+		# 'hefs',
+		# 'jbks',
+		# 'ljhs',
+		# 'rgms',
+		# 'fbms',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -260,20 +264,16 @@ if __name__ == '__main__':
 
 			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='bs-example-navbar-collapse-1')
+			sitemap = soup.find(class_='top-nav-wrapper')
 
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
-			sitemap2 = soup.find(class_='clearfix panel content leftcolumn')
-			list_items2 = sitemap2.select('ul > li')
+			sitemap2 = soup.find(class_='hidden-xs hidden-sm col-md-3 col-lg-3  quicklinkscolumn')
+			list_items2 = sitemap2.select('ul.quicklinks > li')
+			sitemap2 = soup.find(id='bs-example-navbar-collapse-1')
+			list_items2 = sitemap2.select('ul.very-top-nav > li')
 			list_items = itertools.chain(list_items1, list_items2)
-			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
-			school = f'{split_dot[1]}_{s}'
-
-			if len(school) > 30:
-				school_name = str(school[:30]).lower().replace(' ', '_').replace('.', '')
-			else:
-				school_name = str(school).lower().replace(' ', '_').replace('.', '')
+			school_name = f'{split_dot[1]}_{schools[s]}'
 
 			csv_report.writerow(['School name', school_name])
 

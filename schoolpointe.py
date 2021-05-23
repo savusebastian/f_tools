@@ -148,22 +148,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='body-content-container').find_all('form') != []:
+		if web_soup.find(class_='container masterC').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='body-content-container').find_all('embed') != []:
+		if web_soup.find(class_='container masterC').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='body-content-container').find_all('iframe') != []:
+		if web_soup.find(class_='container masterC').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='body-content-container').find_all(id='calendar') != []:
+		if web_soup.find(class_='container masterC').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='body-content-container').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='container masterC').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='body-content-container').find_all(id='news-list') != []:
+		if web_soup.find(class_='container masterC').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -172,8 +172,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='body-content-container') != None and web_soup.find(class_='body-content-container') != '':
-			col1 = web_soup.find(class_='body-content-container')
+		if web_soup.find(class_='container masterC') != None and web_soup.find(class_='container masterC') != '':
+			col1 = web_soup.find(class_='container masterC')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -227,14 +227,14 @@ if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
 		'https://www.barnwell19.k12.sc.us',
-		'https://www.barnwell19.k12.sc.us/1/Home', # bhhs
-		'https://www.barnwell19.k12.sc.us/3/Home', # mesms
-		# 'https://www.barnwell19.k12.sc.us/3/Home', # ece
-		# 'https://www.barnwell19.k12.sc.us/4/Home', # nce
-		# 'https://www.barnwell19.k12.sc.us/5/Home', # sce
-		# 'https://www.barnwell19.k12.sc.us/6/Home', # ccp
-		# 'https://www.barnwell19.k12.sc.us/7/home', # caif
-		# 'https://www.barnwell19.k12.sc.us/9/home', # res
+		'https://www.barnwell19.k12.sc.us/6/Home', # lbs
+		'https://www.barnwell19.k12.sc.us/8/Home', # rebs
+		'https://www.barnwell19.k12.sc.us/4/Home', # hefs
+		'https://www.barnwell19.k12.sc.us/5/Home', # jbks
+		'https://www.barnwell19.k12.sc.us/1/Home', # ljhs
+		'https://www.barnwell19.k12.sc.us/7/home', # rgms
+		'https://www.barnwell19.k12.sc.us/2/Home', # fbms
+		'https://www.barnwell19.k12.sc.us/3/home', # ejts
 		# 'https://www.barnwell19.k12.sc.us/10/Home', # sles
 		# 'https://www.barnwell19.k12.sc.us/BTRLA/Home', # jetes
 		# 'https://www.barnwell19.k12.sc.us/9/Home', # ses
@@ -260,11 +260,11 @@ if __name__ == '__main__':
 
 			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='top-nav hidden-xs')
+			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
-			sitemap2 = soup.find(id='quicklinksDropDown')
+			sitemap2 = soup.find(class_='clearfix panel content leftcolumn')
 			list_items2 = sitemap2.select('ul > li')
 			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()

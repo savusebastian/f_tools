@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
-			sitemap2 = soup.find(class_='hidden-xs hidden-sm col-md-3 col-lg-3  quicklinkscolumn')
+			sitemap2 = soup.find(class_='quicklinkscolumn')
 			list_items2 = sitemap2.select('ul.quicklinks > li')
 			sitemap3 = soup.find(id='bs-example-navbar-collapse-1')
 			list_items3 = sitemap3.select('ul.very-top-nav > li')

@@ -262,12 +262,11 @@ if __name__ == '__main__':
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(class_='top-nav hidden-xs')
 
-			list_items = sitemap.select('ul > li')
-			print(list_items)
-			# list_items1 = sitemap.select('ul > li')
-			# sitemap2 = soup.find(class_='quicklinks')
-			# list_items2 = sitemap2.select('ul > li')
-			# list_items = itertools.chain(list_items1, list_items2)
+			# list_items = sitemap.select('ul > li')
+			list_items1 = sitemap.select('ul > li')
+			sitemap2 = soup.find(id='quicklinksDropDown')
+			list_items2 = sitemap2.select('ul > li')
+			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'
 

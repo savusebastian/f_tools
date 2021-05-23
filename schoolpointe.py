@@ -226,20 +226,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.dallask12.org',
-		'https://www.dallask12.org/12/home', # als
-		'https://www.dallask12.org/13/Home', # dcctc
-		'https://www.dallask12.org/1/Home', # dchs
-		'https://www.dallask12.org/3/Home', # kmhs
-		'https://www.dallask12.org/2/Home', # tshs
-		'https://www.dallask12.org/4/Home', # mms
-		'https://www.dallask12.org/5/home', # tdms
-		'https://www.dallask12.org/6/home', # bkces
-		'https://www.dallask12.org/7/Home', # bes
-		'https://www.dallask12.org/8/Home', # jetes
-		'https://www.dallask12.org/9/Home', # ses
-		'https://www.dallask12.org/10/Home', # sps
-		'https://www.dallask12.org/11/Home', # vges
+		'https://www.cfalls.org',
+		'https://www.cfalls.org/1/home', # cfhs
+		'https://www.cfalls.org/2/Home', # bms
+		'https://www.cfalls.org/3/Home', # rms
+		'https://www.cfalls.org/11/Home', # des
+		'https://www.cfalls.org/8/Home', # epes
+		'https://www.cfalls.org/6/Home', # les
+		'https://www.cfalls.org/7/home', # pes
+		'https://www.cfalls.org/9/home', # res
+		'https://www.cfalls.org/10/Home', # sles
+		'https://www.cfalls.org/BTRLA/Home', # jetes
+		# 'https://www.cfalls.org/9/Home', # ses
+		# 'https://www.cfalls.org/10/Home', # sps
+		# 'https://www.cfalls.org/11/Home', # vges
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -260,13 +260,13 @@ if __name__ == '__main__':
 
 			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='bs-example-navbar-collapse-1')
+			sitemap = soup.find(id='MainNav')
 
-			list_items = sitemap.select('ul > li')
-			# list_items1 = sitemap.select('ul > li')
-			# sitemap2 = soup.find(class_='col-xs-12 col-sm-12 col-md-3 backgroundcolor')
-			# list_items2 = sitemap2.select('ul.quicklinks > li')
-			# list_items = itertools.chain(list_items1, list_items2)
+			# list_items = sitemap.select('ul > li')
+			list_items1 = sitemap.select('ul > li')
+			sitemap2 = soup.find(class_='wrap-news')
+			list_items2 = sitemap2.select('ul.quicklinks > li')
+			list_items = itertools.chain(list_items1, list_items2)
 			# school = soup.find(id='ctl00_ctl00_header_ctl00_lnkSchoolHome2').get_text()
 			school = f'{split_dot[1]}_{s}'
 

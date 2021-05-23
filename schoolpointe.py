@@ -225,7 +225,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.english.cienaguas.org'
+	district = 'https://www.cienaguas.org'
 	all_sites = [
 		f'{district}',
 		# f'{district}/1/Home',
@@ -235,10 +235,11 @@ if __name__ == '__main__':
 		# f'{district}/1/Home',
 		# f'{district}/7/home',
 		# f'{district}/2/Home',
+		'https://www.english.cienaguas.org'
 	]
 	schools = [
 		'district',
-		# 'ths',
+		'english',
 		# 'tms',
 		# 'tes',
 		# 'jbks',

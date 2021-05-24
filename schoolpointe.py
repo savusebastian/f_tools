@@ -95,7 +95,8 @@ def get_column(col):
 			image['width'] = '250'
 
 		except:
-			print('Image:', image)
+			pass
+			# print('Image:', image)
 
 	for anchor in col_anchors:
 		try:
@@ -111,7 +112,8 @@ def get_column(col):
 					anchor.string = f'INTERNAL LINK {anchor.string}'
 
 		except:
-			print('Anchor:', anchor)
+			pass
+			# print('Anchor:', anchor)
 
 	col = remove_tags(str(col))
 
@@ -133,6 +135,7 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
+	print(web_page)
 
 	# if web_page != '#':
 	try:

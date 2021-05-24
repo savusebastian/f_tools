@@ -230,46 +230,46 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.pike.kyschools.us'
 	all_sites = [
-		f'{district}',
-		f'{district}/1/home',
-		f'{district}/2/home',
-		f'{district}/4/home',
-		f'{district}/5/home',
-		f'{district}/6/home',
-		f'{district}/7/home',
-		f'{district}/10/home',
-		f'{district}/11/home',
-		f'{district}/12/home',
-		f'{district}/13/home',
-		f'{district}/14/home',
-		f'{district}/15/home',
-		f'{district}/16/home',
-		f'{district}/8/home',
-		f'{district}/17/home',
-		f'{district}/19/home',
+		# f'{district}',
+		# f'{district}/1/home',
+		# f'{district}/2/home',
+		# f'{district}/4/home',
+		# f'{district}/5/home',
+		# f'{district}/6/home',
+		# f'{district}/7/home',
+		# f'{district}/10/home',
+		# f'{district}/11/home',
+		# f'{district}/12/home',
+		# f'{district}/13/home',
+		# f'{district}/14/home',
+		# f'{district}/15/home',
+		# f'{district}/16/home',
+		# f'{district}/8/home',
+		# f'{district}/17/home',
+		# f'{district}/19/home',
 		f'{district}/21/home',
 		f'{district}/9/home',
 		f'{district}/3/Home',
 		f'{district}/18/Home',
 	]
 	schools = [
-		'district',
-		'bhs',
-		'erhs',
-		'phs',
-		'pcchs',
-		'svhs',
-		'bms',
-		'bes',
-		'black_es',
-		'des',
-		'eces',
-		'fces',
-		'jces',
-		'kes',
-		'ms',
-		'mullinsschool',
-		'pes',
+		# 'district',
+		# 'bhs',
+		# 'erhs',
+		# 'phs',
+		# 'pcchs',
+		# 'svhs',
+		# 'bms',
+		# 'bes',
+		# 'black_es',
+		# 'des',
+		# 'eces',
+		# 'fces',
+		# 'jces',
+		# 'kes',
+		# 'ms',
+		# 'mullinsschool',
+		# 'pes',
 		'belfreyes',
 		'ves',
 		'na',
@@ -330,7 +330,8 @@ if __name__ == '__main__':
 						else:
 							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-						if href.find('.pdf') > -1:
+						if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1
+						or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1:
 							csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 						else:
 							if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
@@ -361,7 +362,8 @@ if __name__ == '__main__':
 										else:
 											page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-										if href.find('.pdf') > -1:
+										if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1
+										or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1:
 											csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
 										else:
 											if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:

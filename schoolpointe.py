@@ -304,7 +304,7 @@ if __name__ == '__main__':
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			list_items = itertools.chain(list_items1, list_items2)
+			# list_items = itertools.chain(list_items1, list_items2)
 			# list_items = itertools.chain(list_items1, list_items2, list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

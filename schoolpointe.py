@@ -228,15 +228,15 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.taylor.k12.ky.us'
+	district = 'http://www.sidney.k12.oh.us.schools.bz'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
+		f'{district}/5/home',
 		f'{district}/3/home',
+		f'{district}/4/home',
 		f'{district}/9/home',
-		f'{district}/10/home',
-		# f'{district}/5/home',
 		# f'{district}/7/home',
 		# f'{district}/6/home',
 		# f'{district}/8/home',
@@ -254,12 +254,12 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'tchs',
-		'tcms',
-		'tci',
-		'tcpc',
-		'ckca',
-		# 'rcanc',
+		'shs',
+		'sms',
+		'nis',
+		'eps',
+		'lps',
+		'wecc',
 		# 'lcatc',
 		# 'oes',
 		# 'pces',

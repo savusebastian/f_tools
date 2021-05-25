@@ -151,22 +151,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='site-body').find_all('form') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='site-body').find_all('embed') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='site-body').find_all('iframe') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='site-body').find_all(id='calendar') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='site-body').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='site-body').find_all(id='news-list') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -175,8 +175,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='site-body') != None and web_soup.find(id='site-body') != '':
-			col1 = web_soup.find(id='site-body')
+		if web_soup.find(class_='masterC alignment-stretch') != None and web_soup.find(class_='masterC alignment-stretch') != '':
+			col1 = web_soup.find(class_='masterC alignment-stretch')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -228,7 +228,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.boyle.kyschools.us'
+	district = 'https://www.hazlet.org'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
@@ -236,10 +236,10 @@ if __name__ == '__main__':
 		f'{district}/3/home',
 		f'{district}/4/home',
 		f'{district}/5/home',
-		# f'{district}/6/home',
+		f'{district}/6/home',
+		f'{district}/7/home',
+		f'{district}/8/home',
 		# f'{district}/10/home',
-		# f'{district}/7/home',
-		# f'{district}/8/home',
 		# f'{district}/12/home',
 		# f'{district}/9/home',
 		# f'{district}/12/home',
@@ -254,14 +254,14 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'bchs',
-		'bcms',
-		'jce',
-		'pes',
-		'we',
-		# 'pris',
-		# 'rhs',
-		# 'rma',
+		'rhs',
+		'hms',
+		'bse',
+		'cre',
+		'lde',
+		'mre',
+		'rve',
+		'sdeclc',
 		# 'shs',
 		# 'ssjjhes',
 		# 'sbams',
@@ -293,7 +293,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='MobileNavBar')
+			sitemap = soup.find(class_='NavBack')
 			list_items = sitemap.select('ul > li')
 			# list_items1 = sitemap.select('ul > li')
 

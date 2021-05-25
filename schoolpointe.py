@@ -297,7 +297,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='shadowBack shadowOn')
+			sitemap2 = soup.find(class_='shadowBack')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

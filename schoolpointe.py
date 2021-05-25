@@ -228,15 +228,15 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.spencer.kyschools.us'
+	district = 'https://www.palmaccsd.org'
 	all_sites = [
 		f'{district}',
-		f'{district}/schs/home',
-		f'{district}/scms/home',
-		f'{district}/sces/home',
-		f'{district}/tes/home',
-		f'{district}/hillview/home',
-		f'{district}/pre/home',
+		f'{district}/1/home',
+		f'{district}/2/home',
+		f'{district}/3/home',
+		f'{district}/4/home',
+		# f'{district}/hillview/home',
+		# f'{district}/pre/home',
 		# f'{district}/les/home',
 		# f'{district}/nbes/home',
 		# f'{district}/7/home',
@@ -258,8 +258,8 @@ if __name__ == '__main__':
 		'scms',
 		'sces',
 		'tes',
-		'hillview',
-		'pre',
+		# 'hillview',
+		# 'pre',
 		# 'les',
 		# 'nbes',
 		# 'mcatc',

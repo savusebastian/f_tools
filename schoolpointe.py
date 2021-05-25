@@ -231,10 +231,10 @@ if __name__ == '__main__':
 	district = 'https://www.russell.k12.ky.us'
 	all_sites = [
 		# f'{district}',
-		# f'{district}/1/home',
-		# f'{district}/2/home',
-		# f'{district}/3/home',
-		# f'{district}/4/home',
+		f'{district}/1/home',
+		f'{district}/2/home',
+		f'{district}/3/home',
+		f'{district}/4/home',
 		f'{district}/5/home',
 		f'{district}/10/home',
 		f'{district}/7/home',
@@ -254,10 +254,10 @@ if __name__ == '__main__':
 	]
 	schools = [
 		# 'district',
-		# 'rch',
-		# 'rcm',
-		# 'rse',
-		# 'je',
+		'rch',
+		'rcm',
+		'rse',
+		'je',
 		'se',
 		'rcanc',
 		'lcatc',
@@ -297,7 +297,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='menu_SchoolLeftNav5')
+			sitemap2 = soup.find(id='menu_SchoolLeftNav1')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

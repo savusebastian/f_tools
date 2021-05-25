@@ -232,7 +232,7 @@ if __name__ == '__main__':
 	all_sites = [
 		# f'{district}',
 		# f'{district}/1/home',
-		f'{district}/2/home',
+		# f'{district}/2/home',
 		f'{district}/3/home',
 		f'{district}/4/home',
 		f'{district}/5/home',
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 	schools = [
 		# 'district',
 		# 'rch',
-		'rcm',
+		# 'rcm',
 		'rse',
 		'je',
 		'se',
@@ -297,7 +297,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='menu_SchoolLeftNav2')
+			sitemap2 = soup.find(id='menu_SchoolLeftNav3')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

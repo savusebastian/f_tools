@@ -228,7 +228,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.woodcliff-lake.com'
+	district = 'https://www.new-miami.k12.oh.us'
 	all_sites = [
 		f'{district}',
 		f'{district}/3/home',

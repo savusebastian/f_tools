@@ -230,41 +230,40 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.fleming.kyschools.us'
 	all_sites = [
-		# f'{district}',
+		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
-		f'{district}/3/home',
-		f'{district}/4/home',
-		f'{district}/5/home',
+		f'{district}/8/home',
+		f'{district}/7/home',
 		f'{district}/6/home',
-		# f'{district}/11/home',
-		# f'{district}/16/home',
+		f'{district}/10/home',
+		f'{district}/3/home',
+		f'{district}/9/home',
+		f'{district}/5/home',
+		f'{district}/4/home',
 		# f'{district}/12/home',
 		# f'{district}/14/home',
 		# f'{district}/15/home',
 		# f'{district}/17/home',
 		# f'{district}/13/home',
 		# f'{district}/16/home',
-		# f'{district}/8/home',
 		# f'{district}/19/home',
 		# f'{district}/21/home',
-		# f'{district}/9/home',
 		# f'{district}/3/Home',
 		# f'{district}/18/Home',
 	]
 	schools = [
-		# 'district',
-		'fchs',
-		'sms',
-		'epwe',
-		'ee',
-		'fe',
-		'he',
-		# 'ires',
-		# 'jepes',
-		# 'jfkes',
-		# 'oes',
-		# 'opes',
+		'district',
+		'ochs',
+		'ocms',
+		'bdes',
+		'fes',
+		'hbes',
+		'rec',
+		'ses',
+		'ocatc',
+		'waes',
+		'wes',
 		# 'ses',
 		# 'kes',
 		# 'ms',
@@ -294,17 +293,17 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='bs-example-navbar-collapse-1')
-			# list_items = sitemap.select('ul > li')
-			list_items1 = sitemap.select('ul > li')
+			sitemap = soup.find(id='MobileNav')
+			list_items = sitemap.select('ul > li')
+			# list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='clearfix panel content')
-			list_items2 = sitemap2.select('ul > li')
+			# sitemap2 = soup.find(class_='clearfix panel content')
+			# list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			list_items = itertools.chain(list_items1, list_items2)
+			# list_items = itertools.chain(list_items1, list_items2)
 			# list_items = itertools.chain(list_items1, list_items2, list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

@@ -228,7 +228,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.wadsworth.k12.oh.us'
+	district = 'https://www.monroe.kyschools.us'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
@@ -236,9 +236,11 @@ if __name__ == '__main__':
 		f'{district}/3/home',
 		f'{district}/4/home',
 		f'{district}/5/home',
-		f'{district}/6/home',
-		f'{district}/7/home',
-		f'{district}/8/home',
+		f'{district}/21/home',
+		f'{district}/20/home',
+		# f'{district}/6/home',
+		# f'{district}/7/home',
+		# f'{district}/8/home',
 		# f'{district}/13/home',
 		# f'{district}/14/home',
 		# f'{district}/5/home',
@@ -248,20 +250,18 @@ if __name__ == '__main__':
 		# f'{district}/17/home',
 		# f'{district}/13/home',
 		# f'{district}/16/home',
-		# f'{district}/19/home',
-		# f'{district}/21/home',
 		# f'{district}/18/home',
 	]
 	schools = [
 		'district',
-		'whs',
-		'wms',
-		'cis',
-		'fes',
-		'ies',
-		'les',
-		'oes',
-		'vves',
+		'mchs',
+		'mcms',
+		'ges',
+		'jhces',
+		'tes',
+		'mcatc',
+		'fwc',
+		# 'vves',
 		# 'mcatc',
 		# 'ccc',
 		# 'sbams',
@@ -293,7 +293,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='main-navbar')
+			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			list_items = sitemap.select('ul > li')
 			# list_items1 = sitemap.select('ul > li')
 

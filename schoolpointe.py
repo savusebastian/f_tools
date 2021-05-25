@@ -151,22 +151,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='site-body').find_all('form') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='site-body').find_all('embed') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='site-body').find_all('iframe') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='site-body').find_all(id='calendar') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='site-body').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='site-body').find_all(id='news-list') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -175,8 +175,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='site-body') != None and web_soup.find(id='site-body') != '':
-			col1 = web_soup.find(id='site-body')
+		if web_soup.find(class_='masterC alignment-stretch') != None and web_soup.find(class_='masterC alignment-stretch') != '':
+			col1 = web_soup.find(class_='masterC alignment-stretch')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -228,17 +228,17 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.campbell.k12.ky.us'
+	district = 'https://www.westcler.k12.oh.us'
 	all_sites = [
 		f'{district}',
-		f'{district}/1/home',
-		f'{district}/2/home',
-		f'{district}/3/home',
-		f'{district}/4/home',
+		f'{district}/WCHS/home',
+		f'{district}/WCMS/home',
 		f'{district}/5/home',
-		f'{district}/6/home',
-		f'{district}/7/home',
-		f'{district}/8/home',
+		f'{district}/CPES/home',
+		f'{district}/HHES/home',
+		f'{district}/9/home',
+		f'{district}/10/home',
+		f'{district}/WVES/home',
 		f'{district}/12/home',
 		# f'{district}/13/home',
 		# f'{district}/14/home',
@@ -254,15 +254,15 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'cchs',
-		'ccms',
-		'cres',
-		'ces',
-		'deces',
-		'gles',
-		'aec',
-		'jwres',
-		'ccatc',
+		'wchs',
+		'wcms',
+		'aes',
+		'cpes',
+		'hhes',
+		'mes',
+		'ses',
+		'wves',
+		'wtes',
 		# 'eces',
 		# 'fces',
 		# 'jces',
@@ -294,17 +294,17 @@ if __name__ == '__main__':
 
 			page = requests.get(site, timeout=5).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='mobileNavs')
-			list_items = sitemap.select('ul > li')
-			# list_items1 = sitemap.select('ul > li')
+			sitemap = soup.find(class_='top-nav')
+			# list_items = sitemap.select('ul > li')
+			list_items1 = sitemap.select('ul > li')
 
-			# sitemap2 = soup.find(class_='quicklinks')
-			# list_items2 = sitemap2.select('ul > li')
+			sitemap2 = soup.find(class_='header-elements')
+			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			# list_items = itertools.chain(list_items1, list_items2)
+			list_items = itertools.chain(list_items1, list_items2)
 			# list_items = itertools.chain(list_items1, list_items2, list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

@@ -230,7 +230,7 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.fleming.kyschools.us'
 	all_sites = [
-		f'{district}',
+		# f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
 		f'{district}/3/home',
@@ -253,7 +253,7 @@ if __name__ == '__main__':
 		# f'{district}/18/Home',
 	]
 	schools = [
-		'district',
+		# 'district',
 		'fchs',
 		'sms',
 		'epwe',
@@ -298,7 +298,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='col-xs-12 col-sm-4 col-md-3 col-lg-3 gradient-1 hidden-xs')
+			sitemap2 = soup.find(class_='clearfix panel content')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

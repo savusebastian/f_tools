@@ -228,42 +228,42 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.ohio.k12.ky.us'
+	district = 'https://www.clay.k12.ky.us'
 	all_sites = [
 		f'{district}',
-		f'{district}/1/home',
-		f'{district}/2/home',
-		f'{district}/8/home',
-		f'{district}/7/home',
-		f'{district}/6/home',
-		f'{district}/10/home',
-		f'{district}/3/home',
-		f'{district}/9/home',
-		f'{district}/5/home',
-		f'{district}/4/home',
-		# f'{district}/12/home',
-		# f'{district}/14/home',
-		# f'{district}/15/home',
-		# f'{district}/17/home',
-		# f'{district}/13/home',
-		# f'{district}/16/home',
-		# f'{district}/19/home',
-		# f'{district}/21/home',
+		f'{district}/1/Home',
+		f'{district}/2/Home',
+		f'{district}/3/Home',
+		f'{district}/4/Home',
+		f'{district}/5/Home',
+		f'{district}/6/Home',
+		f'{district}/7/Home',
+		f'{district}/8/Home',
+		f'{district}/9/Home',
 		# f'{district}/3/Home',
+		# f'{district}/10/Home',
+		# f'{district}/12/Home',
+		# f'{district}/14/Home',
+		# f'{district}/15/Home',
+		# f'{district}/17/Home',
+		# f'{district}/13/Home',
+		# f'{district}/16/Home',
+		# f'{district}/19/Home',
+		# f'{district}/21/Home',
 		# f'{district}/18/Home',
 	]
 	schools = [
 		'district',
-		'ochs',
-		'ocms',
-		'bdes',
-		'fes',
-		'hbes',
-		'rec',
-		'ses',
-		'ocatc',
-		'waes',
-		'wes',
+		'cchs',
+		'ccms',
+		'bces',
+		'bses',
+		'hes',
+		'gres',
+		'mes',
+		'oes',
+		'pces',
+		# 'wes',
 		# 'ses',
 		# 'kes',
 		# 'ms',
@@ -293,7 +293,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='MobileNav')
+			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			list_items = sitemap.select('ul > li')
 			# list_items1 = sitemap.select('ul > li')
 

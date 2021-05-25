@@ -228,7 +228,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.fleming.kyschools.us'
+	district = 'https://www.ohio.k12.ky.us'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',

@@ -230,7 +230,7 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.russell.k12.ky.us'
 	all_sites = [
-		f'{district}',
+		# f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
 		f'{district}/3/home',
@@ -253,7 +253,7 @@ if __name__ == '__main__':
 		# f'{district}/18/home',
 	]
 	schools = [
-		'district',
+		# 'district',
 		'rch',
 		'rcm',
 		'rse',
@@ -297,7 +297,7 @@ if __name__ == '__main__':
 			# list_items = sitemap.select('ul > li')
 			list_items1 = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='menu_DistrictLeftLinks')
+			sitemap2 = soup.find(id='menu_SchoolLeftNav1')
 			list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')

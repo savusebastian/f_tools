@@ -228,22 +228,22 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.hazlet.org'
+	district = 'https://www.montgomery.k12.ky.us'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
-		f'{district}/3/home',
-		f'{district}/4/home',
-		f'{district}/5/home',
 		f'{district}/6/home',
-		f'{district}/7/home',
+		f'{district}/4/home',
+		f'{district}/3/home',
 		f'{district}/8/home',
-		# f'{district}/10/home',
+		f'{district}/11/home',
+		f'{district}/9/home',
+		f'{district}/13/home',
+		f'{district}/14/home',
+		# f'{district}/5/home',
+		# f'{district}/7/home',
 		# f'{district}/12/home',
-		# f'{district}/9/home',
-		# f'{district}/12/home',
-		# f'{district}/14/home',
 		# f'{district}/15/home',
 		# f'{district}/17/home',
 		# f'{district}/13/home',
@@ -254,16 +254,16 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'rhs',
-		'hms',
-		'bse',
-		'cre',
-		'lde',
-		'mre',
-		'rve',
-		'sdeclc',
-		# 'shs',
-		# 'ssjjhes',
+		'mchs',
+		'jbmms',
+		'ces',
+		'mes',
+		'mses',
+		'nes',
+		'mcaa',
+		'tss',
+		'mcatc',
+		'ccc',
 		# 'sbams',
 		# 'kes',
 		# 'ms',
@@ -293,7 +293,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='NavBack')
+			sitemap = soup.find(id='bs-example-navbar-collapse-1')
 			list_items = sitemap.select('ul > li')
 			# list_items1 = sitemap.select('ul > li')
 

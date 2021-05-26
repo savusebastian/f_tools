@@ -228,13 +228,13 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.berlin.k12.wi.us'
+	district = 'https://www.bath.k12.ky.us'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
 		f'{district}/3/home',
-		# f'{district}/4/home',
+		f'{district}/4/home',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
@@ -254,10 +254,10 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'bhs',
-		'bms',
-		'cle',
-		# 'le',
+		'bchs',
+		'bcms',
+		'ces',
+		'oes',
 		# 'me',
 		# 'munforde',
 		# 'grcca',

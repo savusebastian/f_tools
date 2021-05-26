@@ -228,16 +228,16 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.wintonwoods.org'
+	district = 'https://www.palmaccsd.org'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
 		f'{district}/3/home',
 		f'{district}/4/home',
-		f'{district}/5/home',
-		f'{district}/6/home',
-		f'{district}/8/home',
+		# f'{district}/5/home',
+		# f'{district}/6/home',
+		# f'{district}/8/home',
 		# f'{district}/9/home',
 		# f'{district}/11/home',
 		# f'{district}/7/home',
@@ -254,13 +254,13 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'wwhs',
-		'wwms',
-		'wwis',
-		'wwes',
-		'wwpns',
-		'wwpss',
-		'wwps',
+		'pmhs',
+		'pmms',
+		'pmis',
+		'pmps',
+		# 'wwpns',
+		# 'wwpss',
+		# 'wwps',
 		# 'nbes',
 		# 'mcatc',
 		# 'ccc',

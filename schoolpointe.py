@@ -150,22 +150,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find_all(class_='container')[4].find_all('form') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find_all(class_='container')[4].find_all('embed') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find_all(class_='container')[4].find_all('iframe') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find_all(class_='container')[4].find_all(id='calendar') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find_all(class_='container')[4].find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find_all(class_='container')[4].find_all(id='news-list') != []:
+		if web_soup.find(class_='masterC alignment-stretch').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -174,8 +174,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find_all(class_='container')[4] != None and web_soup.find_all(class_='container')[4] != '':
-			col1 = web_soup.find_all(class_='container')[4]
+		if web_soup.find(class_='masterC alignment-stretch') != None and web_soup.find(class_='masterC alignment-stretch') != '':
+			col1 = web_soup.find(class_='masterC alignment-stretch')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -275,13 +275,13 @@ if __name__ == '__main__':
 			sitemap = soup.find(id='middle-nav')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='content-left')
-			list_items2 = sitemap2.select('ul > li')
+			# sitemap2 = soup.find(id='content-left')
+			# list_items2 = sitemap2.select('ul > li')
 
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			list_items.extend(list_items2)
+			# list_items.extend(list_items2)
 			# list_items.extend(list_items2).extend(list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

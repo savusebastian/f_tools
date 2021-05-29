@@ -295,7 +295,7 @@ if __name__ == '__main__':
 					group_links = item.find_all('a')
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links:
+					for link in group_links[1:]:
 						href = link.get('href')
 
 						if len(href) > 1 and href[:2] == '//':

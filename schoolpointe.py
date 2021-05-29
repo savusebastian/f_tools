@@ -2,7 +2,6 @@ from pathlib import Path
 from time import time
 import csv
 import glob
-import itertools
 import re
 
 from bs4 import BeautifulSoup
@@ -228,51 +227,30 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.arcanum-butler.k12.oh.us'
+	district = 'https://www.barbourvilleind.com'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
-		f'{district}/3/home',
-		f'{district}/4/home',
+		# f'{district}/3/home',
+		# f'{district}/4/home',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
 		# f'{district}/3/home',
-		# f'{district}/8/home',
-		# f'{district}/9/home',
 		# f'{district}/4/home',
-		# f'{district}/7/home',
-		# f'{district}/22/home',
-		# f'{district}/6/home',
-		# f'{district}/8/home',
-		# f'{district}/5/home',
-		# f'{district}/7/home',
-		# f'{district}/15/home',
-		# f'{district}/17/home',
-		# f'{district}/18/home',
 	]
 	schools = [
 		'district',
-		'ahs',
-		'bms',
-		'ae',
-		'aelc',
+		'hs',
+		'es',
+		# 'ae',
+		# 'aelc',
 		# 'pa',
 		# 'vvec',
 		# 'grcca',
-		# # 'les',
+		# 'les',
 		# 'mjpes',
-		# 'wwes',
-		# 'wms',
-		# 'ohms',
-		# 'vpk8',
-		# 'mullinsschool',
-		# 'pes',
-		# 'belfreyes',
-		# 'ves',
-		# 'na',
-		# 'pcdt',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -294,9 +272,8 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='menu_DistrictTopNav')
+			sitemap = soup.find(id='middle-nav')
 			list_items = sitemap.select('ul > li')
-			# list_items1 = sitemap.select('ul > li')
 
 			sitemap2 = soup.find(id='content-left')
 			list_items2 = sitemap2.select('ul > li')
@@ -304,10 +281,8 @@ if __name__ == '__main__':
 			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 			# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			# list_items = itertools.chain(list_items1, list_items2)
-			# list_items = itertools.chain(list_items1, list_items2, list_items3)
-
 			list_items.extend(list_items2)
+			# list_items.extend(list_items2).extend(list_items3)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])

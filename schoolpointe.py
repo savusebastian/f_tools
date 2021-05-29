@@ -136,8 +136,8 @@ def get_content(web_page):
 	issue_pages_counter = 0
 	print(web_page)
 
-	# if web_page != '#':
-	try:
+	if web_page != '#':
+	# try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -218,8 +218,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	# else:
-	except Exception:
+	else:
+	# except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
@@ -227,12 +227,12 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.barbourvilleind.com'
+	district = 'https://www.dvschools.com'
 	all_sites = [
 		f'{district}',
 		f'{district}/1/home',
 		f'{district}/2/home',
-		# f'{district}/3/home',
+		f'{district}/3/home',
 		# f'{district}/4/home',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
@@ -243,8 +243,8 @@ if __name__ == '__main__':
 	schools = [
 		'district',
 		'hs',
+		'ms',
 		'es',
-		# 'ae',
 		# 'aelc',
 		# 'pa',
 		# 'vvec',

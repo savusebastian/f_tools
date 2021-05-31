@@ -297,25 +297,25 @@ if __name__ == '__main__':
 				tiers = link.split('/')
 				t1, t2, t3, t4, t5 = '', '', '', '', ''
 				if len(tiers) == 4:
-					t1 = tiers[-1]
+					t1 = tiers[-1].capitalize()
 				elif len(tiers) == 5:
-					t1 = tiers[-2]
-					t2 = tiers[-1]
+					t1 = tiers[-2].capitalize()
+					t2 = tiers[-1].capitalize()
 				elif len(tiers) == 6:
-					t1 = tiers[-3]
-					t2 = tiers[-2]
-					t3 = tiers[-1]
+					t1 = tiers[-3].capitalize()
+					t2 = tiers[-2].capitalize()
+					t3 = tiers[-1].capitalize()
 				elif len(tiers) == 7:
-					t1 = tiers[-4]
-					t2 = tiers[-3]
-					t3 = tiers[-2]
-					t4 = tiers[-1]
+					t1 = tiers[-4].capitalize()
+					t2 = tiers[-3].capitalize()
+					t3 = tiers[-2].capitalize()
+					t4 = tiers[-1].capitalize()
 				elif len(tiers) == 8:
-					t1 = tiers[-5]
-					t2 = tiers[-4]
-					t3 = tiers[-3]
-					t4 = tiers[-2]
-					t5 = tiers[-1]
+					t1 = tiers[-5].capitalize()
+					t2 = tiers[-4].capitalize()
+					t3 = tiers[-3].capitalize()
+					t4 = tiers[-2].capitalize()
+					t5 = tiers[-1].capitalize()
 				else:
 					print(len(tiers))
 

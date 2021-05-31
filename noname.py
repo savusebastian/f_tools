@@ -228,7 +228,6 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'http://www.northandoverpublicschools.com/resources/staff-directory',
 		'http://www.northandoverpublicschools.com/departments/superintendent-s-office',
 		'http://www.northandoverpublicschools.com/departments/superintendent-s-office/district-at-a-glance',
 		'http://www.northandoverpublicschools.com/departments/teaching-learning/dese-accountability-data',
@@ -247,7 +246,6 @@ if __name__ == '__main__':
 		'http://www.northandoverpublicschools.com/departments/teaching-learning/summer-reading',
 		'http://www.northandoverpublicschools.com/departments/teaching-learning/math-resources',
 		'http://www.northandoverpublicschools.com/departments/athletics',
-		'http://www.northandoverpublicschools.com/departments/athletics/sports',
 		'http://www.northandoverpublicschools.com/departments/athletics/athletics-registration',
 		'http://www.northandoverpublicschools.com/departments/athletics/athletic-hall-of-fame',
 		'http://www.northandoverpublicschools.com/departments/athletics/knights-in-college',
@@ -271,6 +269,48 @@ if __name__ == '__main__':
 		'http://www.northandoverpublicschools.com/departments/student-services/social-emotional-learning/raise/raise-in-the-schools',
 		'http://www.northandoverpublicschools.com/departments/student-services/social-emotional-learning/raise/raise-in-the-community',
 		'http://www.northandoverpublicschools.com/departments/student-services/social-emotional-learning/raise/student-leadership',
+
+		'http://www.northandoverpublicschools.com/get-involved',
+		'http://www.northandoverpublicschools.com/fall-2020',
+		'http://www.northandoverpublicschools.com/departments/student-services/health-services/covid-19-planning/covid-dashboard',
+		'http://www.northandoverpublicschools.com/departments/student-services/health-services/covid-19-planning',
+		'http://www.northandoverpublicschools.com/departments/student-services/health-services/covid-19-planning/faq-regarding-masks-in-children',
+		'http://www.northandoverpublicschools.com/fall-2020/parent-university',
+		'http://www.northandoverpublicschools.com/resources/brand-guide',
+		'http://www.northandoverpublicschools.com/departments/student-services/civil-rights',
+
+		'http://www.northandoverpublicschools.com/schools/thomson/thomson-nurse',
+		'http://www.northandoverpublicschools.com/schools/thomson/student-services',
+		'http://www.northandoverpublicschools.com/schools/thomson/arrival-dismissal-procedures',
+		'http://www.northandoverpublicschools.com/schools/thomson/thomson-faq',
+
+		'http://www.northandoverpublicschools.com/schools/nahs/scarlet-knight-academy',
+		'http://www.northandoverpublicschools.com/departments/library/nahs-library',
+		'http://www.northandoverpublicschools.com/schools/nahs/news-from-the-nurse',
+		'http://www.northandoverpublicschools.com/schools/nahs/guidance',
+		'http://www.northandoverpublicschools.com/schools/nahs/activities-clubs',
+		'http://www.northandoverpublicschools.com/schools/nahs/exchange-program',
+		'http://www.northandoverpublicschools.com/schools/nahs/dances-semi-formals-proms',
+		'http://www.northandoverpublicschools.com/schools/nahs/policies-forms',
+		'http://www.northandoverpublicschools.com/schools/nahs/work-permits',
+		'http://www.northandoverpublicschools.com/schools/nahs/student-driving-permit',
+		'http://www.northandoverpublicschools.com/schools/nahs/guidance/picc-committee',
+
+		'http://www.northandoverpublicschools.com/schools/nams/about-nams',
+		'http://www.northandoverpublicschools.com/departments/library/nams-library',
+		'http://www.northandoverpublicschools.com/schools/nams/news-from-the-nurse',
+		'http://www.northandoverpublicschools.com/schools/nams/guidance',
+		'http://www.northandoverpublicschools.com/schools/nams/activities-clubs',
+		'http://www.northandoverpublicschools.com/schools/nams/related-arts',
+		'http://www.northandoverpublicschools.com/schools/nams/nams-faqs',
+
+		'http://www.northandoverpublicschools.com/schools/ecc/ecc-nurse',
+		'http://www.northandoverpublicschools.com/schools/ecc/student-services',
+		'http://www.northandoverpublicschools.com/schools/ecc/abecc-policies-forms',
+		'http://www.northandoverpublicschools.com/schools/ecc/kindergarten-information',
+		'http://www.northandoverpublicschools.com/schools/ecc/kindergarten-information/kindergarten-info-night',
+		'http://www.northandoverpublicschools.com/schools/ecc/program-overview',
+		'http://www.northandoverpublicschools.com/schools/ecc/ecc-faqs',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

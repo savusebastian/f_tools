@@ -55,7 +55,7 @@ def remove_tags(text):
 	return text.strip()
 
 
-def get_column(col, splitter):
+def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
@@ -322,7 +322,7 @@ if __name__ == '__main__':
 				page_link = link
 
 				page_counter += 1
-				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)
+				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 				issue_pages_counter += content_ipc
 
 				csv_writer.writerow([str(page_link), t1, t2, t3, t4, t5, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])

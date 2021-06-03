@@ -552,11 +552,11 @@ if __name__ == '__main__':
 
 		with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 			csv_writer = csv.writer(csv_main)
-			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
+			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5', 'Tier 6', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
 			for link in all_sites:
 				tiers = link.split('/')
-				t1, t2, t3, t4, t5 = '', '', '', '', ''
+				t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
 				if len(tiers) == 4:
 					t1 = tiers[-1].capitalize()
 				elif len(tiers) == 5:
@@ -577,6 +577,13 @@ if __name__ == '__main__':
 					t3 = tiers[-3].capitalize()
 					t4 = tiers[-2].capitalize()
 					t5 = tiers[-1].capitalize()
+				elif len(tiers) == 9:
+					t1 = tiers[-6].capitalize()
+					t2 = tiers[-5].capitalize()
+					t3 = tiers[-4].capitalize()
+					t4 = tiers[-3].capitalize()
+					t5 = tiers[-2].capitalize()
+					t6 = tiers[-1].capitalize()
 				else:
 					print(len(tiers))
 
@@ -586,7 +593,7 @@ if __name__ == '__main__':
 				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 				issue_pages_counter += content_ipc
 
-				csv_writer.writerow([str(page_link), t1, t2, t3, t4, t5, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+				csv_writer.writerow([str(page_link), t1, t2, t3, t4, t5, t6, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
 				if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 					csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])

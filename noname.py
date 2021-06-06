@@ -174,8 +174,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='main-content') != None and web_soup.find(id='main-content') != '':
-			col1 = web_soup.find(id='main-content')
+		if web_soup.find(class_='editable') != None and web_soup.find(class_='editable') != '':
+			col1 = web_soup.find(class_='editable')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1

@@ -136,8 +136,8 @@ def get_content(web_page):
 	issue_pages_counter = 0
 	print(web_page)
 
-	if web_page != '#':
-	# try:
+	# if web_page != '#':
+	try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -218,8 +218,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	else:
-	# except Exception:
+	# else:
+	except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter

@@ -312,8 +312,8 @@ if __name__ == '__main__':
 
 				page_link = link
 
-				if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
-				or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+				if link.find('.pdf') > -1 or link.find('.mp3') > -1 or link.find('.wmv') > -1 or link.find('.mp4') > -1 or link.find('.docx') > -1 or link.find('.xlsx') > -1 or link.find('.pptx') > -1\
+				or link.find('.doc') > -1 or link.find('.xls') > -1 or link.find('.ppt') > -1 or link.find('.m4v') > -1 or link.find('.mkv') > -1:
 					csv_writer.writerow([str(page_link), t1, t2, '', '', '', '', '1', 'Linked file', '', '', '', '', '', ''])
 				else:
 					page_counter += 1

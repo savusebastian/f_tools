@@ -229,21 +229,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hs.pequannock.org/apps/pages/index.jsp?uREC_ID=182143&type=d',
-		'https://hs.pequannock.org/apps/pages/index.jsp?uREC_ID=182144&type=d',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182153&type=d',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=540344&type=u',
+		'https://pv.pequannock.org/apps/staff/',
 		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182221&type=d&termREC_ID=&pREC_ID=717853',
-		'https://hs.pequannock.org/apps/departments/',
-		'https://hs.pequannock.org/apps/pages/index.jsp?uREC_ID=182147&type=d',
-		'https://sites.google.com/pequannock.org/pthslmc',
+		'https://pv.pequannock.org/apps/departments/',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182157&type=d',
+		'https://sites.google.com/pequannock.org/pvmslmc',
 		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=181649&type=d',
-		'https://hs.pequannock.org/apps/bell_schedules/',
-		'https://www.fridaystudentportal.com/portal/security/login.cfm',
-		'https://hs.pequannock.org/ourpages/auto/2016/10/18/57835936/Pequannock%20Twp%20HS%20Student%20Handbook%202020-2021.pdf?rnd=1597843525892',
-		'https://hs.pequannock.org/apps/departments/clubs.jsp',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182155&type=d',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=222955&type=d',
+		'https://pv.pequannock.org/apps/bell_schedules/',
+		'https://drive.google.com/file/d/1gyHUUwfhPpIkYwTtqxTR0v1UEml3zmU6/view',
+		'https://pv.pequannock.org/pdf/2020-2021_PV_Extra-Curricular_ADVISORS.pdf',
 		'https://www.fridayparentportal.com/portal/security/login.cfm',
-		'https://hs.pequannock.org/m/pages/index.jsp?uREC_ID=448967&type=u',
-		'https://hs.pequannock.org/maps/',
-		'https://hs.pequannock.org/apps/contact/',
+		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=240575&type=d&termREC_ID=&pREC_ID=624462',
+		'https://pv.pequannock.org/maps/',
+		'https://pv.pequannock.org/apps/contact/',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'pequannock'
@@ -259,7 +261,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'pequannock'
+		school_name = 'pv'
 
 		csv_report.writerow(['School name', school_name])
 

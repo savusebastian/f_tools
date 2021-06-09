@@ -151,22 +151,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='page-row').find_all('form') != []:
+		if web_soup.find(id='pageContentWrapper').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='page-row').find_all('embed') != []:
+		if web_soup.find(id='pageContentWrapper').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='page-row').find_all('iframe') != []:
+		if web_soup.find(id='pageContentWrapper').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='page-row').find_all(id='calendar') != []:
+		if web_soup.find(id='pageContentWrapper').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='page-row').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='pageContentWrapper').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='page-row').find_all(id='news-list') != []:
+		if web_soup.find(id='pageContentWrapper').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -175,8 +175,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='page-row') != None and web_soup.find(class_='page-row') != '':
-			col1 = web_soup.find(class_='page-row')
+		if web_soup.find(id='pageContentWrapper') != None and web_soup.find(id='pageContentWrapper') != '':
+			col1 = web_soup.find(id='pageContentWrapper')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -229,132 +229,34 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.danahall.org/about-us/wellesley-and-boston',
-		'https://www.danahall.org/about-us/facilities-and-resources',
-		'https://www.danahall.org/about-us/inclusion-and-diversity-statement',
-		'https://www.danahall.org/about-us/mission-statement',
-		'https://www.danahall.org/about-us/job-opportunities',
-		'https://www.danahall.org/about-us/sustainability-at-dana-hall',
-		'https://www.danahall.org/about-us/board-of-trustees',
-		'https://vision2025.danahall.org/',
-		'https://www.danahall.org/about-us/advocating-for-racial-justice',
-		'https://www.danahall.org/academics/',
-		'https://www.danahall.org/curriculum',
-		'https://www.danahall.org/upper-school-classes/english',
-		'https://www.danahall.org/upper-school-classes/mathematics',
-		'https://www.danahall.org/upper-school-classes/science',
-		'https://www.danahall.org/upper-school-classes/social-studies',
-		'https://www.danahall.org/upper-school-classes/world-languages',
-		'https://www.danahall.org/upper-school-classes/world-languages',
-		'https://www.danahall.org/upper-school-classes/fitnessathletics',
-		'https://www.danahall.org/upper-school-classes/performing-arts',
-		'https://www.danahall.org/upper-school-classes/visual-arts',
-		'https://www.danahall.org/middle-school-classes/english',
-		'https://www.danahall.org/middle-school-classes/mathematics',
-		'https://www.danahall.org/middle-school-classes/science',
-		'https://www.danahall.org/middle-school-classes/social-studies',
-		'https://www.danahall.org/middle-school-classes/world-languages',
-		'https://www.danahall.org/middle-school-classes/engineering--computer-science',
-		'https://www.danahall.org/middle-school-classes/fitnessathletics',
-		'https://www.danahall.org/middle-school-classes/performing-arts',
-		'https://www.danahall.org/middle-school-classes/visual-arts',
-		'https://www.danahall.org/academic-advising-and-resources',
-		'https://www.danahall.org/academics/global-education',
-		'https://www.danahall.org/academics/girls-summer-entrepreneurship-program',
-		'https://www.danahall.org/academics/college-counseling',
-		'https://www.danahall.org/academics/college-counseling/meet-the-staff',
-		'https://www.danahall.org/academics/college-counseling/matriculation-list',
-		'https://www.danahall.org/academics/helen-temple-cooke-library',
-		'https://www.danahall.org/about-us/why-dana-hall',
-		'https://www.danahall.org/admission/inquire',
-		'https://www.danahall.org/admission/how-to-apply',
-		'https://www.danahall.org/admission/how-to-apply/information-for-international-students',
-		'https://www.danahall.org/admission/how-to-apply/applicants-from-china',
-		'https://www.danahall.org/admission',
-		'https://www.danahall.org/admission/visit-dana',
-		'https://www.danahall.org/admission/visit-dana/admission-staff',
-		'https://www.danahall.org/admission/visit-dana/interview-faqs',
-		'https://www.danahall.org/Admission/Visit-Dana/Places-to-Stay-and-Eat',
-		'https://www.danahall.org/admission/tuition--financial-aid',
-		'https://www.danahall.org/tuition-and-payment-plans',
-		'https://www.danahall.org/admission/transportation',
-		'https://www.danahall.org/information-for-new-families',
-		'https://www.danahall.org/f-1-student-visa',
-		'https://www.danahall.org/information-for-new-families/new-middle-school-students-faqs',
-		'https://www.danahall.org/information-for-new-families/new-upper-school-students-day-faqs',
-		'https://www.danahall.org/information-for-new-families/new-upper-school-students-boarding-faqs',
-		'https://www.danahall.org/information-for-new-families/new-families-faqs',
-		'https://www.danahall.org/arts',
-		'https://www.danahall.org/arts/visual-arts',
-		'https://www.danahall.org/arts/dance',
-		'https://www.danahall.org/arts/choral-music',
-		'https://www.danahall.org/arts/theater',
-		'https://www.danahall.org/arts/school-of-music',
-		'https://www.danahall.org/arts/school-of-music/listen-to-dana-hall-music',
-		'https://www.danahall.org/arts/the-dana-hall-art-gallery',
-		'https://www.danahall.org/arts/the-dana-hall-art-gallery/artist-in-residence-program',
-		'https://www.danahall.org/athletics',
-		'https://www.danahall.org/athletics/teams--schedules',
-		'https://www.danahall.org/athletics/notable-alumnae-athletes',
-		'https://www.danahall.org/athletics/athletic-facilities',
-		'https://www.danahall.org/athletics/athletics-philosophy',
-		'https://www.danahall.org/admission/inquire',
-		'https://sideline.bsnsports.com/schools/massachusetts/wellesleyhills/dana-hall-school',
-		'https://www.danahall.org/athletics/awards-and-championships',
-		'https://www.danahall.org/athletics/fitness-program',
-		'https://www.danahall.org/athletics/coaching-staff',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/ksec-staff',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/interscholastic-equestrian-team',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/boarders',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/internships-and-teams',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/lesson-program',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/faqs',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/ksec-summer-training-academy',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/ksec-summer-training-academy/apply-now-ksec-summer-training-academy',
-		'https://www.danahall.org/donate-a-horse',
-		'https://www.danahall.org/giving',
-		'https://danahall.myschoolapp.com/page/giving/give-online?siteId=1055&ssl=1',
-		'https://www.danahall.org/giving/meet-our-staff',
-		'https://www.danahall.org/giving/ways-to-give',
-		'https://www.danahall.org/giving/ways-to-give/stock-transfer-instructions',
-		'https://www.danahall.org/giving/ways-to-give/wire-transfer-instructions',
-		'https://www.danahall.org/giving/ways-to-give/donor-advised-fund-electronic-request',
-		'https://www.danahall.org/giving/dana-dedicated',
-		'https://www.danahall.org/giving/reunion-giving',
-		'https://www.danahall.org/giving/the-dana-fund',
-		'https://www.danahall.org/giving/dana-cares-fund',
-		'https://www.danahall.org/giving/shades-alumnx-endowed-fund',
-		'https://danahall.plannedgiving.org/',
-		'https://www.danahall.org/giving/moon--stars-society',
-		'https://www.danahall.org/student-life',
-		'https://www.danahall.org/student-life/boarding-life',
-		'https://www.danahall.org/student-life/community-service',
-		'https://www.danahall.org/student-life/health-center',
-		'https://www.danahall.org/student-life/diversity',
-		'https://www.danahall.org/student-life/clubs-and-organizations',
-		'https://www.danahall.org/student-life/health-and-wellness',
-		'https://www.danahall.org/student-life/leadership',
-		'https://www.danahall.org/external-programs',
-		'https://www.danahall.org/external-programs/equestrian-summer-program',
-		'https://www.danahall.org/external-programs/the-forum-spring-2019',
-		'https://www.danahall.org/external-programs/girls-summer-leadership-program',
-		'https://www.danahall.org/athletics/the-karen-stives-68-equestrian-center/ksec-summer-training-academy',
-		'https://www.danahall.org/external-programs/womens-fitness-membership',
-		'https://form.123formbuilder.com/712616?wwwNgRedir',
-		'https://www.danahall.org/external-programs/school-of-music',
-		'https://www.danahall.org/alumnae/welcome',
-		'https://www.danahall.org/alumnae/alumnae-council-and-association',
-		'https://www.danahall.org/alumnae/alumnae-awards',
-		'https://www.danahall.org/alumnae-award-nomination',
-		'https://www.danahall.org/alumnae/alumnae-directory',
-		'https://www.danahall.org/alumnae/notable-alumnae',
-		'https://www.danahall.org/alumnae/volunteer-opportunities',
-		'https://www.danahall.org/alumnae/super-spring-reunion-2021',
-		'https://www.danahall.org/alumnae/she-sails-2021',
+		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=436717&type=d',
+		'https://pequannock.org/contact.jsp',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182221&type=d&termREC_ID=&pREC_ID=717853',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=181649&type=d',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182221&type=d&termREC_ID=&pREC_ID=717853',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=289280&type=d&pREC_ID=544111',
+		'https://hs.pequannock.org/apps/pages/index.jsp?uREC_ID=183756&type=d&termREC_ID=&pREC_ID=368722',
+		'https://www.nwjerseyac.com/public/genie/235/school/29/',
+		'https://hs.pequannock.org/apps/pages/index.jsp?uREC_ID=183756&type=d&termREC_ID=&pREC_ID=378314',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182094&type=d',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182095&type=d',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182096&type=d',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=181625&type=d&pREC_ID=366713',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=181625&type=d&termREC_ID=&pREC_ID=366292',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=181625&type=d&pREC_ID=366715',
+		'https://pequannock.org/apps/pages/index.jsp?dir=/&type=d&uREC_ID=183274',
+		'https://pequannock.org/apps/video/',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=181625&type=d&termREC_ID=&pREC_ID=366659',
+		'https://www.pequannock.org/pdf/Pequannock_Township_Strategic_Plan_2016-2021.pdf',
+		'https://pequannock.org/ourpages/employment_opps.jsp',
+		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=383102&type=d',
+		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=182095&type=d&termREC_ID=&pREC_ID=374308',
+		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=181889&type=d&pREC_ID=366646',
+		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=183645&type=d',
+		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=182095&type=d&termREC_ID=&pREC_ID=374311',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'danahall'
+	mainfolder = 'pequannock'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -367,7 +269,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'danahall'
+		school_name = 'pequannock'
 
 		csv_report.writerow(['School name', school_name])
 

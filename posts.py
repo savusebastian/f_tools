@@ -42,68 +42,74 @@ def remove_tags(text):
 
 
 def get_column(col):
-	col_images = col.find_all('img')
-	col_anchors = col.find_all('a')
-	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
-	clean_tags(col_tags)
+col_images = col.find_all('img')
+col_anchors = col.find_all('a')
+col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
+clean_tags(col_tags)
 
-	while col.link != None:
-		col.link.decompose()
+while col.script != None:
+	col.script.decompose()
 
-	while col.script != None:
-		col.script.decompose()
+while col.style != None:
+	col.style.decompose()
 
-	while col.style != None:
-		col.style.decompose()
+while col.nav != None:
+	col.nav.decompose()
 
-	while col.nav != None:
-		col.nav.decompose()
+for image in col_images:
+	try:
+		if image.get('src') != None and image.get('src') != '':
+			src = image['src']
 
-	for image in col_images:
-		try:
-			if image.get('src') != None and image.get('src') != '':
-				src = image['src']
-
-				if 'alt' in image.attrs:
-					alt = image['alt']
-					image.attrs.clear()
-					image['alt'] = alt
-				else:
-					image.attrs.clear()
-					image['alt'] = 'alt-text'
-
-				image['src'] = src
-
+			if 'alt' in image.attrs:
+				alt = image['alt']
+				image.attrs.clear()
+				image['alt'] = alt
 			else:
 				image.attrs.clear()
+				image['alt'] = 'alt-text'
 
-			image['id'] = ''
-			image['role'] = 'presentation'
-			image['style'] = ''
-			image['width'] = '250'
+			if src[0] != '/' and src[:4] != 'http':
+				image['src'] = f'/{src}'
+			else:
+				image['src'] = src
 
-		except:
-			print('Image:', image)
+		else:
+			image.attrs.clear()
 
-	for anchor in col_anchors:
-		try:
-			if anchor.get('href') != None and anchor.get('href') != '':
-				href = anchor['href']
-				anchor.attrs.clear()
+		image['id'] = ''
+		image['role'] = 'presentation'
+		image['style'] = ''
+		image['width'] = '250'
+
+	except:
+		pass
+		# print('Image:', image)
+
+for anchor in col_anchors:
+	try:
+		if anchor.get('href') != None and anchor.get('href') != '':
+			href = anchor['href']
+			anchor.attrs.clear()
+
+			if href[0] != '/' and href[:4] != 'http':
+				anchor['href'] = f'/{href}'
+			else:
 				anchor['href'] = href
 
-				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
-				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
-				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
-				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
-					anchor.string = 'INTERNAL LINK ' + anchor.string
+			if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
+			and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
+			and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
+			and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
+				anchor.string = f'INTERNAL LINK {anchor.string}'
 
-		except:
-			print('Anchor:', anchor)
+	except:
+		pass
+		# print('Anchor:', anchor)
 
-	col = remove_tags(str(col))
+col = remove_tags(str(col))
 
-	return col
+return col
 
 
 def get_content(web_page):

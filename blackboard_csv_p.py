@@ -48,9 +48,6 @@ def get_column(col, splitter):
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
 	clean_tags(col_tags)
 
-	while col.link != None:
-		col.link.decompose()
-
 	while col.script != None:
 		col.script.decompose()
 
@@ -73,7 +70,10 @@ def get_column(col, splitter):
 					image.attrs.clear()
 					image['alt'] = 'alt-text'
 
-				image['src'] = src
+				if src[0] != '/' and src[:4] != 'http':
+					image['src'] = f'/{src}'
+				else:
+					image['src'] = src
 
 			else:
 				image.attrs.clear()
@@ -84,23 +84,29 @@ def get_column(col, splitter):
 			image['width'] = '250'
 
 		except:
-			print('Image:', image)
+			pass
+			# print('Image:', image)
 
 	for anchor in col_anchors:
 		try:
 			if anchor.get('href') != None and anchor.get('href') != '':
 				href = anchor['href']
 				anchor.attrs.clear()
-				anchor['href'] = href
+
+				if href[0] != '/' and href[:4] != 'http':
+					anchor['href'] = f'/{href}'
+				else:
+					anchor['href'] = href
 
 				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
 				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
-					anchor.string = 'INTERNAL LINK ' + anchor.string
+					anchor.string = f'INTERNAL LINK {anchor.string}'
 
 		except:
-			print('Anchor:', anchor)
+			pass
+			# print('Anchor:', anchor)
 
 	col = remove_tags(str(col))
 

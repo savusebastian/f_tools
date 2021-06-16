@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='pageContentWrapper').find_all('form') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='pageContentWrapper').find_all('embed') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='pageContentWrapper').find_all('iframe') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='pageContentWrapper').find_all(id='calendar') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='pageContentWrapper').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='pageContentWrapper').find_all(id='news-list') != []:
+		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='pageContentWrapper') != None and web_soup.find(id='pageContentWrapper') != '':
-			col1 = web_soup.find(id='pageContentWrapper')
+		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':
+			col1 = web_soup.find(id='sw-content-layout-wrapper')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,26 +236,88 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182153&type=d',
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=540344&type=u',
-		'https://pv.pequannock.org/apps/staff/',
-		'https://pequannock.org/apps/pages/index.jsp?uREC_ID=182221&type=d&termREC_ID=&pREC_ID=717853',
-		'https://pv.pequannock.org/apps/departments/',
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182157&type=d',
-		'https://sites.google.com/pequannock.org/pvmslmc',
-		'https://www.pequannock.org/apps/pages/index.jsp?uREC_ID=181649&type=d',
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=182155&type=d',
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=222955&type=d',
-		'https://pv.pequannock.org/apps/bell_schedules/',
-		'https://drive.google.com/file/d/1gyHUUwfhPpIkYwTtqxTR0v1UEml3zmU6/view',
-		'https://pv.pequannock.org/pdf/2020-2021_PV_Extra-Curricular_ADVISORS.pdf',
-		'https://www.fridayparentportal.com/portal/security/login.cfm',
-		'https://pv.pequannock.org/apps/pages/index.jsp?uREC_ID=240575&type=d&termREC_ID=&pREC_ID=624462',
-		'https://pv.pequannock.org/maps/',
-		'https://pv.pequannock.org/apps/contact/',
+		'https://www.mpspk12.org/domain/304',
+		'https://www.mpspk12.org/domain/290',
+		'https://www.mpspk12.org/domain/12',
+		'https://www.mpspk12.org/domain/312',
+		'https://www.mpspk12.org/domain/16',
+		'https://www.mpspk12.org/domain/248',
+		'https://www.mpspk12.org/domain/10',
+		'https://www.mpspk12.org/domain/11',
+		'https://www.mpspk12.org/domain/17',
+		'https://www.mpspk12.org/domain/227',
+		'https://www.mpspk12.org/domain/245',
+		'https://www.mpspk12.org/domain/22',
+		'https://www.mpspk12.org/domain/23',
+		'https://www.mpspk12.org/Page/39',
+		'https://www.mpspk12.org/domain/25',
+		'https://www.mpspk12.org/domain/26',
+		'https://www.mpspk12.org/domain/27',
+		'https://sites.google.com/mpspk12.org/mpsfood-services/home',
+		'https://www.mpspk12.org/domain/30',
+		'https://www.mpspk12.org/domain/33',
+		'https://www.mpspk12.org/domain/33',
+		'https://www.mpspk12.org/domain/31',
+		'https://www.mpspk12.org/domain/234',
+		'https://www.mpspk12.org/domain/35',
+		'https://z2policy.ctspublish.com/masc/browse/mashpeeset/welcome/root',
+		'https://www.mpspk12.org/domain/37',
+		'https://www.mpspk12.org/domain/38',
+		'https://www.mpspk12.org/domain/260',
+		'https://www.mpspk12.org/domain/267',
+		'https://www.mpspk12.org/domain/264',
+		'https://www.mpspk12.org/domain/32',
+		'https://www.mpspk12.org/domain/39',
+		'https://sites.google.com/mpspk12.org/indianeducation',
+		'https://www.mpspk12.org/domain/306',
+		'https://calendar.google.com/calendar/u/0/embed?src=mpspk12.org_a8g96k8at7ei3g0njnb1qjr184@group.calendar.google.com&ctz=America/New_York',
+		'https://drive.google.com/file/d/1pMwUaYMv2Fk-o9EtxXQQvD0kV2NI6Xth/view',
+		'https://www.mpspk12.org/domain/259',
+		'https://www.mpspk12.org/Page/18',
+		'https://www.mpspk12.org/Page/15',
+		'https://www.mpspk12.org/Page/18',
+		'https://www.mpspk12.org/domain/257',
+		'https://www.mpspk12.org/domain/45',
+		'https://mashpee.powerschool.com/public/',
+		'https://www.mpspk12.org/domain/315',
+		'https://www.mpspk12.org/domain/46',
+		'https://www.mpspk12.org/site/Default.aspx?PageID=1410',
+		'https://www.mpspk12.org/domain/287',
+		'https://sites.google.com/mpspk12.org/mpsstaffresources',
+		'https://app.smartedu.net/mashpee/pd/default.cfm?',
+		'https://sites.google.com/mpspk12.org/wearemashpee/home',
+		'https://sites.google.com/mpspk12.org/wearemashpee/online-store?authuser=0',
+		'https://www.mpspk12.org/domain/312',
+		'https://www.mpspk12.org/Page/83',
+		'https://www.mpspk12.org/Page/82',
+		'https://www.mpspk12.org/Page/81',
+		'https://www.mashpeerec.com/info/default.aspx',
+		'https://www.mashpeema.gov/',
+		'https://mashpeetv.com/',
+		'https://sites.google.com/mpspk12.org/mashpeealumni/home',
+		'https://sites.google.com/d/1E7W9zY5_6bPnNDu_y65IyumpdN05ozvy/p/1yda5nHpfMInB19HGIHCrAJ2CpkSkR6bn/edit',
+		'https://www.mpspk12.org/domain/66',
+		'https://www.mpspk12.org/Page/1439',
+		'https://www.mpspk12.org/Page/2503',
+		'https://www.mpspk12.org/Page/2546',
+		'https://www.mpspk12.org/Page/1415',
+		'https://www.mpspk12.org/Page/2542',
+		'https://sites.google.com/mpspk12.org/mpsblendedlearning/home',
+		'https://www.mpspk12.org/domain/274',
+		'https://www.mpspk12.org/domain/301',
+		'https://www.mpspk12.org/Page/14',
+		'https://www.mpspk12.org/domain/57',
+		'https://docs.google.com/document/d/1gpq2arAM5JHFK9ppjDOkIQOBbVz-TZ6iVVzxtTc-xBM/edit',
+		'https://www.mpspk12.org/domain/16',
+		'https://www.mpspk12.org/Page/1422',
+		'https://www.mpspk12.org/Page/1423',
+		'https://www.mpspk12.org/',
+		'https://docs.google.com/document/d/1Cv1DL0XbMhsmDKHYJjao_0ZdXp8Xsypyc1E7CaEKzvM/edit',
+		'https://docs.google.com/document/d/1nRDF_zh96lOxXYpIKFBNao6eEBVnBWvbCUB4x-pK3Qk/edit',
+		'https://docs.google.com/document/d/1tZN8eeTHQKclZvIGY34Thwmy6U8koEXC237rsMAKSaQ/edit',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'pequannock'
+	mainfolder = 'mpspk12'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -268,7 +330,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'pv'
+		school_name = 'mpspk12'
 
 		csv_report.writerow(['School name', school_name])
 
@@ -311,28 +373,24 @@ if __name__ == '__main__':
 
 				page_link = link
 
-				if link.find('.pdf') > -1 or link.find('.mp3') > -1 or link.find('.wmv') > -1 or link.find('.mp4') > -1 or link.find('.docx') > -1 or link.find('.xlsx') > -1 or link.find('.pptx') > -1\
-				or link.find('.doc') > -1 or link.find('.xls') > -1 or link.find('.ppt') > -1 or link.find('.m4v') > -1 or link.find('.mkv') > -1:
-					csv_writer.writerow([str(page_link), t1, t2, '', '', '', '', '1', 'Linked file', '', '', '', '', '', ''])
-				else:
-					page_counter += 1
-					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-					issue_pages_counter += content_ipc
+				page_counter += 1
+				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+				issue_pages_counter += content_ipc
 
-					csv_writer.writerow([str(page_link), t1, t2, t3, t4, t5, t6, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+				csv_writer.writerow([str(page_link), t1, t2, t3, t4, t5, t6, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
-					if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-						csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+				if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+					csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-					# if nav_sec != None and nav_sec != '' and nav_sec != []:
-					# 	for nav_link in nav_sec:				#
-					# 		page_counter += 1
-					# 		nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-					# 		issue_pages_counter += content_ipc
-					# 		csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-					#
-					# 		if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-					# 			csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+				# if nav_sec != None and nav_sec != '' and nav_sec != []:
+				# 	for nav_link in nav_sec:				#
+				# 		page_counter += 1
+				# 		nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+				# 		issue_pages_counter += content_ipc
+				# 		csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+				#
+				# 		if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+				# 			csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 			csv_report.writerow([])
 			csv_report.writerow(['Pages scraped', page_counter])

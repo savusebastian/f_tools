@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all('form') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all('embed') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all('iframe') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='calendar') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='sw-content-layout-wrapper').find_all(id='news-list') != []:
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':
-			col1 = web_soup.find(id='sw-content-layout-wrapper')
+		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7') != None and web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7') != '':
+			col1 = web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,52 +236,10 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.mpspk12.org/Domain/69',
-		'https://docs.google.com/document/d/1xPYpKTQlZrbAafYyHyTGc6PfwpyYZ4BIHxfQYDbOvrQ/edit#',
-		'https://www.mpspk12.org/domain/71',
-		'https://www.mpspk12.org/domain/72',
-		'https://www.mpspk12.org/domain/73',
-		'https://www.mpspk12.org/domain/197',
-		'https://www.doe.mass.edu/frameworks/',
-		'https://sites.google.com/mpspk12.org/mrssmithsbookshelf/home',
-		'https://www.mpspk12.org/domain/77',
-		'https://www.mpspk12.org/Page/374',
-		'https://www.mpspk12.org/Page/375',
-		'https://www.mpspk12.org/domain/78',
-		'https://www.mpspk12.org/Page/371',
-		'https://www.mpspk12.org/Page/372',
-		'https://www.mpspk12.org/domain/79',
-		'https://www.mpspk12.org/Page/377',
-		'https://www.mpspk12.org/Page/378',
-		'https://www.mpspk12.org/domain/80',
-		'https://www.mpspk12.org/Page/380',
-		'https://www.mpspk12.org/Page/381',
-		'https://www.mpspk12.org/domain/82',
-		'https://www.mpspk12.org/domain/83',
-		'https://www.mpspk12.org/domain/84',
-		'https://www.mpspk12.org/domain/86',
-		'https://www.mpspk12.org/domain/90',
-		'https://www.mpspk12.org/Page/355',
-		'https://www.mpspk12.org/Page/356',
-		'https://www.mpspk12.org/Page/357',
-		'https://www.mpspk12.org/Page/358',
-		'https://www.mpspk12.org/Page/359',
-		'https://www.mpspk12.org/Page/362',
-		'https://www.mpspk12.org/site/Default.aspx?PageID=346',
-		'https://www.mpspk12.org/domain/45',
-		'https://www.mpspk12.org/domain/314',
-		'https://mashpee.powerschool.com/public/',
-		'https://www.mpspk12.org/domain/315',
-		'https://sites.google.com/mpspk12.org/kccspecialeducation/home',
-		'https://www.mpspk12.org/site/Default.aspx?PageID=44',
-		'https://www.mpspk12.org/domain/66',
-		'https://global-zone50.renaissance-go.com/welcomeportal/9481',
-		'https://www.mpspk12.org/domain/93',
-		'https://www.mpspk12.org/domain/271',
-		'https://sites.google.com/mpspk12.org/mps-volunteers/home',
+		'https://www.ferndalesd.org/school-board/district-policies',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'mpspk12'
+	mainfolder = 'ferndalesd'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -294,7 +252,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'mpspk12'
+		school_name = 'ferndalesd'
 
 		csv_report.writerow(['School name', school_name])
 

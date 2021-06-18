@@ -236,7 +236,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.ferndalesd.org/school-board/district-policies',
+		'https://www.ferndalesd.org/business-support-services/emergency-information',
+		'https://www.ferndalesd.org/business-support-services',
+		'https://www.ferndalesd.org/business-support-services/bond-2019',
+		'https://www.ferndalesd.org/covid-19/first-grade-distance-learning',
+		'https://www.ferndalesd.org/covid-19/second-grade-distance-learning',
+		'https://www.ferndalesd.org/covid-19/kindergarten-distance-learning',
+		'https://www.ferndalesd.org/covid-19/fourth-grade-distance-learning',
+		'https://www.ferndalesd.org/covid-19/fifth-grade-distance-learning',
+		'https://www.ferndalesd.org/covid-19/third-grade-distance-learning',
+		'https://www.ferndalesd.org/teaching-learning/home-based-instruction',
+		'https://www.ferndalesd.org/covid-19/learning-resources',
+		'https://www.ferndalesd.org/teaching-learning/5d-plus-tpep',
+		'https://www.ferndalesd.org/teaching-learning/student-resources',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'ferndalesd'

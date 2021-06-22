@@ -281,7 +281,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='content10')
+			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(class_='footer-nav')

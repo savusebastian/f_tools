@@ -237,8 +237,8 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.wlschools.org'
 	all_sites = [
-		# f'{district}/page.cfm?p=1',
-		f'{district}/page.cfm?p=511',
+		f'{district}/page.cfm?p=1',
+		# f'{district}/page.cfm?p=511',
 		# f'{district}/page.cfm?p=512',
 		# f'{district}/page.cfm?p=513',
 		# f'{district}/4/home',
@@ -249,8 +249,8 @@ if __name__ == '__main__':
 		# f'{district}/4/home',
 	]
 	schools = [
-		# 'district',
-		'Lanesborough Elementary School',
+		'district',
+		# 'Lanesborough Elementary School',
 		# 'Williamstown Elementary School',
 		# 'Mt Greylock Regional School',
 		# 'ae',
@@ -288,16 +288,16 @@ if __name__ == '__main__':
 				sitemap = soup.find(class_='main-nav')
 				list_items = sitemap.select('ul > li')
 
-				sitemap2 = soup.find(id='dhtmlmenu_525')
+				sitemap2 = soup.find(id='dhtmlmenu_499')
 				list_items2 = sitemap2.select('ul > li')
 
-				sitemap3 = soup.find(id='dhtmlmenu_576')
+				sitemap3 = soup.find(id='dhtmlmenu_500')
 				list_items3 = sitemap3.select('ul > li')
 
-				sitemap4 = soup.find(id='dhtmlmenu_620')
+				sitemap4 = soup.find(id='dhtmlmenu_1028')
 				list_items4 = sitemap4.select('ul > li')
 
-				sitemap5 = soup.find(id='dhtmlmenu_675')
+				sitemap5 = soup.find(id='dhtmlmenu_1167')
 				list_items5 = sitemap5.select('ul > li')
 
 				# list_items.extend(list_items2)

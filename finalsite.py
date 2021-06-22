@@ -285,16 +285,16 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='mobileNavs')
+				sitemap = soup.find(id='nav')
 				list_items = sitemap.select('ul > li')
 
-				sitemap2 = soup.find(class_='footer-nav')
-				list_items2 = sitemap2.select('ul > li')
+				# sitemap2 = soup.find(class_='footer-nav')
+				# list_items2 = sitemap2.select('ul > li')
 
 				# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
 				# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-				list_items.extend(list_items2)
+				# list_items.extend(list_items2)
 				# list_items.extend(list_items2).extend(list_items3)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'

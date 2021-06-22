@@ -287,18 +287,23 @@ if __name__ == '__main__':
 				soup = BeautifulSoup(page, 'html.parser')
 				sitemap = soup.find(class_='main-nav')
 				list_items = sitemap.select('ul > li')
+				print(list_items)
 
 				sitemap2 = soup.find(id='dhtmlmenu_525')
 				list_items2 = sitemap2.select('ul > li')
+				print(list_items2)
 
 				sitemap3 = soup.find(id='dhtmlmenu_576')
 				list_items3 = sitemap3.select('ul > li')
+				print(list_items3)
 
 				sitemap4 = soup.find(id='dhtmlmenu_620')
 				list_items4 = sitemap4.select('ul > li')
+				print(list_items4)
 
 				sitemap5 = soup.find(id='dhtmlmenu_675')
 				list_items5 = sitemap5.select('ul > li')
+				print(list_items5)
 
 				# list_items.extend(list_items2)
 				list_items.extend(list_items2).extend(list_items3).extend(list_items4).extend(list_items5)

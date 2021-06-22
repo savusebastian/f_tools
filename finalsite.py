@@ -271,11 +271,12 @@ if __name__ == '__main__':
 		s = 0
 
 			for site in all_sites:
+				s += 1
+
 				with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 					csv_writer = csv.writer(csv_main)
 					csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-					s += 1
 					page_counter = 0
 					issue_pages_counter = 0
 					split_slash = site.split('/')

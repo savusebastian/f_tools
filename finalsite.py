@@ -249,7 +249,7 @@ if __name__ == '__main__':
 		# f'{district}/4/home',
 	]
 	schools = [
-		'district'
+		'district',
 		'Lanesborough Elementary School',
 		'Williamstown Elementary School',
 		'Mt Greylock Regional School',

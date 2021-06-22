@@ -270,36 +270,35 @@ if __name__ == '__main__':
 		csv_report = csv.writer(csv_report)
 		s = 0
 
-		for site in all_sites:
-			s += 1
-			page_counter = 0
-			issue_pages_counter = 0
-			split_slash = site.split('/')
-			split_dot = site.split('.')
-			split_mixed = site.split('/')[2].split('.')
-			all_links = []
+		with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}.csv', 'w', encoding='utf-8') as csv_main:
+			csv_writer = csv.writer(csv_main)
+			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-			page = requests.get(site).content
-			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='main-nav')
-			list_items = sitemap.select('ul > li')
+			for site in all_sites:
+				s += 1
+				page_counter = 0
+				issue_pages_counter = 0
+				split_slash = site.split('/')
+				split_dot = site.split('.')
+				split_mixed = site.split('/')[2].split('.')
+				all_links = []
 
-			# sitemap2 = soup.find(class_='footer-nav')
-			# list_items2 = sitemap2.select('ul > li')
+				page = requests.get(site).content
+				soup = BeautifulSoup(page, 'html.parser')
+				sitemap = soup.find(class_='main-nav')
+				list_items = sitemap.select('ul > li')
 
-			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
-			# list_items3 = sitemap3.select('ul.very-top-nav > li')
+				# sitemap2 = soup.find(class_='footer-nav')
+				# list_items2 = sitemap2.select('ul > li')
 
-			# list_items.extend(list_items2)
-			# list_items.extend(list_items2).extend(list_items3)
+				# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
+				# list_items3 = sitemap3.select('ul.very-top-nav > li')
 
-			school_name = f'{split_dot[1]}_{schools[s - 1]}'
-			csv_report.writerow(['School name', school_name])
+				# list_items.extend(list_items2)
+				# list_items.extend(list_items2).extend(list_items3)
 
-			with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
-				csv_writer = csv.writer(csv_main)
-				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
-
+				school_name = f'{split_dot[1]}_{schools[s - 1]}'
+				csv_report.writerow(['School name', school_name])
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')

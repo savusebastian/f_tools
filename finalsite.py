@@ -55,7 +55,7 @@ def remove_tags(text):
 	return text.strip()
 
 
-def get_column(col, splitter):
+def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
@@ -126,7 +126,7 @@ def get_column(col, splitter):
 	return col
 
 
-def get_content(web_page, splitter):
+def get_content(web_page):
 	col1 = 'Flagged'
 	col2, col3, col4 = '', '', ''
 	col_num = '1'
@@ -237,9 +237,9 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.wlschools.org'
 	all_sites = [
-		f'{district}/page.cfm?p=1',
-		f'{district}/page.cfm?p=511',
-		f'{district}/page.cfm?p=512',
+		# f'{district}/page.cfm?p=1',
+		# f'{district}/page.cfm?p=511',
+		# f'{district}/page.cfm?p=512',
 		f'{district}/page.cfm?p=513',
 		# f'{district}/4/home',
 		# f'{district}/5/home',
@@ -250,9 +250,9 @@ if __name__ == '__main__':
 	]
 	schools = [
 		'district',
-		'Lanesborough Elementary School',
-		'Williamstown Elementary School',
-		'Mt Greylock Regional School',
+		# 'Lanesborough Elementary School',
+		# 'Williamstown Elementary School',
+		# 'Mt Greylock Regional School',
 		# 'ae',
 		# 'aelc',
 		# 'pa',
@@ -270,42 +270,62 @@ if __name__ == '__main__':
 		csv_report = csv.writer(csv_report)
 		s = 0
 
-		for site in all_sites:
-			s += 1
-			page_counter = 0
-			issue_pages_counter = 0
-			split_slash = site.split('/')
-			split_dot = site.split('.')
-			split_mixed = site.split('/')[2].split('.')
-			all_links = []
+		with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}.csv', 'w', encoding='utf-8') as csv_main:
+			csv_writer = csv.writer(csv_main)
+			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-			page = requests.get(site).content
-			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='content10')
-			list_items = sitemap.select('ul > li')
+			for site in all_sites:
+				s += 1
+				page_counter = 0
+				issue_pages_counter = 0
+				split_slash = site.split('/')
+				split_dot = site.split('.')
+				split_mixed = site.split('/')[2].split('.')
+				all_links = []
 
-			# sitemap2 = soup.find(class_='footer-nav')
-			# list_items2 = sitemap2.select('ul > li')
+				page = requests.get(site).content
+				soup = BeautifulSoup(page, 'html.parser')
+				sitemap = soup.find(class_='main-nav')
+				list_items = sitemap.select('ul > li')
 
-			# sitemap3 = soup.find(class_='top-black-bar hidden-xs navigation')
-			# list_items3 = sitemap3.select('ul.very-top-nav > li')
+				sitemap2 = soup.find(id='dhtmlmenu_527')
+				list_items2 = sitemap2.select('ul > li')
 
-			# list_items.extend(list_items2)
-			# list_items.extend(list_items2).extend(list_items3)
+				sitemap3 = soup.find(id='dhtmlmenu_529')
+				list_items3 = sitemap3.select('ul > li')
 
-			school_name = f'{split_dot[1]}_{schools[s - 1]}'
-			csv_report.writerow(['School name', school_name])
+				sitemap4 = soup.find(id='dhtmlmenu_530')
+				list_items4 = sitemap4.select('ul > li')
 
-			with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
-				csv_writer = csv.writer(csv_main)
-				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
+				sitemap5 = soup.find(id='dhtmlmenu_531')
+				list_items5 = sitemap5.select('ul > li')
 
+				sitemap6 = soup.find(id='dhtmlmenu_532')
+				list_items6 = sitemap6.select('ul > li')
+
+				sitemap7 = soup.find(id='dhtmlmenu_643')
+				list_items7 = sitemap7.select('ul > li')
+
+				sitemap8 = soup.find(id='dhtmlmenu_941')
+				list_items8 = sitemap8.select('ul > li')
+
+				# list_items.extend(list_items2)
+				list_items.extend(list_items2)
+				list_items.extend(list_items3)
+				list_items.extend(list_items4)
+				list_items.extend(list_items5)
+				list_items.extend(list_items6)
+				list_items.extend(list_items7)
+				list_items.extend(list_items8)
+
+				school_name = f'{split_dot[1]}_{schools[s - 1]}'
+				csv_report.writerow(['School name', school_name])
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links[1:]:
+					for link in group_links:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 

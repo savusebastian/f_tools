@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('form') != []:
+		if web_soup.find(class_='pageContent').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('embed') != []:
+		if web_soup.find(class_='pageContent').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all('iframe') != []:
+		if web_soup.find(class_='pageContent').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(id='calendar') != []:
+		if web_soup.find(class_='pageContent').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='pageContent').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7').find_all(id='news-list') != []:
+		if web_soup.find(class_='pageContent').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7') != None and web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7') != '':
-			col1 = web_soup.find(id='cms-widget-7b5d4f99-ad81-470a-a8e7-9a20a7c989d7')
+		if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
+			col1 = web_soup.find(class_='pageContent')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,22 +236,70 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.ferndalesd.org/business-support-services/emergency-information',
-		'https://www.ferndalesd.org/business-support-services',
-		'https://www.ferndalesd.org/business-support-services/bond-2019',
-		'https://www.ferndalesd.org/covid-19/first-grade-distance-learning',
-		'https://www.ferndalesd.org/covid-19/second-grade-distance-learning',
-		'https://www.ferndalesd.org/covid-19/kindergarten-distance-learning',
-		'https://www.ferndalesd.org/covid-19/fourth-grade-distance-learning',
-		'https://www.ferndalesd.org/covid-19/fifth-grade-distance-learning',
-		'https://www.ferndalesd.org/covid-19/third-grade-distance-learning',
-		'https://www.ferndalesd.org/teaching-learning/home-based-instruction',
-		'https://www.ferndalesd.org/covid-19/learning-resources',
-		'https://www.ferndalesd.org/teaching-learning/5d-plus-tpep',
-		'https://www.ferndalesd.org/teaching-learning/student-resources',
+		'https://burleyglenwood.skschools.org/our_school',
+		'https://burleyglenwood.skschools.org/our_school/attendance',
+		'https://burleyglenwood.skschools.org/our_school/inclement_weather',
+		'https://burleyglenwood.skschools.org/our_school/library',
+		'https://burleyglenwood.skschools.org/our_school/library/Destiny',
+		'https://burleyglenwood.skschools.org/our_school/library/visiting_the_library',
+		'https://burleyglenwood.skschools.org/our_school/library/golden_book_classrooms',
+		'https://burleyglenwood.skschools.org/our_school/library/junior_librarians',
+		'https://burleyglenwood.skschools.org/our_school/library/book_donations',
+		'https://burleyglenwood.skschools.org/our_school/library/computers_in_the_library',
+		'https://burleyglenwood.skschools.org/our_school/library/damaged_or_lost_books',
+		'https://burleyglenwood.skschools.org/our_school/library/accelerated_reader___a_r_',
+		'https://burleyglenwood.skschools.org/our_school/library/common_sense_media',
+		'https://burleyglenwood.skschools.org/our_school/library/library_priority_standards',
+		'https://burleyglenwood.skschools.org/our_school/library/learning_target_rubric',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/fair_use_notice',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/citations',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/image_resources',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/informational_literacy',
+		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/kitsap_regional_library',
+		'https://burleyglenwood.skschools.org/our_school/meet_the_office_staff',
+		'https://burleyglenwood.skschools.org/our_school/mission_and_vision',
+		'https://burleyglenwood.skschools.org/our_school/new_to_our_school',
+		'https://burleyglenwood.skschools.org/our_school/school_newsletter',
+		'https://burleyglenwood.skschools.org/our_school/school_report',
+		'https://burleyglenwood.skschools.org/our_school/staff_directory',
+		'https://burleyglenwood.skschools.org/our_school/tip_line',
+		'https://burleyglenwood.skschools.org/our_school/title_i___l_a_p_information',
+		'https://burleyglenwood.skschools.org/our_school/web_store',
+		'https://burleyglenwood.skschools.org/our_school/a_s_b_fund_balance_link',
+		'https://burleyglenwood.skschools.org/students',
+		'https://burleyglenwood.skschools.org/students/accelerated_reader',
+		'https://burleyglenwood.skschools.org/students/calendars',
+		'https://burleyglenwood.skschools.org/students/character_counts',
+		'https://burleyglenwood.skschools.org/students/homeless_education_assistance',
+		'https://burleyglenwood.skschools.org/students/kelso_s_choices',
+		'https://burleyglenwood.skschools.org/students/kid-_friendly_programs___burley_glenwood',
+		'https://burleyglenwood.skschools.org/students/kids_at_hope',
+		'https://burleyglenwood.skschools.org/students/lunch_menu',
+		'https://burleyglenwood.skschools.org/students/RazKids',
+		'https://burleyglenwood.skschools.org/students/spanish_immersion',
+		'https://burleyglenwood.skschools.org/students/strings_class',
+		'https://burleyglenwood.skschools.org/students/student_dress_code',
+		'https://burleyglenwood.skschools.org/students/student_recognition',
+		'https://burleyglenwood.skschools.org/students/supply_list',
+		'https://burleyglenwood.skschools.org/parents',
+		'https://burleyglenwood.skschools.org/parents/make_a_donation',
+		'https://burleyglenwood.skschools.org/parents/community_resources',
+		'https://burleyglenwood.skschools.org/parents/military_families',
+		'https://burleyglenwood.skschools.org/parents/skyward',
+		'https://burleyglenwood.skschools.org/parents/volunteer',
+		'https://burleyglenwood.skschools.org/parents/w_a_t_c_h_d__o__g__s_',
+		'https://burleyglenwood.skschools.org/parents/p_t_s_o',
+		'https://burleyglenwood.skschools.org/parents/p_t_s_o/p_t_s_a_district_council',
+		'https://burleyglenwood.skschools.org/parents/title_i___lap_information',
+		'https://burleyglenwood.skschools.org/parents/a__r__home_links',
+		'https://burleyglenwood.skschools.org/parents/y_m_c_a_before_and_after_school_program',
+		'https://burleyglenwood.skschools.org/parents/homeless_education_assistance',
+		'https://burleyglenwood.skschools.org/teachers',
+		'https://burleyglenwood.skschools.org/lund',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'ferndalesd'
+	mainfolder = 'south_kitsap'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -264,7 +312,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'ferndalesd'
+		school_name = 'south_kitsap'
 
 		csv_report.writerow(['School name', school_name])
 

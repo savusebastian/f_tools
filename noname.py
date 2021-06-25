@@ -236,65 +236,36 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://marcuswhitman.skschools.org/our_school_',
-		'https://marcuswhitman.skschools.org/our_school_/attendance_information',
-		'https://marcuswhitman.skschools.org/our_school_/bell_schedule',
-		'https://marcuswhitman.skschools.org/our_school_/inclement_weather',
-		'https://marcuswhitman.skschools.org/our_school_/library',
-		'https://marcuswhitman.skschools.org/our_school_/meet_the_office_staff',
-		'https://marcuswhitman.skschools.org/our_school_/mission___vision',
-		'https://marcuswhitman.skschools.org/our_school_/new_student_registration',
-		'https://marcuswhitman.skschools.org/our_school_/new_student_registration/registration_for_new_students',
-		'https://marcuswhitman.skschools.org/our_school_/principal_s_corner',
-		'https://marcuswhitman.skschools.org/our_school_/school_newsletter',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/overview',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/what_does_the_school_nurse_do_',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/frequently_used_forms',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/newsletter_articles_and_additional_information',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/community_services_opportunities',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/health_education_resources',
-		'https://marcuswhitman.skschools.org/our_school_/school_nurse_information_1/s_k_s_d_policies_and_procedures',
-		'https://marcuswhitman.skschools.org/our_school_/school_report',
-		'https://marcuswhitman.skschools.org/our_school_/staff_directory',
-		'https://marcuswhitman.skschools.org/our_school_/tip_line',
-		'https://marcuswhitman.skschools.org/our_school_/title_i___l_a_p_information',
-		'https://marcuswhitman.skschools.org/our_school_/web_store',
-		'https://marcuswhitman.skschools.org/our_school_/a_s_b_fund_balance_link',
-		'https://marcuswhitman.skschools.org/students',
-		'https://marcuswhitman.skschools.org/students/BrianCarlson',
-		'https://marcuswhitman.skschools.org/students/calendar',
-		'https://marcuswhitman.skschools.org/students/school_supplies',
-		'https://marcuswhitman.skschools.org/students/behavioral_expectations__rules_and_policies',
-		'https://marcuswhitman.skschools.org/students/college_bound_scholarships',
-		'https://marcuswhitman.skschools.org/students/lunch_menu',
-		'https://marcuswhitman.skschools.org/students/dress_code',
-		'https://marcuswhitman.skschools.org/students/p__e__uniforms',
-		'https://marcuswhitman.skschools.org/students/student_planner',
-		'https://marcuswhitman.skschools.org/students/math_related_links',
-		'https://marcuswhitman.skschools.org/students/student_handbook',
-		'https://marcuswhitman.skschools.org/parents',
-		'https://marcuswhitman.skschools.org/parents/family_access',
-		'https://marcuswhitman.skschools.org/parents/fred_meyer',
-		'https://marcuswhitman.skschools.org/parents/make_a_donation',
-		'https://marcuswhitman.skschools.org/parents/parenting_101',
-		'https://marcuswhitman.skschools.org/parents/volunteer_news_and_information',
-		'https://marcuswhitman.skschools.org/parents/homeless_education_assistance',
-		'https://marcuswhitman.skschools.org/athletics',
-		'https://marcuswhitman.skschools.org/athletics/athlete_handbook',
-		'https://marcuswhitman.skschools.org/athletics/turn_out_info',
-		'https://marcuswhitman.skschools.org/athletics/intramural_sports',
-		'https://marcuswhitman.skschools.org/athletics/fall_sports',
-		'https://marcuswhitman.skschools.org/athletics/winter_sports',
-		'https://marcuswhitman.skschools.org/athletics/spring_sports',
-		'https://marcuswhitman.skschools.org/clubs',
-		'https://marcuswhitman.skschools.org/clubs/chanime_club',
-		'https://marcuswhitman.skschools.org/clubs/christian_bible_study_club',
-		'https://marcuswhitman.skschools.org/clubs/honor_society',
-		'https://marcuswhitman.skschools.org/clubs/m_w_running__walking_club',
-		'https://marcuswhitman.skschools.org/clubs/weight_club',
-		'https://marcuswhitman.skschools.org/clubs/s_t_e_m_club',
-		'https://marcuswhitman.skschools.org/clubs/yearbook_club',
+		'https://mullenixridge.skschools.org/our_school'
+		'https://mullenixridge.skschools.org/our_school/principal_s_corner'
+		'https://mullenixridge.skschools.org/our_school/meet_the_office_staff'
+		'https://mullenixridge.skschools.org/our_school/mission___vision'
+		'https://mullenixridge.skschools.org/our_school/attendance'
+		'https://mullenixridge.skschools.org/our_school/new_to_our_school'
+		'https://mullenixridge.skschools.org/our_school/library'
+		'https://mullenixridge.skschools.org/our_school/inclement_weather'
+		'https://mullenixridge.skschools.org/our_school/school_newsletter'
+		'https://mullenixridge.skschools.org/our_school/school_report'
+		'https://mullenixridge.skschools.org/our_school/staff_directory'
+		'https://mullenixridge.skschools.org/our_school/tip_line'
+		'https://mullenixridge.skschools.org/our_school/a_s_b_fund_balance_link'
+		'https://mullenixridge.skschools.org/our_school/web_store'
+		'https://mullenixridge.skschools.org/students'
+		'https://mullenixridge.skschools.org/students/calendar'
+		'https://mullenixridge.skschools.org/students/lunch_menu'
+		'https://mullenixridge.skschools.org/students/student_dress_code'
+		'https://mullenixridge.skschools.org/students/school_supply_list'
+		'https://mullenixridge.skschools.org/parents'
+		'https://mullenixridge.skschools.org/parents/homeless_education_assistance'
+		'https://mullenixridge.skschools.org/parents/make_a_donation'
+		'https://mullenixridge.skschools.org/parents/parent_resources'
+		'https://mullenixridge.skschools.org/parents/parent_student_handbook'
+		'https://mullenixridge.skschools.org/parents/p_t_a'
+		'https://mullenixridge.skschools.org/parents/p_t_a/what_is_p_t_a_'
+		'https://mullenixridge.skschools.org/parents/skyward'
+		'https://mullenixridge.skschools.org/parents/volunteer'
+		'https://mullenixridge.skschools.org/parents/watch_d__o__g__s'
+		'https://mullenixridge.skschools.org/teachers'
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'south_kitsap'
@@ -310,7 +281,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'south_kitsap_marcuswhitman'
+		school_name = 'south_kitsap_mullenixridge'
 
 		csv_report.writerow(['School name', school_name])
 

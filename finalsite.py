@@ -285,7 +285,7 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='menu')
+				sitemap = soup.find(class_='menu_wrapper')
 				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(id='dhtmlmenu_527')

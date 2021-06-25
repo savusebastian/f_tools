@@ -286,12 +286,11 @@ if __name__ == '__main__':
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
 				sitemap = soup.find(class_='menu_wrapper')
+				print(sitemap)
 				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(id='dhtmlmenu_527')
 				# list_items2 = sitemap2.select('ul > li')
-
-				# list_items.extend(list_items2)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])

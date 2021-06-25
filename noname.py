@@ -143,8 +143,8 @@ def get_content(web_page):
 	issue_pages_counter = 0
 	print(web_page)
 
-	if web_page != '#':
-	# try:
+	# if web_page != '#':
+	try:
 		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
 		web_link = requests.get(web_page, headers=headers, timeout=20).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
@@ -226,8 +226,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	else:
-	# except Exception:
+	# else:
+	except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
@@ -236,53 +236,77 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hiddencreek.skschools.org/our_school',
-		'https://hiddencreek.skschools.org/our_school/attendance',
-		'https://hiddencreek.skschools.org/our_school/hidden_creek_news',
-		'https://hiddencreek.skschools.org/our_school/inclement_weather',
-		'https://hiddencreek.skschools.org/our_school/library',
-		'https://hiddencreek.skschools.org/our_school/library/checking_out_books_',
-		'https://hiddencreek.skschools.org/our_school/library/damaged_books',
-		'https://hiddencreek.skschools.org/our_school/library/reading_strategies',
-		'https://hiddencreek.skschools.org/our_school/library/comprehension_strategies',
-		'https://hiddencreek.skschools.org/our_school/library/literacy_websites',
-		'https://hiddencreek.skschools.org/our_school/library/accelerated_reader',
-		'https://hiddencreek.skschools.org/our_school/library/destiny',
-		'https://hiddencreek.skschools.org/our_school/meet_the_office_staff',
-		'https://hiddencreek.skschools.org/our_school/introduction_to_hidden_creek',
-		'https://hiddencreek.skschools.org/our_school/new_to_our_school',
-		'https://hiddencreek.skschools.org/our_school/principal_s_corner',
-		'https://hiddencreek.skschools.org/our_school/school_report',
-		'https://hiddencreek.skschools.org/our_school/staff_directory',
-		'https://hiddencreek.skschools.org/our_school/tip_line',
-		'https://hiddencreek.skschools.org/our_school/title_i___l_a_p_information',
-		'https://hiddencreek.skschools.org/our_school/web_store',
-		'https://hiddencreek.skschools.org/our_school/a_s_b_fund_balance_link',
-		'https://hiddencreek.skschools.org/news',
-		'https://hiddencreek.skschools.org/news/what_s_new',
-		'https://hiddencreek.skschools.org/news/what_s_new/contact_info',
-		'https://hiddencreek.skschools.org/news/what_s_new/school_supplies',
-		'https://hiddencreek.skschools.org/news/what_s_new/school_safety_discussion',
-		'https://hiddencreek.skschools.org/news/what_s_new/out_of_this_world_experience_for_students',
-		'https://hiddencreek.skschools.org/news/what_s_new/school_safety_newsletter',
-		'https://hiddencreek.skschools.org/news/what_s_new/kindergarten_registration',
-		'https://hiddencreek.skschools.org/news/archived_news',
-		'https://hiddencreek.skschools.org/students',
-		'https://hiddencreek.skschools.org/students/calendar',
-		'https://hiddencreek.skschools.org/students/curriculum',
-		'https://hiddencreek.skschools.org/students/curriculum/science_and_research',
-		'https://hiddencreek.skschools.org/students/curriculum/common_core_state_standards',
-		'https://hiddencreek.skschools.org/students/lunch_menu',
-		'https://hiddencreek.skschools.org/students/student_dress_code',
-		'https://hiddencreek.skschools.org/students/student_handbook',
-		'https://hiddencreek.skschools.org/parents',
-		'https://hiddencreek.skschools.org/parents/make_a_donation',
-		'https://hiddencreek.skschools.org/parents/skyward',
-		'https://hiddencreek.skschools.org/parents/volunteer',
-		'https://hiddencreek.skschools.org/parents/p_t_a',
-		'https://hiddencreek.skschools.org/parents/p_t_a/p_t_s_a_district_council',
-		'https://hiddencreek.skschools.org/parents/homeless_education_assistance',
-		'https://hiddencreek.skschools.org/teachers',
+		'https://cedarheights.skschools.org/our_school',
+		'https://cedarheights.skschools.org/our_school/a_s_b_fund_balance_link',
+		'https://cedarheights.skschools.org/our_school/attendance_info',
+		'https://cedarheights.skschools.org/our_school/celebration_of_excellence',
+		'https://cedarheights.skschools.org/our_school/community_partners',
+		'https://cedarheights.skschools.org/our_school/follow_us_on_facebook',
+		'https://cedarheights.skschools.org/our_school/inclement_weather',
+		'https://cedarheights.skschools.org/our_school/Peck',
+		'https://cedarheights.skschools.org/our_school/mission_and_vision',
+		'https://cedarheights.skschools.org/our_school/principal_s_corner',
+		'https://cedarheights.skschools.org/our_school/school_report',
+		'https://cedarheights.skschools.org/our_school/staff_directory',
+		'https://cedarheights.skschools.org/our_school/tip_line',
+		'https://cedarheights.skschools.org/our_school/title_i___l_a_p_information',
+		'https://cedarheights.skschools.org/our_school/web_store',
+		'https://cedarheights.skschools.org/students',
+		'https://cedarheights.skschools.org/students/a_v_i_d',
+		'https://cedarheights.skschools.org/students/bell_schedule',
+		'https://cedarheights.skschools.org/students/calendar',
+		'https://cedarheights.skschools.org/students/Destiny',
+		'https://cedarheights.skschools.org/students/events',
+		'https://cedarheights.skschools.org/students/HelloID',
+		'https://cedarheights.skschools.org/students/important_info',
+		'https://cedarheights.skschools.org/students/lunch_menu',
+		'https://cedarheights.skschools.org/students/math_monday',
+		'https://cedarheights.skschools.org/students/new_students_',
+		'https://cedarheights.skschools.org/students/new_students_/building_hours_and_information',
+		'https://cedarheights.skschools.org/students/new_students_/register_your_student',
+		'https://cedarheights.skschools.org/students/new_students_/building_hours_and_information',
+		'https://cedarheights.skschools.org/students/new_students_/register_your_student',
+		'https://cedarheights.skschools.org/students/new_students_/building_hours_and_information',
+		'https://cedarheights.skschools.org/students/new_students_/register_your_student',
+		'https://cedarheights.skschools.org/students/picture_info',
+		'https://cedarheights.skschools.org/students/school_supplies',
+		'https://cedarheights.skschools.org/students/student_dress_code',
+		'https://cedarheights.skschools.org/students/student_handbook',
+		'https://cedarheights.skschools.org/students/student_recognition',
+		'https://cedarheights.skschools.org/students/weekly_bulletin',
+		'https://cedarheights.skschools.org/students/word_of_the_week_wednesday___w_o_w_w_',
+		'https://cedarheights.skschools.org/parents',
+		'https://cedarheights.skschools.org/parents/community_project',
+		'https://cedarheights.skschools.org/parents/dance__social_information',
+		'https://cedarheights.skschools.org/parents/district_ptsa_council',
+		'https://cedarheights.skschools.org/parents/healthy_youth_survey',
+		'https://cedarheights.skschools.org/parents/homeless_education_assistance',
+		'https://cedarheights.skschools.org/parents/i_b_policies',
+		'https://cedarheights.skschools.org/parents/upcoming_events',
+		'https://cedarheights.skschools.org/parents/items_needed',
+		'https://cedarheights.skschools.org/parents/make_a_donation',
+		'https://cedarheights.skschools.org/parents/medication_forms',
+		'https://cedarheights.skschools.org/parents/parent_resources',
+		'https://cedarheights.skschools.org/parents/parent_teacher_student_association',
+		'https://cedarheights.skschools.org/parents/parent_teacher_student_association/officers',
+		'https://cedarheights.skschools.org/parents/parent_teacher_student_association/forms',
+		'https://cedarheights.skschools.org/parents/parent_teacher_student_association/p_t_s_a_district_council',
+		'https://cedarheights.skschools.org/parents/skyward_family_access',
+		'https://cedarheights.skschools.org/parents/student_events',
+		'https://cedarheights.skschools.org/parents/volunteer',
+		'https://cedarheights.skschools.org/activities',
+		'https://cedarheights.skschools.org/activities/athletics',
+		'https://cedarheights.skschools.org/activities/athletics/9th_grade_athletics',
+		'https://cedarheights.skschools.org/activities/athletics/turn_out_information',
+		'https://cedarheights.skschools.org/activities/athletics/coach_access',
+		'https://cedarheights.skschools.org/activities/athletics/directions_to_games',
+		'https://cedarheights.skschools.org/activities/athletics/fall_sports',
+		'https://cedarheights.skschools.org/activities/athletics/intramural_sports',
+		'https://cedarheights.skschools.org/activities/athletics/sports_links',
+		'https://cedarheights.skschools.org/activities/athletics/spring_sports',
+		'https://cedarheights.skschools.org/activities/athletics/winter_sports',
+		'https://cedarheights.skschools.org/activities/web',
+		'https://cedarheights.skschools.org/teachers',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'south_kitsap'

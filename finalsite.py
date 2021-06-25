@@ -158,32 +158,32 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='contentdiv').find_all('form') != []:
+		if web_soup.find(class_='section_wrapper').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='contentdiv').find_all('embed') != []:
+		if web_soup.find(class_='section_wrapper').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='contentdiv').find_all('iframe') != []:
+		if web_soup.find(class_='section_wrapper').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='contentdiv').find_all(id='calendar') != []:
+		if web_soup.find(class_='section_wrapper').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='contentdiv').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='section_wrapper').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='contentdiv').find_all(id='news-list') != []:
+		if web_soup.find(class_='section_wrapper').find_all(id='news-list') != []:
 			news = 'news'
 
-		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
-		# 	page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
+		if web_soup.find(class_='menu-ec-pages-menu-container') != None:
+			page_nav = web_soup.find(class_='menu-ec-pages-menu-container').find_all('a')
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
-			col1 = web_soup.find(id='contentdiv')
+		if web_soup.find(class_='section_wrapper') != None and web_soup.find(class_='section_wrapper') != '':
+			col1 = web_soup.find(class_='section_wrapper')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -235,12 +235,12 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.wlschools.org'
+	district = 'https://www.crossingsschool.org'
 	all_sites = [
-		# f'{district}/page.cfm?p=1',
-		# f'{district}/page.cfm?p=511',
-		# f'{district}/page.cfm?p=512',
-		f'{district}/page.cfm?p=513',
+		f'{district}',
+		# f'{district}/1/home',
+		# f'{district}/2/home',
+		# f'{district}/3/home',
 		# f'{district}/4/home',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
@@ -285,38 +285,13 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(class_='main-nav')
+				sitemap = soup.find(id='menu')
 				list_items = sitemap.select('ul > li')
 
-				sitemap2 = soup.find(id='dhtmlmenu_527')
-				list_items2 = sitemap2.select('ul > li')
-
-				sitemap3 = soup.find(id='dhtmlmenu_529')
-				list_items3 = sitemap3.select('ul > li')
-
-				sitemap4 = soup.find(id='dhtmlmenu_530')
-				list_items4 = sitemap4.select('ul > li')
-
-				sitemap5 = soup.find(id='dhtmlmenu_531')
-				list_items5 = sitemap5.select('ul > li')
-
-				sitemap6 = soup.find(id='dhtmlmenu_532')
-				list_items6 = sitemap6.select('ul > li')
-
-				sitemap7 = soup.find(id='dhtmlmenu_643')
-				list_items7 = sitemap7.select('ul > li')
-
-				sitemap8 = soup.find(id='dhtmlmenu_941')
-				list_items8 = sitemap8.select('ul > li')
+				# sitemap2 = soup.find(id='dhtmlmenu_527')
+				# list_items2 = sitemap2.select('ul > li')
 
 				# list_items.extend(list_items2)
-				list_items.extend(list_items2)
-				list_items.extend(list_items3)
-				list_items.extend(list_items4)
-				list_items.extend(list_items5)
-				list_items.extend(list_items6)
-				list_items.extend(list_items7)
-				list_items.extend(list_items8)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])
@@ -357,33 +332,33 @@ if __name__ == '__main__':
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-									# if nav_sec != None and nav_sec != '' and nav_sec != []:
-									# 	for nav_link in nav_sec:
-									# 		href = nav_link.get('href')
-									#
-									# 		if len(href) > 1 and href[:2] == '//':
-									# 			page_link = f'{split_slash[0]}{href}'
-									# 		elif len(href) > 0 and href[0] == '/':
-									# 			page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
-									# 		elif len(href) > 4 and href[:4] == 'http':
-									# 			page_link = href
-									# 		else:
-									# 			page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
-									#
-									# 		if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
-									# 		or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-									# 			csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
-									# 		else:
-									# 			if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-									# 				csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
-									# 			else:
-									# 				page_counter += 1
-									# 				nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-									# 				issue_pages_counter += content_ipc
-									# 				csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-									#
-									# 				if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-									# 					csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										for nav_link in nav_sec:
+											href = nav_link.get('href')
+
+											if len(href) > 1 and href[:2] == '//':
+												page_link = f'{split_slash[0]}{href}'
+											elif len(href) > 0 and href[0] == '/':
+												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+											elif len(href) > 4 and href[:4] == 'http':
+												page_link = href
+											else:
+												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+
+											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											else:
+												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												else:
+													page_counter += 1
+													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+													issue_pages_counter += content_ipc
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+
+													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

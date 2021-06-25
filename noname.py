@@ -236,36 +236,36 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://mullenixridge.skschools.org/our_school'
-		'https://mullenixridge.skschools.org/our_school/principal_s_corner'
-		'https://mullenixridge.skschools.org/our_school/meet_the_office_staff'
-		'https://mullenixridge.skschools.org/our_school/mission___vision'
-		'https://mullenixridge.skschools.org/our_school/attendance'
-		'https://mullenixridge.skschools.org/our_school/new_to_our_school'
-		'https://mullenixridge.skschools.org/our_school/library'
-		'https://mullenixridge.skschools.org/our_school/inclement_weather'
-		'https://mullenixridge.skschools.org/our_school/school_newsletter'
-		'https://mullenixridge.skschools.org/our_school/school_report'
-		'https://mullenixridge.skschools.org/our_school/staff_directory'
-		'https://mullenixridge.skschools.org/our_school/tip_line'
-		'https://mullenixridge.skschools.org/our_school/a_s_b_fund_balance_link'
-		'https://mullenixridge.skschools.org/our_school/web_store'
-		'https://mullenixridge.skschools.org/students'
-		'https://mullenixridge.skschools.org/students/calendar'
-		'https://mullenixridge.skschools.org/students/lunch_menu'
-		'https://mullenixridge.skschools.org/students/student_dress_code'
-		'https://mullenixridge.skschools.org/students/school_supply_list'
-		'https://mullenixridge.skschools.org/parents'
-		'https://mullenixridge.skschools.org/parents/homeless_education_assistance'
-		'https://mullenixridge.skschools.org/parents/make_a_donation'
-		'https://mullenixridge.skschools.org/parents/parent_resources'
-		'https://mullenixridge.skschools.org/parents/parent_student_handbook'
-		'https://mullenixridge.skschools.org/parents/p_t_a'
-		'https://mullenixridge.skschools.org/parents/p_t_a/what_is_p_t_a_'
-		'https://mullenixridge.skschools.org/parents/skyward'
-		'https://mullenixridge.skschools.org/parents/volunteer'
-		'https://mullenixridge.skschools.org/parents/watch_d__o__g__s'
-		'https://mullenixridge.skschools.org/teachers'
+		'https://mullenixridge.skschools.org/our_school',
+		'https://mullenixridge.skschools.org/our_school/principal_s_corner',
+		'https://mullenixridge.skschools.org/our_school/meet_the_office_staff',
+		'https://mullenixridge.skschools.org/our_school/mission___vision',
+		'https://mullenixridge.skschools.org/our_school/attendance',
+		'https://mullenixridge.skschools.org/our_school/new_to_our_school',
+		'https://mullenixridge.skschools.org/our_school/library',
+		'https://mullenixridge.skschools.org/our_school/inclement_weather',
+		'https://mullenixridge.skschools.org/our_school/school_newsletter',
+		'https://mullenixridge.skschools.org/our_school/school_report',
+		'https://mullenixridge.skschools.org/our_school/staff_directory',
+		'https://mullenixridge.skschools.org/our_school/tip_line',
+		'https://mullenixridge.skschools.org/our_school/a_s_b_fund_balance_link',
+		'https://mullenixridge.skschools.org/our_school/web_store',
+		'https://mullenixridge.skschools.org/students',
+		'https://mullenixridge.skschools.org/students/calendar',
+		'https://mullenixridge.skschools.org/students/lunch_menu',
+		'https://mullenixridge.skschools.org/students/student_dress_code',
+		'https://mullenixridge.skschools.org/students/school_supply_list',
+		'https://mullenixridge.skschools.org/parents',
+		'https://mullenixridge.skschools.org/parents/homeless_education_assistance',
+		'https://mullenixridge.skschools.org/parents/make_a_donation',
+		'https://mullenixridge.skschools.org/parents/parent_resources',
+		'https://mullenixridge.skschools.org/parents/parent_student_handbook',
+		'https://mullenixridge.skschools.org/parents/p_t_a',
+		'https://mullenixridge.skschools.org/parents/p_t_a/what_is_p_t_a_',
+		'https://mullenixridge.skschools.org/parents/skyward',
+		'https://mullenixridge.skschools.org/parents/volunteer',
+		'https://mullenixridge.skschools.org/parents/watch_d__o__g__s',
+		'https://mullenixridge.skschools.org/teachers',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'south_kitsap'

@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='section_wrapper').find_all('form') != []:
+		if web_soup.find(id='contentdiv').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='section_wrapper').find_all('embed') != []:
+		if web_soup.find(id='contentdiv').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='section_wrapper').find_all('iframe') != []:
+		if web_soup.find(id='contentdiv').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='section_wrapper').find_all(id='calendar') != []:
+		if web_soup.find(id='contentdiv').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='section_wrapper').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='section_wrapper').find_all(id='news-list') != []:
+		if web_soup.find(id='contentdiv').find_all(id='news-list') != []:
 			news = 'news'
 
 		if web_soup.find(class_='menu-ec-pages-menu-container') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='section_wrapper') != None and web_soup.find(class_='section_wrapper') != '':
-			col1 = web_soup.find(class_='section_wrapper')
+		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
+			col1 = web_soup.find(id='contentdiv')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -235,9 +235,9 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.crossingsschool.org'
+	district = 'https://www.wlschools.org'
 	all_sites = [
-		f'{district}',
+		f'{district}/page.cfm?p=63',
 		# f'{district}/1/home',
 		# f'{district}/2/home',
 		# f'{district}/3/home',
@@ -285,7 +285,7 @@ if __name__ == '__main__':
 
 				page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(class_='menu_wrapper')
+				sitemap = soup.find(id='contentdiv')
 				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(id='dhtmlmenu_527')

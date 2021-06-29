@@ -238,10 +238,10 @@ if __name__ == '__main__':
 	district = 'https://www.wlschools.org'
 	all_sites = [
 		f'{district}/page.cfm?p=63',
-		# f'{district}/1/home',
-		# f'{district}/2/home',
-		# f'{district}/3/home',
-		# f'{district}/4/home',
+		# f'{district}/page.cfm?p=1',
+		# f'{district}/page.cfm?p=511',
+		# f'{district}/page.cfm?p=513',
+		# f'{district}/page.cfm?p=512',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
@@ -249,10 +249,11 @@ if __name__ == '__main__':
 		# f'{district}/4/home',
 	]
 	schools = [
-		'district',
-		# 'Lanesborough Elementary School',
-		# 'Williamstown Elementary School',
-		# 'Mt Greylock Regional School',
+		'sitemap',
+		# 'district',
+		# 'les',
+		# 'mgrs',
+		# 'wes',
 		# 'ae',
 		# 'aelc',
 		# 'pa',
@@ -270,29 +271,29 @@ if __name__ == '__main__':
 		csv_report = csv.writer(csv_report)
 		s = 0
 
-		with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}.csv', 'w', encoding='utf-8') as csv_main:
-			csv_writer = csv.writer(csv_main)
-			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
+		for site in all_sites:
+			s += 1
+			page_counter = 0
+			issue_pages_counter = 0
+			split_slash = site.split('/')
+			split_dot = site.split('.')
+			split_mixed = site.split('/')[2].split('.')
+			all_links = []
 
-			for site in all_sites:
-				s += 1
-				page_counter = 0
-				issue_pages_counter = 0
-				split_slash = site.split('/')
-				split_dot = site.split('.')
-				split_mixed = site.split('/')[2].split('.')
-				all_links = []
+			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
+			soup = BeautifulSoup(page, 'html.parser')
+			sitemap = soup.find(id='contentdiv')
+			list_items = sitemap.select('ul > li')
 
-				page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
-				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='contentdiv')
-				list_items = sitemap.select('ul > li')
+			# sitemap2 = soup.find(id='dhtmlmenu_527')
+			# list_items2 = sitemap2.select('ul > li')
 
-				# sitemap2 = soup.find(id='dhtmlmenu_527')
-				# list_items2 = sitemap2.select('ul > li')
+			school_name = f'{split_dot[1]}_{schools[s - 1]}'
+			csv_report.writerow(['School name', school_name])
 
-				school_name = f'{split_dot[1]}_{schools[s - 1]}'
-				csv_report.writerow(['School name', school_name])
+			with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
+				csv_writer = csv.writer(csv_main)
+				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')

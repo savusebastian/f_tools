@@ -284,6 +284,7 @@ if __name__ == '__main__':
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
+			print(list_items)
 
 			# sitemap2 = soup.find(id='dhtmlmenu_527')
 			# list_items2 = sitemap2.select('ul > li')

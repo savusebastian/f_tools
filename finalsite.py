@@ -267,7 +267,7 @@ if __name__ == '__main__':
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open(f'../f_web_interface/static/files/{mainfolder}/report1.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report2.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 		s = 0
 

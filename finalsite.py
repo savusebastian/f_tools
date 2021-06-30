@@ -237,8 +237,8 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.wlschools.org'
 	all_sites = [
-		f'{district}/page.cfm?p=63',
-		# f'{district}/page.cfm?p=1',
+		# f'{district}/page.cfm?p=63',
+		f'{district}/page.cfm?p=1',
 		# f'{district}/page.cfm?p=511',
 		# f'{district}/page.cfm?p=513',
 		# f'{district}/page.cfm?p=512',
@@ -249,8 +249,8 @@ if __name__ == '__main__':
 		# f'{district}/4/home',
 	]
 	schools = [
-		'sitemap',
-		# 'district',
+		# 'sitemap',
+		'district',
 		# 'les',
 		# 'mgrs',
 		# 'wes',
@@ -282,20 +282,20 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='contentdiv')
+			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
 
-			# sitemap2 = soup.find(id='dhtmlmenu_499')
-			# list_items2 = sitemap2.select('ul > li')
-			#
-			# sitemap3 = soup.find(id='dhtmlmenu_500')
-			# list_items3 = sitemap3.select('ul > li')
-			#
-			# sitemap4 = soup.find(id='dhtmlmenu_1028')
-			# list_items4 = sitemap4.select('ul > li')
-			#
-			# sitemap5 = soup.find(id='dhtmlmenu_1167')
-			# list_items5 = sitemap5.select('ul > li')
+			sitemap2 = soup.find(id='dhtmlmenu_499')
+			list_items2 = sitemap2.select('ul > li')
+
+			sitemap3 = soup.find(id='dhtmlmenu_500')
+			list_items3 = sitemap3.select('ul > li')
+
+			sitemap4 = soup.find(id='dhtmlmenu_1028')
+			list_items4 = sitemap4.select('ul > li')
+
+			sitemap5 = soup.find(id='dhtmlmenu_1167')
+			list_items5 = sitemap5.select('ul > li')
 
 			# sitemap6 = soup.find(id='dhtmlmenu_532')
 			# list_items6 = sitemap6.select('ul > li')
@@ -307,10 +307,10 @@ if __name__ == '__main__':
 			# list_items8 = sitemap8.select('ul > li')
 
 
-			# list_items.extend(list_items2)
-			# list_items.extend(list_items3)
-			# list_items.extend(list_items4)
-			# list_items.extend(list_items5)
+			list_items.extend(list_items2)
+			list_items.extend(list_items3)
+			list_items.extend(list_items4)
+			list_items.extend(list_items5)
 			# list_items.extend(list_items6)
 			# list_items.extend(list_items7)
 			# list_items.extend(list_items8)

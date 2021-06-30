@@ -237,11 +237,11 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.wlschools.org'
 	all_sites = [
-		f'{district}/page.cfm?p=63',
-		# f'{district}/page.cfm?p=1',
-		# f'{district}/page.cfm?p=511',
-		# f'{district}/page.cfm?p=513',
-		# f'{district}/page.cfm?p=512',
+		# f'{district}/page.cfm?p=63',
+		f'{district}/page.cfm?p=1',
+		f'{district}/page.cfm?p=511',
+		f'{district}/page.cfm?p=513',
+		f'{district}/page.cfm?p=512',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
@@ -249,11 +249,11 @@ if __name__ == '__main__':
 		# f'{district}/4/home',
 	]
 	schools = [
-		'sitemap',
-		# 'district',
-		# 'les',
-		# 'mgrs',
-		# 'wes',
+		# 'sitemap',
+		'district',
+		'les',
+		'mgrs',
+		'wes',
 		# 'ae',
 		# 'aelc',
 		# 'pa',
@@ -282,7 +282,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='contentdiv')
+			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_527')

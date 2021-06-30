@@ -240,8 +240,8 @@ if __name__ == '__main__':
 		# f'{district}/page.cfm?p=63',
 		# f'{district}/page.cfm?p=1',
 		# f'{district}/page.cfm?p=511',
-		# f'{district}/page.cfm?p=513',
-		f'{district}/page.cfm?p=512',
+		f'{district}/page.cfm?p=513',
+		# f'{district}/page.cfm?p=512',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
@@ -252,8 +252,8 @@ if __name__ == '__main__':
 		# 'sitemap',
 		# 'district',
 		# 'les',
-		# 'mgrs',
-		'wes',
+		'mgrs',
+		# 'wes',
 		# 'ae',
 		# 'aelc',
 		# 'pa',
@@ -285,26 +285,26 @@ if __name__ == '__main__':
 			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='dhtmlmenu_557')
+			sitemap2 = soup.find(id='dhtmlmenu_527')
 			list_items2 = sitemap2.select('ul > li')
 
-			sitemap3 = soup.find(id='dhtmlmenu_616')
+			sitemap3 = soup.find(id='dhtmlmenu_529')
 			list_items3 = sitemap3.select('ul > li')
 
-			sitemap4 = soup.find(id='dhtmlmenu_618')
+			sitemap4 = soup.find(id='dhtmlmenu_530')
 			list_items4 = sitemap4.select('ul > li')
 
-			sitemap5 = soup.find(id='dhtmlmenu_651')
+			sitemap5 = soup.find(id='dhtmlmenu_531')
 			list_items5 = sitemap5.select('ul > li')
 
-			sitemap6 = soup.find(id='dhtmlmenu_656')
+			sitemap6 = soup.find(id='dhtmlmenu_532')
 			list_items6 = sitemap6.select('ul > li')
 
-			# sitemap7 = soup.find(id='dhtmlmenu_643')
-			# list_items7 = sitemap7.select('ul > li')
-			#
-			# sitemap8 = soup.find(id='dhtmlmenu_941')
-			# list_items8 = sitemap8.select('ul > li')
+			sitemap7 = soup.find(id='dhtmlmenu_643')
+			list_items7 = sitemap7.select('ul > li')
+
+			sitemap8 = soup.find(id='dhtmlmenu_941')
+			list_items8 = sitemap8.select('ul > li')
 
 
 			list_items.extend(list_items2)
@@ -312,8 +312,8 @@ if __name__ == '__main__':
 			list_items.extend(list_items4)
 			list_items.extend(list_items5)
 			list_items.extend(list_items6)
-			# list_items.extend(list_items7)
-			# list_items.extend(list_items8)
+			list_items.extend(list_items7)
+			list_items.extend(list_items8)
 
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

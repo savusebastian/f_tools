@@ -167,13 +167,13 @@ def get_content(web_page):
 		if web_soup.find(id='contentdiv').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='contentdiv').find_all(id='calendar') != []:
+		if web_soup.find(id='contentdiv').find_all(id='calendarcon') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='contentdiv').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='fsDirEntry') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='contentdiv').find_all(id='news-list') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='newspostitem') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='menu-ec-pages-menu-container') != None:
@@ -267,7 +267,7 @@ if __name__ == '__main__':
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report1.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 		s = 0
 

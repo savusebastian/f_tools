@@ -239,9 +239,9 @@ if __name__ == '__main__':
 	all_sites = [
 		# f'{district}/page.cfm?p=63',
 		f'{district}/page.cfm?p=1',
-		f'{district}/page.cfm?p=511',
-		f'{district}/page.cfm?p=513',
-		f'{district}/page.cfm?p=512',
+		# f'{district}/page.cfm?p=511',
+		# f'{district}/page.cfm?p=513',
+		# f'{district}/page.cfm?p=512',
 		# f'{district}/5/home',
 		# f'{district}/6/home',
 		# f'{district}/10/home',
@@ -251,9 +251,9 @@ if __name__ == '__main__':
 	schools = [
 		# 'sitemap',
 		'district',
-		'les',
-		'mgrs',
-		'wes',
+		# 'les',
+		# 'mgrs',
+		# 'wes',
 		# 'ae',
 		# 'aelc',
 		# 'pa',
@@ -284,10 +284,39 @@ if __name__ == '__main__':
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
-			print(list_items)
 
-			# sitemap2 = soup.find(id='dhtmlmenu_527')
-			# list_items2 = sitemap2.select('ul > li')
+			sitemap2 = soup.find(id='dhtmlmenu_499')
+			list_items2 = sitemap2.select('ul > li')
+
+			sitemap3 = soup.find(id='dhtmlmenu_500')
+			list_items3 = sitemap3.select('ul > li')
+
+			sitemap4 = soup.find(id='dhtmlmenu_1028')
+			list_items4 = sitemap4.select('ul > li')
+
+			sitemap5 = soup.find(id='dhtmlmenu_1167')
+			list_items5 = sitemap5.select('ul > li')
+
+			# sitemap6 = soup.find(id='dhtmlmenu_527')
+			# list_items6 = sitemap6.select('ul > li')
+
+			# sitemap7 = soup.find(id='dhtmlmenu_527')
+			# list_items7 = sitemap7.select('ul > li')
+
+			# sitemap8 = soup.find(id='dhtmlmenu_527')
+			# list_items8 = sitemap8.select('ul > li')
+
+			# sitemap9 = soup.find(id='dhtmlmenu_527')
+			# list_items9 = sitemap9.select('ul > li')
+
+			list_items.extend(list_items2)
+			list_items.extend(list_items3)
+			list_items.extend(list_items4)
+			list_items.extend(list_items5)
+			# list_items.extend(list_items6)
+			# list_items.extend(list_items7)
+			# list_items.extend(list_items8)
+			# list_items.extend(list_items9)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])

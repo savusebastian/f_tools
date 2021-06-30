@@ -238,8 +238,8 @@ if __name__ == '__main__':
 	district = 'https://www.wlschools.org'
 	all_sites = [
 		# f'{district}/page.cfm?p=63',
-		f'{district}/page.cfm?p=1',
-		# f'{district}/page.cfm?p=511',
+		# f'{district}/page.cfm?p=1',
+		f'{district}/page.cfm?p=511',
 		# f'{district}/page.cfm?p=513',
 		# f'{district}/page.cfm?p=512',
 		# f'{district}/5/home',
@@ -250,8 +250,8 @@ if __name__ == '__main__':
 	]
 	schools = [
 		# 'sitemap',
-		'district',
-		# 'les',
+		# 'district',
+		'les',
 		# 'mgrs',
 		# 'wes',
 		# 'ae',
@@ -285,16 +285,16 @@ if __name__ == '__main__':
 			sitemap = soup.find(class_='main-nav')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='dhtmlmenu_499')
+			sitemap2 = soup.find(id='dhtmlmenu_525')
 			list_items2 = sitemap2.select('ul > li')
 
-			sitemap3 = soup.find(id='dhtmlmenu_500')
+			sitemap3 = soup.find(id='dhtmlmenu_576')
 			list_items3 = sitemap3.select('ul > li')
 
-			sitemap4 = soup.find(id='dhtmlmenu_1028')
+			sitemap4 = soup.find(id='dhtmlmenu_620')
 			list_items4 = sitemap4.select('ul > li')
 
-			sitemap5 = soup.find(id='dhtmlmenu_1167')
+			sitemap5 = soup.find(id='dhtmlmenu_675')
 			list_items5 = sitemap5.select('ul > li')
 
 			# sitemap6 = soup.find(id='dhtmlmenu_527')

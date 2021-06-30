@@ -176,8 +176,8 @@ def get_content(web_page):
 		if web_soup.find(id='contentdiv').find_all(id='news-list') != []:
 			news = 'news'
 
-		if web_soup.find(class_='menu-ec-pages-menu-container') != None:
-			page_nav = web_soup.find(class_='menu-ec-pages-menu-container').find_all('a')
+		# if web_soup.find(class_='menu-ec-pages-menu-container') != None:
+		# 	page_nav = web_soup.find(class_='menu-ec-pages-menu-container').find_all('a')
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 

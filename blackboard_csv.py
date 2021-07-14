@@ -291,16 +291,16 @@ if __name__ == '__main__':
 
 							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
 							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
+								csv_writer.writerow([str(page_link), school, t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
 							else:
 								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+									csv_writer.writerow([str(page_link), school, t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
 								else:
 									page_counter += 1
 									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 									issue_pages_counter += content_ipc
 
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+									csv_writer.writerow([str(page_link), school, t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])

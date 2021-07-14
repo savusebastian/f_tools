@@ -235,7 +235,19 @@ if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
 		'https://www.gisd.org/site/Default.aspx?PageType=15&SiteID=8&SectionMax=50&DirectoryType=6',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=3948&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=103&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=203&DirectoryType=6&SectionMax=50',
 		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=926&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=579&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=306&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=453&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=382&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=149&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=627&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=712&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=798&DirectoryType=6&SectionMax=50',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=860&DirectoryType=6&SectionMax=50',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

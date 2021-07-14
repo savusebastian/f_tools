@@ -174,10 +174,10 @@ def get_content(web_page):
 		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='headlines') != []:
 			news = 'news'
 
-		if web_soup.find(class_='section-navigation') != None:
-			page_nav = web_soup.find(class_='section-navigation').find_all('a')
-		elif web_soup.find(class_='page-navigation') != None:
-			page_nav = web_soup.find(class_='page-navigation').find_all('a')
+		# if web_soup.find(class_='section-navigation') != None:
+		# 	page_nav = web_soup.find(class_='section-navigation').find_all('a')
+		# elif web_soup.find(class_='page-navigation') != None:
+		# 	page_nav = web_soup.find(class_='page-navigation').find_all('a')
 
 		# First column
 		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':

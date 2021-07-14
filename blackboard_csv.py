@@ -247,6 +247,7 @@ if __name__ == '__main__':
 		for site in all_sites:
 			page_counter = 0
 			issue_pages_counter = 0
+			all_links = []
 
 			splitter = site.split('/')
 			page = requests.get(site).content

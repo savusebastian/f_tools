@@ -55,7 +55,7 @@ def remove_tags(text):
 	return text.strip()
 
 
-def get_column(col, splitter):
+def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
@@ -126,7 +126,7 @@ def get_column(col, splitter):
 	return col
 
 
-def get_content(web_page, splitter):
+def get_content(web_page):
 	col1 = 'Flagged'
 	col2, col3, col4 = '', '', ''
 	col_num = '1'
@@ -182,7 +182,7 @@ def get_content(web_page, splitter):
 		# First column
 		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':
 			col1 = web_soup.find(id='sw-content-layout-wrapper')
-			col1 = get_column(col1, splitter)
+			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
 
@@ -247,9 +247,11 @@ if __name__ == '__main__':
 		for site in all_sites:
 			page_counter = 0
 			issue_pages_counter = 0
+			split_slash = site.split('/')
+			split_dot = site.split('.')
+			split_mixed = site.split('/')[2].split('.')
 			all_links = []
 
-			splitter = site.split('/')
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='sw-sitemap')

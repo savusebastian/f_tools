@@ -12,7 +12,7 @@ def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()
 
-		if tag.contents == []:
+		if tag.contents == [] or (len(tag.contents) < 2 and tag.contents[0] == '\xa0'):
 			tag.decompose()
 
 
@@ -20,6 +20,13 @@ def remove_tags(text):
 	div = re.compile(r'<div[^>]+>')
 	dive = re.compile(r'<div+>')
 	divc = re.compile(r'</div+>')
+	link = re.compile(r'<link[^>]+>')
+	section = re.compile(r'<section[^>]+>')
+	sectione = re.compile(r'<section+>')
+	sectionc = re.compile(r'</section+>')
+	article = re.compile(r'<article[^>]+>')
+	articlee = re.compile(r'<article+>')
+	articlec = re.compile(r'</article+>')
 	span = re.compile(r'<span+>')
 	spane = re.compile(r'<span[^>]+>')
 	spanc = re.compile(r'</span+>')
@@ -30,6 +37,13 @@ def remove_tags(text):
 	text = div.sub('', text)
 	text = dive.sub('', text)
 	text = divc.sub('', text)
+	text = link.sub('', text)
+	text = section.sub('', text)
+	text = sectione.sub('', text)
+	text = sectionc.sub('', text)
+	text = article.sub('', text)
+	text = article.sub('', text)
+	text = articlec.sub('', text)
 	text = span.sub('', text)
 	text = spane.sub('', text)
 	text = spanc.sub('', text)
@@ -127,7 +141,7 @@ def get_content(web_page, splitter):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	# print(web_page)
+	print(web_page)
 
 	try:
 		web_link = requests.get(web_page, timeout=10).content
@@ -166,33 +180,27 @@ def get_content(web_page, splitter):
 			page_nav = web_soup.find(class_='page-navigation').find_all('a')
 
 		# First column
-		if web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container1') != None and web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container1') != '':
-			col1 = web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container1')
+		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':
+			col1 = web_soup.find(id='sw-content-layout-wrapper')
 			col1 = get_column(col1, splitter)
 		else:
 			issue_pages_counter = 1
 
-		if web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container2') != None and web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container2') != '':
-			col2 = web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container2')
-			col2 = get_column(col2, splitter)
-
-		if web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container3') != None and web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container3') != '':
-			col3 = web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container3')
-			col3 = get_column(col3, splitter)
-
-		if web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container4') != None and web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container4') != '':
-			col4 = web_soup.find(id='sw-content-layout-wrapper').find(id='sw-content-container4')
-			col4 = get_column(col4, splitter)
-
 		col1 = str(col1)
-		col4 = str(col2) + str(col3) + str(col4)
 
-		if len(col1) > 150000:
+		if len(col1) > 200000:
 			col1 = 'Flagged'
 			col2 = 'This page has too much content'
 			col3 = ''
 			col4 = ''
 			col_num = '2'
+			issue_pages_counter = 1
+		elif len(col1) > 150000:
+			col2 = col1[50000:100000]
+			col3 = col1[100000:150000]
+			col4 = col1[150000:]
+			col1 = col1[:50000]
+			col_num = '4'
 			issue_pages_counter = 1
 		elif len(col1) > 100000:
 			col2 = col1[50000:100000]
@@ -217,7 +225,7 @@ def get_content(web_page, splitter):
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
 	# else:
-	except:
+	except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
@@ -226,9 +234,8 @@ def get_content(web_page, splitter):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.satsumaschools.com/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=15',
-		'https://www.satsumaschools.com/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=15',
-		'https://www.satsumaschools.com/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=15',
+		'https://www.gisd.org/site/Default.aspx?PageType=15&SiteID=8&SectionMax=50&DirectoryType=6',
+		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=926&DirectoryType=6&SectionMax=50',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
@@ -261,67 +268,67 @@ if __name__ == '__main__':
 
 				for item in list_items[1:]:
 					group_links = item.find_all('a')
+					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier'
 
 					for link in group_links:
-						external_link = False
+						href = link.get('href')
+						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 
-						if link.get('href')[0] == '#':
-							page_link = '#'
-						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':
-							page_link = splitter[0] + link.get('href')
-						elif link.get('href')[0] == '/':
-							page_link = splitter[0] + '//' + splitter[2] + link.get('href')
-						elif link.get('href')[:4] == 'http':
-							page_link = link.get('href')
-
-							if link.get('href').find(splitter[2].split('.')[1]) == -1:
-								external_link = True
+						if len(href) > 1 and href[:2] == '//':
+							page_link = f'{split_slash[0]}{href}'
+						elif len(href) > 0 and href[0] == '/':
+							page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+						elif len(href) > 4 and href[:4] == 'http':
+							page_link = href
 						else:
-							page_link = splitter[0] + '//' + splitter[2] + '/' + link.get('href')
+							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-						if not external_link:
-							page_counter += 1
-							col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)
-							issue_pages_counter += content_ipc
+						if page_link not in all_links:
+							all_links.append(page_link)
 
-							if group_links[0].get_text() != link.get_text():
-								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
 							else:
-								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), '', '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+								else:
+									page_counter += 1
+									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+									issue_pages_counter += content_ipc
 
-							if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-								csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
-							if nav_sec != None and nav_sec != '' and nav_sec != []:
-								for nav_link in nav_sec:
-									external_link = False
+									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-									if nav_link.get('href')[0] == '#':
-										page_link = '#'
-									elif len(nav_link.get('href')) > 1 and nav_link.get('href')[:2] == '//':
-										page_link = splitter[0] + nav_link.get('href')
-									elif nav_link.get('href')[0] == '/':
-										page_link = splitter[0] + '//' + splitter[2] + nav_link.get('href')
-									elif nav_link.get('href')[:4] == 'http':
-										page_link = nav_link.get('href')
+									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										for nav_link in nav_sec:
+											href = nav_link.get('href')
 
-										if nav_link.get('href').find(splitter[2].split('.')[1]) == -1:
-											external_link = True
-									else:
-										page_link = splitter[0] + '//' + splitter[2] + '/' + nav_link.get('href')
+											if len(href) > 1 and href[:2] == '//':
+												page_link = f'{split_slash[0]}{href}'
+											elif len(href) > 0 and href[0] == '/':
+												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+											elif len(href) > 4 and href[:4] == 'http':
+												page_link = href
+											else:
+												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-									if not external_link:
-										page_counter += 1
-										nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)
-										issue_pages_counter += content_ipc
-										csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											else:
+												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												else:
+													page_counter += 1
+													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+													issue_pages_counter += content_ipc
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
 
-										if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-											csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
-									else:
-										csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', '1', 'Linked page', '', '', '', '', '', ''])
-						else:
-							csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

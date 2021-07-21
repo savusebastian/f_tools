@@ -367,7 +367,7 @@ if __name__ == '__main__':
 		'https://www.briarcrest.com/student-laptop-pickup',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'south_kitsap'
+	mainfolder = 'briarcrest'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

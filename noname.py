@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='pageContent').find_all('form') != []:
+		if web_soup.find(id='layout_region_2').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='pageContent').find_all('embed') != []:
+		if web_soup.find(id='layout_region_2').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='pageContent').find_all('iframe') != []:
+		if web_soup.find(id='layout_region_2').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='pageContent').find_all(id='calendar') != []:
+		if web_soup.find(id='layout_region_2').find_all(class_='calendargrid') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='pageContent').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='layout_region_2').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='pageContent').find_all(id='news-list') != []:
+		if web_soup.find(id='layout_region_2').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
-			col1 = web_soup.find(class_='pageContent')
+		if web_soup.find(id='layout_region_2') != None and web_soup.find(id='layout_region_2') != '':
+			col1 = web_soup.find(id='layout_region_2')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,67 +236,135 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://burleyglenwood.skschools.org/our_school',
-		'https://burleyglenwood.skschools.org/our_school/attendance',
-		'https://burleyglenwood.skschools.org/our_school/inclement_weather',
-		'https://burleyglenwood.skschools.org/our_school/library',
-		'https://burleyglenwood.skschools.org/our_school/library/Destiny',
-		'https://burleyglenwood.skschools.org/our_school/library/visiting_the_library',
-		'https://burleyglenwood.skschools.org/our_school/library/golden_book_classrooms',
-		'https://burleyglenwood.skschools.org/our_school/library/junior_librarians',
-		'https://burleyglenwood.skschools.org/our_school/library/book_donations',
-		'https://burleyglenwood.skschools.org/our_school/library/computers_in_the_library',
-		'https://burleyglenwood.skschools.org/our_school/library/damaged_or_lost_books',
-		'https://burleyglenwood.skschools.org/our_school/library/accelerated_reader___a_r_',
-		'https://burleyglenwood.skschools.org/our_school/library/common_sense_media',
-		'https://burleyglenwood.skschools.org/our_school/library/library_priority_standards',
-		'https://burleyglenwood.skschools.org/our_school/library/learning_target_rubric',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/fair_use_notice',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/citations',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/image_resources',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/informational_literacy',
-		'https://burleyglenwood.skschools.org/our_school/library/technology_tips_and_links/kitsap_regional_library',
-		'https://burleyglenwood.skschools.org/our_school/meet_the_office_staff',
-		'https://burleyglenwood.skschools.org/our_school/mission_and_vision',
-		'https://burleyglenwood.skschools.org/our_school/new_to_our_school',
-		'https://burleyglenwood.skschools.org/our_school/school_newsletter',
-		'https://burleyglenwood.skschools.org/our_school/school_report',
-		'https://burleyglenwood.skschools.org/our_school/staff_directory',
-		'https://burleyglenwood.skschools.org/our_school/tip_line',
-		'https://burleyglenwood.skschools.org/our_school/title_i___l_a_p_information',
-		'https://burleyglenwood.skschools.org/our_school/web_store',
-		'https://burleyglenwood.skschools.org/our_school/a_s_b_fund_balance_link',
-		'https://burleyglenwood.skschools.org/students',
-		'https://burleyglenwood.skschools.org/students/accelerated_reader',
-		'https://burleyglenwood.skschools.org/students/calendars',
-		'https://burleyglenwood.skschools.org/students/character_counts',
-		'https://burleyglenwood.skschools.org/students/homeless_education_assistance',
-		'https://burleyglenwood.skschools.org/students/kelso_s_choices',
-		'https://burleyglenwood.skschools.org/students/kid-_friendly_programs___burley_glenwood',
-		'https://burleyglenwood.skschools.org/students/kids_at_hope',
-		'https://burleyglenwood.skschools.org/students/lunch_menu',
-		'https://burleyglenwood.skschools.org/students/RazKids',
-		'https://burleyglenwood.skschools.org/students/spanish_immersion',
-		'https://burleyglenwood.skschools.org/students/strings_class',
-		'https://burleyglenwood.skschools.org/students/student_dress_code',
-		'https://burleyglenwood.skschools.org/students/student_recognition',
-		'https://burleyglenwood.skschools.org/students/supply_list',
-		'https://burleyglenwood.skschools.org/parents',
-		'https://burleyglenwood.skschools.org/parents/make_a_donation',
-		'https://burleyglenwood.skschools.org/parents/community_resources',
-		'https://burleyglenwood.skschools.org/parents/military_families',
-		'https://burleyglenwood.skschools.org/parents/skyward',
-		'https://burleyglenwood.skschools.org/parents/volunteer',
-		'https://burleyglenwood.skschools.org/parents/w_a_t_c_h_d__o__g__s_',
-		'https://burleyglenwood.skschools.org/parents/p_t_s_o',
-		'https://burleyglenwood.skschools.org/parents/p_t_s_o/p_t_s_a_district_council',
-		'https://burleyglenwood.skschools.org/parents/title_i___lap_information',
-		'https://burleyglenwood.skschools.org/parents/a__r__home_links',
-		'https://burleyglenwood.skschools.org/parents/y_m_c_a_before_and_after_school_program',
-		'https://burleyglenwood.skschools.org/parents/homeless_education_assistance',
-		'https://burleyglenwood.skschools.org/teachers',
-		'https://burleyglenwood.skschools.org/lund',
+		'https://www.briarcrest.com/admissions',
+		'https://www.briarcrest.com/admissions/visit-briarcrest',
+		'https://www.briarcrest.com/admissions/visit-briarcrest/inquiry-form',
+		'https://www.briarcrest.com/admissions/apply-to-briarcrest',
+		'https://www.briarcrest.com/list-detail?pk=140752&fromId=209281',
+		'https://www.briarcrest.com/admissions/tuition--financial-aid',
+		'https://sssandtadsfa.force.com/familyportal/FamilyLogin?startURL=%2Ffamilyportal',
+		'https://www.briarcrest.com/admissions/student-and-family-policies',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/attendance-policies',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/biblical-principles-policy',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/student-code-of-conduct',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/handgun-carry-policy',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/textbook-sales-policy',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/uniform-policy',
+		'https://www.briarcrest.com/admissions/student-and-family-policies/vaccination-policy',
+		'https://www.briarcrest.com/admissions/virtual-open-house',
+		'https://www.briarcrest.com/about/why-briarcrest',
+		'https://www.briarcrest.com/about/at-a-glance',
+		'https://www.briarcrest.com/about/mission--values',
+		'https://www.briarcrest.com/about/administration--staff',
+		'https://www.briarcrest.com/about/history',
+		'https://www.briarcrest.com/about/employment',
+		'https://www.briarcrest.com/about/facilities',
+		'https://www.briarcrest.com/about/videos',
+		'https://www.briarcrest.com/academics',
+		'https://www.briarcrest.com/academics/philosophy',
+		'https://www.briarcrest.com/academics/elementary-school--prek-gr-5',
+		'https://www.briarcrest.com/academics/middle-school--gr-6-8',
+		'https://www.briarcrest.com/academics/high-school--gr-9-12',
+		'https://www.briarcrest.com/academics/high-school--gr-9-12',
+		'https://www.briarcrest.com/academics/education-support-services-ess',
+		'https://www.briarcrest.com/academics/college-counseling',
+		'https://www.briarcrest.com/academics/tutoring',
+		'https://www.briarcrest.com/academics/technology',
+		'https://www.briarcrest.com/academics/career-conference',
+		'https://www.briarcrest.com/arts',
+		'https://www.briarcrest.com/arts/overview',
+		'https://www.briarcrest.com/arts/vocal-music',
+		'https://www.briarcrest.com/arts/instrumental-music?siteId=978',
+		'https://www.briarcrest.com/arts/instrumental-music/instrumental-music-facilities',
+		'https://www.briarcrest.com/arts/instrumental-music/marching-band-invitational',
+		'https://www.briarcrest.com/arts/theater?siteId=978',
+		'https://www.briarcrest.com/arts/visual-arts?siteId=978',
+		'https://www.briarcrest.com/arts/visual-arts/brace?siteId=978',
+		'https://www.briarcrest.com/arts/technical-production',
+		'https://www.briarcrest.com/arts/conservatory',
+		'https://www.briarcrest.com/arts/hall-of-fame',
+		'https://www.briarcrest.com/arts/briarcrest-arts',
+		'https://briarcrest.myschoolapp.com/page/arts/briarcrest-arts/briarcrestarts-family-membership?siteId=978&ssl=1',
+		'https://www.briarcrest.com/athletics',
+		'https://www.briarcrest.com/athletics/overview',
+		'https://www.briarcrest.com/athletics/overview/elementary-school',
+		'https://www.briarcrest.com/athletics/overview/middle-school',
+		'https://www.briarcrest.com/athletics/overview/high-school',
+		'https://www.briarcrest.com/athletics/championships--honors',
+		'https://www.briarcrest.com/athletics/college-athletes',
+		'https://www.briarcrest.com/athletics/sports-medicine',
+		'https://www.briarcrest.com/athletics/golden-saints-booster-club',
+		'https://www.briarcrest.com/athletics/watch-live',
+		'https://www.briarcrest.com/spiritual-life?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/elementary-school?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/middle-school?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/high-school?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/service?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/clubs--activities?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/mission-trips?siteId=978',
+		'https://www.briarcrest.com/spiritual-life/student-ministries?siteId=978',
+		'https://www.briarcrest.com/support',
+		'https://www.briarcrest.com/support/giving-to-briarcrest',
+		'https://www.briarcrest.com/support/the-briarcrest-fund',
+		'https://www.briarcrest.com/support/elementary-expansion',
+		'https://www.briarcrest.com/support/how-can-i-give',
+		'https://www.briarcrest.com/support/honor-someone',
+		'https://www.briarcrest.com/support/matching-gifts',
+		'https://www.briarcrest.com/support/legacy-giving',
+		'https://www.briarcrest.com/news',
+		'https://www.briarcrest.com/news',
+		'https://www.bcsaints.com/',
+		'https://www.briarcrest.com/parents',
+		'https://www.briarcrest.com/parents/general-information/back-to-school',
+		'https://www.briarcrest.com/parents/general-information/buzz-book',
+		'https://www.briarcrest.com/parents/high-school',
+		'https://www.briarcrest.com/parents/high-school/guidance',
+		'https://www.briarcrest.com/parents/high-school/senior-parent-info',
+		'https://www.briarcrest.com/parents/high-school/summer-assignments',
+		'https://www.briarcrest.com/parents/high-school/back-to-school-info',
+		'https://www.briarcrest.com/parents/high-school/ptf',
+		'https://www.briarcrest.com/parents/high-school/project-graduation',
+		'https://www.briarcrest.com/parents/middle-school',
+		'https://www.briarcrest.com/parents/middle-school/student-services',
+		'https://www.briarcrest.com/parents/middle-school/ptf',
+		'https://www.briarcrest.com/parents/middle-school/summer-assignments',
+		'https://www.briarcrest.com/parents/middle-school/back-to-school-info',
+		'https://www.briarcrest.com/parents/elementary',
+		'https://www.briarcrest.com/parents/elementary/student-services',
+		'https://www.briarcrest.com/parents/elementary/ptf',
+		'https://www.briarcrest.com/parents/elementary/summer-assignments',
+		'https://www.briarcrest.com/parents/elementary/back-to-school-info',
+		'https://www.briarcrest.com/parents/general-information/saint-shop',
+		'https://www.briarcrest.com/parents/briarcare',
+		'https://www.briarcrest.com/parents/health-services',
+		'https://www.briarcrest.com/parents/general-information/back-to-school',
+		'https://www.briarcrest.com/alumni/welcome',
+		'https://www.briarcrest.com/alumni/welcome',
+		'https://www.briarcrest.com/alumni/reunions-and-homecoming',
+		'https://www.briarcrest.com/alumni/awards',
+		'https://www.briarcrest.com/alumni/awards/paul-piper-award',
+		'https://www.briarcrest.com/alumni/awards/paul-piper-award/paul-piper-nomination',
+		'https://www.briarcrest.com/alumni/awards/paul-piper-award/paul-piper-hall-of-fame-recipient-list',
+		'https://www.briarcrest.com/alumni/awards/fine-arts-hall-of-fame',
+		'https://www.briarcrest.com/alumni/awards/fine-arts-hall-of-fame/fine-arts-hall-of-fame-nomination',
+		'https://www.briarcrest.com/alumni/awards/fine-arts-hall-of-fame/fine-arts-hall-of-fame-recipient-list',
+		'https://www.briarcrest.com/alumni/alumni-information-update',
+		'https://www.briarcrest.com/2018-brace-award-recipients?siteId=978',
+		'https://www.briarcrest.com/admissions-thank-you',
+		'https://www.briarcrest.com/after-school-xtra',
+		'https://www.briarcrest.com/briarcamp?siteId=978',
+		'https://www.briarcrest.com/buzzbook-opt-out-form',
+		'https://www.briarcrest.com/communications-and-media-policy',
+		'https://www.briarcrest.com/conservatory-registration',
+		'https://www.briarcrest.com/covid-19',
+		'https://www.briarcrest.com/donate-now',
+		'https://www.briarcrest.com/driver-application',
+		'https://www.briarcrest.com/enrollment-instructions',
+		'https://www.briarcrest.com/health-services',
+		'https://www.briarcrest.com/online-learning',
+		'https://www.briarcrest.com/parent-information-change-form',
+		'https://www.briarcrest.com/privacy-policy',
+		'https://www.briarcrest.com/student-laptop-pickup',
 	]
 	# mainfolder = all_sites[0].split('.')[1]
 	mainfolder = 'south_kitsap'
@@ -312,7 +380,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'south_kitsap_burleyglenwood'
+		school_name = 'briarcrest'
 
 		csv_report.writerow(['School name', school_name])
 

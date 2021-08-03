@@ -20,12 +20,12 @@ if __name__ == '__main__':
 	def check_by_class(web_page):
 		# try:
 			web_link = requests.get(web_page)
+			print(web_page)
 			web_soup = BeautifulSoup(web_link.content, 'html.parser')
 			links = web_soup.find('main').find_all('a')
 			o = []
 
 			for link in links:
-				print(link)
 				if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:25] == 'https://www.skschools.org' or link.get('href')[:24] == 'http://www.skschools.org' or link.get('href')[:21] == 'https://skschools.org' or link.get('href')[:20] == 'http://skschools.org'):
 					o.append(link)
 

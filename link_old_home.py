@@ -50,10 +50,10 @@ if __name__ == '__main__':
 		counter = 0
 
 		for link in urls:
-			if link.get_text()[0] != 'h':
-				d = check_by_class('https:' + link.get_text())
-			else:
-				d = check_by_class(link.get_text())
+			# if link.get_text()[0] != 'h':
+			# 	d = check_by_class('https:' + link.get_text())
+			# else:
+			d = check_by_class(link.get('href'))
 
 			if d != []:
 				print('Link:', link.get_text())

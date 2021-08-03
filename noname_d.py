@@ -157,22 +157,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find('main').find_all('form') != []:
+		if web_soup.find(class_='content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find('main').find_all('embed') != []:
+		if web_soup.find(class_='content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find('main').find_all('iframe') != []:
+		if web_soup.find(class_='content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find('main').find_all(id='calendar') != []:
+		if web_soup.find(class_='content').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find('main').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find('main').find_all(id='news-list') != []:
+		if web_soup.find(class_='content').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -181,8 +181,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find('main') != None and web_soup.find('main') != '':
-			col1 = web_soup.find('main')
+		if web_soup.find(class_='content') != None and web_soup.find(class_='content') != '':
+			col1 = web_soup.find(class_='content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,9 +236,9 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'http://www.paterson.k12.nj.us'
 	all_sites = [
-		# f'{district}',
-		f'https://act-pps-nj.schoolloop.com',
-		f'https://ps09-pps-nj.schoolloop.com',
+		f'{district}',
+		# f'https://act-pps-nj.schoolloop.com',
+		# f'https://ps09-pps-nj.schoolloop.com',
 		# f'https://ehs-pps-nj.schoolloop.com',
 		# f'https://soit-pps-nj.schoolloop.com',
 		# f'https://gopa-pps-nj.schoolloop.com',
@@ -296,9 +296,9 @@ if __name__ == '__main__':
 	# stem nu se incarca (science technology ...)
 	# ps04 nu se incarca (public school no 4)
 	schools = [
-		# 'district',
-		'act',
-		'ps09',
+		'district',
+		# 'act',
+		# 'ps09',
 		# 'ehs',
 		# 'soit',
 		# 'gopa',
@@ -377,37 +377,37 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(class_='sl-cms2-nav-holder')
+				sitemap = soup.find(class_='navigation')
 				list_items = sitemap.select('ul > li')
 
-				# sitemap2 = soup.find(id='quicklinks')
-				# list_items2 = sitemap2.select('ul > li')
+				sitemap2 = soup.find(id='quicklinks')
+				list_items2 = sitemap2.select('ul > li')
 
-				# sitemap3 = soup.find(id='bullying')
-				# list_items3 = sitemap3.select('ul > li')
-				#
-				# sitemap4 = soup.find(id='dropmenu1')
-				# list_items4 = sitemap4.select('ul > li')
-				#
-				# sitemap5 = soup.find(id='dropmenu2')
-				# list_items5 = sitemap5.select('ul > li')
-				#
-				# sitemap6 = soup.find(id='dropmenu3')
-				# list_items6 = sitemap6.select('ul > li')
-				#
-				# sitemap7 = soup.find(id='dropmenu4')
-				# list_items7 = sitemap7.select('ul > li')
-				#
-				# sitemap8 = soup.find(id='dropmenu5')
-				# list_items8 = sitemap8.select('ul > li')
+				sitemap3 = soup.find(id='bullying')
+				list_items3 = sitemap3.select('ul > li')
 
-				# list_items.extend(list_items2)
-				# list_items.extend(list_items3)
-				# list_items.extend(list_items4)
-				# list_items.extend(list_items5)
-				# list_items.extend(list_items6)
-				# list_items.extend(list_items7)
-				# list_items.extend(list_items8)
+				sitemap4 = soup.find(id='dropmenu1')
+				list_items4 = sitemap4.select('ul > li')
+
+				sitemap5 = soup.find(id='dropmenu2')
+				list_items5 = sitemap5.select('ul > li')
+
+				sitemap6 = soup.find(id='dropmenu3')
+				list_items6 = sitemap6.select('ul > li')
+
+				sitemap7 = soup.find(id='dropmenu4')
+				list_items7 = sitemap7.select('ul > li')
+
+				sitemap8 = soup.find(id='dropmenu5')
+				list_items8 = sitemap8.select('ul > li')
+
+				list_items.extend(list_items2)
+				list_items.extend(list_items3)
+				list_items.extend(list_items4)
+				list_items.extend(list_items5)
+				list_items.extend(list_items6)
+				list_items.extend(list_items7)
+				list_items.extend(list_items8)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])

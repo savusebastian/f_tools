@@ -5,7 +5,7 @@ import requests
 
 
 def check_by_class(web_page):
-	try:
+	# try:
 		web_link = requests.get(web_page)
 		web_soup = BeautifulSoup(web_link.content, 'html.parser')
 		links = web_soup.find('main').find_all('a')
@@ -17,8 +17,8 @@ def check_by_class(web_page):
 
 		return o
 
-	except Exception:
-		pass
+	# except Exception:
+	# 	pass
 		# print('Page not working:', web_page)
 
 

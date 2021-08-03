@@ -284,7 +284,6 @@ if __name__ == '__main__':
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
 				sitemap = soup.find(class_='navigation')
-				print(sitemap)
 				list_items = sitemap.select('ul > li')
 
 				sitemap2 = soup.find(id='quicklinks')
@@ -293,8 +292,28 @@ if __name__ == '__main__':
 				sitemap3 = soup.find(id='bullying')
 				list_items3 = sitemap3.select('ul > li')
 
+				sitemap4 = soup.find(id='dropmenu1')
+				list_items4 = sitemap4.select('ul > li')
+
+				sitemap5 = soup.find(id='dropmenu2')
+				list_items5 = sitemap5.select('ul > li')
+
+				sitemap6 = soup.find(id='dropmenu3')
+				list_items6 = sitemap6.select('ul > li')
+
+				sitemap7 = soup.find(id='dropmenu4')
+				list_items7 = sitemap7.select('ul > li')
+
+				sitemap8 = soup.find(id='dropmenu5')
+				list_items8 = sitemap8.select('ul > li')
+
 				list_items.extend(list_items2)
 				list_items.extend(list_items3)
+				list_items.extend(list_items4)
+				list_items.extend(list_items5)
+				list_items.extend(list_items6)
+				list_items.extend(list_items7)
+				list_items.extend(list_items8)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])

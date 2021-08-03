@@ -47,12 +47,8 @@ if __name__ == '__main__':
 		page = requests.get(url)
 		soup = BeautifulSoup(page.content, 'html.parser')
 		urls = soup.find('main').find_all('a')
-		counter = 0
 
 		for link in urls:
-			# if link.get_text()[0] != 'h':
-			# 	d = check_by_class('https:' + link.get_text())
-			# else:
 			print(url[:-9])
 			d = check_by_class(url[:-9] + link.get('href'))
 

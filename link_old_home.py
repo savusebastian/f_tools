@@ -18,7 +18,7 @@ def check_news(web_page):
 
 if __name__ == '__main__':
 	def check_by_class(web_page):
-		# try:
+		try:
 			web_link = requests.get(web_page)
 			print(web_page)
 			web_soup = BeautifulSoup(web_link.content, 'html.parser')
@@ -31,8 +31,8 @@ if __name__ == '__main__':
 
 			return o
 
-		# except:
-		# 	pass
+		except:
+			pass
 			# print('Page not working:', web_page)
 
 

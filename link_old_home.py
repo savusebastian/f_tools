@@ -24,10 +24,8 @@ if __name__ == '__main__':
 			links = web_soup.find('main').find_all('a')
 			o = []
 
-			print(links)
 			for link in links:
-				print(link)
-				if link.get('href')[:25] == 'https://www.skschools.org' or link.get('href')[:24] == 'http://www.skschools.org' or link.get('href')[:21] == 'https://skschools.org' or link.get('href')[:20] == 'http://skschools.org':
+				if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:25] == 'https://www.skschools.org' or link.get('href')[:24] == 'http://www.skschools.org' or link.get('href')[:21] == 'https://skschools.org' or link.get('href')[:20] == 'http://skschools.org'):
 					o.append(link)
 
 			return o

@@ -141,7 +141,7 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	print(web_page)
+	# print(web_page)
 
 	# if web_page != '#':
 	try:
@@ -157,22 +157,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='content').find_all('form') != []:
+		if web_soup.find('main').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='content').find_all('embed') != []:
+		if web_soup.find('main').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='content').find_all('iframe') != []:
+		if web_soup.find('main').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='content').find_all(id='calendar') != []:
+		if web_soup.find('main').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='content').find_all(class_='staff-directory') != []:
+		if web_soup.find('main').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='content').find_all(id='news-list') != []:
+		if web_soup.find('main').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -181,8 +181,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='content') != None and web_soup.find(class_='content') != '':
-			col1 = web_soup.find(class_='content')
+		if web_soup.find('main') != None and web_soup.find('main') != '':
+			col1 = web_soup.find('main')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -236,43 +236,137 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'http://www.paterson.k12.nj.us'
 	all_sites = [
-		f'{district}',
-		# f'{district}/1/Home',
-		# f'{district}/2/Home',
-		# f'{district}/3/home',
-		# f'{district}/4/home',
-		# f'{district}/5/home',
-		# f'{district}/6/home',
-		# f'{district}/10/home',
-		# f'{district}/3/home',
-		# f'{district}/4/home',
+		# f'{district}',
+		f'https://act-pps-nj.schoolloop.com',
+		f'https://ps09-pps-nj.schoolloop.com',
+		# f'https://ehs-pps-nj.schoolloop.com',
+		# f'https://soit-pps-nj.schoolloop.com',
+		# f'https://gopa-pps-nj.schoolloop.com',
+		# f'https://cahts-pps-nj.schoolloop.com',
+		# f'https://ihs-pps-nj.schoolloop.com',
+		# f'https://jfk-pps-nj.schoolloop.com',
+		# f'https://btmf-pps-nj.schoolloop.com',
+		# f'https://set-pps-nj.schoolloop.com',
+		# f'https://rphs-pps-nj.schoolloop.com',
+		# f'https://gma-pps-nj.schoolloop.com',
+		# f'https://panther-pps-nj.schoolloop.com',
+		# f'https://harp-pps-nj.schoolloop.com',
+		# f'https://stars-pps-nj.schoolloop.com',
+		# f'https://ps01-pps-nj.schoolloop.com',
+		# f'https://ps02-pps-nj.schoolloop.com',
+		# f'https://ps03-pps-nj.schoolloop.com',
+		# f'https://ps5-pps-nj.schoolloop.com',
+		# f'https://ps06-pps-nj.schoolloop.com',
+		# f'https://ps08-pps-nj.schoolloop.com',
+		# f'https://ps07-pps-nj.schoolloop.com',
+		# f'https://ps10-pps-nj.schoolloop.com',
+		# f'https://ps11-pps-nj.schoolloop.com',
+		# f'https://ps12-pps-nj.schoolloop.com',
+		# f'https://ps13-pps-nj.schoolloop.com',
+		# f'https://ps14-pps-nj.schoolloop.com',
+		# f'https://ps15-pps-nj.schoolloop.com',
+		# f'https://ps16-pps-nj.schoolloop.com',
+		# f'https://ps18-pps-nj.schoolloop.com',
+		# f'https://ps19-pps-nj.schoolloop.com',
+		# f'https://ps20-pps-nj.schoolloop.com',
+		# f'https://ps21-pps-nj.schoolloop.com',
+		# f'https://ps24-pps-nj.schoolloop.com',
+		# f'https://ps25-pps-nj.schoolloop.com',
+		# f'https://ps26-pps-nj.schoolloop.com',
+		# f'https://ps27-pps-nj.schoolloop.com',
+		# f'https://ps28-pps-nj.schoolloop.com',
+		# f'https://ps29-pps-nj.schoolloop.com',
+		# f'https://dale-pps-nj.schoolloop.com',
+		# f'https://elc-pps-nj.schoolloop.com',
+		# f'https://ewk-pps-nj.schoolloop.com',
+		# f'https://mlk-pps-nj.schoolloop.com',
+		# f'https://nrc-pps-nj.schoolloop.com',
+		# f'https://nsw-pps-nj.schoolloop.com',
+		# f'https://rc-pps-nj.schoolloop.com',
+		# f'https://dhas-pps-nj.schoolloop.com',
+		# f'https://aha-pps-nj.schoolloop.com',
+		# f'https://gta-pps-nj.schoolloop.com',
+		# f'https://dbta-pps-nj.schoolloop.com',
+		# f'https://ymla-pps-nj.schoolloop.com',
+		# f'https://ula-pps-nj.schoolloop.com',
+		# f'https://gfa-pps-nj.schoolloop.com',
+		# f'https://pace-pps-nj.schoolloop.com',
+		# f'https://sca-pps-nj.schoolloop.com',
 	]
+	# stem nu se incarca (science technology ...)
+	# ps04 nu se incarca (public school no 4)
 	schools = [
-		'district',
-		# 'Alcott Elementary',
-		# 'Annehurst Elementary',
-		# 'ae',
-		# 'aelc',
-		# 'pa',
-		# 'vvec',
-		# 'grcca',
-		# 'les',
-		# 'mjpes',
+		# 'district',
+		'act',
+		'ps09',
+		# 'ehs',
+		# 'soit',
+		# 'gopa',
+		# 'cahts',
+		# 'ihs',
+		# 'jfk',
+		# 'btmf',
+		# 'set',
+		# 'rphs',
+		# 'gma',
+		# 'panther',
+		# 'harp',
+		# 'stars',
+		# 'ps01',
+		# 'ps02',
+		# 'ps03',
+		# 'ps5',
+		# 'ps06',
+		# 'ps07',
+		# 'ps08',
+		# 'ps10',
+		# 'ps11',
+		# 'ps12',
+		# 'ps13',
+		# 'ps14',
+		# 'ps15',
+		# 'ps16',
+		# 'ps18',
+		# 'ps19',
+		# 'ps20',
+		# 'ps21',
+		# 'ps24',
+		# 'ps25',
+		# 'ps26',
+		# 'ps27',
+		# 'ps28',
+		# 'ps29',
+		# 'dale',
+		# 'elc',
+		# 'ewk',
+		# 'mlk',
+		# 'nrc',
+		# 'nsw',
+		# 'rc',
+		# 'dhas',
+		# 'aha',
+		# 'gta',
+		# 'dbta',
+		# 'ymla',
+		# 'ula',
+		# 'gfa',
+		# 'pace',
+		# 'sca',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
+	s = 0
 
 	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
-		s = 0
 
-		with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}.csv', 'w', encoding='utf-8') as csv_main:
-			csv_writer = csv.writer(csv_main)
-			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
+		for site in all_sites:
+			with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}_{schools[s - 1]}.csv', 'w', encoding='utf-8') as csv_main:
+				csv_writer = csv.writer(csv_main)
+				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-			for site in all_sites:
 				s += 1
 				page_counter = 0
 				issue_pages_counter = 0
@@ -283,37 +377,37 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(class_='navigation')
+				sitemap = soup.find(class_='sl-cms2-nav-holder')
 				list_items = sitemap.select('ul > li')
 
-				sitemap2 = soup.find(id='quicklinks')
-				list_items2 = sitemap2.select('ul > li')
+				# sitemap2 = soup.find(id='quicklinks')
+				# list_items2 = sitemap2.select('ul > li')
 
-				sitemap3 = soup.find(id='bullying')
-				list_items3 = sitemap3.select('ul > li')
+				# sitemap3 = soup.find(id='bullying')
+				# list_items3 = sitemap3.select('ul > li')
+				#
+				# sitemap4 = soup.find(id='dropmenu1')
+				# list_items4 = sitemap4.select('ul > li')
+				#
+				# sitemap5 = soup.find(id='dropmenu2')
+				# list_items5 = sitemap5.select('ul > li')
+				#
+				# sitemap6 = soup.find(id='dropmenu3')
+				# list_items6 = sitemap6.select('ul > li')
+				#
+				# sitemap7 = soup.find(id='dropmenu4')
+				# list_items7 = sitemap7.select('ul > li')
+				#
+				# sitemap8 = soup.find(id='dropmenu5')
+				# list_items8 = sitemap8.select('ul > li')
 
-				sitemap4 = soup.find(id='dropmenu1')
-				list_items4 = sitemap4.select('ul > li')
-
-				sitemap5 = soup.find(id='dropmenu2')
-				list_items5 = sitemap5.select('ul > li')
-
-				sitemap6 = soup.find(id='dropmenu3')
-				list_items6 = sitemap6.select('ul > li')
-
-				sitemap7 = soup.find(id='dropmenu4')
-				list_items7 = sitemap7.select('ul > li')
-
-				sitemap8 = soup.find(id='dropmenu5')
-				list_items8 = sitemap8.select('ul > li')
-
-				list_items.extend(list_items2)
-				list_items.extend(list_items3)
-				list_items.extend(list_items4)
-				list_items.extend(list_items5)
-				list_items.extend(list_items6)
-				list_items.extend(list_items7)
-				list_items.extend(list_items8)
+				# list_items.extend(list_items2)
+				# list_items.extend(list_items3)
+				# list_items.extend(list_items4)
+				# list_items.extend(list_items5)
+				# list_items.extend(list_items6)
+				# list_items.extend(list_items7)
+				# list_items.extend(list_items8)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])
@@ -322,7 +416,7 @@ if __name__ == '__main__':
 					group_links = item.find_all('a')
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links[1:]:
+					for link in group_links:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 

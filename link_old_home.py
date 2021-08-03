@@ -53,7 +53,8 @@ if __name__ == '__main__':
 			# if link.get_text()[0] != 'h':
 			# 	d = check_by_class('https:' + link.get_text())
 			# else:
-			d = check_by_class(link.get('href'))
+			print(url[:-9])
+			d = check_by_class(url[:-9] + link.get('href'))
 
 			if d != []:
 				print('Link:', link.get_text())

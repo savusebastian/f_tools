@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
 			for link in links:
 				if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:25] == 'https://www.skschools.org' or link.get('href')[:24] == 'http://www.skschools.org' or link.get('href')[:21] == 'https://skschools.org' or link.get('href')[:20] == 'http://skschools.org'):
-					o.append(link)
+					o.append(link.get_text())
 
 			return o
 

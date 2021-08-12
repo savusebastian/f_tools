@@ -381,16 +381,14 @@ if __name__ == '__main__':
 					else:
 						print(len(tiers))
 
-					page_link = link
-
 					page_counter += 1
-					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(item.get_text())
 					issue_pages_counter += content_ipc
 
-					csv_writer.writerow([str(page_link), t1, t2, t3, t4, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+					csv_writer.writerow([str(item.get_text()), t1, t2, t3, t4, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
 					if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-						csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+						csv_report.writerow([str(item.get_text()), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

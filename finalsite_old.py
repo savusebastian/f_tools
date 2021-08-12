@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find('main').find_all('form') != []:
+		if web_soup.find(id='contentdiv').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find('main').find_all('embed') != []:
+		if web_soup.find(id='contentdiv').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find('main').find_all('iframe') != []:
+		if web_soup.find(id='contentdiv').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find('main').find_all(class_='fsCalendar') != []:
+		if web_soup.find(id='contentdiv').find_all(id='calendarcon') != []:
 			calendar = 'calendar'
 
-		if web_soup.find('main').find_all(class_='fsDirEntry') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='fsDirEntry') != []:
 			staff = 'staff'
 
-		if web_soup.find('main').find_all(class_='fsPost') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='newspostitem') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='menu-ec-pages-menu-container') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find('main') != None and web_soup.find('main') != '':
-			col1 = web_soup.find('main')
+		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
+			col1 = web_soup.find(id='contentdiv')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -235,94 +235,39 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
+	district = 'https://www.wlschools.org'
 	all_sites = [
-		'https://www.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://acprep.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://banneker.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://borderstar.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://central.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://cms.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://eca.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://east.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://faxon.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://fla.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://garfield.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://melcher.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://carver.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://gladstone.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://halecook.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://holliday.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://james.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://rogers.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://hartman.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://lcpa.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://lcpams.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://longfellow.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://manual.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://king.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://northeast.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://nems.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://paseo.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://wheatley.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://pitcher.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://garcia.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://richardson.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://southeast.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://anderson.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://knotts.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://trailwoods.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://troost.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://phillips.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://whittier.kcpublicschools.org/fs/pages/sitemap.xml',
-		'https://woodland.kcpublicschools.org/fs/pages/sitemap.xml',
+		# f'{district}/page.cfm?p=63',
+		# f'{district}/page.cfm?p=1',
+		# f'{district}/page.cfm?p=511',
+		# f'{district}/page.cfm?p=513',
+		f'{district}/page.cfm?p=512',
+		# f'{district}/5/home',
+		# f'{district}/6/home',
+		# f'{district}/10/home',
+		# f'{district}/3/home',
+		# f'{district}/4/home',
 	]
 	schools = [
-		'district',
-		'acprep',
-		'banneker',
-		'borderstar',
-		'central',
-		'cms',
-		'eca',
-		'east',
-		'faxon',
-		'fla',
-		'garfield',
-		'melcher',
-		'carver',
-		'gladstone',
-		'halecook',
-		'holliday',
-		'james',
-		'rogers',
-		'hartman',
-		'lcpa',
-		'lcpams',
-		'longfellow',
-		'manual',
-		'king',
-		'northeast',
-		'nems',
-		'paseo',
-		'wheatley',
-		'pitcher',
-		'garcia',
-		'richardson',
-		'southeast',
-		'anderson',
-		'knotts',
-		'trailwoods',
-		'troost',
-		'phillips',
-		'whittier',
-		'woodland',
+		# 'sitemap',
+		# 'district',
+		# 'les',
+		# 'mgrs',
+		'wes',
+		# 'ae',
+		# 'aelc',
+		# 'pa',
+		# 'vvec',
+		# 'grcca',
+		# 'les',
+		# 'mjpes',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report5.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 		s = 0
 
@@ -337,8 +282,39 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find_all('loc')
-			list_items = sitemap
+			sitemap = soup.find(class_='main-nav')
+			list_items = sitemap.select('ul > li')
+
+			sitemap2 = soup.find(id='dhtmlmenu_557')
+			list_items2 = sitemap2.select('ul > li')
+
+			sitemap3 = soup.find(id='dhtmlmenu_616')
+			list_items3 = sitemap3.select('ul > li')
+
+			sitemap4 = soup.find(id='dhtmlmenu_618')
+			list_items4 = sitemap4.select('ul > li')
+
+			sitemap5 = soup.find(id='dhtmlmenu_651')
+			list_items5 = sitemap5.select('ul > li')
+
+			sitemap6 = soup.find(id='dhtmlmenu_656')
+			list_items6 = sitemap6.select('ul > li')
+
+			# sitemap7 = soup.find(id='dhtmlmenu_643')
+			# list_items7 = sitemap7.select('ul > li')
+			#
+			# sitemap8 = soup.find(id='dhtmlmenu_941')
+			# list_items8 = sitemap8.select('ul > li')
+
+
+			list_items.extend(list_items2)
+			list_items.extend(list_items3)
+			list_items.extend(list_items4)
+			list_items.extend(list_items5)
+			list_items.extend(list_items6)
+			# list_items.extend(list_items7)
+			# list_items.extend(list_items8)
+
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])
@@ -348,49 +324,68 @@ if __name__ == '__main__':
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
 				for i, item in enumerate(list_items):
-					link = item.get_text().replace('-', ' ')
-					tiers = link.split('/')
-					t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
-					if len(tiers) == 4:
-						t1 = tiers[-1].title()
-					elif len(tiers) == 5:
-						t1 = tiers[-2].title()
-						t2 = tiers[-1].title()
-					elif len(tiers) == 6:
-						t1 = tiers[-3].title()
-						t2 = tiers[-2].title()
-						t3 = tiers[-1].title()
-					elif len(tiers) == 7:
-						t1 = tiers[-4].title()
-						t2 = tiers[-3].title()
-						t3 = tiers[-2].title()
-						t4 = tiers[-1].title()
-					# elif len(tiers) == 8:
-					# 	t1 = tiers[-5].title()
-					# 	t2 = tiers[-4].title()
-					# 	t3 = tiers[-3].title()
-					# 	t4 = tiers[-2].title()
-					# 	t5 = tiers[-1].title()
-					# elif len(tiers) == 9:
-					# 	t1 = tiers[-6].title()
-					# 	t2 = tiers[-5].title()
-					# 	t3 = tiers[-4].title()
-					# 	t4 = tiers[-3].title()
-					# 	t5 = tiers[-2].title()
-					# 	t6 = tiers[-1].title()
-					else:
-						print(len(tiers))
+					group_links = item.find_all('a')
+					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					page_link = link
+					for link in group_links:
+						href = link.get('href')
+						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 
-					page_counter += 1
-					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-					issue_pages_counter += content_ipc
+						if len(href) > 1 and href[:2] == '//':
+							page_link = f'{split_slash[0]}{href}'
+						elif len(href) > 0 and href[0] == '/':
+							page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+						elif len(href) > 4 and href[:4] == 'http':
+							page_link = href
+						else:
+							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-					csv_writer.writerow([str(page_link), t1, t2, t3, t4, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+						if page_link not in all_links:
+							all_links.append(page_link)
 
-					if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-						csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
+							else:
+								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+								else:
+									page_counter += 1
+									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+									issue_pages_counter += content_ipc
+
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+
+									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+
+									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										for nav_link in nav_sec:
+											href = nav_link.get('href')
+
+											if len(href) > 1 and href[:2] == '//':
+												page_link = f'{split_slash[0]}{href}'
+											elif len(href) > 0 and href[0] == '/':
+												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+											elif len(href) > 4 and href[:4] == 'http':
+												page_link = href
+											else:
+												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+
+											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											else:
+												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												else:
+													page_counter += 1
+													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+													issue_pages_counter += content_ipc
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+
+													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

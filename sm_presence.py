@@ -280,9 +280,9 @@ if __name__ == '__main__':
 				list_items = sitemap.select('ul > li')
 
 				sitemap2 = soup.find(id='quicklinks')
-				# list_items2 = sitemap2.find_all('a')
+				list_items2 = sitemap2.find_all('a')
 
-				list_items.extend(sitemap2)
+				list_items.extend(list_items2)
 				print(list_items)
 				break
 

@@ -283,8 +283,6 @@ if __name__ == '__main__':
 				list_items2 = sitemap2.find_all('a')
 
 				list_items.extend(list_items2)
-				print(list_items)
-				break
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])

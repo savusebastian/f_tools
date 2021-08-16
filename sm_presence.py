@@ -12,7 +12,7 @@ def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()
 
-		if tag.contents == []:
+		if tag.contents == [] or (len(tag.contents) < 2 and tag.contents[0] == '\xa0'):
 			tag.decompose()
 
 
@@ -20,6 +20,13 @@ def remove_tags(text):
 	div = re.compile(r'<div[^>]+>')
 	dive = re.compile(r'<div+>')
 	divc = re.compile(r'</div+>')
+	link = re.compile(r'<link[^>]+>')
+	section = re.compile(r'<section[^>]+>')
+	sectione = re.compile(r'<section+>')
+	sectionc = re.compile(r'</section+>')
+	article = re.compile(r'<article[^>]+>')
+	articlee = re.compile(r'<article+>')
+	articlec = re.compile(r'</article+>')
 	span = re.compile(r'<span+>')
 	spane = re.compile(r'<span[^>]+>')
 	spanc = re.compile(r'</span+>')
@@ -30,6 +37,13 @@ def remove_tags(text):
 	text = div.sub('', text)
 	text = dive.sub('', text)
 	text = divc.sub('', text)
+	text = link.sub('', text)
+	text = section.sub('', text)
+	text = sectione.sub('', text)
+	text = sectionc.sub('', text)
+	text = article.sub('', text)
+	text = article.sub('', text)
+	text = articlec.sub('', text)
 	text = span.sub('', text)
 	text = spane.sub('', text)
 	text = spanc.sub('', text)
@@ -41,7 +55,7 @@ def remove_tags(text):
 	return text.strip()
 
 
-def get_column(col, splitter):
+def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
@@ -112,7 +126,7 @@ def get_column(col, splitter):
 	return col
 
 
-def get_content(web_page, splitter):
+def get_content(web_page):
 	col1 = 'Flagged'
 	col2, col3, col4 = '', '', ''
 	col_num = '1'
@@ -129,8 +143,9 @@ def get_content(web_page, splitter):
 	issue_pages_counter = 0
 	# print(web_page)
 
+	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=10).content
+		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -142,49 +157,51 @@ def get_content(web_page, splitter):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='page').find_all('form') != []:
+		if web_soup.find(id='sub-page-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='page').find_all('embed') != []:
+		if web_soup.find(id='sub-page-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='page').find_all('iframe') != []:
+		if web_soup.find(id='sub-page-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		# if web_soup.find(id='page').find_all(id='calendar') != []:
-		# 	calendar = 'calendar'
-		#
-		# if web_soup.find(id='page').find_all(class_='DIR-card') != []:
-		# 	staff = 'staff'
-		#
-		# if web_soup.find(id='page').find_all(id='news-list') != []:
-		# 	news = 'news'
+		if web_soup.find(id='sub-page-content').find_all(id='divCalendar') != []:
+			calendar = 'calendar'
 
-		if web_soup.find(id='nav-box') != None:
+		if web_soup.find(id='sub-page-content').find_all(class_='staff-directory') != []:
+			staff = 'staff'
+
+		if web_soup.find(id='sub-page-content').find_all(id='news') != []:
+			news = 'news'
+
+		if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
+			page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
+		elif web_soup.find(id='nav-box') != None:
 			page_nav = web_soup.find(id='nav-box').find_all('a')
 
-		# First column
-		# if web_soup.find(class_='pageContent') != None and web_soup.find(class_='pageContent') != '':
-		# 	col1 = web_soup.find(class_='pageContent')
-		# 	col1 = get_column(col1, splitter)
-		if web_soup.find(class_='subpage-content') != None and web_soup.find(class_='pageContent') != '':
-			col1 = web_soup.find(class_='subpage-content')
-			col1 = get_column(col1, splitter)
-		# elif web_soup.find(id='subpage_right_sidebar') != None:
-		# 	col1 = web_soup.find(id='subpage_right_sidebar')
-		# 	col1 = get_column(col1, splitter)
+		# Content
+		if web_soup.find(id='sub-page-content') != None and web_soup.find(id='sub-page-content') != '':
+			col1 = web_soup.find(id='sub-page-content')
+			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
 
 		col1 = str(col1)
-		col4 = str(col2) + str(col3) + str(col4)
 
-		if len(col1) > 150000:
+		if len(col1) > 200000:
 			col1 = 'Flagged'
 			col2 = 'This page has too much content'
 			col3 = ''
 			col4 = ''
 			col_num = '2'
+			issue_pages_counter = 1
+		elif len(col1) > 150000:
+			col2 = col1[50000:100000]
+			col3 = col1[100000:150000]
+			col4 = col1[150000:]
+			col1 = col1[:50000]
+			col_num = '4'
 			issue_pages_counter = 1
 		elif len(col1) > 100000:
 			col2 = col1[50000:100000]
@@ -208,7 +225,8 @@ def get_content(web_page, splitter):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	except:
+	# else:
+	except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
@@ -216,225 +234,122 @@ def get_content(web_page, splitter):
 
 if __name__ == '__main__':
 	start_time = time()
+	district = 'https://www.jerichoschools.org'
 	all_sites = [
-		'https://www.skschools.org',
-		# 'https://burleyglenwood.skschools.org',
-		# 'https://cedarheights.skschools.org',
-		# 'https://discovery.skschools.org',
-		# 'https://eastportorchard.skschools.org',
-		# 'https://explorer.skschools.org',
-		# 'https://hiddencreek.skschools.org',
-		# 'https://johnsedgwick.skschools.org',
-		# 'https://manchester.skschools.org',
-		# 'https://marcuswhitman.skschools.org',
-		# 'https://mullenixridge.skschools.org',
-		# 'https://olalla.skschools.org',
-		# 'https://orchardheights.skschools.org',
-		# 'https://sidneyglen.skschools.org',
-		# 'https://southcolby.skschools.org',
-		# 'https://skhs.skschools.org',
-		# 'https://sunnyslope.skschools.org',
-
-		# 'http://www.lockhartisd.org',
-		# 'http://abs.lockhartisd.org',
-		# 'http://bes.lockhartisd.org',
-		# 'http://cfes.lockhartisd.org',
-		# 'http://ck.lockhartisd.org',
-		# 'http://dmc.lockhartisd.org',
-		# 'http://lhs.lockhartisd.org',
-		# 'http://ljh.lockhartisd.org',
-		# 'http://nes.lockhartisd.org',
-		# 'http://ples.lockhartisd.org',
-		# 'http://phs.lockhartisd.org',
-
-		# 'https://cantiague.jerichoschools.org',
-		# 'https://jackson.jerichoschools.org',
-		# 'https://hs.jerichoschools.org',
-		# 'https://ms.jerichoschools.org',
-		# 'https://seaman.jerichoschools.org'
-
-		# 'https://www.vbschools.com',
-		# 'https://alantones.vbschools.com',
-		# 'https://arrowheades.vbschools.com',
-		# 'https://baysidees.vbschools.com',
-		# 'https://birdneckes.vbschools.com',
-		# 'https://brookwoodes.vbschools.com',
-		# 'https://centervillees.vbschools.com',
-		# 'https://christopherfarmses.vbschools.com',
-		# 'https://collegeparkes.vbschools.com',
-		# 'https://cookees.vbschools.com',
-		# 'https://corporatelandinges.vbschools.com',
-		# 'https://creedses.vbschools.com',
-		# 'https://deyes.vbschools.com',
-		# 'https://diamondspringses.vbschools.com',
-		# 'https://fairfieldes.vbschools.com',
-		# 'https://glenwoodes.vbschools.com',
-		# 'https://greenrunes.vbschools.com',
-		# 'https://hermitagees.vbschools.com',
-		# 'https://hollandes.vbschools.com',
-		# 'https://indianlakeses.vbschools.com',
-		# 'https://kempsvillees.vbschools.com',
-		# 'https://kempsvillemeadowses.vbschools.com',
-		# 'https://kingsgrantes.vbschools.com',
-		# 'https://kingstones.vbschools.com',
-		# 'https://landstownes.vbschools.com',
-		# 'https://linkhornparkes.vbschools.com',
-		# 'https://luxfordes.vbschools.com',
-		# 'https://lynnhavenes.vbschools.com',
-		# 'https://malibues.vbschools.com',
-		# 'https://newcastlees.vbschools.com',
-		# 'https://newtownes.vbschools.com',
-		# 'https://northlandinges.vbschools.com',
-		# 'https://oceanlakeses.vbschools.com',
-		# 'https://parkwayes.vbschools.com',
-		# 'https://pembrokees.vbschools.com',
-		# 'https://pembrokemeadowses.vbschools.com',
-		# 'https://pointoviewes.vbschools.com',
-		# 'https://princessannees.vbschools.com',
-		# 'https://providencees.vbschools.com',
-		# 'https://redmilles.vbschools.com',
-		# 'https://rosemontes.vbschools.com',
-		# 'https://rosemontforestes.vbschools.com',
-		# 'https://salemes.vbschools.com',
-		# 'https://seatackes.vbschools.com',
-		# 'https://sheltonparkes.vbschools.com',
-		# 'https://strawbridgees.vbschools.com',
-		# 'https://tallwoodes.vbschools.com',
-		# 'https://thaliaes.vbschools.com',
-		# 'https://thoroughgoodes.vbschools.com',
-		# 'https://threeoakses.vbschools.com',
-		# 'https://trantwoodes.vbschools.com',
-		# 'https://whiteoakses.vbschools.com',
-		# 'https://williamses.vbschools.com',
-		# 'https://windsoroakses.vbschools.com',
-		# 'https://windsorwoodses.vbschools.com',
-		# 'https://woodstockes.vbschools.com',
-		# 'https://baysidems.vbschools.com',
-		# 'https://bayside6ms.vbschools.com',
-		# 'https://brandonms.vbschools.com',
-		# 'https://corporatelandingms.vbschools.com',
-		# 'https://greatneckms.vbschools.com',
-		# 'https://independencems.vbschools.com',
-		# 'https://kempsvillems.vbschools.com',
-		# 'https://landstownms.vbschools.com',
-		# 'https://larkspurms.vbschools.com',
-		# 'https://lynnhavenms.vbschools.com',
-		# 'https://olddonationschool.vbschools.com',
-		# 'https://plazams.vbschools.com',
-		# 'https://princessannems.vbschools.com',
-		# 'https://salemms.vbschools.com',
-		# 'https://virginiabeachms.vbschools.com',
-		# 'https://baysidehs.vbschools.com',
-		# 'https://coxhs.vbschools.com',
-		# 'https://firstcolonialhs.vbschools.com',
-		# 'https://greenruncollegiate.vbschools.com',
-		# 'https://greenrunhs.vbschools.com',
-		# 'https://kellamhs.vbschools.com',
-		# 'https://kempsvillehs.vbschools.com',
-		# 'https://landstownhs.vbschools.com',
-		# 'https://oceanlakeshs.vbschools.com',
-		# 'https://princessannehs.vbschools.com',
-		# 'https://salemhs.vbschools.com',
-		# 'https://tallwoodhs.vbschools.com',
-		# 'https://adultlearning.vbschools.com',
-		# 'https://advancedtechnologycenter.vbschools.com',
-		# 'https://renaissanceacademy.vbschools.com',
-		# 'https://techcenter.vbschools.com',
+		f'{district}',
+		f'https://hs.jerichoschools.org',
+		f'https://ms.jerichoschools.org',
+		f'https://cantiague.jerichoschools.org',
+		f'https://jackson.jerichoschools.org',
+		f'https://seaman.jerichoschools.org',
 	]
+
+	schools = [
+		'district',
+		'hs',
+		'ms',
+		'cantiague',
+		'jackson',
+		'seaman',
+	]
+
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
+	s = 0
 
-	with open('../f_web_interface/static/files/' + mainfolder + '/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 
 		for site in all_sites:
-			page_counter = 0
-			issue_pages_counter = 0
-
-			splitter = site.split('/')
-			page = requests.get(site).content
-			soup = BeautifulSoup(page, 'html.parser')
-			# sitemap = soup.find(class_='rmRootGroup')
-			# list_items = sitemap.select('li.rmItem')
-			sitemap = soup.find(class_='nav-menu')
-			list_items = sitemap.select('li')
-			school = site.split('/')[-1].split('.')[0]
-
-			if len(school) > 30:
-				school_name = str(school[:30]).lower().replace(' ', '_').replace('.', '')
-			else:
-				school_name = str(school).lower().replace(' ', '_').replace('.', '')
-
-			csv_report.writerow(['School name', school_name])
-
-			with open('../f_web_interface/static/files/' + mainfolder + '/' + school_name + '.csv', 'w', encoding='utf-8') as csv_main:
+			with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}_{schools[s - 1]}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
-				for item in list_items[1:]:
+				s += 1
+				page_counter = 0
+				issue_pages_counter = 0
+				split_slash = site.split('/')
+				split_dot = site.split('.')
+				split_mixed = site.split('/')[2].split('.')
+				all_links = []
+
+				page = requests.get(site).content
+				soup = BeautifulSoup(page, 'html.parser')
+				sitemap = soup.find(id='menubar')
+				list_items = sitemap.select('ul > li')
+
+				sitemap2 = soup.find(id='quicklinks')
+				# list_items2 = sitemap2.find_all('')
+
+				list_items.extend(sitemap2)
+
+				school_name = f'{split_dot[1]}_{schools[s - 1]}'
+				csv_report.writerow(['School name', school_name])
+
+				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
+					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
 					for link in group_links:
-						external_link = False
+						href = link.get('href')
+						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 
-						if link.get('href')[0] == '#':
-							page_link = '#'
-						elif len(link.get('href')) > 1 and link.get('href')[:2] == '//':
-							page_link = splitter[0] + link.get('href')
-						elif link.get('href')[0] == '/':
-							page_link = splitter[0] + '//' + splitter[2] + link.get('href')
-						elif link.get('href')[:4] == 'http':
-							page_link = link.get('href')
-
-							if link.get('href').find(splitter[2].split('.')[1]) == -1:
-								external_link = True
+						if len(href) > 1 and href[:2] == '//':
+							page_link = f'{split_slash[0]}{href}'
+						elif len(href) > 0 and href[0] == '/':
+							page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+						elif len(href) > 4 and href[:4] == 'http':
+							page_link = href
 						else:
-							page_link = splitter[0] + '//' + splitter[2] + '/' + link.get('href')
+							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
 
-						if not external_link:
-							page_counter += 1
-							col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)
-							issue_pages_counter += content_ipc
+						if page_link not in all_links:
+							all_links.append(page_link)
 
-							if group_links[0].get_text() != link.get_text():
-								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
 							else:
-								csv_writer.writerow([str(page_link), str(group_links[0].get_text()), '', '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+								else:
+									page_counter += 1
+									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+									issue_pages_counter += content_ipc
 
-							if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-								csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
-							# if nav_sec != None and nav_sec != '' and nav_sec != []:
-							# 	for nav_link in nav_sec:
-							# 		external_link = False
-							#
-							# 		if nav_link.get('href')[0] == '#':
-							# 			page_link = '#'
-							# 		elif len(nav_link.get('href')) > 1 and nav_link.get('href')[:2] == '//':
-							# 			page_link = splitter[0] + nav_link.get('href')
-							# 		elif nav_link.get('href')[0] == '/':
-							# 			page_link = splitter[0] + '//' + splitter[2] + nav_link.get('href')
-							# 		elif nav_link.get('href')[:4] == 'http':
-							# 			page_link = nav_link.get('href')
-							#
-							# 			if nav_link.get('href').find(splitter[2].split('.')[1]) == -1:
-							# 				external_link = True
-							# 		else:
-							# 			page_link = splitter[0] + '//' + splitter[2] + '/' + nav_link.get('href')
-							#
-							# 		if not external_link:
-							# 			page_counter += 1
-							# 			nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, splitter)
-							# 			issue_pages_counter += content_ipc
-							# 			csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-							#
-							# 			if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-							# 				csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
-							# 		else:
-							# 			csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', '1', 'Linked page', '', '', '', '', '', ''])
-						else:
-							csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+
+									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										for nav_link in nav_sec:
+											href = nav_link.get('href')
+
+											if len(href) > 1 and href[:2] == '//':
+												page_link = f'{split_slash[0]}{href}'
+											elif len(href) > 0 and href[0] == '/':
+												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+											elif len(href) > 4 and href[:4] == 'http':
+												page_link = href
+											else:
+												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+
+											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											else:
+												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												else:
+													page_counter += 1
+													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+													issue_pages_counter += content_ipc
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+
+													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])
@@ -445,4 +360,4 @@ if __name__ == '__main__':
 
 			print('Finished:', site)
 
-	print('Finished:', round((time() - start_time) / 3600, 2), 'h')
+	print('Finished:', round((time() - start_time) / 60, 2), 'm')

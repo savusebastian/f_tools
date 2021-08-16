@@ -280,15 +280,16 @@ if __name__ == '__main__':
 				list_items = sitemap.select('ul > li')
 
 				sitemap2 = soup.find(id='quicklinks')
-				# list_items2 = sitemap2.find_all('')
+				list_items2 = sitemap2.find_all('a')
 
-				list_items.extend(sitemap2)
+				# list_items.extend(sitemap2)
 
 				school_name = f'{split_dot[1]}_{schools[s - 1]}'
 				csv_report.writerow(['School name', school_name])
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
+					group_links.extend(sitemap2)
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
 					for link in group_links:

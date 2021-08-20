@@ -269,9 +269,7 @@ if __name__ == '__main__':
 			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
 			page = requests.get(site, headers=headers).content
 			soup = BeautifulSoup(page, 'html.parser')
-			print('>>soup:   ', soup)
 			sitemap = soup.find(id='sw-sitemap')
-			print('>>sitemap:   ', sitemap)
 			list_items = sitemap.select('li.sw-sitemap-channel-item')
 			school = soup.find(id='sw-sitemap-sitelist').find('option', selected='selected').get_text()
 

@@ -267,7 +267,9 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
+			print('>>soup:   ', soup)
 			sitemap = soup.find(id='sw-sitemap')
+			print('>>sitemap:   ', sitemap)
 			list_items = sitemap.select('li.sw-sitemap-channel-item')
 			school = soup.find(id='sw-sitemap-sitelist').find('option', selected='selected').get_text()
 

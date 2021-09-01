@@ -52,10 +52,10 @@ if __name__ == '__main__':
 			d = check_by_class(url[:-9] + link.get('href'))
 
 			if d != []:
-				print('Link:', link.get_text())
+				print('Page:', link.get_text(), url[:-9] + link.get('href'))
 				print('Text of links:', d)
 
-		print()
-		print()
-		print()
-		print('Next school')
+		# print()
+		# print()
+		# print()
+		# print('Next school')

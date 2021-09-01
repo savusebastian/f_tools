@@ -12,7 +12,11 @@ def check_by_class(web_page):
 		o = []
 
 		for link in links:
-			if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:20] == 'https://www.mtsd.org' or link.get('href')[:19] == 'http://www.mtsd.org' or link.get('href')[:16] == 'https://mtsd.org' or link.get('href')[:15] == 'http://mtsd.org'):
+			if link.get('href') != None and len(link.get('href')) > 19 and \
+				(link.get('href')[:20] == 'https://www.mtsd.org' or \
+				link.get('href')[:19] == 'http://www.mtsd.org' or \
+				link.get('href')[:16] == 'https://mtsd.org' or \
+				link.get('href')[:15] == 'http://mtsd.org'):
 				o.append(link.get_text())
 
 		return o
@@ -29,18 +33,6 @@ if __name__ == '__main__':
 		# 'https://skschoolsorg-42-us-west1-01.preview.finalsitecdn.com/site-map',
 		# 'https://skschoolsorg-49-us-west1-01.preview.finalsitecdn.com/site-map',
 		# 'https://skschoolsorg-47-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-48-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-50-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-51-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-52-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-53-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-54-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-56-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-55-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-57-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-58-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-59-us-west1-01.preview.finalsitecdn.com/site-map',
-		# 'https://skschoolsorg-60-us-west1-01.preview.finalsitecdn.com/site-map',
 	]
 
 	for url in all_schools:

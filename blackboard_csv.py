@@ -144,7 +144,8 @@ def get_content(web_page):
 	print(web_page)
 
 	try:
-		web_link = requests.get(web_page, timeout=10).content
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+		web_link = requests.get(web_page, headers=headers, timeout=10).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -234,26 +235,27 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.gisd.org/site/Default.aspx?PageType=15&SiteID=8&SectionMax=50&DirectoryType=6',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=3948&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=103&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=203&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=926&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=579&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=306&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=453&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=382&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=149&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=627&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=712&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=798&DirectoryType=6&SectionMax=50',
-		'https://www.gisd.org/site/default.aspx?pagetype=15&SiteID=860&DirectoryType=6&SectionMax=50',
+		'https://www.rcsdk8.net/site/Default.aspx?PageType=15&SiteID=1&SectionMax=15&DirectoryType=6',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=81&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=108&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=202&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=279&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=341&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=405&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=388&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=529&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=559&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=617&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=656&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=826&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=769&DirectoryType=6&SectionMax=15',
+		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=814&DirectoryType=6&SectionMax=15',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open('../f_web_interface/static/files/' + mainfolder + '/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
 		csv_report = csv.writer(csv_report)
 
 		for site in all_sites:
@@ -264,7 +266,8 @@ if __name__ == '__main__':
 			split_mixed = site.split('/')[2].split('.')
 			all_links = []
 
-			page = requests.get(site).content
+			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+			page = requests.get(site, headers=headers).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='sw-sitemap')
 			list_items = sitemap.select('li.sw-sitemap-channel-item')
@@ -277,7 +280,7 @@ if __name__ == '__main__':
 
 			csv_report.writerow(['School name', school_name])
 
-			with open('../f_web_interface/static/files/' + mainfolder + '/' + school_name + '.csv', 'w', encoding='utf-8') as csv_main:
+			with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 

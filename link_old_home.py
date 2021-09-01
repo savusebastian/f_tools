@@ -12,7 +12,7 @@ def check_by_class(web_page):
 		o = []
 
 		for link in links:
-			if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:25] == 'https://www.skschools.org' or link.get('href')[:24] == 'http://www.skschools.org' or link.get('href')[:21] == 'https://skschools.org' or link.get('href')[:20] == 'http://skschools.org'):
+			if link.get('href') != None and len(link.get('href')) > 19 and (link.get('href')[:20] == 'https://www.mtsd.org' or link.get('href')[:19] == 'http://www.mtsd.org' or link.get('href')[:16] == 'https://mtsd.org' or link.get('href')[:15] == 'http://mtsd.org'):
 				o.append(link.get_text())
 
 		return o

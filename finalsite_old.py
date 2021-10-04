@@ -158,22 +158,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='contentdiv').find_all('form') != []:
+		if web_soup.find(id='block_col1').parent.find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='contentdiv').find_all('embed') != []:
+		if web_soup.find(id='block_col1').parent.find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='contentdiv').find_all('iframe') != []:
+		if web_soup.find(id='block_col1').parent.find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='contentdiv').find_all(id='calendarcon') != []:
+		if web_soup.find(id='block_col1').parent.find_all(class_='sl-cms2-calendar__month') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='contentdiv').find_all(class_='fsDirEntry') != []:
+		if web_soup.find(id='block_col1').parent.find_all(class_='fsDirEntry') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='contentdiv').find_all(class_='newspostitem') != []:
+		if web_soup.find(id='block_col1').parent.find_all(class_='newsItem') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='menu-ec-pages-menu-container') != None:
@@ -182,8 +182,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
-			col1 = web_soup.find(id='contentdiv')
+		if web_soup.find(id='block_col1').parent != None and web_soup.find(id='block_col1').parent != '':
+			col1 = web_soup.find(id='block_col1').parent
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -235,32 +235,38 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.wlschools.org'
+	district = 'https://www.upland.k12.ca.us'
 	all_sites = [
-		# f'{district}/page.cfm?p=63',
-		# f'{district}/page.cfm?p=1',
-		# f'{district}/page.cfm?p=511',
-		# f'{district}/page.cfm?p=513',
-		f'{district}/page.cfm?p=512',
-		# f'{district}/5/home',
-		# f'{district}/6/home',
-		# f'{district}/10/home',
-		# f'{district}/3/home',
-		# f'{district}/4/home',
+		f'https://bv-uusd-ca.schoolloop.com',
+		f'https://ces-uusd-ca.schoolloop.com',
+		f'https://ce-uusd-ca.schoolloop.com',
+		f'https://me-uusd-ca.schoolloop.com',
+		f'https://pte-uusd-ca.schoolloop.com',
+		f'https://sve-uusd-ca.schoolloop.com',
+		f'https://ses-uusd-ca.schoolloop.com',
+		f'https://ue-uusd-ca.schoolloop.com',
+		f'https://ve-uusd-ca.schoolloop.com',
+		f'https://pjh.schoolloop.com',
+		f'https://ujh.schoolloop.com',
+		f'https://fk-uusd-ca.schoolloop.com',
+		f'https://hhs-uusd-ca.schoolloop.com',
+		# f'https://www.uplandhigh.org',
 	]
 	schools = [
-		# 'sitemap',
-		# 'district',
-		# 'les',
-		# 'mgrs',
-		'wes',
-		# 'ae',
-		# 'aelc',
-		# 'pa',
-		# 'vvec',
-		# 'grcca',
-		# 'les',
-		# 'mjpes',
+		'bv_elementary',
+		'ces_elementary',
+		'ce_elementary',
+		'me_elementary',
+		'pte_elementary',
+		'sve_elementary',
+		'ses_elementary',
+		'ue_elementary',
+		've_elementary',
+		'pjh_junior_high',
+		'ujh_junior_high',
+		'fk_tk_8',
+		'hhs_high_school',
+		# 'uhs_high_school',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -282,38 +288,13 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='main-nav')
+			sitemap = soup.find(class_='fullnav')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(id='dhtmlmenu_557')
-			list_items2 = sitemap2.select('ul > li')
+			# sitemap2 = soup.find(id='dhtmlmenu_557')
+			# list_items2 = sitemap2.select('ul > li')
 
-			sitemap3 = soup.find(id='dhtmlmenu_616')
-			list_items3 = sitemap3.select('ul > li')
-
-			sitemap4 = soup.find(id='dhtmlmenu_618')
-			list_items4 = sitemap4.select('ul > li')
-
-			sitemap5 = soup.find(id='dhtmlmenu_651')
-			list_items5 = sitemap5.select('ul > li')
-
-			sitemap6 = soup.find(id='dhtmlmenu_656')
-			list_items6 = sitemap6.select('ul > li')
-
-			# sitemap7 = soup.find(id='dhtmlmenu_643')
-			# list_items7 = sitemap7.select('ul > li')
-			#
-			# sitemap8 = soup.find(id='dhtmlmenu_941')
-			# list_items8 = sitemap8.select('ul > li')
-
-
-			list_items.extend(list_items2)
-			list_items.extend(list_items3)
-			list_items.extend(list_items4)
-			list_items.extend(list_items5)
-			list_items.extend(list_items6)
-			# list_items.extend(list_items7)
-			# list_items.extend(list_items8)
+			# list_items.extend(list_items2)
 
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'

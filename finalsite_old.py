@@ -269,7 +269,8 @@ if __name__ == '__main__':
 		# 'uhs_high_school',
 	]
 
-	mainfolder = all_sites[0].split('.')[1]
+	# mainfolder = all_sites[0].split('.')[1]
+	mainfolder = 'upland'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

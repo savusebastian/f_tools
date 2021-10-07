@@ -237,6 +237,7 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://vbschools.com'
 	all_sites = [
+		f'https://vbschools.com',
 		f'https://alantones.vbschools.com',
 		f'https://arrowheades.vbschools.com',
 		f'https://baysidees.vbschools.com',
@@ -325,6 +326,7 @@ if __name__ == '__main__':
 		f'https://techcenter.vbschools.com',
 	]
 	schools = [
+		'vbschools'
 		'alantones',
 		'arrowheades',
 		'baysidees',
@@ -414,7 +416,7 @@ if __name__ == '__main__':
 	]
 
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'upland'
+	mainfolder = 'vbschools'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -433,7 +435,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='mobile-nav-items')
+			sitemap = soup.find(id='menubar')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')

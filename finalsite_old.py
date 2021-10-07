@@ -237,7 +237,7 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://vbschools.com'
 	all_sites = [
-		f'https://vbschools.com',
+		f'https://www.vbschools.com',
 		f'https://alantones.vbschools.com',
 		f'https://arrowheades.vbschools.com',
 		f'https://baysidees.vbschools.com',

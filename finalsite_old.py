@@ -235,7 +235,7 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://vbschools.com'
+	district = 'https://www.vbschools.com'
 	all_sites = [
 		f'https://www.vbschools.com',
 		f'https://alantones.vbschools.com',
@@ -326,7 +326,7 @@ if __name__ == '__main__':
 		f'https://techcenter.vbschools.com',
 	]
 	schools = [
-		'vbschools'
+		'vbschools',
 		'alantones',
 		'arrowheades',
 		'baysidees',

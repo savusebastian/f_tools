@@ -284,7 +284,7 @@ if __name__ == '__main__':
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])
 
-			with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}_{schools[s]}.csv', 'w', encoding='utf-8') as csv_main:
+			with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}_{schools[s - 1]}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 

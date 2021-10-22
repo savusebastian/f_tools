@@ -145,7 +145,8 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=5).content
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -175,10 +176,10 @@ def get_content(web_page):
 		if web_soup.find(id='sub-page-content').find_all(id='news') != []:
 			news = 'news'
 
-		if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
-			page_nav = web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn').find_all('a')
-		elif web_soup.find(id='nav-box') != None:
-			page_nav = web_soup.find(id='nav-box').find_all('a')
+		if web_soup.find(class_='nav-box') != None:
+			page_nav = web_soup.find(class_='nav-box').find_all('a')
+		# elif web_soup.find(id='nav-box') != None:
+		# 	page_nav = web_soup.find(id='nav-box').find_all('a')
 
 		# Content
 		if web_soup.find(id='sub-page-content') != None and web_soup.find(id='sub-page-content') != '':
@@ -262,30 +263,30 @@ if __name__ == '__main__':
 		csv_report = csv.writer(csv_report)
 
 		for site in all_sites:
+			s += 1
+			page_counter = 0
+			issue_pages_counter = 0
+			split_slash = site.split('/')
+			split_dot = site.split('.')
+			split_mixed = site.split('/')[2].split('.')
+			all_links = []
+
+			page = requests.get(site).content
+			soup = BeautifulSoup(page, 'html.parser')
+			sitemap = soup.find(id='menubar')
+			list_items = sitemap.select('ul > li')
+
+			sitemap2 = soup.find(id='quicklinks')
+			list_items2 = sitemap2.find_all('a')
+
+			list_items.extend(list_items2)
+
+			school_name = f'{split_dot[1]}_{schools[s - 1]}'
+			csv_report.writerow(['School name', school_name])
+
 			with open(f'../f_web_interface/static/files/{mainfolder}/{mainfolder}_{schools[s]}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
-
-				s += 1
-				page_counter = 0
-				issue_pages_counter = 0
-				split_slash = site.split('/')
-				split_dot = site.split('.')
-				split_mixed = site.split('/')[2].split('.')
-				all_links = []
-
-				page = requests.get(site).content
-				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='menubar')
-				list_items = sitemap.select('ul > li')
-
-				sitemap2 = soup.find(id='quicklinks')
-				list_items2 = sitemap2.find_all('a')
-
-				list_items.extend(list_items2)
-
-				school_name = f'{split_dot[1]}_{schools[s - 1]}'
-				csv_report.writerow(['School name', school_name])
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
@@ -309,16 +310,16 @@ if __name__ == '__main__':
 
 							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
 							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
+								csv_writer.writerow([str(page_link), t1, t2, '', '', '1', 'Linked file', '', '', '', '', '', ''])
 							else:
 								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+									csv_writer.writerow([str(page_link), t1, t2, '', '', '1', 'Linked page', '', '', '', '', '', ''])
 								else:
 									page_counter += 1
 									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 									issue_pages_counter += content_ipc
 
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+									csv_writer.writerow([str(page_link), t1, t2, '', '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])

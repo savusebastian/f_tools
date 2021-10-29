@@ -247,9 +247,9 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://vbschools.com'
+	district = 'https://www.vbschools.com'
 	all_sites = [
-		f'https://vbschools.com',
+		f'https://www.vbschools.com',
 		f'https://alantones.vbschools.com',
 		f'https://arrowheades.vbschools.com',
 		f'https://baysidees.vbschools.com',
@@ -446,7 +446,6 @@ if __name__ == '__main__':
 			all_links = []
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
-			print(page)
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='menubar')
 			list_items = sitemap.select('ul > li')

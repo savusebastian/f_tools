@@ -446,6 +446,7 @@ if __name__ == '__main__':
 			all_links = []
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}).content
+			print(page)
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='menubar')
 			list_items = sitemap.select('ul > li')

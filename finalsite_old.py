@@ -338,7 +338,7 @@ if __name__ == '__main__':
 		f'https://techcenter.vbschools.com',
 	]
 	schools = [
-		'vbschools'
+		'vbschools',
 		'alantones',
 		'arrowheades',
 		'baysidees',

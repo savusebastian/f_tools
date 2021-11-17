@@ -156,7 +156,7 @@ def get_content(web_page):
 	print(web_page)
 
 	try:
-		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
 		web_link = requests.get(web_page, headers=headers, timeout=10).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -278,7 +278,7 @@ if __name__ == '__main__':
 			split_mixed = site.split('/')[2].split('.')
 			all_links = []
 
-			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
 			page = requests.get(site, headers=headers).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='sw-sitemap')

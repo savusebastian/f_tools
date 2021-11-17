@@ -157,7 +157,7 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/80.0'}
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
 		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 

@@ -116,12 +116,18 @@ def get_column(col):
 		try:
 			if anchor.get('href') != None and anchor.get('href') != '':
 				href = anchor['href']
+				src = anchor['src']
 				anchor.attrs.clear()
 
+				# if href[0] != '/' and href[:4] != 'http':
+				# 	anchor['href'] = f'/{href}'
+				# else:
+				# 	anchor['href'] = href
+
 				if href[0] != '/' and href[:4] != 'http':
-					anchor['href'] = f'/{href}'
+					anchor['href'] = f'/{src}'
 				else:
-					anchor['href'] = href
+					anchor['href'] = src
 
 				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\

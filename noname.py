@@ -255,24 +255,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hopewellecs.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://hopewellecs.lakotaonline.com/our_school/our_team',
+		'https://libertyecs.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://libertyecs.lakotaonline.com/our_school/our_team',
 
 
 
-		'https://hopewellecs.lakotaonline.com/our_school/school_newsletter',
+		'https://libertyecs.lakotaonline.com/our_school/school_newsletter',
 
-		'https://hopewellecs.lakotaonline.com/our_school/mental_health_services',
-
-
-		'https://reportcard.education.ohio.gov/school/016824',
-		'https://hopewellecs.lakotaonline.com/our_school/school_forms___documents',
-		'https://hopewellecs.lakotaonline.com/our_school/visitors__guests',
-
-		'https://hopewellecs.lakotaonline.com/contact_us/report_an_absence',
+		'https://libertyecs.lakotaonline.com/our_school/mental_health_services',
 
 
-		'https://hopewellecs.lakotaonline.com/p_t_o/presidents_message',
+		'https://reportcard.education.ohio.gov/school/020321',
+		'https://libertyecs.lakotaonline.com/our_school/transportation_information',
+		'https://libertyecs.lakotaonline.com/our_school/visitors___guests',
+
+		'https://libertyecs.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'https://libertyecs.lakotaonline.com/p_t_o/connect_with_us',
 
 	]
 	mainfolder = 'lakota'

@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='main-content').find_all('form') != []:
+		if web_soup.find(id='subpage-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='main-content').find_all('embed') != []:
+		if web_soup.find(id='subpage-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='main-content').find_all('iframe') != []:
+		if web_soup.find(id='subpage-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='main-content').find_all(class_='calendar') != []:
+		if web_soup.find(id='subpage-content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='main-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='subpage-content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='main-content').find_all(class_='news') != []:
+		if web_soup.find(id='subpage-content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='main-content') != None and web_soup.find(id='main-content') != '':
-			col1 = web_soup.find(id='main-content')
+		if web_soup.find(id='subpage-content') != None and web_soup.find(id='subpage-content') != '':
+			col1 = web_soup.find(id='subpage-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1

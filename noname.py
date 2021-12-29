@@ -255,38 +255,32 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://union.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://union.lakotaonline.com/our_school/our_team',
-		'https://freedom.lakotaonline.com/our_school/lunch_times',
-		'https://union.lakotaonline.com/our_school/title_1',
-
-		'https://union.lakotaonline.com/our_school/school_newsletter',
-
-		'https://union.lakotaonline.com/our_school/mental_health_services',
-
-		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?siteId=371015&pageId=1315070&objectId.157270=1322009&contextId.157270=1315072',
-		'https://union.lakotaonline.com/our_school/school_history',
-		'https://reportcard.education.ohio.gov/school/037820',
-		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?siteId=371015&pageId=1315070&objectId.157270=1322009&contextId.157270=1315072',
-		'https://union.lakotaonline.com/our_school/visitors___guests',
+		'https://vangorden.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://vangorden.lakotaonline.com/our_school/our_team',
 
 
 
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960593',
+
+		'https://vangorden.lakotaonline.com/our_school/mental_health_services',
+
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1322099',
+		'https://reportcard.education.ohio.gov/school/146837',
+
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960607',
+
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1771470',
+
+
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960688',
+
+
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960631',
 
 
 
-
-
-
-
-		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=1484766',
-		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=1613007',
-
-
-		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=732298',
-
-
-		'https://unionptso.org',
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=9716579',
+		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1676781',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

@@ -255,33 +255,38 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://freedom.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://freedom.lakotaonline.com/our_school/our_team',
-		'https://freedom.lakotaonline.com/our_school/lunch_times',
-		'https://freedom.lakotaonline.com/our_school/title_1',
-		'https://freedom.lakotaonline.com/our_school/national_blue_ribbon_school',
-		'https://freedom.lakotaonline.com/our_school/school_newsletter',
-
-		'https://freedom.lakotaonline.com/our_school/_school_counselor; https://freedom.lakotaonline.com/our_school/mental_health_services',
-
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=1274715',
-		'https://reportcard.education.ohio.gov/school/098467',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=1274715&objectId.156164=1612974&contextId.156164=1274716',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922361',
+		'https://independence.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://independence.lakotaonline.com/our_school/our_team',
 
 
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922407',
+
+		'https://independence.lakotaonline.com/our_school/indy_info',
+
+		'https://independence.lakotaonline.com/our_school/mental_health_services',
+
+		'https://independence.lakotaonline.com/our_school/school_forms___documents',
+		'https://reportcard.education.ohio.gov/school/037820',
+		'https://independence.lakotaonline.com/our_school/transportation_information',
+		'https://independence.lakotaonline.com/our_school/visitors__guests',
 
 
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922437',
 
 
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922378; ; ',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922382; ',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922388ne.com/p_t_s_o/our_programs',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922397',
-		'https://p10cdn4static.sharpschool.com/UserFiles/Servers/Server_376782/File/Parent%20Council/Freedomisms.pdf',
-		'https://lakotafreedom.ss10.sharpschool.com/cms/One.aspx?portalId=376866&pageId=922394',
+
+
+
+
+
+
+		'https://independence.lakotaonline.com/cms/One.aspx?portalId=377154&pageId=1724012',
+
+
+		'https://independence.lakotaonline.com/cms/One.aspx?portalId=377154&pageId=945379',
+
+
+		'https://independence.lakotaonline.com/common/pages/DisplayFile.aspx?itemId=9884660 ;',
+		'https://independence.lakotaonline.com/common/pages/DisplayFile.aspx?itemId=9884618',
+		'https://independence.lakotaonline.com/p_t_a/p_t_a_forms___documents',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

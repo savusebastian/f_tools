@@ -255,21 +255,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://creeksideecs.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://creeksideecs.lakotaonline.com/our_school/our_team',
+		'https://heritageecs.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://heritageecs.lakotaonline.com/our_school/our_team',
 
-		'https://creeksideecs.lakotaonline.com/our_school/school_newsletter',
+		'https://heritageecs.lakotaonline.com/our_school/school_newsletter',
 
-		'https://creeksideecs.lakotaonline.com/our_school/mental_health_services',
+		'https://heritageecs.lakotaonline.com/our_school/mental_health_services',
 
-		'https://creeksideecs.lakotaonline.com/our_school/school_form___document',
-		'https://reportcard.education.ohio.gov/school/123810',
+		'https://heritageecs.lakotaonline.com/our_school/school_forms___documents',
+		'https://reportcard.education.ohio.gov/school/113910',
 
-		'https://creeksideecs.lakotaonline.com/our_school/visitors___guests',
+		'https://heritageecs.lakotaonline.com/our_school/visitors__guests',
 
-		'https://creeksideecs.lakotaonline.com/contact_us/report_an_absence',
+		'https://heritageecs.lakotaonline.com/contact_us/report_an_absence',
 
-		'http://www.creeksidepto.com',
+		'https://heritageecs.lakotaonline.com/pto/presidents_message',
 
 	]
 	mainfolder = 'lakota'

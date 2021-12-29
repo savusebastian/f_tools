@@ -255,30 +255,29 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://adena.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://adena.lakotaonline.com/our_school/our_team',
-
-		'https://adena.lakotaonline.com/our_school/school_newsletter',
-
-		'https://adena.lakotaonline.com/our_school/mental_health_services',
-
-		'https://lakotaadena.ss10.sharpschool.com/our_school/school_form___document',
-		'https://reportcard.education.ohio.gov/school/070920',
-		'https://lakotaadena.ss10.sharpschool.com/cms/One.aspx?action=view&siteId=376434&pageId=1245596&objectId.155813=1494764&contextId.155813=1245597&parentId.155813=1245598',
-		'https://lakotaadena.ss10.sharpschool.com/our_school/visitors___guests',
+		'https://cherokee.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://cherokee.lakotaonline.com/our_school/our_team',
 
 
-		'http://www.opportunitiesforkids.com',
-		'https://adena.lakotaonline.com/activities/beginning_band',
+
+		'https://cherokee.lakotaonline.com/our_school/school_newsletter',
+
+		'https://cherokee.lakotaonline.com/our_school/mental_health_services',
+
+		'https://cherokee.lakotaonline.com/our_school/school_form___document',
+		'https://reportcard.education.ohio.gov/school/119768',
+		'https://cherokee.lakotaonline.com/our_school/transportation__arrival___dismissal_information',
+		'https://cherokee.lakotaonline.com/our_school/visitors___guests',
 
 
-		'https://adena.lakotaonline.com/contact_us/report_an_absence',
+
+		'https://cherokee.lakotaonline.com/activities/beginning_band',
 
 
-		'https://adena.lakotaonline.com/p_t_s_o/president_s_message; ',
-		'https://adena.lakotaonline.com/p_t_s_o/meetings',
-		'https://adena.lakotaonline.com/p_t_s_o/our_programs',
-		'https://adena.lakotaonline.com/p_t_s_o/contact_us; https://adena.lakotaonline.com/p_t_s_o/forms',
+		'https://cherokee.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'http://www.cherokeecheetahpta.com',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

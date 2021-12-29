@@ -255,45 +255,49 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hopewelljr.lakotaonline.com',
-		'https://hopewelljr.lakotaonline.com/our_school/our_team',
+		'https://libertyjr.lakotaonline.com',
+		'https://libertyjr.lakotaonline.com/our_school/our_team',
 
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=738754',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811769',
 
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811962',
 
-
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=19376824',
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=24478099',
-
-
-
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=856898',
-
-		'https://hopewelljr.lakotaonline.com/cms/one.aspx?pageId=857817',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=18116861',
 
 
 
 
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=15472275',
+
+
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812031',
+
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812060',
+		'https://libertyjr.lakotaonline.com/our_school/conferences',
+
+
+
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811952',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=15459081',
 
 
 
 
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=856866',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=15524505',
 
-		'https://hopewelljr.lakotaonline.com/activities/after-_school_programs',
-		'https://hopewelljr.lakotaonline.com/activities/after-_school_programs/national_junior_honor_society',
-		'https://hopewelljr.lakotaonline.com/athletics/hopewell_junior_athletics',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812621',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869709',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869712',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869715',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869718',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869721',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869724',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869727',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869730',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869733',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869736',
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869739',
 
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=738808',
-
-
-
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=858091',
-
-
-		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=858097',
-
+		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=870176',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

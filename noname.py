@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='subpage-content').find_all('form') != []:
+		if web_soup.find(id='main-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='subpage-content').find_all('embed') != []:
+		if web_soup.find(id='main-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='subpage-content').find_all('iframe') != []:
+		if web_soup.find(id='main-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='subpage-content').find_all(class_='calendar') != []:
+		if web_soup.find(id='main-content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='subpage-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='main-content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='subpage-content').find_all(class_='news') != []:
+		if web_soup.find(id='main-content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='subpage-content') != None and web_soup.find(id='subpage-content') != '':
-			col1 = web_soup.find(id='subpage-content')
+		if web_soup.find(id='main-content') != None and web_soup.find(id='main-content') != '':
+			col1 = web_soup.find(id='main-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -255,39 +255,34 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://woodland.lakotaonline.com/our_school/a_message_from_the_principal; ',
-		'https://woodland.lakotaonline.com/our_school/our_team',
-		'https://woodland.lakotaonline.com/our_school/title_i',
 
+		'https://easthigh.lakotaonline.com/about_east/administrative_team',
+		'https://www.lakotaonline.com/community/alumni',
+		'https://easthigh.lakotaonline.com/about_east/transportation',
+		'https://easthigh.lakotaonline.com/about_east/attendance_information',
+		'https://easthigh.lakotaonline.com/about_east/bell_schedules',
 
-		'https://woodland.lakotaonline.com/our_school/school_newsletter; https://lakotawoodland.ss10.sharpschool.com/our_school/the_w_o_l_f',
-
-		'https://woodland.lakotaonline.com/our_school/mental_health_services',
-
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457',
-		'https://reportcard.education.ohio.gov/school/111187',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457&objectId.157376=1813450&contextId.157376=1322459&parentId.157376=1322460',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=964607',
+		'https://easthigh.lakotaonline.com/about_east/daily_announcements',
 
 
 
+		'https://easthigh.lakotaonline.com/academics/summer_academic_assignments',
+
+
+		'https://easthigh.lakotaonline.com/activities/national_honor_society',
+		'https://easthigh.lakotaonline.com/activities/theatre',
+		'https://easthigh.lakotaonline.com/connect/connect_with_lakota_east',
 
 
 
+		'https://easthigh.lakotaonline.com/counseling/school_counseling_department',
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9987976',
 
 
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=19376865',
 
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9961612',
 
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508302',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1813428',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508312',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25721273',
-
-
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1018323',
-
-
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508144',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

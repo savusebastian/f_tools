@@ -255,25 +255,44 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://wyandotecs.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://wyandotecs.lakotaonline.com/our_school/our_team',
+		'https://hopewelljr.lakotaonline.com',
+		'https://hopewelljr.lakotaonline.com/our_school/our_team',
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=738754',
 
 
 
-		'https://wyandotecs.lakotaonline.com/our_school/school_newsletter',
-
-		'https://wyandotecs.lakotaonline.com/our_school/mental_health_services',
-
-
-		'https://reportcard.education.ohio.gov/school/008983',
-		'https://wyandotecs.lakotaonline.com/our_school/title_1',
-
-		'https://wyandotecs.lakotaonline.com/our_school/visitors___guests',
-
-		'https://wyandotecs.lakotaonline.com/contact_us/report_an_absence',
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=19376824',
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=24478099',
 
 
-		'https://wyandotpto.com',
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=856898',
+
+		'https://hopewelljr.lakotaonline.com/cms/one.aspx?pageId=857817',
+
+
+
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=15472275',
+
+
+
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=856866',
+
+		'https://hopewelljr.lakotaonline.com/activities/after-_school_programs',
+		'https://hopewelljr.lakotaonline.com/activities/after-_school_programs/national_junior_honor_society',
+		'https://hopewelljr.lakotaonline.com/athletics/hopewell_junior_athletics',
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=738808',
+
+
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=858091',
+
+
+		'https://hopewelljr.lakotaonline.com/cms/One.aspx?portalId=371441&pageId=858097',
 
 	]
 	mainfolder = 'lakota'

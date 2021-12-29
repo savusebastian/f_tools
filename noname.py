@@ -411,7 +411,7 @@ if __name__ == '__main__':
 
 				page_counter += 1
 
-				if href.split('/')[2].find('dodge') == -1:
+				if link.split('/')[2].find('dodge') == -1:
 					csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
 				else:
 					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)

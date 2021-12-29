@@ -255,24 +255,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://libertyecs.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://libertyecs.lakotaonline.com/our_school/our_team',
+		'https://shawneeecs.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://shawneeecs.lakotaonline.com/our_school/our_team',
 
 
 
-		'https://libertyecs.lakotaonline.com/our_school/school_newsletter',
+		'https://shawneeecs.lakotaonline.com/our_school/school_newsletter',
 
-		'https://libertyecs.lakotaonline.com/our_school/mental_health_services',
-
-
-		'https://reportcard.education.ohio.gov/school/020321',
-		'https://libertyecs.lakotaonline.com/our_school/transportation_information',
-		'https://libertyecs.lakotaonline.com/our_school/visitors___guests',
-
-		'https://libertyecs.lakotaonline.com/contact_us/report_an_absence',
+		'https://shawneeecs.lakotaonline.com/our_school/mental_health_services',
 
 
-		'https://libertyecs.lakotaonline.com/p_t_o/connect_with_us',
+		'https://reportcard.education.ohio.gov/school/111179',
+		'https://shawneeecs.lakotaonline.com/our_school/transportion_information',
+		'https://shawneeecs.lakotaonline.com/our_school/visitors___guests',
+
+		'https://shawneeecs.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'https://shawneeecs.lakotaonline.com/pta/president_s_message',
 
 	]
 	mainfolder = 'lakota'

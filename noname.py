@@ -255,20 +255,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://cherokee.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://cherokee.lakotaonline.com/our_school/our_team',
+		'https://endeavor.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://endeavor.lakotaonline.com/our_school/our_team',
 
 
 
-		'https://cherokee.lakotaonline.com/our_school/school_newsletter',
+		'https://endeavor.lakotaonline.com/our_school/school_newsletter',
 
-		'https://cherokee.lakotaonline.com/our_school/mental_health_services',
+		'https://endeavor.lakotaonline.com/our_school/mental_health_services',
 
-		'https://cherokee.lakotaonline.com/our_school/school_form___document',
-		'https://reportcard.education.ohio.gov/school/119768',
-		'https://cherokee.lakotaonline.com/our_school/transportation__arrival___dismissal_information',
-		'https://cherokee.lakotaonline.com/our_school/visitors___guests',
-
+		'https://endeavor.lakotaonline.com/our_school/school_forms___documents',
+		'https://reportcard.education.ohio.gov/school/008984',
+		'https://endeavor.lakotaonline.com/cms/One.aspx?portalId=376722&pageId=959653',
+		'https://endeavor.lakotaonline.com/cms/One.aspx?portalId=376722&pageId=920834',
 
 
 		'https://cherokee.lakotaonline.com/activities/beginning_band',
@@ -277,7 +276,12 @@ if __name__ == '__main__':
 		'https://cherokee.lakotaonline.com/contact_us/report_an_absence',
 
 
-		'http://www.cherokeecheetahpta.com',
+		'https://endeavor.lakotaonline.com/p_t_o/president_s_message; ; ',
+		'https://lakotaendeavour.ss10.sharpschool.com/cms/One.aspx?portalId=376722&pageId=922561; ',
+		'https://lakotaendeavour.ss10.sharpschool.com/cms/One.aspx?portalId=376722&pageId=922555',
+		'https://lakotaendeavour.ss10.sharpschool.com/cms/One.aspx?portalId=376722&pageId=922561',
+		'https://endeavor.lakotaonline.com/p_t_o/contact_us',
+		'https://lakotaendeavour.ss10.sharpschool.com/cms/One.aspx?portalId=376722&pageId=1274360&objectId.156155=1274646&contextId.156155=1274519&parentId.156155=1274520',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

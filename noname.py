@@ -255,19 +255,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://independence.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://independence.lakotaonline.com/our_school/our_team',
+		'https://union.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://union.lakotaonline.com/our_school/our_team',
+		'https://freedom.lakotaonline.com/our_school/lunch_times',
+		'https://union.lakotaonline.com/our_school/title_1',
 
+		'https://union.lakotaonline.com/our_school/school_newsletter',
 
+		'https://union.lakotaonline.com/our_school/mental_health_services',
 
-		'https://independence.lakotaonline.com/our_school/indy_info',
-
-		'https://independence.lakotaonline.com/our_school/mental_health_services',
-
-		'https://independence.lakotaonline.com/our_school/school_forms___documents',
+		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?siteId=371015&pageId=1315070&objectId.157270=1322009&contextId.157270=1315072',
+		'https://union.lakotaonline.com/our_school/school_history',
 		'https://reportcard.education.ohio.gov/school/037820',
-		'https://independence.lakotaonline.com/our_school/transportation_information',
-		'https://independence.lakotaonline.com/our_school/visitors__guests',
+		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?siteId=371015&pageId=1315070&objectId.157270=1322009&contextId.157270=1315072',
+		'https://union.lakotaonline.com/our_school/visitors___guests',
 
 
 
@@ -278,15 +279,14 @@ if __name__ == '__main__':
 
 
 
-		'https://independence.lakotaonline.com/cms/One.aspx?portalId=377154&pageId=1724012',
+		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=1484766',
+		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=1613007',
 
 
-		'https://independence.lakotaonline.com/cms/One.aspx?portalId=377154&pageId=945379',
+		'https://lakotaunion.ss10.sharpschool.com/cms/One.aspx?portalId=371015&pageId=732298',
 
 
-		'https://independence.lakotaonline.com/common/pages/DisplayFile.aspx?itemId=9884660 ;',
-		'https://independence.lakotaonline.com/common/pages/DisplayFile.aspx?itemId=9884618',
-		'https://independence.lakotaonline.com/p_t_a/p_t_a_forms___documents',
+		'https://unionptso.org',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

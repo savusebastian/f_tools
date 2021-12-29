@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='view-content').find_all('form') != []:
+		if web_soup.find(id='subpage_content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='view-content').find_all('embed') != []:
+		if web_soup.find(id='subpage_content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='view-content').find_all('iframe') != []:
+		if web_soup.find(id='subpage_content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='view-content').find_all(class_='calendar') != []:
+		if web_soup.find(id='subpage_content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='view-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='subpage_content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='view-content').find_all(class_='news') != []:
+		if web_soup.find(id='subpage_content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='view-content') != None and web_soup.find(class_='view-content') != '':
-			col1 = web_soup.find(class_='view-content')
+		if web_soup.find(id='subpage_content') != None and web_soup.find(id='subpage_content') != '':
+			col1 = web_soup.find(id='subpage_content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -255,67 +255,100 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.adams12.org/departments/communications/3/documents',
-		'https://www.adams12.org/departments/communications/3/documents?page=1',
-		'https://www.adams12.org/departments/communications/3/documents?page=2',
-		'https://www.adams12.org/departments/communications/3/documents?page=3',
-		'https://www.adams12.org/departments/communications/3/documents?page=4',
-		'https://www.adams12.org/departments/communications/3/documents?page=5',
-		'https://www.adams12.org/departments/communications/3/documents?page=6',
-		'https://www.adams12.org/departments/communications/3/documents?page=7',
-		'https://www.adams12.org/departments/communications/3/documents?page=8',
-		'https://www.adams12.org/departments/communications/3/documents?page=9',
-		'https://www.adams12.org/departments/communications/3/documents?page=10',
-		'https://www.adams12.org/departments/communications/3/documents?page=11',
-		'https://www.adams12.org/district-policies',
-		'https://www.adams12.org/district-policies?page=1',
-		'https://www.adams12.org/district-policies?page=2',
-		'https://www.adams12.org/district-policies?page=3',
-		'https://www.adams12.org/district-policies?page=4',
-		'https://www.adams12.org/district-policies?page=5',
-		'https://www.adams12.org/district-policies?page=6',
-		'https://www.adams12.org/district-policies?page=7',
-		'https://www.adams12.org/district-policies?page=8',
-		'https://www.adams12.org/district-policies?page=9',
-		'https://www.adams12.org/district-policies?page=10',
-		'https://www.adams12.org/district-policies?page=11',
-		'https://www.adams12.org/district-policies?page=12',
-		'https://www.adams12.org/district-policies?page=13',
-		'https://www.adams12.org/district-policies?page=14',
-		'https://www.adams12.org/district-policies?page=15',
-		'https://www.adams12.org/departments/board-education/260/documents',
-		'https://www.adams12.org/departments/board-education/260/documents?page=1',
-		'https://www.adams12.org/departments/board-education/260/documents?page=2',
-		'https://www.adams12.org/departments/board-education/260/documents?page=3',
-		'https://www.adams12.org/departments/board-education/260/documents?page=4',
-		'https://www.adams12.org/departments/board-education/260/documents?page=5',
-		'https://www.adams12.org/departments/board-education/260/documents?page=6',
-		'https://www.adams12.org/departments/board-education/260/documents?page=7',
-		'https://www.adams12.org/departments/board-education/260/documents?page=8',
-		'https://www.adams12.org/departments/board-education/260/documents?page=9',
-		'https://www.adams12.org/departments/board-education/260/documents?page=10',
-		'https://www.adams12.org/departments/board-education/260/documents?page=11',
-		'https://www.adams12.org/departments/board-education/260/documents?page=12',
-		'https://www.adams12.org/departments/board-education/260/documents?page=13',
-		'https://www.adams12.org/departments/board-education/260/documents?page=14',
-		'https://www.adams12.org/departments/board-education/260/documents?page=15',
-		'https://www.adams12.org/departments/board-education/260/documents?page=16',
-		'https://www.adams12.org/departments/board-education/260/documents?page=17',
-		'https://www.adams12.org/departments/board-education/260/documents?page=18',
-		'https://www.adams12.org/departments/board-education/260/documents?page=19',
-		'https://www.adams12.org/departments/board-education/260/documents?page=20',
-		'https://www.adams12.org/departments/board-education/260/documents?page=21',
-		'https://www.adams12.org/departments/board-education/260/documents?page=22',
-		'https://www.adams12.org/departments/board-education/260/documents?page=23',
-		'https://www.adams12.org/departments/board-education/260/documents?page=24',
-		'https://www.adams12.org/initiatives/elevate/19926/documents',
-		'https://www.adams12.org/initiatives/elevate/19926/documents?page=1',
-		'https://www.adams12.org/initiatives/elevate/19926/documents?page=2',
-		'https://www.adams12.org/initiatives/elevate/19926/documents?page=3',
-		'https://www.adams12.org/initiatives/elevate/19926/documents?page=4',
-		'https://www.adams12.org/initiatives/elevate/19926/documents?page=5',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=221504',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=59854',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=221513',
+		'https://simbli.eboardsolutions.com/Index.aspx?S=4055',
+		'https://simbli.eboardsolutions.com/News/ViewNewsAttachment.aspx?S=4055&AID=3042',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49416346',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49416381',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49416381',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49416548',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49477974',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49841956',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=50131737',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=50298639',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=205690',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/Image/SPLOST%20Schedule%20as%20of%206-30-2020.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/Image/2021_Current_Tax_Digest_and_5_Year_History_of_Levy_2-27-19.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/Image/Notice%20of%20Property%20Tax%20Increase%2021-22%20.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/Image/FY%2022%20Budget...pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/Image/PRESS%20RELEASE%20ANNOUNCING%20A%20PROPOSED%20PROPERTY%20TAX%20INCREASE.pdf',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49583654',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49583657',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49583659',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49583661',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49583663',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49589774',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=206739',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=206742',
+		'http://www.dodge.k12.ga.us/technology_page',
+		'http://www.dodge.k12.ga.us/b_o_e___district_offices/student_records_and_teacher_support_services',
+		'http://www.dodge.k12.ga.us/cms/one.aspx?pageId=37648184',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=49978103',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/File/Dodge%20County%20Schools%20Approved%20Calendar%202021-2022%20.pdf',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=205676',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=206793',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/File/21-22TOTY.jpg',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_59740/File/quarantine_social_twitter.png',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=59832',
+		'https://dcss.powerschool.com/public/home.html',
+		'https://docs.google.com/forms/d/e/1FAIpQLSekx0MPCsYZMiMCcde6KQfA_H6-oNvQALoZzo76LCR3Nig94g/viewform',
+		'http://www.dodge.k12.ga.us/cms/One.aspx?portalId=59824&pageId=39061681',
+		'https://dcss.powerschool.com/teachers/pw.html',
+		'https://dcss.powerschool.com/admin/pw.html',
+
+		'https://docs.google.com/spreadsheets/d/14_j2QPFh9T46DovWZ739PyhGNPlpZ8muN_vP83UYKNI/edit?usp=sharing',
+		'http://dhs.dodge.k12.ga.us/news/about_us',
+		'http://dhs.dodge.k12.ga.us/news/___2021-2022_school_calendar___',
+		'http://dhs.dodge.k12.ga.us/for_parents/d_c_h_s_student_handbook',
+		'http://dhs.dodge.k12.ga.us/for_parents/harassment_discrimination_notification_statement',
+		'http://dhs.dodge.k12.ga.us/for_parents/parent_resources',
+		'http://dhs.dodge.k12.ga.us/for_parents/financial_aid_presentation',
+		'http://dhs.dodge.k12.ga.us/for_students/counselor_s_corner',
+		'http://dhs.dodge.k12.ga.us/for_students/counselor_s_corner/parent_information_-_11th_grade',
+		'http://dhs.dodge.k12.ga.us/for_students/counselor_s_corner/financial_aid_information',
+		'http://dhs.dodge.k12.ga.us/distance_learning',
+		'http://dhs.dodge.k12.ga.us/contact_school/directions',
+		'http://dhs.dodge.k12.ga.us/for_parents/georgia_s_office_of_student_achievement_report_car',
+		'https://docs.google.com/presentation/d/e/2PACX-1vTJCBjllXj1Ho-mZtqnZcP4KgKqXkLbfSEI170i-3xQei1mWtdhKpMuReLHVDMbL8rxSrG1skfbkf2q/pub?start=false&loop=false&delayms=3000&slide=id.g8b94e5bc81_1_416',
+		'http://dhs.dodge.k12.ga.us/contact_school',
+
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/File/SDES%20Student.Handbook.21-22.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/File/Dodge%20County%20Schools%20Approved%20Calendar%202021-2022%20.pdf',
+		'https://clever.com/oauth/district-picker?channel=clever&client_id=4c63c1cf623dce82caac&confirmed=true&redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&response_type=code&state=6b35d34ac9e5567aef934cfdfb24b69d6fe5658f832d99c745a216b246113de4',
+		'https://www.educatorshandbook.com/',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/File/September%2021%20Menu%20orders.pdf',
+		'https://dodgecountyfm.sherpadesk.com/login/',
+		'https://dodgecountyit.sherpadesk.com/portal/logon.aspx',
+		'https://dcss.powerschool.com/public/home.html',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/Image/Darla/FY21%20Implementation%20Plan%20and%20Core%20Curriculum%20List.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/Image/PBIS%20Discipline%20Procedurespdf.pdf',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60316/File/Consolidated_LEA_PLAN_FY2022_WorkingCopy%20(4).Pdf',
+		'https://eboard.eboardsolutions.com/Index.aspx?S=4055',
+		'https://dcss.powerschool.com/teachers/pw.html',
+		'http://sdes.dodge.k12.ga.us/for_students/student_resources',
+
+		'http://ndes.dodge.k12.ga.us/cms/One.aspx?portalId=60256&pageId=60287',
+		'http://www.dodge.k12.ga.us/b_o_e___district_offices/board_of_education',
+		'http://ndes.dodge.k12.ga.us/food_services/lunch_menu',
+		'http://ndes.dodge.k12.ga.us/principal_s_pen',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60172/File/Dodge%20County%20Schools%20Approved%20Calendar%202021-2022%20.pdf',
+		'http://ndes.dodge.k12.ga.us/cms/One.aspx?portalId=60256&pageId=50308706',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60172/File/NDES%20Student.Handbook.21-22.approved.pdf',
+		'https://clever.com/oauth/authorize?channel=clever&client_id=4c63c1cf623dce82caac&confirmed=true&redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&response_type=code&state=1cc6c48fcc071c6fbc33cdec458d6fd0a44671852459a914135b7217805d95f2&district_id=511d419d0ec99d805b000001',
+		'https://docs.google.com/presentation/d/e/2PACX-1vRNng43GlB9watLSe5O19t3tTyQSePFfSLVFSExAfKjPhOimzQo2ScnLD9CCKxnyJozvh4MJcXxBfmL/pub?start=false&loop=false&delayms=3000&slide=id.g8ddc84f30a_0_0',
+		'https://docs.google.com/presentation/d/e/2PACX-1vR7n21Pl595XUj5iNCCIYBSdFTqtvzqwJmg2lNa9cs_1NnIACgVjLVXsuIl-7yhfRdN4OnOhixltYL-/pub?start=false&loop=false&delayms=3000&slide=id.g84f8b4fdf7_0_0',
+		'http://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_60172/Image/Consolidated_LEA_PLAN_FY2022_WorkingCopy%20(6).Pdf',
+		'https://schoolgrades.georgia.gov/north-dodge-elementary-school',
+		'https://dcss.powerschool.com/public/home.html',
+		'https://docs.google.com/presentation/d/e/2PACX-1vR5Se_DZoOJurKYaDa1-SU-2gHMAjUAIK4A8LP6izY3yzyUupBZZq3zBRxqINuzoIGmjPY09Nen4Tpb/pub?start=false&loop=false&delayms=3000&slide=id.g8b94e5bc81_1_416',
+		'https://dodgecountyft.sherpadesk.com/login/',
+		'https://dodgecountyfm.sherpadesk.com/login/',
+		'https://www.gapsc.com/Certification/Lookup.aspx',
+		'https://dcss.powerschool.com/teachers/pw.html',
 	]
-	mainfolder = 'adams12'
+	mainfolder = 'dodgek12'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -328,7 +361,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'adams12'
+		school_name = 'dodgek12'
 
 		csv_report.writerow(['School name', school_name])
 

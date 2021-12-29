@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='subpage-content').find_all('form') != []:
+		if web_soup.find(id='main-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='subpage-content').find_all('embed') != []:
+		if web_soup.find(id='main-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='subpage-content').find_all('iframe') != []:
+		if web_soup.find(id='main-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='subpage-content').find_all(class_='calendar') != []:
+		if web_soup.find(id='main-content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='subpage-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='main-content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='subpage-content').find_all(class_='news') != []:
+		if web_soup.find(id='main-content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='subpage-content') != None and web_soup.find(id='subpage-content') != '':
-			col1 = web_soup.find(id='subpage-content')
+		if web_soup.find(id='main-content') != None and web_soup.find(id='main-content') != '':
+			col1 = web_soup.find(id='main-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -255,23 +255,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24010899; ',
-		'https://drive.google.com/drive/folders/1TRc34TMhxLfuL5XdywE-Vcf_bVx6PT6l',
+		'https://adena.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://adena.lakotaonline.com/our_school/our_team',
+
+		'https://adena.lakotaonline.com/our_school/school_newsletter',
+
+		'https://adena.lakotaonline.com/our_school/mental_health_services',
+
+		'https://lakotaadena.ss10.sharpschool.com/our_school/school_form___document',
+		'https://reportcard.education.ohio.gov/school/070920',
+		'https://lakotaadena.ss10.sharpschool.com/cms/One.aspx?action=view&siteId=376434&pageId=1245596&objectId.155813=1494764&contextId.155813=1245597&parentId.155813=1245598',
+		'https://lakotaadena.ss10.sharpschool.com/our_school/visitors___guests',
 
 
+		'http://www.opportunitiesforkids.com',
+		'https://adena.lakotaonline.com/activities/beginning_band',
 
 
+		'https://adena.lakotaonline.com/contact_us/report_an_absence',
 
 
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24010899',
-
-		'https://lakotaonlinecom.finalsite.com/fs/admin/site/pages/12',
-
-		'https://drive.google.com/drive/folders/1TRc34TMhxLfuL5XdywE-Vcf_bVx6PT6l',
-		'https://docs.google.com/document/d/10xyv7T7XYa3zN8SeGYUerzb11cCGRDfgySFztCfyZ-o/edit?usp=sharing',
-		'https://www.lakotaonline.com/about_us/what_s_new/focus_on_the_social___emotional_needs',
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24251943',
-		'https://docs.google.com/document/d/1ahPklxhpqXEs7pumG_Ba23ckydfJBtYCM8-h65H5FP4/edit?usp=sharing',
+		'https://adena.lakotaonline.com/p_t_s_o/president_s_message; ',
+		'https://adena.lakotaonline.com/p_t_s_o/meetings',
+		'https://adena.lakotaonline.com/p_t_s_o/our_programs',
+		'https://adena.lakotaonline.com/p_t_s_o/contact_us; https://adena.lakotaonline.com/p_t_s_o/forms',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

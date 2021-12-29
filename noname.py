@@ -255,24 +255,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://shawneeecs.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://shawneeecs.lakotaonline.com/our_school/our_team',
+		'https://wyandotecs.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://wyandotecs.lakotaonline.com/our_school/our_team',
 
 
 
-		'https://shawneeecs.lakotaonline.com/our_school/school_newsletter',
+		'https://wyandotecs.lakotaonline.com/our_school/school_newsletter',
 
-		'https://shawneeecs.lakotaonline.com/our_school/mental_health_services',
-
-
-		'https://reportcard.education.ohio.gov/school/111179',
-		'https://shawneeecs.lakotaonline.com/our_school/transportion_information',
-		'https://shawneeecs.lakotaonline.com/our_school/visitors___guests',
-
-		'https://shawneeecs.lakotaonline.com/contact_us/report_an_absence',
+		'https://wyandotecs.lakotaonline.com/our_school/mental_health_services',
 
 
-		'https://shawneeecs.lakotaonline.com/pta/president_s_message',
+		'https://reportcard.education.ohio.gov/school/008983',
+		'https://wyandotecs.lakotaonline.com/our_school/title_1',
+
+		'https://wyandotecs.lakotaonline.com/our_school/visitors___guests',
+
+		'https://wyandotecs.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'https://wyandotpto.com',
 
 	]
 	mainfolder = 'lakota'

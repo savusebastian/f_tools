@@ -255,49 +255,52 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://libertyjr.lakotaonline.com',
-		'https://libertyjr.lakotaonline.com/our_school/our_team',
+		'https://plainsjr.lakotaonline.com',
+		'https://plainsjr.lakotaonline.com/our_school/our_team',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811769',
+		'https://plainsjr.lakotaonline.com/our_school/hours__directions',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811962',
+		'https://plainsjr.lakotaonline.com/our_school/school_newsletter',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=18116861',
-
-
+		'https://plainsjr.lakotaonline.com/our_school/mental_health_services',
 
 
 
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812031',
+		'https://plainsjr.lakotaonline.com/our_school/transportation_information',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812060',
-		'https://libertyjr.lakotaonline.com/our_school/conferences',
-
-
-
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=811952',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=15459081',
+		'https://plainsjr.lakotaonline.com/our_school/visitors__guests',
 
 
 
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=15524505',
+		'https://plainsjr.lakotaonline.com/our_school/innovation_hub',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=812621',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869709',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869712',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869715',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869718',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869721',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869724',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869727',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869730',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869733',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869736',
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=869739',
 
-		'https://libertyjr.lakotaonline.com/cms/One.aspx?portalId=371725&pageId=870176',
+
+		'https://plainsjr.lakotaonline.com/activities/after-_school_programs',
+		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/beta_club',
+		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/drama_club',
+		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/yearbook_club',
+		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/student_council',
+		'https://plainsjr.lakotaonline.com/athletics/plains_junior_athletics',
+		'https://plainsjr.lakotaonline.com/athletics/plains_junior_athletics/athletic_forms',
+		'https://plainsjr.lakotaonline.com/athletics/basketball__boys_',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861807',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861812',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861821',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861837',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861843',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861847',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861853',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861860',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861872',
+		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861879',
+
+		'https://plainsjr.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'https://plainsjr.lakotaonline.com/pto/presidents_message',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

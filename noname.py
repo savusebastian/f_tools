@@ -297,7 +297,9 @@ if __name__ == '__main__':
 				tiers = link.split('/')
 				t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
 
-				if len(tiers) == 4:
+				if len(tiers) == 3:
+					t1 = tiers[-1].capitalize()
+				elif len(tiers) == 4:
 					t1 = tiers[-1].capitalize()
 				elif len(tiers) == 5:
 					t1 = tiers[-2].capitalize()

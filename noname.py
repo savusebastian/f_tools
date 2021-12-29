@@ -255,52 +255,64 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://plainsjr.lakotaonline.com',
-		'https://plainsjr.lakotaonline.com/our_school/our_team',
+		'https://ridgejr.lakotaonline.com',
+		'https://ridgejr.lakotaonline.com/our_school/our_team',
 
-		'https://plainsjr.lakotaonline.com/our_school/hours__directions',
+		'https://ridgejr.lakotaonline.com/our_school/hours__directions',
 
-		'https://plainsjr.lakotaonline.com/our_school/school_newsletter',
+		'https://ridgejr.lakotaonline.com/our_school/school_newsletter',
 
-		'https://plainsjr.lakotaonline.com/our_school/mental_health_services',
+		'https://ridgejr.lakotaonline.com/our_school/mental_health_services',
 
-
-
-
-		'https://plainsjr.lakotaonline.com/our_school/transportation_information',
-
-		'https://plainsjr.lakotaonline.com/our_school/visitors__guests',
+		'https://ridgejr.lakotaonline.com/our_school/school_forms___documents',
+		'https://ridgejr.lakotaonline.com/our_school/ridge_ribbons',
 
 
 
-
-		'https://plainsjr.lakotaonline.com/our_school/innovation_hub',
-
+		'https://ridgejr.lakotaonline.com/our_school/visitors___guests',
 
 
-		'https://plainsjr.lakotaonline.com/activities/after-_school_programs',
-		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/beta_club',
-		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/drama_club',
-		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/yearbook_club',
-		'https://plainsjr.lakotaonline.com/activities/after-_school_programs/student_council',
-		'https://plainsjr.lakotaonline.com/athletics/plains_junior_athletics',
-		'https://plainsjr.lakotaonline.com/athletics/plains_junior_athletics/athletic_forms',
-		'https://plainsjr.lakotaonline.com/athletics/basketball__boys_',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861807',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861812',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861821',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861837',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861843',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861847',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861853',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861860',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861872',
-		'https://plainsjr.lakotaonline.com/cms/One.aspx?portalId=371583&pageId=861879',
-
-		'https://plainsjr.lakotaonline.com/contact_us/report_an_absence',
 
 
-		'https://plainsjr.lakotaonline.com/pto/presidents_message',
+		'https://ridgejr.lakotaonline.com/our_school/innovation_hub',
+
+
+
+		'https://ridgejr.lakotaonline.com/our_school/title_i',
+		'https://ridgejr.lakotaonline.com/activities/club_card',
+		'https://ridgejr.lakotaonline.com/activities/art_club',
+		'https://ridgejr.lakotaonline.com/activities/boys__club',
+		'https://ridgejr.lakotaonline.com/activities/digital_book_club',
+		'https://ridgejr.lakotaonline.com/activities/drama_club',
+		'https://ridgejr.lakotaonline.com/activities/jazz_band',
+		'https://ridgejr.lakotaonline.com/activities/junior_honor_society',
+		'https://ridgejr.lakotaonline.com/activities/student_council',
+		'https://ridgejr.lakotaonline.com/activities/super_scribers',
+		'https://ridgejr.lakotaonline.com/activities/t_s_a___technology_student_association_',
+		'https://ridgejr.lakotaonline.com/activities/yearbook_club',
+		'https://ridgejr.lakotaonline.com/athletics/ridge_junior_athletics',
+		'https://ridgejr.lakotaonline.com/athletics/community_foundation',
+
+		'https://ridgejr.lakotaonline.com/athletics/basketball___boys_',
+		'https://ridgejr.lakotaonline.com/athletics/basketball___girls_',
+		'https://ridgejr.lakotaonline.com/athletics/cheerleading__football_',
+		'https://ridgejr.lakotaonline.com/athletics/cheerleading__basketball_',
+		'https://ridgejr.lakotaonline.com/athletics/cross_country',
+		'https://ridgejr.lakotaonline.com/athletics/football',
+		'https://ridgejr.lakotaonline.com/athletics/golf',
+		'https://ridgejr.lakotaonline.com/athletics/tennis___boys_',
+		'https://ridgejr.lakotaonline.com/athletics/tennis___girls_',
+		'https://plainsjr.lakotaonline.com/athletics/track__field',
+		'https://ridgejr.lakotaonline.com/athletics/volleyball',
+		'https://ridgejr.lakotaonline.com/athletics/wrestling',
+
+		'https://ridgejr.lakotaonline.com/contact_us/report_an_absence',
+
+
+		'https://ridgejr.lakotaonline.com/p_t_o/president_s_message',
+
+		'https://ridgejr.lakotaonline.com/p_t_o/position_descriptions',
+		'https://ridgejr.lakotaonline.com/p_t_o/contact_us',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

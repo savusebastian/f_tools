@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='subpage_content').find_all('form') != []:
+		if web_soup.find(id='main_content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='subpage_content').find_all('embed') != []:
+		if web_soup.find(id='main_content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='subpage_content').find_all('iframe') != []:
+		if web_soup.find(id='main_content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='subpage_content').find_all(class_='calendar') != []:
+		if web_soup.find(id='main_content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='subpage_content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='main_content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='subpage_content').find_all(class_='news') != []:
+		if web_soup.find(id='main_content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='subpage_content') != None and web_soup.find(id='subpage_content') != '':
-			col1 = web_soup.find(id='subpage_content')
+		if web_soup.find(id='main_content') != None and web_soup.find(id='main_content') != '':
+			col1 = web_soup.find(id='main_content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -411,7 +411,7 @@ if __name__ == '__main__':
 
 				page_counter += 1
 
-				if link.split('/')[2].find('dodge') == -1:
+				if link.split('/')[2].find(mainfolder) == -1:
 					csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
 				else:
 					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)

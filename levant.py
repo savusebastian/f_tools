@@ -152,6 +152,8 @@ def get_column(col, splitter):
 				# 		download_file(str(splitter[0] + '//' + splitter[2] + anchor.get('href')), mainfolder, school, '/docs/', filename)
 				# 	else:
 				# 		download_file(str(anchor.get('href')), mainfolder, school, '/docs/', filename)
+			else:
+				anchor.attrs.clear()
 
 		except:
 			print('Anchor:', anchor)

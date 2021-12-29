@@ -255,34 +255,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-
-		'https://easthigh.lakotaonline.com/about_east/administrative_team',
-		'https://www.lakotaonline.com/community/alumni',
-		'https://easthigh.lakotaonline.com/about_east/transportation',
-		'https://easthigh.lakotaonline.com/about_east/attendance_information',
-		'https://easthigh.lakotaonline.com/about_east/bell_schedules',
-
-		'https://easthigh.lakotaonline.com/about_east/daily_announcements',
+		'https://westhigh.lakotaonline.com/about_west/vision__mission__beliefs',
+		'https://westhigh.lakotaonline.com/about_west/administrative_team',
+		'https://www.alumniclass.com/lakota-west-high-school-firebirds-west-chester-oh',
+		'https://westhigh.lakotaonline.com/about_west/transportation/pick-up_and_drop-off_procedures',
+		'https://westhigh.lakotaonline.com/about_west/attendance_information',
+		'https://westhigh.lakotaonline.com/about_west/bell_schedules',
 
 
+		'https://westhigh.lakotaonline.com/activities/clubs',
 
-		'https://easthigh.lakotaonline.com/academics/summer_academic_assignments',
+		'https://westhigh.lakotaonline.com/connect_with_us/ways_to_connect_with_lakota_west',
 
-
-		'https://easthigh.lakotaonline.com/activities/national_honor_society',
-		'https://easthigh.lakotaonline.com/activities/theatre',
-		'https://easthigh.lakotaonline.com/connect/connect_with_lakota_east',
-
+		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=639705',
+		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=640344',
 
 
-		'https://easthigh.lakotaonline.com/counseling/school_counseling_department',
-		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9987976',
-
-
-		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=19376865',
+		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=19376961',
 
 		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9961612',
 
+
+		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=639700',
+		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=640150',
+		'https://lakotawest.ss10.sharpschool.com/cms/one.aspx?pageId=640310',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

@@ -177,22 +177,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='subpage-content').find_all('form') != []:
+		if web_soup.find(id='main-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='subpage-content').find_all('embed') != []:
+		if web_soup.find(id='main-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='subpage-content').find_all('iframe') != []:
+		if web_soup.find(id='main-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='subpage-content').find_all(class_='calendar') != []:
+		if web_soup.find(id='main-content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='subpage-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='main-content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='subpage-content').find_all(class_='news') != []:
+		if web_soup.find(id='main-content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -201,8 +201,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='subpage-content') != None and web_soup.find(id='subpage-content') != '':
-			col1 = web_soup.find(id='subpage-content')
+		if web_soup.find(id='main-content') != None and web_soup.find(id='main-content') != '':
+			col1 = web_soup.find(id='main-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -255,12 +255,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.lakotaonline.com/cms/one.aspx?pageId=273061',
+		'https://creeksideecs.lakotaonline.com/our_school/a_message_from_the_principal',
+		'https://creeksideecs.lakotaonline.com/our_school/our_team',
 
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=22615494',
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=15366996',
+		'https://creeksideecs.lakotaonline.com/our_school/school_newsletter',
 
-		'https://www.lakotaonline.com/district_info/curriculum___instruction/elementary_education__prek-6_/preschool/preschool_calendar',
+		'https://creeksideecs.lakotaonline.com/our_school/mental_health_services',
+
+		'https://creeksideecs.lakotaonline.com/our_school/school_form___document',
+		'https://reportcard.education.ohio.gov/school/123810',
+
+		'https://creeksideecs.lakotaonline.com/our_school/visitors___guests',
+
+		'https://creeksideecs.lakotaonline.com/contact_us/report_an_absence',
+
+		'http://www.creeksidepto.com',
 
 	]
 	mainfolder = 'lakota'

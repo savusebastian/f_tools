@@ -255,18 +255,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=15290776',
-		'https://www.lakotaonline.com/cms/one.aspx?pageId=15290767',
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=15290801',
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=15290812',
+		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24010899; ',
+		'https://drive.google.com/drive/folders/1TRc34TMhxLfuL5XdywE-Vcf_bVx6PT6l',
 
 
 
-		'https://www.lakotaonline.com/district_info/safety___security/safety_tip_line',
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=15308850',
 
 
-		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=19378485',
+
+		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24010899',
+
+		'https://lakotaonlinecom.finalsite.com/fs/admin/site/pages/12',
+
+		'https://drive.google.com/drive/folders/1TRc34TMhxLfuL5XdywE-Vcf_bVx6PT6l',
+		'https://docs.google.com/document/d/10xyv7T7XYa3zN8SeGYUerzb11cCGRDfgySFztCfyZ-o/edit?usp=sharing',
+		'https://www.lakotaonline.com/about_us/what_s_new/focus_on_the_social___emotional_needs',
+		'https://www.lakotaonline.com/cms/One.aspx?portalId=216799&pageId=24251943',
+		'https://docs.google.com/document/d/1ahPklxhpqXEs7pumG_Ba23ckydfJBtYCM8-h65H5FP4/edit?usp=sharing',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

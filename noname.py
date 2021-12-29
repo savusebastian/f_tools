@@ -257,21 +257,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://woodland.lakotaonline.com/our_school/a_message_from_the_principal;',
-		'https://woodland.lakotaonline.com/our_school/our_team',
-		'https://woodland.lakotaonline.com/our_school/title_i',
-		'https://woodland.lakotaonline.com/our_school/school_newsletter; https://lakotawoodland.ss10.sharpschool.com/our_school/the_w_o_l_f',
-		'https://woodland.lakotaonline.com/our_school/mental_health_services',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457',
-		'https://reportcard.education.ohio.gov/school/111187',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457&objectId.157376=1813450&contextId.157376=1322459&parentId.157376=1322460',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=964607',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508302',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1813428',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508312',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25721273',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1018323',
-		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508144',
+		'https://easthigh.lakotaonline.com/about_east/administrative_team',
+		'https://www.lakotaonline.com/community/alumni',
+		'https://easthigh.lakotaonline.com/about_east/transportation',
+		'https://easthigh.lakotaonline.com/about_east/attendance_information',
+		'https://easthigh.lakotaonline.com/about_east/bell_schedules',
+		'https://easthigh.lakotaonline.com/about_east/daily_announcements',
+		'https://easthigh.lakotaonline.com/academics/summer_academic_assignments',
+		'https://easthigh.lakotaonline.com/activities/national_honor_society',
+		'https://easthigh.lakotaonline.com/activities/theatre',
+		'https://easthigh.lakotaonline.com/connect/connect_with_lakota_east',
+		'https://easthigh.lakotaonline.com/counseling/school_counseling_department',
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9987976',
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=19376865',
+		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9961612',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

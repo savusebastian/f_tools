@@ -257,18 +257,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://vangorden.lakotaonline.com/our_school/a_message_from_the_principal',
-		'https://vangorden.lakotaonline.com/our_school/our_team',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960593',
-		'https://vangorden.lakotaonline.com/our_school/mental_health_services',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1322099',
-		'https://reportcard.education.ohio.gov/school/146837',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960607',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1771470',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960688',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=960631',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=9716579',
-		'https://vangorden.lakotaonline.com/cms/One.aspx?portalId=371157&pageId=1676781',
+		'https://woodland.lakotaonline.com/our_school/a_message_from_the_principal;',
+		'https://woodland.lakotaonline.com/our_school/our_team',
+		'https://woodland.lakotaonline.com/our_school/title_i',
+		'https://woodland.lakotaonline.com/our_school/school_newsletter; https://lakotawoodland.ss10.sharpschool.com/our_school/the_w_o_l_f',
+		'https://woodland.lakotaonline.com/our_school/mental_health_services',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457',
+		'https://reportcard.education.ohio.gov/school/111187',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1322457&objectId.157376=1813450&contextId.157376=1322459&parentId.157376=1322460',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=964607',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508302',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1813428',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508312',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25721273',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=1018323',
+		'https://lakotawoodland.ss10.sharpschool.com/cms/One.aspx?portalId=371299&pageId=25508144',
 	]
 	mainfolder = 'lakota'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

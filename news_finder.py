@@ -22,7 +22,7 @@ if __name__ == '__main__':
 		csv_reader = csv.reader(csv_file)
 		csv_writer = csv.writer(csv_main)
 		# csv_writer.writerow(csv_reader[0])
-		for row in csv_reader:
+		for row in csv_reader[1:]:
 			print(row)
 
 		# for row in csv_reader[1:]:

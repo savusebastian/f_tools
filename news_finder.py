@@ -21,8 +21,9 @@ if __name__ == '__main__':
 	with open('all_sites.csv') as csv_file, open('news_finder.csv', 'w', encoding='utf-8') as csv_main:
 		csv_reader = csv.reader(csv_file)
 		csv_writer = csv.writer(csv_main)
-		print(next(csv_reader))
-		csv_writer.writerow(next(csv_reader))
+		x=next(csv_reader)
+		print(x)
+		csv_writer.writerow(x)
 
 		for row in csv_reader:
 			URL = row[0]

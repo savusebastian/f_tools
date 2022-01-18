@@ -23,6 +23,7 @@ if __name__ == '__main__':
 
 		with open('news_finder.csv', 'w') as csv_main:
 			csv_writer = csv.writer(csv_main)
+			print(csv_reader[0])
 			csv_writer.writerow(csv_reader[0])
 
 			for row in csv_reader[1:]:

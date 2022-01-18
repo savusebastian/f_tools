@@ -22,7 +22,7 @@ if __name__ == '__main__':
 		csv_reader = csv.reader(csv_file)
 
 		with open('news_finder.csv', 'w') as csv_main:
-			csv_writer = csv.write(csv_main)
+			csv_writer = csv.writer(csv_main)
 			csv_writer.writerow(csv_reader[0])
 
 			for row in csv_reader[1:]:

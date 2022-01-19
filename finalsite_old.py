@@ -172,22 +172,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='ptl_page').find_all('form') != []:
+		if web_soup.find(id='contentdiv').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='ptl_page').find_all('embed') != []:
+		if web_soup.find(id='contentdiv').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='ptl_page').find_all('iframe') != []:
+		if web_soup.find(id='contentdiv').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='ptl_page').find_all(class_='CAL-view') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='CAL-view') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='ptl_page').find_all(class_='fsDirEntry') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='fsDirEntry') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='ptl_page').find_all(class_='news-summary') != []:
+		if web_soup.find(id='contentdiv').find_all(class_='news-summary') != []:
 			news = 'news'
 
 		# if web_soup.find(id='bannerdiv5') != None:
@@ -196,8 +196,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='ptl_page') != None and web_soup.find(class_='ptl_page') != '':
-			col1 = web_soup.find(class_='ptl_page')
+		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':
+			col1 = web_soup.find(id='contentdiv')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -249,188 +249,16 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.vbschools.com'
+	district = 'https://www.aisr.com'
 	all_sites = [
-		f'https://www.vbschools.com',
-		f'https://alantones.vbschools.com',
-		f'https://arrowheades.vbschools.com',
-		f'https://baysidees.vbschools.com',
-		f'https://birdneckes.vbschools.com',
-		f'https://brookwoodes.vbschools.com',
-		f'https://centervillees.vbschools.com',
-		f'https://christopherfarmses.vbschools.com',
-		f'https://collegeparkes.vbschools.com',
-		f'https://cookees.vbschools.com',
-		f'https://corporatelandinges.vbschools.com',
-		f'https://creedses.vbschools.com',
-		f'https://deyes.vbschools.com',
-		f'https://diamondspringses.vbschools.com',
-		f'https://fairfieldes.vbschools.com',
-		f'https://glenwoodes.vbschools.com',
-		f'https://greenrunes.vbschools.com',
-		f'https://hermitagees.vbschools.com',
-		f'https://hollandes.vbschools.com',
-		f'https://indianlakeses.vbschools.com',
-		f'https://kempsvillees.vbschools.com',
-		f'https://kempsvillemeadowses.vbschools.com',
-		f'https://kingsgrantes.vbschools.com',
-		f'https://kingstones.vbschools.com',
-		f'https://landstownes.vbschools.com',
-		f'https://linkhornparkes.vbschools.com',
-		f'https://luxfordes.vbschools.com',
-		f'https://lynnhavenes.vbschools.com',
-		f'https://malibues.vbschools.com',
-		f'https://newcastlees.vbschools.com',
-		f'https://newtownes.vbschools.com',
-		f'https://northlandinges.vbschools.com',
-		f'https://oceanlakeses.vbschools.com',
-		f'https://parkwayes.vbschools.com',
-		f'https://pembrokees.vbschools.com',
-		f'https://pembrokemeadowses.vbschools.com',
-		f'https://pointoviewes.vbschools.com',
-		f'https://princessannees.vbschools.com',
-		f'https://providencees.vbschools.com',
-		f'https://redmilles.vbschools.com',
-		f'https://rosemontes.vbschools.com',
-		f'https://rosemontforestes.vbschools.com',
-		f'https://salemes.vbschools.com',
-		f'https://seatackes.vbschools.com',
-		f'https://sheltonparkes.vbschools.com',
-		f'https://strawbridgees.vbschools.com',
-		f'https://tallwoodes.vbschools.com',
-		f'https://thaliaes.vbschools.com',
-		f'https://thoroughgoodes.vbschools.com',
-		f'https://threeoakses.vbschools.com',
-		f'https://trantwoodes.vbschools.com',
-		f'https://whiteoakses.vbschools.com',
-		f'https://williamses.vbschools.com',
-		f'https://windsoroakses.vbschools.com',
-		f'https://windsorwoodses.vbschools.com',
-		f'https://woodstockes.vbschools.com',
-		f'https://baysidems.vbschools.com',
-		f'https://bayside6ms.vbschools.com',
-		f'https://brandonms.vbschools.com',
-		f'https://corporatelandingms.vbschools.com',
-		f'https://greatneckms.vbschools.com',
-		f'https://independencems.vbschools.com',
-		f'https://kempsvillems.vbschools.com',
-		f'https://landstownms.vbschools.com',
-		f'https://larkspurms.vbschools.com',
-		f'https://lynnhavenms.vbschools.com',
-		f'https://olddonationschool.vbschools.com',
-		f'https://plazams.vbschools.com',
-		f'https://princessannems.vbschools.com',
-		f'https://salemms.vbschools.com',
-		f'https://virginiabeachms.vbschools.com',
-		f'https://baysidehs.vbschools.com',
-		f'https://coxhs.vbschools.com',
-		f'https://firstcolonialhs.vbschools.com',
-		f'https://greenruncollegiate.vbschools.com',
-		f'https://greenrunhs.vbschools.com',
-		f'https://kellamhs.vbschools.com',
-		f'https://kempsvillehs.vbschools.com',
-		f'https://landstownhs.vbschools.com',
-		f'https://oceanlakeshs.vbschools.com',
-		f'https://princessannehs.vbschools.com',
-		f'https://salemhs.vbschools.com',
-		f'https://tallwoodhs.vbschools.com',
-		f'https://adultlearning.vbschools.com',
-		f'https://advancedtechnologycenter.vbschools.com',
-		f'https://renaissanceacademy.vbschools.com',
-		f'https://techcenter.vbschools.com',
+		f'https://www.aisr.com',
 	]
 	schools = [
-		'vbschools',
-		'alantones',
-		'arrowheades',
-		'baysidees',
-		'birdneckes',
-		'brookwoodes',
-		'centervillees',
-		'christopherfarmses',
-		'collegeparkes',
-		'cookees',
-		'corporatelandinges',
-		'creedses',
-		'deyes',
-		'diamondspringses',
-		'fairfieldes',
-		'glenwoodes',
-		'greenrunes',
-		'hermitagees',
-		'hollandes',
-		'indianlakeses',
-		'kempsvillees',
-		'kempsvillemeadowses',
-		'kingsgrantes',
-		'kingstones',
-		'landstownes',
-		'linkhornparkes',
-		'luxfordes',
-		'lynnhavenes',
-		'malibues',
-		'newcastlees',
-		'newtownes',
-		'northlandinges',
-		'oceanlakeses',
-		'parkwayes',
-		'pembrokees',
-		'pembrokemeadowses',
-		'pointoviewes',
-		'princessannees',
-		'providencees',
-		'redmilles',
-		'rosemontes',
-		'rosemontforestes',
-		'salemes',
-		'seatackes',
-		'sheltonparkes',
-		'strawbridgees',
-		'tallwoodes',
-		'thaliaes',
-		'thoroughgoodes',
-		'threeoakses',
-		'trantwoodes',
-		'whiteoakses',
-		'williamses',
-		'windsoroakses',
-		'windsorwoodses',
-		'woodstockes',
-		'baysidems',
-		'bayside6ms',
-		'brandonms',
-		'corporatelandingms',
-		'greatneckms',
-		'independencems',
-		'kempsvillems',
-		'landstownms',
-		'larkspurms',
-		'lynnhavenms',
-		'olddonationschool',
-		'plazams',
-		'princessannems',
-		'salemms',
-		'virginiabeachms',
-		'baysidehs',
-		'coxhs',
-		'firstcolonialhs',
-		'greenruncollegiate',
-		'greenrunhs',
-		'kellamhs',
-		'kempsvillehs',
-		'landstownhs',
-		'oceanlakeshs',
-		'princessannehs',
-		'salemhs',
-		'tallwoodhs',
-		'adultlearning',
-		'advancedtechnologycenter',
-		'renaissanceacademy',
-		'techcenter',
+		'aisr',
 	]
 
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'vbschools'
+	mainfolder = 'aisr'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -449,7 +277,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='menubar')
+			sitemap = soup.find(id='content10')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')

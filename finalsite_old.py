@@ -190,10 +190,10 @@ def get_content(web_page):
 		if web_soup.find(id='contentdiv').find_all(class_='news-summary') != []:
 			news = 'news'
 
-		# if web_soup.find(id='bannerdiv5') != None:
-		# 	page_nav = web_soup.find(id='bannerdiv5').find_all('a')
-		# elif web_soup.find(id='quicklinks') != None:
-		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
+		if web_soup.find(id='bannerdiv5') != None:
+			page_nav = web_soup.find(id='bannerdiv5').find_all('a')
+		elif web_soup.find(id='quicklinks') != None:
+			page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
 		if web_soup.find(id='contentdiv') != None and web_soup.find(id='contentdiv') != '':

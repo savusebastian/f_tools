@@ -160,7 +160,7 @@ def get_content(web_page):
 	# if web_page != '#':
 	try:
 		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}
-		web_link = requests.get(web_page, headers=headers, timeout=5, verify=False).content
+		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -249,9 +249,9 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.aisr.com'
+	district = 'https://www.aisr.org'
 	all_sites = [
-		f'https://www.aisr.com',
+		f'https://www.aisr.org',
 	]
 	schools = [
 		'aisr',
@@ -275,7 +275,7 @@ if __name__ == '__main__':
 			split_mixed = site.split('/')[2].split('.')
 			all_links = []
 
-			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}, verify=False).content
+			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
 			sitemap = soup.find(id='content10')
 			list_items = sitemap.select('ul > li')

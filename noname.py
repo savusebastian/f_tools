@@ -165,9 +165,9 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}
 		# web_link = requests.get(web_page, headers=headers, timeout=20, verify=False).content
-		web_link = requests.get(web_page, headers=headers, timeout=20).content
+		web_link = requests.get(web_page, headers=headers, timeout=10).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -179,22 +179,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='subpage-content').find_all('form') != []:
+		if web_soup.find(class_='pages-left-column').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='subpage-content').find_all('embed') != []:
+		if web_soup.find(class_='pages-left-column').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='subpage-content').find_all('iframe') != []:
+		if web_soup.find(class_='pages-left-column').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='subpage-content').find_all(class_='calendar') != []:
+		if web_soup.find(class_='pages-left-column').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='subpage-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='pages-left-column').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='subpage-content').find_all(class_='news') != []:
+		if web_soup.find(class_='pages-left-column').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -203,8 +203,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='subpage-content') != None and web_soup.find(id='subpage-content') != '':
-			col1 = web_soup.find(id='subpage-content')
+		if web_soup.find(class_='pages-left-column') != None and web_soup.find(class_='pages-left-column') != '':
+			col1 = web_soup.find(class_='pages-left-column')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -257,23 +257,158 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://westhigh.lakotaonline.com/about_west/vision__mission__beliefs',
-		'https://westhigh.lakotaonline.com/about_west/administrative_team',
-		'https://www.alumniclass.com/lakota-west-high-school-firebirds-west-chester-oh',
-		'https://westhigh.lakotaonline.com/about_west/transportation/pick-up_and_drop-off_procedures',
-		'https://westhigh.lakotaonline.com/about_west/attendance_information',
-		'https://westhigh.lakotaonline.com/about_west/bell_schedules',
-		'https://westhigh.lakotaonline.com/activities/clubs',
-		'https://westhigh.lakotaonline.com/connect_with_us/ways_to_connect_with_lakota_west',
-		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=639705',
-		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=640344',
-		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=19376961',
-		'https://easthigh.lakotaonline.com/cms/One.aspx?portalId=372147&pageId=9961612',
-		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=639700',
-		'https://lakotawest.ss10.sharpschool.com/cms/One.aspx?portalId=372011&pageId=640150',
-		'https://lakotawest.ss10.sharpschool.com/cms/one.aspx?pageId=640310',
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=779501&type=d&pREC_ID=1182807'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=779501&type=d&pREC_ID=1177324'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=931438&type=d&pREC_ID=1399827'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=931438&type=d&pREC_ID=1400233'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=931438&type=d&pREC_ID=1803144'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=931438&type=d&pREC_ID=2090762'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=931438&type=d&pREC_ID=2090721'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=779501&type=d&pREC_ID=1182822'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090110'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090121'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090367'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090368'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090369'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090370'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090371'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090373'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090374'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090375'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090378'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2210033'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2210042'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2090462'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808892&type=d&pREC_ID=2251064'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1183280'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1183298'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1183314'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1183359'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1183360'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=1808427'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=808887&type=d&pREC_ID=2095719'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1180544'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=1047453&type=d&pREC_ID=1183296'
+		'https://www.deperek12.org/apps/pages/district_enrollment'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=977371&type=d&pREC_ID=1297195'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=1179827&type=d&pREC_ID=1427237'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1180073'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1179999'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1183376'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1655669'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1359754'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=1649391'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=782637&type=d&pREC_ID=2183361'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=1179827&type=d&pREC_ID=1427262'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=1179827&type=d&pREC_ID=1427271'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=1179827&type=d&pREC_ID=1428863'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2183516'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118637'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118827'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2181202'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2177816'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118839'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118846'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118948'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2120604'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2118876'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2177812'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2120625'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2177791'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2177792'
+		'https://www.deperek12.org/apps/pages/index.jsp?uREC_ID=2050023&type=d&pREC_ID=2177807'
+
+		'https://www.deperek12.org/apps/pages/elementary_reading_goals'
+		'https://drive.google.com/file/d/1bLh8A39blz3kNKY0Fn02iSYPNjZGu4EE/view'
+		'https://altmayer.deperek12.org/apps/pages/index.jsp?uREC_ID=789277&type=d&pREC_ID=1182729'
+		'https://altmayer.deperek12.org/apps/pages/volunteers'
+		'https://docs.google.com/forms/d/e/1FAIpQLSdwS3uFEpkju0rLe69JYXWRM2Rlawe2aSFLbUS1EnD92cOzAg/viewform'
+		'https://global-zone08.renaissance-go.com/welcomeportal/153322'
+		'https://sites.google.com/depere.k12.wi.us/distancelearningforstudents/start-here'
+		'https://classroom.google.com/h'
+		'https://drive.google.com/file/d/1DZgOdRUgBCR-segSCweIWtWsupI0NDsS/view'
+		'https://www.origoslate.com/slatecast'
+		'https://altmayer.deperek12.org/apps/pages/index.jsp?uREC_ID=913298&type=d&pREC_ID=1182747'
+		'https://app.typingagent.com/site/login?domain=depere'
+		'https://www.brainpop.com/?panel=login'
+		'https://sso.rumba.pk12ls.com/sso/login?service=https://cat.easybridge.pk12ls.com/ca/dashboard.htm&EBTenant=DPUSD-WI&profile=eb'
+		'https://sites.google.com/depere.k12.wi.us/susie-c-altmayer-library/home?authuser=0'
+		'https://app.seesaw.me/#/login'
+		'https://idp-awsprod1.education.scholastic.com/idp/'
+		'https://docs.google.com/document/d/112S5-8iAqptTAnvjfjsPzlktLWh3DLUYMfx5V_TzIjw/edit'
+		'https://studio.code.org/users/sign_in'
+		'https://student.freckle.com/#/login'
+		'https://altmayer.deperek12.org/apps/pages/hour-of-code'
+		'https://suite.smarttech-prod.com/student/login'
+		'https://www.sumdog.com/sch/altmayer'
+		'https://altmayer.deperek12.org/apps/pages/grade1'
+		'https://altmayer.deperek12.org/apps/pages/grade2'
+		'https://altmayer.deperek12.org/apps/pages/grade3'
+		'https://altmayer.deperek12.org/apps/pages/grade4'
+
+		'https://foxview.deperek12.org/apps/pages/index.jsp?uREC_ID=783501&type=d&pREC_ID=1180531'
+		'https://foxview.deperek12.org/apps/pages/index.jsp?uREC_ID=783501&type=d&pREC_ID=1180525'
+		'https://sites.google.com/depere.k12.wi.us/fx-4thgrade-orientation/home'
+		'https://foxview.deperek12.org/apps/pages/index.jsp?uREC_ID=783501&type=d&pREC_ID=2154492'
+		'https://4.files.edl.io/915a/07/29/21/175210-db7ee1ef-aa61-4940-a796-8b9471e9634d.pdf'
+		'https://sites.google.com/depere.k12.wi.us/dpenrichmenttagk12'
+		'https://foxview.deperek12.org/apps/pages/index.jsp?uREC_ID=783536&type=d&pREC_ID=1180572'
+		'https://sites.google.com/a/depere.k12.wi.us/usdd-rti/'
+
+		'https://sites.google.com/depere.k12.wi.us/dpms-counselors/meet-your-counselors'
+		'https://dpms.deperek12.org/apps/pages/index.jsp?uREC_ID=783335&type=d&pREC_ID=1180365'
+		'https://docs.google.com/document/d/1_cfF17_P7NOSPObu4XJlDL9NhomcZ7VL6dzzqQGteLM/edit'
+		'https://4.files.edl.io/6094/08/24/21/180019-f2def7d5-1dd7-433d-97e1-16a9b8b897f7.pdf'
+		'https://dpms.deperek12.org/apps/pages/index.jsp?uREC_ID=783337&type=d&pREC_ID=1180372'
+		'https://dpms.deperek12.org/apps/pages/index.jsp?uREC_ID=783434&type=d&pREC_ID=1180444'
+		'https://docs.google.com/forms/d/e/1FAIpQLSfmCQ8tUmVjGiOzoaWOPVCv6-I3Sg5zF35Ar9dLnQgBQmcE3g/viewform'
+		'https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&access_type=online&approval_prompt=auto&client_id=803448468987-k6ojjvm1aoapljnsogf6ldgnkjctoelo.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fauth.xello.world%2Fgoogle%2Fstudent%2Fcallback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.me&include_granted_scopes=true&state=194549BA-F117-43C3-8B01-84CD84445629&flowName=GeneralOAuthFlow'
+		'https://dpms.edf.school/'
+		'https://dpms.deperek12.org/apps/pages/index.jsp?uREC_ID=783434&type=d&pREC_ID=1180450'
+		'https://dpms.deperek12.org/apps/pages/index.jsp?uREC_ID=783434&type=d&pREC_ID=1180453'
+		'https://sites.google.com/depere.k12.wi.us/dpms-extracurriculars/home'
+		'https://dpms.deperek12.org/apps/bell_schedules/'
+
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=1028787&type=d&pREC_ID=1332811'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782602&type=d&pREC_ID=1179993'
+		'https://docs.google.com/document/d/1seZSldE3T_TVpH88_0akseDZJ98EwamOoPu7fEwTh90/edit'
+		'https://sideline.bsnsports.com/schools/wisconsin/depere/de-pere-high-school/'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782636&type=d&pREC_ID=1775037'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782636&type=d&pREC_ID=1775266'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782636&type=d&pREC_ID=2279392'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782636&type=d&pREC_ID=1179998'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=1180098'
+		'https://www.deperek12.org/apps/news/article/1538568'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=2147147'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=2200185'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=1243506'
+		'https://dphscurrguide.weebly.com/'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=1191331&type=d&pREC_ID=1434778'
+		'https://deperehsnewspaper.com/category/opinions/'
+		'https://dphs.edf.school/'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=1327073'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=2248006'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782855&type=d&pREC_ID=1180102'
+		'https://dphs.deperek12.org/apps/departments/index.jsp?show=TDE'
+		'https://athletics.deperek12.org/'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782903&type=d&pREC_ID=1180111'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782903&type=d&pREC_ID=1309168'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782903&type=d&pREC_ID=1309169'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782903&type=d&pREC_ID=1309172'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782903&type=d&pREC_ID=1309166'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782636&type=d&pREC_ID=1180113'
+		'https://dphs.deperek12.org/apps/pages/index.jsp?uREC_ID=782602&type=d&pREC_ID=1485037'
+		'https://athletics.deperek12.org/apps/pages/index.jsp?uREC_ID=783065&type=d&pREC_ID=1180181'
+		'https://athletics.deperek12.org/apps/pages/index.jsp?uREC_ID=783065&type=d&pREC_ID=2281148'
+		'https://athletics.deperek12.org/apps/pages/index.jsp?uREC_ID=783065&type=d&pREC_ID=1180183'
+		'https://athletics.deperek12.org/apps/pages/index.jsp?uREC_ID=783065&type=d&pREC_ID=1180184'
+		'https://athletics.deperek12.org/apps/pages/index.jsp?uREC_ID=783065&type=d&pREC_ID=1767984'
+		'https://docs.google.com/document/d/1bwSvV4Y3eMxiXd-JPQRklJpryf2QYeIezwysZvtKy5k/edit'
+		'https://sites.google.com/depere.k12.wi.us/coaches-information/home'
+		'https://sites.google.com/depere.k12.wi.us/coaches-information/logos-colors-guidelines'
+		'https://sites.google.com/depere.k12.wi.us/coaches-information/forms'
 	]
-	mainfolder = 'lakota'
+	mainfolder = 'deperek12'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -286,7 +421,7 @@ if __name__ == '__main__':
 		split_dot = all_sites[0].split('.')
 		split_mixed = all_sites[0].split('/')[2].split('.')
 		all_links = []
-		school_name = 'lakota'
+		school_name = 'deperek12'
 
 		csv_report.writerow(['School name', school_name])
 

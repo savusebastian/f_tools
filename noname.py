@@ -119,33 +119,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://dp.ceres.k12.ca.us/',
-		'https://dp.ceres.k12.ca.us/contact_school',
-		'https://dp.ceres.k12.ca.us/publications',
-		'https://dp.ceres.k12.ca.us/publications/student_english_handbook',
-		'https://dp.ceres.k12.ca.us/publications/williams_complaint_form',
-		'https://dp.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
-		'https://dp.ceres.k12.ca.us/publications/parent_s_rights',
-		'https://dp.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
-		'https://dp.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
-		'https://dp.ceres.k12.ca.us/publications/parent_calenda',
-		'https://dp.ceres.k12.ca.us/publications/acceptable_snacks',
-		'https://dp.ceres.k12.ca.us/publications/grade_level_standards_brochures',
-		'https://dp.ceres.k12.ca.us/publications/_newsletter',
-		'https://dp.ceres.k12.ca.us/publications/_student_spanish_handbook',
-		'https://dp.ceres.k12.ca.us/school_facts',
-		'https://dp.ceres.k12.ca.us/schedule',
-		'https://dp.ceres.k12.ca.us/menus',
-		'https://dp.ceres.k12.ca.us/district_main',
-		'https://dp.ceres.k12.ca.us/after_school_program',
-		'https://dp.ceres.k12.ca.us/staff_directory',
-		'https://dp.ceres.k12.ca.us/information',
-		'https://dp.ceres.k12.ca.us/information/important_numbers',
-		'https://dp.ceres.k12.ca.us/information/parents__students',
-		'https://dp.ceres.k12.ca.us/information/don_pedro_calendar',
+		'https://hidahl.ceres.k12.ca.us/',
+		'https://hidahl.ceres.k12.ca.us/contact_school',
+		'https://hidahl.ceres.k12.ca.us/principal_s_message',
+		'https://hidahl.ceres.k12.ca.us/publications',
+		'https://hidahl.ceres.k12.ca.us/publications/school_newsletter',
+		'https://hidahl.ceres.k12.ca.us/publications/williams_complaint_form',
+		'https://hidahl.ceres.k12.ca.us/publications/parent_s_rights',
+		'https://hidahl.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
+		'https://hidahl.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
+		'https://hidahl.ceres.k12.ca.us/publications/acceptable_snacks',
+		'https://hidahl.ceres.k12.ca.us/publications/grade_level_standards_brochures',
+		'https://hidahl.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
+		'https://hidahl.ceres.k12.ca.us/school_facts',
+		'https://hidahl.ceres.k12.ca.us/schedule',
+		'https://hidahl.ceres.k12.ca.us/menus',
+		'https://hidahl.ceres.k12.ca.us/district_main',
+		'https://hidahl.ceres.k12.ca.us/after_school_program',
+		'https://hidahl.ceres.k12.ca.us/staff_directory',
+		'https://hidahl.ceres.k12.ca.us/information',
+		'https://hidahl.ceres.k12.ca.us/information/important_numbers',
+		'https://hidahl.ceres.k12.ca.us/information/parents__students',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_dp'
+	school_name = 'ceres_hidahl'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

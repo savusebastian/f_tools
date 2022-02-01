@@ -7,143 +7,145 @@ import re
 from bs4 import BeautifulSoup
 import requests
 
-
-def clean_tags(tags):
-	for tag in tags:
-		tag.attrs.clear()
-
-		if tag.contents == [] or (len(tag.contents) < 2 and tag.contents[0] == '\xa0'):
-			tag.decompose()
+from util import get_column
 
 
-def remove_tags(text):
-	div = re.compile(r'<div[^>]+>')
-	dive = re.compile(r'<div+>')
-	divc = re.compile(r'</div+>')
-	link = re.compile(r'<link[^>]+>')
-	section = re.compile(r'<section[^>]+>')
-	sectione = re.compile(r'<section+>')
-	sectionc = re.compile(r'</section+>')
-	article = re.compile(r'<article[^>]+>')
-	articlee = re.compile(r'<article+>')
-	articlec = re.compile(r'</article+>')
-	span = re.compile(r'<span+>')
-	spane = re.compile(r'<span[^>]+>')
-	spanc = re.compile(r'</span+>')
-	font = re.compile(r'<font+>')
-	fonte = re.compile(r'<font[^>]+>')
-	fontc = re.compile(r'</font+>')
-
-	text = div.sub('', text)
-	text = dive.sub('', text)
-	text = divc.sub('', text)
-	text = link.sub('', text)
-	text = section.sub('', text)
-	text = sectione.sub('', text)
-	text = sectionc.sub('', text)
-	text = article.sub('', text)
-	text = article.sub('', text)
-	text = articlec.sub('', text)
-	text = span.sub('', text)
-	text = spane.sub('', text)
-	text = spanc.sub('', text)
-	text = font.sub('', text)
-	text = fonte.sub('', text)
-	text = fontc.sub('', text)
-	text = re.sub('<!--|-->', '', text)
-
-	return text.strip()
-
-
-def clean_src(src):
-	split = src.split('/')[3:]
-	out = ''
-
-	for x in split:
-		out += f'/{x}'
-
-	return out
-
-
-def get_column(col):
-	col_images = col.find_all('img')
-	col_anchors = col.find_all('a')
-	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
-	clean_tags(col_tags)
-
-	while col.script != None:
-		col.script.decompose()
-
-	while col.style != None:
-		col.style.decompose()
-
-	while col.nav != None:
-		col.nav.decompose()
-
-	for image in col_images:
-		try:
-			if image.get('src') != None and image.get('src') != '':
-				src = image['src']
-
-				if 'alt' in image.attrs:
-					alt = image['alt']
-					image.attrs.clear()
-					image['alt'] = alt
-				else:
-					image.attrs.clear()
-					image['alt'] = 'alt-text'
-
-				if src[0] != '/' and src[:4] != 'http':
-					image['src'] = f'/{src}'
-				elif src[:4] == 'http':
-					image['src'] = clean_src(src)
-				else:
-					image['src'] = src
-
-			else:
-				image.attrs.clear()
-
-			image['id'] = ''
-			image['role'] = 'presentation'
-			image['style'] = ''
-			image['width'] = '250'
-
-		except:
-			pass
-			# print('Image:', image)
-
-	for anchor in col_anchors:
-		try:
-			if anchor.get('href') != None and anchor.get('href') != '':
-				href = anchor['href']
-				src = anchor['src']
-				anchor.attrs.clear()
-
-				# if href[0] != '/' and href[:4] != 'http':
-				# 	anchor['href'] = f'/{href}'
-				# else:
-				# 	anchor['href'] = href
-
-				if href[0] != '/' and href[:4] != 'http':
-					anchor['href'] = f'/{src}'
-				else:
-					anchor['href'] = src
-
-				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
-				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
-				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
-				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
-					anchor.string = f'INTERNAL LINK {anchor.string}'
-			else:
-				anchor.attrs.clear()
-
-		except:
-			pass
-			# print('Anchor:', anchor)
-
-	col = remove_tags(str(col))
-
-	return col
+# def clean_tags(tags):
+# 	for tag in tags:
+# 		tag.attrs.clear()
+#
+# 		if tag.contents == [] or (len(tag.contents) < 2 and tag.contents[0] == '\xa0'):
+# 			tag.decompose()
+#
+#
+# def remove_tags(text):
+# 	div = re.compile(r'<div[^>]+>')
+# 	dive = re.compile(r'<div+>')
+# 	divc = re.compile(r'</div+>')
+# 	link = re.compile(r'<link[^>]+>')
+# 	section = re.compile(r'<section[^>]+>')
+# 	sectione = re.compile(r'<section+>')
+# 	sectionc = re.compile(r'</section+>')
+# 	article = re.compile(r'<article[^>]+>')
+# 	articlee = re.compile(r'<article+>')
+# 	articlec = re.compile(r'</article+>')
+# 	span = re.compile(r'<span+>')
+# 	spane = re.compile(r'<span[^>]+>')
+# 	spanc = re.compile(r'</span+>')
+# 	font = re.compile(r'<font+>')
+# 	fonte = re.compile(r'<font[^>]+>')
+# 	fontc = re.compile(r'</font+>')
+#
+# 	text = div.sub('', text)
+# 	text = dive.sub('', text)
+# 	text = divc.sub('', text)
+# 	text = link.sub('', text)
+# 	text = section.sub('', text)
+# 	text = sectione.sub('', text)
+# 	text = sectionc.sub('', text)
+# 	text = article.sub('', text)
+# 	text = article.sub('', text)
+# 	text = articlec.sub('', text)
+# 	text = span.sub('', text)
+# 	text = spane.sub('', text)
+# 	text = spanc.sub('', text)
+# 	text = font.sub('', text)
+# 	text = fonte.sub('', text)
+# 	text = fontc.sub('', text)
+# 	text = re.sub('<!--|-->', '', text)
+#
+# 	return text.strip()
+#
+#
+# def clean_src(src):
+# 	split = src.split('/')[3:]
+# 	out = ''
+#
+# 	for x in split:
+# 		out += f'/{x}'
+#
+# 	return out
+#
+#
+# def get_column(col):
+# 	col_images = col.find_all('img')
+# 	col_anchors = col.find_all('a')
+# 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
+# 	clean_tags(col_tags)
+#
+# 	while col.script != None:
+# 		col.script.decompose()
+#
+# 	while col.style != None:
+# 		col.style.decompose()
+#
+# 	while col.nav != None:
+# 		col.nav.decompose()
+#
+# 	for image in col_images:
+# 		try:
+# 			if image.get('src') != None and image.get('src') != '':
+# 				src = image['src']
+#
+# 				if 'alt' in image.attrs:
+# 					alt = image['alt']
+# 					image.attrs.clear()
+# 					image['alt'] = alt
+# 				else:
+# 					image.attrs.clear()
+# 					image['alt'] = 'alt-text'
+#
+# 				if src[0] != '/' and src[:4] != 'http':
+# 					image['src'] = f'/{src}'
+# 				elif src[:4] == 'http':
+# 					image['src'] = clean_src(src)
+# 				else:
+# 					image['src'] = src
+#
+# 			else:
+# 				image.attrs.clear()
+#
+# 			image['id'] = ''
+# 			image['role'] = 'presentation'
+# 			image['style'] = ''
+# 			image['width'] = '250'
+#
+# 		except:
+# 			pass
+# 			# print('Image:', image)
+#
+# 	for anchor in col_anchors:
+# 		try:
+# 			if anchor.get('href') != None and anchor.get('href') != '':
+# 				href = anchor['href']
+# 				src = anchor['src']
+# 				anchor.attrs.clear()
+#
+# 				# if href[0] != '/' and href[:4] != 'http':
+# 				# 	anchor['href'] = f'/{href}'
+# 				# else:
+# 				# 	anchor['href'] = href
+#
+# 				if href[0] != '/' and href[:4] != 'http':
+# 					anchor['href'] = f'/{src}'
+# 				else:
+# 					anchor['href'] = src
+#
+# 				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
+# 				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
+# 				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
+# 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
+# 					anchor.string = f'INTERNAL LINK {anchor.string}'
+# 			else:
+# 				anchor.attrs.clear()
+#
+# 		except:
+# 			pass
+# 			# print('Anchor:', anchor)
+#
+# 	col = remove_tags(str(col))
+#
+# 	return col
 
 
 def get_content(web_page):
@@ -163,10 +165,10 @@ def get_content(web_page):
 	issue_pages_counter = 0
 	print(web_page)
 
-	# if web_page != '#':
-	try:
+	if web_page != '#':
+	# try:
 		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}
-		# web_link = requests.get(web_page, headers=headers, timeout=20, verify=False).content
+		# web_link = requests.get(web_page, headers=headers, timeout=10, verify=False).content
 		web_link = requests.get(web_page, headers=headers, timeout=10).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -247,8 +249,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	# else:
-	except Exception:
+	else:
+	# except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter

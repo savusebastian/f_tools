@@ -119,32 +119,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://ww.ceres.k12.ca.us/',
-		'https://ww.ceres.k12.ca.us/information',
-		'https://ww.ceres.k12.ca.us/information/important_numbers',
-		'https://ww.ceres.k12.ca.us/information/parents__students',
-		'https://ww.ceres.k12.ca.us/parent_volunteer_opportunities_page/a_s_e_s__a_i_p_curriculum',
-		'https://ww.ceres.k12.ca.us/parent_volunteer_opportunities_page/after_school_program__a_s_e_s',
-		'https://ww.ceres.k12.ca.us/contact_school',
-		'https://ww.ceres.k12.ca.us/mission_statement',
-		'https://ww.ceres.k12.ca.us/publications',
-		'https://ww.ceres.k12.ca.us/publications/student_handbook',
-		'https://ww.ceres.k12.ca.us/publications/school_newsletter',
-		'https://ww.ceres.k12.ca.us/publications/williams_complaint_form',
-		'https://ww.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
-		'https://ww.ceres.k12.ca.us/publications/parent_s_rights',
-		'https://ww.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
-		'https://ww.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
-		'https://ww.ceres.k12.ca.us/publications/acceptable_snacks',
-		'https://ww.ceres.k12.ca.us/publications/grade_level_standards_brochures',
-		'https://ww.ceres.k12.ca.us/menus',
-		'https://ww.ceres.k12.ca.us/school_facts',
-		'https://ww.ceres.k12.ca.us/district_main',
-		'https://ww.ceres.k12.ca.us/staff_directory',
-		'https://ww.ceres.k12.ca.us/schedule',
+		'https://wp.ceres.k12.ca.us/',
+		'https://wp.ceres.k12.ca.us/information',
+		'https://wp.ceres.k12.ca.us/information/important_numbers',
+		'https://wp.ceres.k12.ca.us/information/parents__students',
+		'https://wp.ceres.k12.ca.us/contact_school',
+		'https://wp.ceres.k12.ca.us/schedule',
+		'https://wp.ceres.k12.ca.us/publications',
+		'https://wp.ceres.k12.ca.us/publications/student_handbook',
+		'https://wp.ceres.k12.ca.us/publications/williams_complaint_form',
+		'https://wp.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
+		'https://wp.ceres.k12.ca.us/publications/parent_s_rights',
+		'https://wp.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
+		'https://wp.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
+		'https://wp.ceres.k12.ca.us/publications/acceptable_snacks',
+		'https://wp.ceres.k12.ca.us/publications/grade_level_standards_brochures',
+		'https://wp.ceres.k12.ca.us/publications/newsletter',
+		'https://wp.ceres.k12.ca.us/menus',
+		'https://wp.ceres.k12.ca.us/school_facts',
+		'https://wp.ceres.k12.ca.us/district_main',
+		'https://wp.ceres.k12.ca.us/after_school_program',
+		'https://wp.ceres.k12.ca.us/staff_directory',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_ww'
+	school_name = 'ceres_wp'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -68,7 +68,6 @@ def get_content(web_page):
 		if web_soup.find(class_='ptl_page') != None and web_soup.find(class_='ptl_page') != '':
 			col1 = web_soup.find(class_='ptl_page')
 			col1 = get_column(col1)
-			print(1)
 		else:
 			issue_pages_counter = 1
 
@@ -415,6 +414,7 @@ if __name__ == '__main__':
 			if tiers[2].find(mainfolder) == -1:
 				csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
 			else:
+				print(1)
 				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
 				issue_pages_counter += content_ipc
 

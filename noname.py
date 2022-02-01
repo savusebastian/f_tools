@@ -119,40 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://wcs.ceres.k12.ca.us/',
-		'https://wcs.ceres.k12.ca.us/contact',
-		'https://wcs.ceres.k12.ca.us/after_school_program',
-		'https://wcs.ceres.k12.ca.us/schedules/w_c_s_a_t_schedule',
-		'https://wcs.ceres.k12.ca.us/menus',
-		'https://wcs.ceres.k12.ca.us/publications/student_handbook/StudentHandbook',
-		'https://wcs.ceres.k12.ca.us/publications/student_handbook/w_c_h_s_student_handbook_21-22',
-		'https://wcs.ceres.k12.ca.us/publications/williams_complaint_form',
-		'https://wcs.ceres.k12.ca.us/publications/parent_s_rights',
-		'https://wcs.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
-		'https://wcs.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
-		'https://wcs.ceres.k12.ca.us/publications/grade_level_standards_brochures',
-		'https://wcs.ceres.k12.ca.us/publications/applications/enrollment_application_-_school_of_the_arts_and_technology',
-		'https://wcs.ceres.k12.ca.us/publications/applications/enrollment_application_-_whitmore_charter_high_school',
-		'https://wcs.ceres.k12.ca.us/publications/w_c_s_a_t_paw_print_newsletter',
-		'https://wcs.ceres.k12.ca.us/publications/w_c_s_a_t_paw_print_newsletter/archived_newsletters',
-		'https://wcs.ceres.k12.ca.us/publications/w_c_h_s_wolf_tracks_newsletter',
-		'https://wcs.ceres.k12.ca.us/publications/calendars/district_student_calendar_21-22',
-		'https://wcs.ceres.k12.ca.us/publications/calendars/w_c_s_a_t_student_calendar_21-22',
-		'https://wcs.ceres.k12.ca.us/publications/volunteer_assistant_program__v_a_p',
-		'https://wcs.ceres.k12.ca.us/publications/w_c_h_s_course_catalog_21-22',
-		'https://wcs.ceres.k12.ca.us/school_facts',
-		'https://wcs.ceres.k12.ca.us/mission_statement',
-		'https://wcs.ceres.k12.ca.us/schools',
-		'https://wcs.ceres.k12.ca.us/schools/school_of_art_and_technology',
-		'https://wcs.ceres.k12.ca.us/schools/whitmore_charter_high_school',
-		'https://wcs.ceres.k12.ca.us/w_c_h_s',
-		'https://wcs.ceres.k12.ca.us/information',
-		'https://wcs.ceres.k12.ca.us/information/important_numbers',
-		'https://wcs.ceres.k12.ca.us/contact',
-		'https://wcs.ceres.k12.ca.us/district_main',
+		'https://adulted.ceres.k12.ca.us/programs',
+		'https://adulted.ceres.k12.ca.us/programs/classes__workshops_',
+		'https://adulted.ceres.k12.ca.us/Our_School',
+		'https://adulted.ceres.k12.ca.us/Our_School/about_us',
+		'https://adulted.ceres.k12.ca.us/Our_School/coordinator_s_message',
+		'https://adulted.ceres.k12.ca.us/Our_School/mission_statement',
+		'https://adulted.ceres.k12.ca.us/Our_School/your_rights__responsibilities__and_conduct_code',
+		'https://adulted.ceres.k12.ca.us/contact_school',
+		'https://adulted.ceres.k12.ca.us/course_catalog',
+		'https://adulted.ceres.k12.ca.us/registration',
+		'https://adulted.ceres.k12.ca.us/',
+		'https://adulted.ceres.k12.ca.us/partners',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_wcs'
+	school_name = 'ceres_adulted'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

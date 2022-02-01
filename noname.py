@@ -25,8 +25,8 @@ def get_content(web_page):
 	issue_pages_counter = 0
 	print(web_page)
 
-	# if web_page != '#':
-	try:
+	if web_page != '#':
+	# try:
 		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}
 		# web_link = requests.get(web_page, headers=headers, timeout=10, verify=False).content
 		web_link = requests.get(web_page, headers=headers, timeout=10).content
@@ -109,8 +109,8 @@ def get_content(web_page):
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
-	# else:
-	except Exception:
+	else:
+	# except Exception:
 		issue_pages_counter = 1
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
@@ -353,90 +353,84 @@ if __name__ == '__main__':
 		'https://www.ceres.k12.ca.us/Information/about_us',
 	]
 	mainfolder = 'ceresk12'
+	school_name = 'ceresk12_district'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
-	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report:
+	with open(f'../f_web_interface/static/files/{mainfolder}/report.csv', 'w', encoding='utf-8') as csv_report, open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 		csv_report = csv.writer(csv_report)
+		csv_report.writerow(['School name', school_name])
+
+		csv_writer = csv.writer(csv_main)
+		csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5', 'Tier 6', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
 		page_counter = 0
 		issue_pages_counter = 0
-		split_slash = all_sites[0].split('/')
-		split_dot = all_sites[0].split('.')
-		split_mixed = all_sites[0].split('/')[2].split('.')
-		all_links = []
-		school_name = 'ceresk12_district'
 
-		csv_report.writerow(['School name', school_name])
+		for link in all_sites:
+			tiers = link.split('/')
+			t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
 
-		with open(f'../f_web_interface/static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
-			csv_writer = csv.writer(csv_main)
-			csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5', 'Tier 6', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
+			if len(tiers) == 3:
+				t1 = tiers[-1].capitalize()
+			elif len(tiers) == 4:
+				t1 = tiers[-1].capitalize()
+			elif len(tiers) == 5:
+				t1 = tiers[-2].capitalize()
+				t2 = tiers[-1].capitalize()
+			elif len(tiers) == 6:
+				t1 = tiers[-3].capitalize()
+				t2 = tiers[-2].capitalize()
+				t3 = tiers[-1].capitalize()
+			elif len(tiers) == 7:
+				t1 = tiers[-4].capitalize()
+				t2 = tiers[-3].capitalize()
+				t3 = tiers[-2].capitalize()
+				t4 = tiers[-1].capitalize()
+			elif len(tiers) == 8:
+				t1 = tiers[-5].capitalize()
+				t2 = tiers[-4].capitalize()
+				t3 = tiers[-3].capitalize()
+				t4 = tiers[-2].capitalize()
+				t5 = tiers[-1].capitalize()
+			elif len(tiers) == 9:
+				t1 = tiers[-6].capitalize()
+				t2 = tiers[-5].capitalize()
+				t3 = tiers[-4].capitalize()
+				t4 = tiers[-3].capitalize()
+				t5 = tiers[-2].capitalize()
+				t6 = tiers[-1].capitalize()
+			else:
+				t1 = tiers[-6].capitalize()
+				t2 = tiers[-5].capitalize()
+				t3 = tiers[-4].capitalize()
+				t4 = tiers[-3].capitalize()
+				t5 = tiers[-2].capitalize()
+				t6 = tiers[-1].capitalize()
+				print(len(tiers))
 
-			for link in all_sites:
-				tiers = link.split('/')
-				t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
+			page_counter += 1
 
-				if len(tiers) == 3:
-					t1 = tiers[-1].capitalize()
-				elif len(tiers) == 4:
-					t1 = tiers[-1].capitalize()
-				elif len(tiers) == 5:
-					t1 = tiers[-2].capitalize()
-					t2 = tiers[-1].capitalize()
-				elif len(tiers) == 6:
-					t1 = tiers[-3].capitalize()
-					t2 = tiers[-2].capitalize()
-					t3 = tiers[-1].capitalize()
-				elif len(tiers) == 7:
-					t1 = tiers[-4].capitalize()
-					t2 = tiers[-3].capitalize()
-					t3 = tiers[-2].capitalize()
-					t4 = tiers[-1].capitalize()
-				elif len(tiers) == 8:
-					t1 = tiers[-5].capitalize()
-					t2 = tiers[-4].capitalize()
-					t3 = tiers[-3].capitalize()
-					t4 = tiers[-2].capitalize()
-					t5 = tiers[-1].capitalize()
-				elif len(tiers) == 9:
-					t1 = tiers[-6].capitalize()
-					t2 = tiers[-5].capitalize()
-					t3 = tiers[-4].capitalize()
-					t4 = tiers[-3].capitalize()
-					t5 = tiers[-2].capitalize()
-					t6 = tiers[-1].capitalize()
-				else:
-					t1 = tiers[-6].capitalize()
-					t2 = tiers[-5].capitalize()
-					t3 = tiers[-4].capitalize()
-					t4 = tiers[-3].capitalize()
-					t5 = tiers[-2].capitalize()
-					t6 = tiers[-1].capitalize()
-					print(len(tiers))
+			if link.split('/')[2].find(mainfolder) == -1:
+				csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
+			else:
+				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
+				issue_pages_counter += content_ipc
 
-				page_counter += 1
+				csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
-				if link.split('/')[2].find(mainfolder) == -1:
-					csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
-				else:
-					col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
-					issue_pages_counter += content_ipc
+				if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+					csv_report.writerow([link, form, embed, iframe, calendar, staff, news])
 
-					csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
-
-					if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-						csv_report.writerow([link, form, embed, iframe, calendar, staff, news])
-
-					# if nav_sec != None and nav_sec != '' and nav_sec != []:
-					# 	for nav_link in nav_sec:
-					# 		page_counter += 1
-					# 		nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
-					# 		issue_pages_counter += content_ipc
-					# 		csv_writer.writerow([link, str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-					#
-					# 		if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-					# 			csv_report.writerow([link, form, embed, iframe, calendar, staff, news])
+				# if nav_sec != None and nav_sec != '' and nav_sec != []:
+				# 	for nav_link in nav_sec:
+				# 		page_counter += 1
+				# 		nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
+				# 		issue_pages_counter += content_ipc
+				# 		csv_writer.writerow([link, str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+				#
+				# 		if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+				# 			csv_report.writerow([link, form, embed, iframe, calendar, staff, news])
 
 			csv_report.writerow([])
 			csv_report.writerow(['Pages scraped', page_counter])

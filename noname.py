@@ -370,6 +370,7 @@ if __name__ == '__main__':
 		for link in all_sites:
 			tiers = link.split('/')
 			t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
+			print(1)
 
 			if len(tiers) == 3:
 				t1 = tiers[-1].capitalize()

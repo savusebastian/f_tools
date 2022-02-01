@@ -119,30 +119,33 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://beaver.ceres.k12.ca.us/',
-		'https://beaver.ceres.k12.ca.us/staff_directory',
-		'https://beaver.ceres.k12.ca.us/contact_school',
-		'https://beaver.ceres.k12.ca.us/schedule',
-		'https://beaver.ceres.k12.ca.us/menus',
-		'https://beaver.ceres.k12.ca.us/publications',
-		'https://beaver.ceres.k12.ca.us/publications/student_handbook',
-		'https://beaver.ceres.k12.ca.us/publications/school_newsletter',
-		'https://beaver.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
-		'https://beaver.ceres.k12.ca.us/publications/acceptable_snacks',
-		'https://beaver.ceres.k12.ca.us/publications/grade_level_standards_brochures',
-		'https://beaver.ceres.k12.ca.us/publications/parent_s_rights',
-		'https://beaver.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
-		'https://beaver.ceres.k12.ca.us/publications/williams_complaint_form',
-		'https://beaver.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
-		'https://beaver.ceres.k12.ca.us/school_facts',
-		'https://beaver.ceres.k12.ca.us/district_main',
-		'https://beaver.ceres.k12.ca.us/after_school_program',
-		'https://beaver.ceres.k12.ca.us/information',
-		'https://beaver.ceres.k12.ca.us/information/important_numbers',
-		'https://beaver.ceres.k12.ca.us/information/parents__students',
+		'https://sv.ceres.k12.ca.us/',
+		'https://sv.ceres.k12.ca.us/information',
+		'https://sv.ceres.k12.ca.us/information/important_numbers',
+		'https://sv.ceres.k12.ca.us/information/parents__students',
+		'https://sv.ceres.k12.ca.us/parent_resources',
+		'https://sv.ceres.k12.ca.us/contact_school',
+		'https://sv.ceres.k12.ca.us/library__lab',
+		'https://sv.ceres.k12.ca.us/publications',
+		'https://sv.ceres.k12.ca.us/publications/student_handbook',
+		'https://sv.ceres.k12.ca.us/publications/williams_complaint_form',
+		'https://sv.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
+		'https://sv.ceres.k12.ca.us/publications/parent_s_rights',
+		'https://sv.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
+		'https://sv.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
+		'https://sv.ceres.k12.ca.us/publications/acceptable_snacks',
+		'https://sv.ceres.k12.ca.us/publications/grade_level_standards_brochures',
+		'https://sv.ceres.k12.ca.us/publications/school_newsletter',
+		'https://sv.ceres.k12.ca.us/publications/ClaimForm',
+		'https://sv.ceres.k12.ca.us/school_facts',
+		'https://sv.ceres.k12.ca.us/schedule',
+		'https://sv.ceres.k12.ca.us/menus',
+		'https://sv.ceres.k12.ca.us/district_main',
+		'https://sv.ceres.k12.ca.us/after_school_program',
+		'https://sv.ceres.k12.ca.us/staff_list',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_beaver'
+	school_name = 'ceres_sv'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

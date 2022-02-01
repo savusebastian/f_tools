@@ -119,21 +119,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://adulted.ceres.k12.ca.us/programs',
-		'https://adulted.ceres.k12.ca.us/programs/classes__workshops_',
-		'https://adulted.ceres.k12.ca.us/Our_School',
-		'https://adulted.ceres.k12.ca.us/Our_School/about_us',
-		'https://adulted.ceres.k12.ca.us/Our_School/coordinator_s_message',
-		'https://adulted.ceres.k12.ca.us/Our_School/mission_statement',
-		'https://adulted.ceres.k12.ca.us/Our_School/your_rights__responsibilities__and_conduct_code',
-		'https://adulted.ceres.k12.ca.us/contact_school',
-		'https://adulted.ceres.k12.ca.us/course_catalog',
-		'https://adulted.ceres.k12.ca.us/registration',
-		'https://adulted.ceres.k12.ca.us/',
-		'https://adulted.ceres.k12.ca.us/partners',
+		'https://ceresunifiedfoundation.org/goals_and_objectives',
+		'https://ceresunifiedfoundation.org/board_of_directors',
+		'https://ceresunifiedfoundation.org/grants',
+		'https://ceresunifiedfoundation.org/contributors',
+		'https://ceresunifiedfoundation.org/fundraising',
+		'https://ceresunifiedfoundation.org/fundraising/13th_annual_raffle_fundraiser_june_2020',
+		'https://ceresunifiedfoundation.org/fundraising/12th_annual_raffle_fundraiser_may_2019',
+		'https://ceresunifiedfoundation.org/fundraising/11th_annual_raffle_fundraiser_may_2018',
+		'https://ceresunifiedfoundation.org/fundraising/10th_annual_raffle_fundraiser_may_2017',
+		'https://ceresunifiedfoundation.org/fundraising/9th_annual_raffle_fundraiser_may_2016',
+		'https://ceresunifiedfoundation.org/fundraising/8th_annual_raffle_fundraiser_may_2015',
+		'https://ceresunifiedfoundation.org/fundraising/7th_annual_raffle_fundraiser_may_2014',
+		'https://ceresunifiedfoundation.org/fundraising/6th_annual_raffle_fundraiser_may_2013',
+		'https://ceresunifiedfoundation.org/fundraising/5th_annual_raffle_fundraiser_may_2012',
+		'https://ceresunifiedfoundation.org/fundraising/4th_annual_raffle_fundraiser_may_2011',
+		'https://ceresunifiedfoundation.org/fundraising/3rd_annual_raffle_fundraiser_may_2010',
+		'https://ceresunifiedfoundation.org/fundraising/2nd_annual_raffle_fundraiser_may_2009',
+		'https://ceresunifiedfoundation.org/fundraising/1st_annual_raffle_fundraiser_may_2008',
+		'https://ceresunifiedfoundation.org/contact_info',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_adulted'
+	school_name = 'ceres_unifiedfoundation'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

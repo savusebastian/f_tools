@@ -68,6 +68,7 @@ def get_content(web_page):
 		if web_soup.find(class_='ptl_page') != None and web_soup.find(class_='ptl_page') != '':
 			col1 = web_soup.find(class_='ptl_page')
 			col1 = get_column(col1)
+			print(1)
 		else:
 			issue_pages_counter = 1
 
@@ -370,7 +371,6 @@ if __name__ == '__main__':
 		for link in all_sites:
 			tiers = link.split('/')
 			t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
-			print(1)
 
 			if len(tiers) == 3:
 				t1 = tiers[-1].capitalize()
@@ -412,7 +412,7 @@ if __name__ == '__main__':
 
 			page_counter += 1
 
-			if link.split('/')[2].find(mainfolder) == -1:
+			if tiers[2].find(mainfolder) == -1:
 				csv_writer.writerow([link, t1, t2, t3, t4, t5, t6, '1', 'Linked page', '', '', '', '', '', ''])
 			else:
 				col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(link)
@@ -433,13 +433,13 @@ if __name__ == '__main__':
 				# 		if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 				# 			csv_report.writerow([link, form, embed, iframe, calendar, staff, news])
 
-			csv_report.writerow([])
-			csv_report.writerow(['Pages scraped', page_counter])
-			csv_report.writerow(['Issues', issue_pages_counter])
-			csv_report.writerow([])
-			csv_report.writerow([])
-			csv_report.writerow([])
+		csv_report.writerow([])
+		csv_report.writerow(['Pages scraped', page_counter])
+		csv_report.writerow(['Issues', issue_pages_counter])
+		csv_report.writerow([])
+		csv_report.writerow([])
+		csv_report.writerow([])
 
-			# print('Finished:', site)
+		# print('Finished:', site)
 
 	print('Finished:', round((time() - start_time) / 3600, 2), 'h')

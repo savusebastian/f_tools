@@ -352,8 +352,8 @@ if __name__ == '__main__':
 		'https://www.ceres.k12.ca.us/business_services/Transportation',
 		'https://www.ceres.k12.ca.us/Information/about_us',
 	]
-	mainfolder = 'ceresk12'
-	school_name = 'ceresk12_district'
+	mainfolder = 'ceres'
+	school_name = 'ceres_district'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

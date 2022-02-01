@@ -119,27 +119,34 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://adkison.ceres.k12.ca.us/',
-		'https://adkison.ceres.k12.ca.us/information',
-		'https://adkison.ceres.k12.ca.us/for_students/educational_resources',
-		'https://adkison.ceres.k12.ca.us/information/parents__students',
-		'https://adkison.ceres.k12.ca.us/parent_volunteer',
-		'https://adkison.ceres.k12.ca.us/information/important_numbers',
-		'https://adkison.ceres.k12.ca.us/information/important_dates',
-		'https://adkison.ceres.k12.ca.us/contact_school',
-		'https://adkison.ceres.k12.ca.us/FoodMenu',
-		'https://adkison.ceres.k12.ca.us/Publications',
-		'https://adkison.ceres.k12.ca.us/Publications/student_handbook',
-		'https://adkison.ceres.k12.ca.us/Publications/williams_complaint_form',
-		'https://adkison.ceres.k12.ca.us/Publications/parent_s_rights',
-		'https://adkison.ceres.k12.ca.us/Publications/grade_level_standards_brochures',
-		'https://adkison.ceres.k12.ca.us/school_facts',
-		'https://adkison.ceres.k12.ca.us/district_main',
-		'https://adkison.ceres.k12.ca.us/after_school_program',
-		'https://adkison.ceres.k12.ca.us/bell_schedule',
+		'https://cf.ceres.k12.ca.us/',
+		'https://cf.ceres.k12.ca.us/information',
+		'https://cf.ceres.k12.ca.us/parent_volunteer_opportunities_page',
+		'https://cf.ceres.k12.ca.us/parent_volunteer_opportunities_page/tips',
+		'https://cf.ceres.k12.ca.us/parent_volunteer_opportunities_page/activities',
+		'https://cf.ceres.k12.ca.us/parent_volunteer_opportunities_page/how_can_we_help_carroll_fowler_school_',
+		'https://cf.ceres.k12.ca.us/parent_resources',
+		'https://cf.ceres.k12.ca.us/for_students/district_calendars',
+		'https://cf.ceres.k12.ca.us/information/important_numbers',
+		'https://cf.ceres.k12.ca.us/information/parents__students',
+		'https://cf.ceres.k12.ca.us/contact_school',
+		'https://cf.ceres.k12.ca.us/websites_for_kids',
+		'https://cf.ceres.k12.ca.us/after_school_program',
+		'https://cf.ceres.k12.ca.us/school_facts',
+		'https://cf.ceres.k12.ca.us/staff_directory',
+		'https://cf.ceres.k12.ca.us/publications',
+		'https://cf.ceres.k12.ca.us/publications/student_handbook',
+		'https://cf.ceres.k12.ca.us/publications/school_newsletter',
+		'https://cf.ceres.k12.ca.us/publications/williams_complaint_form',
+		'https://cf.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
+		'https://cf.ceres.k12.ca.us/publications/parent_s_rights',
+		'https://cf.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
+		'https://cf.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
+		'https://cf.ceres.k12.ca.us/schedule',
+		'https://cf.ceres.k12.ca.us/district_main',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_adkinson'
+	school_name = 'ceres_cf'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

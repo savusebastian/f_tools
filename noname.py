@@ -1,8 +1,8 @@
 from pathlib import Path
 from time import time
 import csv
-import glob
-import re
+# import glob
+# import re
 
 from bs4 import BeautifulSoup
 import requests

@@ -1,3 +1,6 @@
+import re
+
+
 def clean_tags(tags):
 	for tag in tags:
 		tag.attrs.clear()

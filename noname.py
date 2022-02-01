@@ -119,33 +119,33 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://sv.ceres.k12.ca.us/',
-		'https://sv.ceres.k12.ca.us/information',
-		'https://sv.ceres.k12.ca.us/information/important_numbers',
-		'https://sv.ceres.k12.ca.us/information/parents__students',
-		'https://sv.ceres.k12.ca.us/parent_resources',
-		'https://sv.ceres.k12.ca.us/contact_school',
-		'https://sv.ceres.k12.ca.us/library__lab',
-		'https://sv.ceres.k12.ca.us/publications',
-		'https://sv.ceres.k12.ca.us/publications/student_handbook',
-		'https://sv.ceres.k12.ca.us/publications/williams_complaint_form',
-		'https://sv.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
-		'https://sv.ceres.k12.ca.us/publications/parent_s_rights',
-		'https://sv.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
-		'https://sv.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
-		'https://sv.ceres.k12.ca.us/publications/acceptable_snacks',
-		'https://sv.ceres.k12.ca.us/publications/grade_level_standards_brochures',
-		'https://sv.ceres.k12.ca.us/publications/school_newsletter',
-		'https://sv.ceres.k12.ca.us/publications/ClaimForm',
-		'https://sv.ceres.k12.ca.us/school_facts',
-		'https://sv.ceres.k12.ca.us/schedule',
-		'https://sv.ceres.k12.ca.us/menus',
-		'https://sv.ceres.k12.ca.us/district_main',
-		'https://sv.ceres.k12.ca.us/after_school_program',
-		'https://sv.ceres.k12.ca.us/staff_list',
+		'https://vp.ceres.k12.ca.us/',
+		'https://vp.ceres.k12.ca.us/information',
+		'https://vp.ceres.k12.ca.us/information/important_numbers',
+		'https://vp.ceres.k12.ca.us/information/important_dates',
+		'https://vp.ceres.k12.ca.us/information/parents__students',
+		'https://vp.ceres.k12.ca.us/information/parents__students/p_t_c_-_parent_teacher_club',
+		'https://vp.ceres.k12.ca.us/contact_school',
+		'https://vp.ceres.k12.ca.us/schedule',
+		'https://vp.ceres.k12.ca.us/menus',
+		'https://vp.ceres.k12.ca.us/district_main',
+		'https://vp.ceres.k12.ca.us/publications',
+		'https://vp.ceres.k12.ca.us/publications/student_handbook',
+		'https://vp.ceres.k12.ca.us/publications/school_newsletter',
+		'https://vp.ceres.k12.ca.us/publications/williams_complaint_form',
+		'https://vp.ceres.k12.ca.us/publications/williams_u_c_p_classroom_posting',
+		'https://vp.ceres.k12.ca.us/publications/parent_s_rights',
+		'https://vp.ceres.k12.ca.us/publications/c_u_s_d_conduct_code',
+		'https://vp.ceres.k12.ca.us/publications/c_a_healthy_kids_survey',
+		'https://vp.ceres.k12.ca.us/publications/acceptable_snacks',
+		'https://vp.ceres.k12.ca.us/publications/grade_level_standards_brochures',
+		'https://vp.ceres.k12.ca.us/school_facts',
+		'https://vp.ceres.k12.ca.us/after_school_program',
+		'https://vp.ceres.k12.ca.us/school_mission_statement',
+		'https://vp.ceres.k12.ca.us/staff_directory',
 	]
 	mainfolder = 'ceres'
-	school_name = 'ceres_sv'
+	school_name = 'ceres_vp'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

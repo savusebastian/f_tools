@@ -119,27 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_1',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_2',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_3',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_4',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_5',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_6',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_7',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_8',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_9',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_10',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_11',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_12',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_13',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_14',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_15',
-		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_16',
-		'https://ces.beaufortschools.net/parents/bobcat_brief',
-		'https://ces.beaufortschools.net/academics/school_counselor_resources',
+		'https://rces.beaufortschools.net/stem',
+		'https://rces.beaufortschools.net/stem/executive_summary',
+		'https://rces.beaufortschools.net/stem/s_t_e_m_standard_narrative',
+		'https://rces.beaufortschools.net/stem/stem_learners/s_t_1_1',
+		'https://rces.beaufortschools.net/stem/stem_learners/s_t_1_2',
+		'https://rces.beaufortschools.net/stem/stem_learners/s_t_1_3',
+		'https://rces.beaufortschools.net/stem/stem_learners/s_t_1_4',
+		'https://rces.beaufortschools.net/stem/stem_learners/s_t_1_5',
+		'https://rces.beaufortschools.net/stem/stem_educators/s_t_1_6',
+		'https://rces.beaufortschools.net/stem/stem_educators/s_t_1_7',
+		'https://rces.beaufortschools.net/stem/stem_educators/s_t_1_8',
+		'https://rces.beaufortschools.net/stem/stem_educators/s_t_1_9',
+		'https://rces.beaufortschools.net/stem/stem_experiences/s_t_1_10',
+		'https://rces.beaufortschools.net/stem/stem_experiences/s_t_1_11',
+		'https://rces.beaufortschools.net/stem/stem_highlights',
 	]
 	mainfolder = 'beaufortschools'
-	school_name = 'beaufortschools_ces'
+	school_name = 'beaufortschools_rces'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

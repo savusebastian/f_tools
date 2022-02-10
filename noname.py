@@ -119,28 +119,27 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://bes.beaufortschools.net/stem_2021-2022',
-		'https://bes.beaufortschools.net/stem_2021-2022/program_summary',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_community/standard_1',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_community/standard_2',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_community/standard_3',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_community/standard_4',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_learning_culture/standard_5',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_learning_culture/standard_6',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_learning_culture/standard_7',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_learning_culture/standard_8',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_experiences/standard_9',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_experiences/standard_10',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_experiences/standard_11',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_experiences/standard_12',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_outcomes/standard_13',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_outcomes/standard_14',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_outcomes/standard_15',
-		'https://bes.beaufortschools.net/stem_2021-2022/s_t_e_m_outcomes/standard_16',
-		'https://bes.beaufortschools.net/p_a_r_e_n_t_s/school_improvement_council___s_i_c_/s_i_c_meeting_minutes__notes',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_1',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_2',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_3',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_community/standard_4',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_5',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_6',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_7',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_learning_culture/standard_8',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_9',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_10',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_11',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_experiences/standard_12',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_13',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_14',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_15',
+		'https://ces.beaufortschools.net/s_t_e_m/s_t_e_m_outcomes/standard_16',
+		'https://ces.beaufortschools.net/parents/bobcat_brief',
+		'https://ces.beaufortschools.net/academics/school_counselor_resources',
 	]
 	mainfolder = 'beaufortschools'
-	school_name = 'beaufortschools_bes'
+	school_name = 'beaufortschools_ces'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

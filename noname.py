@@ -119,22 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://bles.beaufortschools.net/stem',
-		'https://bles.beaufortschools.net/stem/stem_standard_narrative',
-		'https://bles.beaufortschools.net/stem/stem_learners/st1_1',
-		'https://bles.beaufortschools.net/stem/stem_learners/st1_2',
-		'https://bles.beaufortschools.net/stem/stem_learners/st1_3',
-		'https://bles.beaufortschools.net/stem/stem_learners/st1_4',
-		'https://bles.beaufortschools.net/stem/stem_learners/st1_5',
-		'https://bles.beaufortschools.net/stem/stem_educators/st1_6',
-		'https://bles.beaufortschools.net/stem/stem_educators/st1_7',
-		'https://bles.beaufortschools.net/stem/stem_educators/st1_8',
-		'https://bles.beaufortschools.net/stem/stem_educators/st1_9',
-		'https://bles.beaufortschools.net/stem/stem_experiences/st1_10',
-		'https://bles.beaufortschools.net/stem/stem_experiences/st1_11',
+		'https://rra.beaufortschools.net/stem/executive_summary',
+		'https://rra.beaufortschools.net/stem/stem_standard_narrative',
+		'https://rra.beaufortschools.net/stem/stem_learners/st1_1',
+		'https://rra.beaufortschools.net/stem/stem_learners/st1_2',
+		'https://rra.beaufortschools.net/stem/stem_learners/st1_3',
+		'https://rra.beaufortschools.net/stem/stem_learners/st1_4',
+		'https://rra.beaufortschools.net/stem/stem_learners/st1_5',
+		'https://rra.beaufortschools.net/stem/stem_educators/st1_6',
+		'https://rra.beaufortschools.net/stem/stem_educators/st1_7',
+		'https://rra.beaufortschools.net/stem/stem_educators/st1_8',
+		'https://rra.beaufortschools.net/stem/stem_educators/st1_9',
+		'https://rra.beaufortschools.net/stem/stem_experiences/st1_10',
+		'https://rra.beaufortschools.net/stem/stem_experiences/st1_11',
 	]
 	mainfolder = 'beaufortschools'
-	school_name = 'beaufortschools_bles'
+	school_name = 'beaufortschools_rra'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -18,7 +18,7 @@ def remove_tags(text):
 	span = re.compile(r'<span[^>]*>|</span>')
 	font = re.compile(r'<font[^>]*>|</font>')
 	link = re.compile(r'<link[^>]*>')
-	comment = re.compile(r'<!--.*-->')
+	comment = re.compile(r'<!--[^>]*-->')
 
 	text = div.sub('', text)
 	text = main.sub('', text)
@@ -28,8 +28,7 @@ def remove_tags(text):
 	text = span.sub('', text)
 	text = font.sub('', text)
 	text = link.sub('', text)
-	# text = comment.sub('', text)
-	text = comment.sub('', text, flags=re.DOTALL)
+	text = comment.sub('', text)
 
 	return text.strip()
 

@@ -125,7 +125,7 @@ if __name__ == '__main__':
 		'https://foundation.metrotech.edu/donate',
 	]
 	mainfolder = 'metrotech'
-	school_name = 'metrotech_kalms'
+	school_name = 'metrotech_foundation'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,16 +119,10 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kalms.metrotech.edu/employee-matters/who-call',
-		'https://kalms.metrotech.edu/employee-matters/professional-development/mqu-course-descriptions',
-		'https://kalms.metrotech.edu/employee-matters/professional-development/mqu-faq',
-		'https://kalms.metrotech.edu/employee-matters/professional-development/teacher-news',
-		'https://kalms.metrotech.edu/support/maintenance-request',
-		'https://kalms.metrotech.edu/support/marketing-communications/copyright-regulations',
-		'https://kalms.metrotech.edu/reference/board-education',
-		'https://kalms.metrotech.edu/reference/acronyms',
-		'https://kalms.metrotech.edu/reference/site-addresses-maps',
-		'https://kalms.metrotech.edu/dice',
+		'https://foundation.metrotech.edu/scholarships',
+		'https://foundation.metrotech.edu/events/banquet',
+		'https://foundation.metrotech.edu/events/golf-tournament',
+		'https://foundation.metrotech.edu/donate',
 	]
 	mainfolder = 'metrotech'
 	school_name = 'metrotech_district'

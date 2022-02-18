@@ -57,12 +57,12 @@ def get_content(web_page):
 		if web_soup.find(id='sw-content-layout-wrapper').find_all(class_='headlines') != []:
 			news = 'news'
 
-		# if web_soup.find(class_='section-navigation') != None:
-		# 	page_nav = web_soup.find(class_='section-navigation').find_all('a')
-		# elif web_soup.find(class_='page-navigation') != None:
-		# 	page_nav = web_soup.find(class_='page-navigation').find_all('a')
+		if web_soup.find(class_='section-navigation') != None:
+			page_nav = web_soup.find(class_='section-navigation').find_all('a')
+		elif web_soup.find(class_='page-navigation') != None:
+			page_nav = web_soup.find(class_='page-navigation').find_all('a')
 
-		# First column
+		# Content
 		if web_soup.find(id='sw-content-layout-wrapper') != None and web_soup.find(id='sw-content-layout-wrapper') != '':
 			col1 = web_soup.find(id='sw-content-layout-wrapper')
 			col1 = get_column(col1)
@@ -117,21 +117,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.rcsdk8.net/site/Default.aspx?PageType=15&SiteID=1&SectionMax=15&DirectoryType=6',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=81&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=108&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=202&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=279&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=341&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=405&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=388&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=529&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=559&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=617&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=656&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=826&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=769&DirectoryType=6&SectionMax=15',
-		'https://www.rcsdk8.net/site/default.aspx?pagetype=15&SiteID=814&DirectoryType=6&SectionMax=15',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=84&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=425&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=620&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1251&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=801&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=918&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1032&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1145&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1381&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1492&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1607&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1722&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1804&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=4166&DirectoryType=6&SectionMax=50',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

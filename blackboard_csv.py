@@ -130,8 +130,8 @@ if __name__ == '__main__':
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1492&DirectoryType=6&SectionMax=50',
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1607&DirectoryType=6&SectionMax=50',
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1722&DirectoryType=6&SectionMax=50',
-		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1804&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=4166&DirectoryType=6&SectionMax=50',
+		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1804&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=4166&DirectoryType=6&SectionMax=50',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

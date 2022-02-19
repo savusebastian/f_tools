@@ -117,8 +117,8 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=84&DirectoryType=6&SectionMax=50',
+		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1&DirectoryType=6&SectionMax=50',
+		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=84&DirectoryType=6&SectionMax=50',
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=425&DirectoryType=6&SectionMax=50',
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=620&DirectoryType=6&SectionMax=50',
 		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1251&DirectoryType=6&SectionMax=50',

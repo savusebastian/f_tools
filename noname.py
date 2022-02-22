@@ -404,8 +404,8 @@ if __name__ == '__main__':
 		'https://mwhs.magnoliaisd.org/apps/pages/index.jsp?uREC_ID=257733&type=d&pREC_ID=586926',
 		'https://mwhs.magnoliaisd.org/apps/pages/index.jsp?uREC_ID=257733&type=d&pREC_ID=586954',
 	]
-	mainfolder = 'metrotech'
-	school_name = 'metrotech_foundation'
+	mainfolder = 'magnoliaisd'
+	school_name = 'magnoliaisd'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

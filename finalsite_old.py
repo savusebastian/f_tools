@@ -147,7 +147,7 @@ if __name__ == '__main__':
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# print(soup)
-			sitemap = soup.find(class='text_misc')
+			sitemap = soup.find(class_='text_misc')
 			list_items = sitemap.select('ul li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')

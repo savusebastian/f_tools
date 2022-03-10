@@ -30,6 +30,7 @@ def get_content(web_page):
 		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}
 		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
+		print(web_soup)
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))

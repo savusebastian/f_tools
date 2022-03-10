@@ -118,9 +118,9 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.themontessorischool.com'
+	# district = 'https://www.themontessorischool.com'
 	all_sites = [
-		f'https://www.themontessorischool.com',
+		f'https://www.themontessorischool.com/page.cfm?p=1301',
 	]
 	schools = [
 		'themontessorischool',
@@ -147,8 +147,8 @@ if __name__ == '__main__':
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
 			# print(soup)
-			sitemap = soup.find(id='bannerdiv232')
-			list_items = sitemap.select('ul > li')
+			sitemap = soup.find(class='text_misc')
+			list_items = sitemap.select('ul li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')
 			# list_items2 = sitemap2.select('ul > li')

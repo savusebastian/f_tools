@@ -117,16 +117,16 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.aisr.org'
+	district = 'https://www.themontessorischool.com'
 	all_sites = [
-		f'https://www.aisr.org',
+		f'https://www.themontessorischool.com',
 	]
 	schools = [
-		'aisr',
+		'themontessorischool',
 	]
 
 	# mainfolder = all_sites[0].split('.')[1]
-	mainfolder = 'aisr'
+	mainfolder = 'themontessorischool'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 
@@ -145,7 +145,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='content215')
+			sitemap = soup.find(id='content71')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')

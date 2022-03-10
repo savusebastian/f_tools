@@ -58,8 +58,8 @@ def get_content(web_page):
 		if web_soup.find(id='contentdiv').find_all(class_='news-summary') != []:
 			news = 'news'
 
-		if web_soup.find(id='bannerdiv5') != None:
-			page_nav = web_soup.find(id='bannerdiv5').find_all('a')
+		if web_soup.find(id='bannerdiv97') != None:
+			page_nav = web_soup.find(id='bannerdiv97').find_all('a')
 		elif web_soup.find(id='quicklinks') != None:
 			page_nav = web_soup.find(id='quicklinks').find_all('a')
 
@@ -145,7 +145,7 @@ if __name__ == '__main__':
 
 			page = requests.get(site, headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0'}).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='content71')
+			sitemap = soup.find(id='bannerdiv71')
 			list_items = sitemap.select('ul > li')
 
 			# sitemap2 = soup.find(id='dhtmlmenu_557')

@@ -27,7 +27,7 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
+		headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0'}
 		web_link = requests.get(web_page, headers=headers, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
@@ -40,32 +40,32 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='sub-page-content').find_all('form') != []:
+		if web_soup.find(class_='ptl_page').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='sub-page-content').find_all('embed') != []:
+		if web_soup.find(class_='ptl_page').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='sub-page-content').find_all('iframe') != []:
+		if web_soup.find(class_='ptl_page').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='sub-page-content').find_all(id='divCalendar') != []:
+		if web_soup.find(class_='ptl_page').find_all(id='divCalendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='sub-page-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='ptl_page').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='sub-page-content').find_all(id='news') != []:
+		if web_soup.find(class_='ptl_page').find_all(id='news') != []:
 			news = 'news'
 
-		if web_soup.find(class_='nav-box') != None:
-			page_nav = web_soup.find(class_='nav-box').find_all('a')
+		# if web_soup.find(class_='nav-box') != None:
+		# 	page_nav = web_soup.find(class_='nav-box').find_all('a')
 		# elif web_soup.find(id='nav-box') != None:
 		# 	page_nav = web_soup.find(id='nav-box').find_all('a')
 
 		# Content
-		if web_soup.find(id='sub-page-content') != None and web_soup.find(id='sub-page-content') != '':
-			col1 = web_soup.find(id='sub-page-content')
+		if web_soup.find(class_='ptl_page') != None and web_soup.find(class_='ptl_page') != '':
+			col1 = web_soup.find(class_='ptl_page')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -117,23 +117,21 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.jerichoschools.org'
+	district = 'http://www.lewiscentral.org'
 	all_sites = [
 		f'{district}',
-		f'https://hs.jerichoschools.org',
-		f'https://ms.jerichoschools.org',
-		f'https://cantiague.jerichoschools.org',
-		f'https://jackson.jerichoschools.org',
-		f'https://seaman.jerichoschools.org',
+		f'http://lckr.lewiscentral.org',
+		f'http://lcth.lewiscentral.org',
+		f'http://lcms.lewiscentral.org',
+		f'http://lchs.lewiscentral.org',
 	]
 
 	schools = [
 		'district',
-		'hs',
-		'ms',
-		'cantiague',
-		'jackson',
-		'seaman',
+		'lckr',
+		'lcth',
+		'lcms',
+		'lchs',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]

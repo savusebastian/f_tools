@@ -46,4 +46,5 @@ if __name__ == '__main__':
 			if news_links == '':
 				news_links = 'No news found'
 
-			csv_writer.writerow([col_0, news_links])
+			# csv_writer.writerow([col_0, news_links])
+			print(news_links)

@@ -189,7 +189,7 @@ if __name__ == '__main__':
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824488&vdid=il18ar1ymnb2f1d7',
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824490&vdid=i18b9ga1ybp2f1ee',
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824490&vdid=i18a1eyb42f1dq',
-		'https:/hd-lbusd-ca.schoolloop.com/',
+		'https:/hd-lbusd-ca.schoolloop.com',
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824493&vdid=i18a1dyb2f1ex',
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824494&vdid=i18a1ybq2f1ff',
 		'https://birney-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1535349824494&vdid=i18a1yb2f1fv',
@@ -227,7 +227,7 @@ if __name__ == '__main__':
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863905&vdid=4i104ek1z1sh1fq',
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863905&vdid=ciy10e1zu1sh1g8',
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863908&vdid=v3qi107e1z1sh1h8',
-		'https:/www.groundeducation.org/',
+		'https:/www.groundeducation.org',
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863908&vdid=i10e1z1sh1jp',
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863910&vdid=iiu10em1z1ysh1kc',
 		'https://bbk-lbusd.ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1537427863910&vdid=i10e32msg0m18c0',
@@ -516,7 +516,7 @@ if __name__ == '__main__':
 		'https://www.lbschools.net/parentvue',
 		'https://www.lbschools.net/Departments/Research/parent_vue.cfm',
 		'https://lbhudson.schoolloop.com/portal/login',
-		'https://www.lbschools.net/',
+		'https://www.lbschools.net',
 		'https://www.lbschools.net/Departments/Nutrition_Services/menu_nutrient_info.cfm',
 		'https://lbhudson.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1534404161789&vdid=i16c1y198iq',
 		'https://lbhudson.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1534404161789&vdid=i16c21j2zx1df',
@@ -529,26 +529,26 @@ if __name__ == '__main__':
 		'https://lbhudson.schoolloop.com/titleix',
 		'https://lbhudson.schoolloop.com/uniformcomplaint',
 		'https://www.lbschools.net/Departments/Parent_U/vips.cfm',
-		'https://lbschools.instructure.com/',
+		'https://lbschools.instructure.com',
 		'https://studentlbusd.lbschools.net/LoginPolicy.jsp',
 		'https://lbhudson.schoolloop.com/portal/login',
 		'https://www.lbschools.net/studentvue',
-		'https://accounts.google.com/',
-		'https://www.lbschools.net/',
+		'https://accounts.google.com',
+		'https://www.lbschools.net',
 		'https://lbhudson.schoolloop.com/calendar',
 		'https://lbhudson.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1534404161791&vdid=ia16c2jt2zx1f5',
 		'https://lbhudson.schoolloop.com/elementary',
 		'https://lbhudson.schoolloop.com/onlineresources',
-		'https://quizlet.com/',
+		'https://quizlet.com',
 		'https://www.lbschools.net/Departments/OMS/homework_helpline.cfm',
 		'https://lbhudson.schoolloop.com/Math_Support',
-		'https://www.longbeach.gov/library/locations/harte/',
+		'https://www.longbeach.gov/library/locations/harte',
 		'https://mylbusd.lbschools.net/LoginPolicy.jsp',
-		'https://lbschools.instructure.com/',
-		'https://accounts.google.com/',
-		'https://outlook.lbschools.net/',
+		'https://lbschools.instructure.com',
+		'https://accounts.google.com',
+		'https://outlook.lbschools.net',
 		'https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&response_type=code&state=27ffa9d5488e57a2778fba984f01b0ce61740295212d3f3938ffb319be69554e&district_id=5123f61b95f100c94e000001',
-		'https://synergy.lbschools.net/',
+		'https://synergy.lbschools.net',
 		'https://lroix.lbschools.net/Account/Login?ReturnUrl=%2fHome%2f',
 		'https://asp.schoolmessenger.com/lbusd/index.php?',
 		'https://adminweb.aesoponline.com/access',
@@ -557,14 +557,14 @@ if __name__ == '__main__':
 		'https://classroom.google.com/u/0/h',
 		'https://lbhudson.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1534404161793&vdid=ci16ac1y19814r',
 		'https://lbhudson.schoolloop.com/lbusdcalendar',
-		'https://www.lbschools.net/',
+		'https://www.lbschools.net',
 		'https://connected.mcgraw-hill.com/connected/login.do',
 		'https://www-k6.thinkcentral.com/ePC/start.do',
 		'https://play.stmath.com/account.html',
 		'https://clever.com/oauth/sis/login?target=NTEyM2Y2MWI5NWYxMDBjOTRlMDAwMDAx%3BZjg4Mjc0NDk0MmRiMzUwMGY5OGM%3D%3BaHR0cHM6Ly9hdXRoLm15bGV4aWEuY29tL2NsZXZlci9vYXV0aC5waHA%2FcHJvZD1teUxleGlhJnBsYXQ9d2Vi%3B%3BY29kZQ%3D%3D&skip=1&default_badge=',
-		'https://online.sanfordprograms.org/',
+		'https://online.sanfordprograms.org',
 		'https://www.khanacademy.org/login',
-		'https://www.caaspp.org/',
+		'https://www.caaspp.org',
 		'https://kpop.ukp.io/login?view=83',
 		'https://mysteryscience.com/log-in',
 		'https://lbhudson.schoolloop.com/staff',
@@ -814,9 +814,9 @@ if __name__ == '__main__':
 		'https://parentlbusd.lbschools.net/Login_Parent_PXP.aspx?regenerateSessionId=True&CFID=78285872&CFTOKEN=fc7669f606029403-D428F9B9-D83E-98CD-95326FF772722AA6',
 		'https://naples-lbusd-ca.schoolloop.com/schoolsupplychecklists',
 		'https://naples-lbusd-ca.schoolloop.com/parenthandbook',
-		'https://naplespta.net/',
+		'https://naplespta.net',
 		'https://naples-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1531973539101&vdid=7i2i0f1xjepfd',
-		'https://shop.spreadshirt.com/1033827/',
+		'https://shop.spreadshirt.com/1033827',
 		'https://naples-lbusd-ca.schoolloop.com/ptafundraisers',
 		'https://naples-lbusd-ca.schoolloop.com/attendance',
 
@@ -851,7 +851,7 @@ if __name__ == '__main__':
 		'https://www.lbschools.net/Schools/calendars.cfm',
 		'https://www.lbschools.net/Departments/School_Support_Services/s-e-b-support.cfm',
 		'https://herrera-lbusd-ca.schoolloop.com/pf4/cms2/view_page?d=x&group_id=1500178973877&vdid=xi1q5b2n15rb2zs',
-		'https://lbschools.instructure.com/',
+		'https://lbschools.instructure.com',
 		'https://herrera-lbusd-ca.schoolloop.com/pf4/cms2_site/viewFirstPageOfMenuSection?d=x&id=i15qb2o098l4wx',
 		'https://parentlbusd.lbschools.net/Login_Student_PXP.aspx?regenerateSessionId=True&CFID=63274060&CFTOKEN=2130aeccae088104-8C498263-BE9B-3D89-96E1573778DEFD33',
 		'https://herrera-lbusd-ca.schoolloop.com/Kinder',
@@ -1148,7 +1148,7 @@ if __name__ == '__main__':
 		issue_pages_counter = 0
 
 		for link in all_sites:
-			tiers = link.split('/')
+			tiers = link.split('')
 			t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
 
 			if len(tiers) == 3:
@@ -1181,11 +1181,11 @@ if __name__ == '__main__':
 				t5 = tiers[-2].capitalize()
 				t6 = tiers[-1].capitalize()
 			else:
-				t1 = tiers[-6].capitalize()
-				t2 = tiers[-5].capitalize()
-				t3 = tiers[-4].capitalize()
-				t4 = tiers[-3].capitalize()
-				t5 = tiers[-2].capitalize()
+				# t1 = tiers[-6].capitalize()
+				# t2 = tiers[-5].capitalize()
+				# t3 = tiers[-4].capitalize()
+				# t4 = tiers[-3].capitalize()
+				# t5 = tiers[-2].capitalize()
 				t6 = tiers[-1].capitalize()
 				print(len(tiers))
 

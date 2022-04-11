@@ -1186,7 +1186,7 @@ if __name__ == '__main__':
 				# t3 = tiers[-4].capitalize()
 				# t4 = tiers[-3].capitalize()
 				# t5 = tiers[-2].capitalize()
-				t6 = tiers[-1].capitalize()
+				# t6 = tiers[-1].capitalize()
 				print(len(tiers))
 
 			page_counter += 1

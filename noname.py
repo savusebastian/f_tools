@@ -1148,7 +1148,7 @@ if __name__ == '__main__':
 		issue_pages_counter = 0
 
 		for link in all_sites:
-			tiers = link.split('')
+			tiers = link.split('/')
 			t1, t2, t3, t4, t5, t6 = '', '', '', '', '', ''
 
 			if len(tiers) == 3:

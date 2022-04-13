@@ -117,21 +117,11 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=84&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=425&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=620&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1251&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=801&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=918&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1032&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1145&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1381&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1492&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1607&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1722&DirectoryType=6&SectionMax=50',
-		# 'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=1804&DirectoryType=6&SectionMax=50',
-		'https://www.barrington220.org/site/default.aspx?pagetype=15&SiteID=4166&DirectoryType=6&SectionMax=50',
+		'https://www.communityisd.org/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=15',
+		'https://www.communityisd.org/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=15',
+		'https://www.communityisd.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=15',
+		'https://www.communityisd.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=15',
+		'https://www.communityisd.org/site/default.aspx?pagetype=15&SiteID=11&DirectoryType=6&SectionMax=15',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

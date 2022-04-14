@@ -41,22 +41,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='content_area').find_all('form') != []:
+		if web_soup.find(class_='entry-content').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='content_area').find_all('embed') != []:
+		if web_soup.find(class_='entry-content').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='content_area').find_all('iframe') != []:
+		if web_soup.find(class_='entry-content').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='content_area').find_all(class_='calendar') != []:
+		if web_soup.find(class_='entry-content').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='content_area').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='entry-content').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='content_area').find_all(class_='news') != []:
+		if web_soup.find(class_='entry-content').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -65,8 +65,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='content_area') != None and web_soup.find(id='content_area') != '':
-			col1 = web_soup.find(id='content_area')
+		if web_soup.find(class_='entry-content') != None and web_soup.find(class_='entry-content') != '':
+			col1 = web_soup.find(class_='entry-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -119,77 +119,85 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.lbschools.net/Departments/Business_Services/financial_documents.cfm',
-		'https://www.lbschools.net/Departments/Business_Services/financial_documents_arc.cfm',
-		'https://www.lbschools.net/Departments/Business_Services/accounting.cfm',
-		'https://www.lbschools.net/Departments/Business_Services/payroll.cfm',
-		'https://www.lbschools.net/Departments/Human_Resource_Services/',
-		'https://www.lbschools.net/Departments/Personnel_Commission/',
-		'https://www.lbschools.net/Departments/Local_Control/',
-		'https://www.lbschools.net/Departments/Linked_Learning/index.cfm',
-		'https://www.lbschools.net/Departments/Linked_Learning/pathways.cfm',
-		'https://www.lbschools.net/Departments/Superintendent/index.cfm',
-		'https://www.lbschools.net/Departments/Superintendent/goals.cfm',
-		'https://www.lbschools.net/Departments/Superintendent/student-advisory-committee.cfm',
-		'https://www.lbschools.net/Departments/Superintendent/supt-parent-connection.cfm',
-		'https://www.lbschools.net/Departments/Superintendent/learning-acceleration-plan.cfm',
-		'https://www.lbschools.net/Departments/Elementary_Schools/school_finder.cfm',
-		'https://www.lbschools.net/Schools/calendars.cfm',
-		'https://www.lbschools.net/Schools/sarcs.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/index.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/meal_app.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/menu_nutrient_info.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/special_diets.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/fitness.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/summer_programs.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/job_opps.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/staff_resources.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/vendor_resources.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/about.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/contact.cfm',
-		'https://www.lbschools.net/Departments/Nutrition_Services/Bids/',
-		'https://www.lbschools.net/Departments/Research/',
-		'https://www.lbschools.net/Departments/Research/test_schedules.cfm',
-		'https://www.lbschools.net/Departments/Research/Testing/state-wide.cfm',
-		'https://www.lbschools.net/Departments/Research/Testing/prep-placement.cfm',
-		'https://www.lbschools.net/Departments/Research/Accountability/state_account.cfm',
-		'https://www.lbschools.net/Departments/Research/Accountability/federal_account.cfm',
-		'https://www.lbschools.net/Departments/Research/parent_vue.cfm',
-		'https://www.lbschools.net/Departments/Research/student_data.cfm',
-		'https://www.lbschools.net/Departments/Research/Data/core_survey.cfm',
-		'https://www.lbschools.net/Departments/Research/Data/sarc.cfm',
-		'https://www.lbschools.net/Departments/Research/school-messenger.cfm',
-		'https://www.lbschools.net/Departments/EEP/',
-		'https://www.lbschools.net/Departments/Parent_U/',
-		'https://www.lbschools.net/Departments/Parent_U/parent_workshops.cfm',
-		'https://www.lbschools.net/Departments/Parent_U/enrollment.cfm',
-		'https://www.lbschools.net/Departments/Parent_U/guidelines.cfm',
-		'https://www.lbschools.net/Departments/Parent_U/online_resources.cfm',
-		'https://www.lbschools.net/Departments/EEP/native_americans.cfm',
-		'https://www.lbschools.net/Departments/EEP/translation-unit.cfm',
-		'https://www.lbschools.net/Departments/EEP/college_aides.cfm',
-		'https://www.lbschools.net/Departments/Education_Foundation/index.cfm',
-		'https://www.lbschools.net/Departments/Education_Foundation/programs.cfm',
-		'https://www.lbschools.net/Departments/High_Schools/index.cfm',
-		'https://www.lbschools.net/Departments/High_Schools/hs_list.cfm',
-		'https://www.lbschools.net/Departments/School_Choice/hs_choice.cfm',
-		'https://www.lbschools.net/Departments/Counseling/index.cfm',
-		'https://www.lbschools.net/Departments/Counseling/transcripts_current.cfm',
-		'https://www.lbschools.net/Departments/Counseling/counseling_modules.cfm',
-		'https://www.lbschools.net/Departments/Counseling/grad_requirements.cfm',
-		'https://www.lbschools.net/Departments/Counseling/scholar.cfm',
-		'https://www.lbschools.net/Departments/Records_Management/',
-		'https://www.lbschools.net/Departments/Middle_K8_Schools/index.cfm',
-		'https://www.lbschools.net/Departments/Middle_K8_Schools/school_choice.cfm',
-		'https://www.lbschools.net/Departments/Middle_K8_Schools/sports.cfm',
-		'https://www.lbschools.net/Departments/Middle_K8_Schools/school_finder.cfm',
-		'https://www.lbschools.net/Departments/Curriculum/CTE/',
-		'https://www.lbschools.net/Departments/Curriculum/CTE/standards.cfm',
-		'https://www.lbschools.net/Departments/Curriculum/CTE/ctso.cfm',
-		'https://www.lbschools.net/Departments/Curriculum/CTE/teacher_resources.cfm',
+		'https://www.medfordma.org/departments',
+		'https://www.medfordma.org/departments/animal-control',
+		'https://www.medfordma.org/departments/assessor',
+		'https://www.medfordma.org/departments/building-department',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/cemetery-division',
+		'https://www.medfordma.org/departments/city-clerk',
+		'https://www.medfordma.org/departments/collector',
+		'https://www.medfordma.org/community-preservation',
+		'https://www.medfordma.org/departments/council-on-aging',
+		'https://www.medfordma.org/departments/credit-union',
+		'https://www.medfordma.org/departments/department-of-public-works',
+		'https://www.medfordma.org/departments/electrical',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/engineering-division',
+		'https://www.medfordma.org/departments/finance-and-auditing',
+		'https://www.medfordma.org/departments/fire-department',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/forestry-division',
+		'https://www.medfordma.org/departments/health-department',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/highway-division',
+		'https://www.medfordma.org/departments/human-resources',
+		'https://www.medfordma.org/departments/information-technology',
+		'https://www.medfordma.org/departments/law-department',
+		'https://www.medfordma.org/mayor',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/park-division',
+		'https://www.medfordma.org/parking',
+		'https://www.medfordma.org/departments/planning-development-sustainability',
+		'https://www.medfordma.org/departments/voter-registration',
+		'https://www.medfordma.org/departments/veterans',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/water-and-sewer-division',
+		'https://www.medfordma.org/departments/weights-and-measures',
+		'https://www.medfordma.org/boards',
+		'https://www.medfordma.org/departments/planning-development-sustainability/adult-use-marijuana-establishments',
+		'https://www.medfordma.org/boards/civic-auditorium-and-convention-center-commission',
+		'https://www.medfordma.org/boards/parking-policy',
+		'https://www.medfordma.org/departments/disability',
+		'https://www.medfordma.org/boards/commissioner-of-trust-funds',
+		'https://www.medfordma.org/boards/community-development-board',
+		'https://www.medfordma.org/boards/conservation-commission',
+		'https://www.medfordma.org/boards/boards-firetaskforce',
+		'https://www.medfordma.org/boards/historic-district-commission',
+		'https://www.medfordma.org/boards/hormel-stadium-commission',
+		'https://www.medfordma.org/departments/human-rights',
+		'https://www.medfordma.org/boards/library-trustees',
+		'https://www.medfordma.org/boards/license-commission',
+		'https://www.medfordma.org/departments/department-of-public-works/dpw-links/park-division/park-commission',
+		'https://www.medfordma.org/boards/small-cell-committee',
+		'https://www.medfordma.org/boards/traffic-commission',
+		'https://www.medfordma.org/welcome-to-medford ',
+		'https://www.medfordma.org/boards/board-of-appeals',
+		'https://www.medfordma.org/city-council',
+		'https://www.medfordma.org/seeclickfix ',
+		'https://www.medfordma.org/alerts',
+		'https://www.medfordma.org/snow',
+		'https://www.medfordma.org/street-sweeping',
+		'https://www.medfordma.org/business-resources',
+		'https://www.medfordma.org/business-development-resources',
+		'https://www.medfordma.org/rodent-prevention',
+		'https://www.medfordma.org/transportation',
+		'https://www.medfordma.org/departments/department-of-public-works/fleet-maintenance-garage',
+		'https://www.medfordma.org/mayor2/city-budget',
+		'https://www.medfordma.org/departments/health-department/municipal-vulnerability-project',
+		'https://www.medfordma.org/compplan',
+		'https://www.medfordma.org/construction',
+		'https://www.medfordma.org/coronavirus-information',
+		'https://www.medfordma.org/covid-19-business-resources',
+		'https://www.medfordma.org/arpa',
+		'https://www.medfordma.org/covid-19-vaccine-information',
+		'https://www.medfordma.org/coronavirus-information/medford-vaccination-rate-data',
+		'https://www.medfordma.org/covid-19-positive-test-rates',
+		'https://www.medfordma.org/volunteering',
+		'https://www.medfordma.org/coronavirus-information/covid-19-support-recovery-resources',
+		'https://www.medfordma.org/departments/finance-and-auditing/21459-2',
+		'https://www.medfordma.org/departments/voter-registration/voter-registration',
+		'https://www.medfordma.org/departments/recycling',
+		'https://www.medfordma.org/departments/personnel/jobs',
+		'https://www.medfordma.org/public-records-requests',
+		'https://www.medfordma.org/airplane-noise',
 	]
-	mainfolder = 'lbschools'
-	school_name = 'lbschools'
+	mainfolder = 'medfordma'
+	school_name = 'medfordma'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

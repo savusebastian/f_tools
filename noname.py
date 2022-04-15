@@ -119,26 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kellamhs.vbschools.com/parents',
-		'https://kellamhs.vbschools.com/parents/attendance/attendancepolicy',
-		'https://kellamhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://kellamhs.vbschools.com/students',
-		'https://kellamhs.vbschools.com/students/student_activities/athletics',
-		'https://kellamhs.vbschools.com/students/guidance',
-		'https://kellamhs.vbschools.com/cms/One.aspx?portalId=89305&pageId=1819215',
-		'https://kellamhs.vbschools.com/students/student_activities/activity_bus',
-		'https://kellamhs.vbschools.com/students/parking_information',
-		'https://kellamhs.vbschools.com/students/library',
-		'https://kellamhs.vbschools.com/our_school/administration',
-		'https://kellamhs.vbschools.com/our_school/calendar',
-		'https://kellamhs.vbschools.com/our_school/contact_us',
-		'https://kellamhs.vbschools.com/our_school',
-		'https://kellamhs.vbschools.com/our_school/our_staff',
-		'https://kellamhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/3/',
+		'https://kempsvillehs.vbschools.com/parents',
+		'https://kempsvillehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://kempsvillehs.vbschools.com/students',
+		'https://kempsvillehs.vbschools.com/students/Counseling',
+		'https://kempsvillehs.vbschools.com/students/student_activities',
+		'https://firstcolonialhs.vbschools.com/students/library',
+		'https://kempsvillehs.vbschools.com/our_school/administration',
+		'https://kempsvillehs.vbschools.com/our_school/calendar',
+		'https://kempsvillehs.vbschools.com/our_school/contact_us',
+		'https://kempsvillehs.vbschools.com/our_school',
+		'https://kempsvillehs.vbschools.com/our_school/our_staff',
+		'https://kempsvillehs.vbschools.com/our_school/entrepreneurship_and_business_academy',
+		'https://kempsvillehs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/6/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'kellamhs'
+	school_name = 'kempsvillehs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,23 +119,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kempsvillehs.vbschools.com/parents',
-		'https://kempsvillehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://kempsvillehs.vbschools.com/students',
-		'https://kempsvillehs.vbschools.com/students/Counseling',
-		'https://kempsvillehs.vbschools.com/students/student_activities',
-		'https://firstcolonialhs.vbschools.com/students/library',
-		'https://kempsvillehs.vbschools.com/our_school/administration',
-		'https://kempsvillehs.vbschools.com/our_school/calendar',
-		'https://kempsvillehs.vbschools.com/our_school/contact_us',
-		'https://kempsvillehs.vbschools.com/our_school',
-		'https://kempsvillehs.vbschools.com/our_school/our_staff',
-		'https://kempsvillehs.vbschools.com/our_school/entrepreneurship_and_business_academy',
-		'https://kempsvillehs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/6/',
+		'https://landstownhs.vbschools.com/parents',
+		'https://landstownhs.vbschools.com/parents/attendance',
+		'https://landstownhs.vbschools.com/students',
+		'https://landstownhs.vbschools.com/our_school/eagle_athletics',
+		'https://landstownhs.vbschools.com/students/guidance',
+		'https://landstownhs.vbschools.com/students/library',
+		'https://landstownhs.vbschools.com/students/APStudentInformation',
+		'https://landstownhs.vbschools.com/our_school/administration',
+		'https://landstownhs.vbschools.com/our_school/calendar',
+		'https://landstownhs.vbschools.com/our_school/contact_us',
+		'https://landstownhs.vbschools.com/our_school',
+		'https://landstownhs.vbschools.com/our_school',
+		'https://landstownhs.vbschools.com/our_school/eagle_news',
+		'https://landstownhs.vbschools.com/our_school/governor_s_s_t_e_m_and_technology_academies',
+		'https://landstownhs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/7/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'kempsvillehs'
+	school_name = 'landstownhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

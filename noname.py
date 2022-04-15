@@ -119,20 +119,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://sheltonparkes.vbschools.com/parents',
-		'https://sheltonparkes.vbschools.com/students/student_resources/school_supply_list',
-		'https://sheltonparkes.vbschools.com/students',
-		'https://sheltonparkes.vbschools.com/students/school_counselor',
-		'https://sheltonparkes.vbschools.com/students/library',
-		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298412',
-		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=108638',
-		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298397',
-		'https://sheltonparkes.vbschools.com/our_school',
-		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298417',
-		'https://sheltonparkes.vbschools.com/students/student_resources',
+		'https://strawbridgees.vbschools.com/parents',
+		'https://strawbridgees.vbschools.com/students/student_resources/school_supply_lists',
+		'https://strawbridgees.vbschools.com/students',
+		'https://strawbridgees.vbschools.com/our_school/administration',
+		'https://strawbridgees.vbschools.com/our_school/calendar',
+		'https://strawbridgees.vbschools.com/cms/One.aspx?portalId=108800&pageId=298531',
+		'https://strawbridgees.vbschools.com/cms/One.aspx?portalId=108800&pageId=298546',
+		'https://strawbridgees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'sheltonparkes'
+	school_name = 'strawbridgees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,21 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://greenruncollegiate.vbschools.com/parents',
-		'https://greenruncollegiate.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://greenruncollegiate.vbschools.com/our_school/why_g_r_c',
-		'https://greenruncollegiate.vbschools.com/students',
-		'https://greenruncollegiate.vbschools.com/students/School_Counseling',
-		'https://greenruncollegiate.vbschools.com/students/library',
-		'https://greenruncollegiate.vbschools.com/our_school/administration',
-		'https://greenruncollegiate.vbschools.com/our_school/calendar',
-		'https://greenruncollegiate.vbschools.com/our_school/contact_us',
-		'https://greenruncollegiate.vbschools.com/our_school',
-		'https://greenruncollegiate.vbschools.com/our_school/our_staff',
-		'https://greenruncollegiate.vbschools.com/students/student_resources',
+		'https://greenrunhs.vbschools.com/Parents',
+		'https://greenrunhs.vbschools.com/Parents/grading_guidelines/school_grading_practices',
+		'https://greenrunhs.vbschools.com/students',
+		'https://greenrunhs.vbschools.com/students/Athletics_and_Clubs/athletics',
+		'https://greenrunhs.vbschools.com/students/school_counseling',
+		'https://greenrunhs.vbschools.com/students/Athletics_and_Clubs/clubs',
+		'https://greenrunhs.vbschools.com/students/student_parking',
+		'https://greenrunhs.vbschools.com/students/library',
+		'https://greenrunhs.vbschools.com/our_school/administration',
+		'https://greenrunhs.vbschools.com/our_school/calendar',
+		'https://greenrunhs.vbschools.com/our_school/contact_us',
+		'https://greenrunhs.vbschools.com/our_school',
+		'https://greenrunhs.vbschools.com/our_school/our_staff',
+		'https://greenrunhs.vbschools.com/our_school/plan_for_continuous_improvement',
+		'https://www.beachdistrictva.org/public/genie/356/school/5/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'greenruncollegiate'
+	school_name = 'greenrunhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -41,22 +41,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(class_='entry-content').find_all('form') != []:
+		if web_soup.find(class_='PAGE').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(class_='entry-content').find_all('embed') != []:
+		if web_soup.find(class_='PAGE').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(class_='entry-content').find_all('iframe') != []:
+		if web_soup.find(class_='PAGE').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(class_='entry-content').find_all(class_='calendar') != []:
+		if web_soup.find(class_='PAGE').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(class_='entry-content').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='PAGE').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(class_='entry-content').find_all(class_='news') != []:
+		if web_soup.find(class_='PAGE').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -65,8 +65,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='entry-content') != None and web_soup.find(class_='entry-content') != '':
-			col1 = web_soup.find(class_='entry-content')
+		if web_soup.find(class_='PAGE') != None and web_soup.find(class_='PAGE') != '':
+			col1 = web_soup.find(class_='PAGE')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -373,8 +373,8 @@ if __name__ == '__main__':
 		'http://www.hibbing.k12.mn.us/calendar-testing-wide',
 		'http://www.hibbing.k12.mn.us/iron-range-summer-institute',
 	]
-	mainfolder = 'medfordma'
-	school_name = 'medfordma'
+	mainfolder = 'hibbing'
+	school_name = 'hibbing'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

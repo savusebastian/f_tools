@@ -119,21 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://oceanlakeses.vbschools.com/parents',
-		'https://oceanlakeses.vbschools.com/parents/school_supply_lists',
-		'https://oceanlakeses.vbschools.com/students',
-		'https://oceanlakeses.vbschools.com/students/guidance',
-		'https://oceanlakeses.vbschools.com/students/library',
-		'https://oceanlakeses.vbschools.com/our_school/administration',
-		'https://oceanlakeses.vbschools.com/our_school/calendar',
-		'https://oceanlakeses.vbschools.com/our_school/contact_us',
-		'https://oceanlakeses.vbschools.com/our_school',
-		'https://oceanlakeses.vbschools.com/our_school/our_staff',
-		'https://oceanlakeses.vbschools.com/students/student_resources',
-		'https://oceanlakeses.vbschools.com/students/Clubs',
+		'https://parkwayes.vbschools.com/parents',
+		'https://parkwayes.vbschools.com/parents/title_i_parent_information',
+		'https://parkwayes.vbschools.com/students/student_resources/school_supply_list',
+		'https://parkwayes.vbschools.com/students',
+		'https://parkwayes.vbschools.com/students/library',
+		'https://parkwayes.vbschools.com/our_school/administration',
+		'https://parkwayes.vbschools.com/our_school/calendar',
+		'https://parkwayes.vbschools.com/our_school/contact_us',
+		'https://parkwayes.vbschools.com/our_school',
+		'https://parkwayes.vbschools.com/our_school/our_staff',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'oceanlakeses'
+	school_name = 'parkwayes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

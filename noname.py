@@ -119,16 +119,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://fairfieldes.vbschools.com/parents',
-		'https://fairfieldes.vbschools.com/parents/tips',
-		'https://fairfieldes.vbschools.com/students',
-		'https://fairfieldes.vbschools.com/students/school_counseling',
-		'https://fairfieldes.vbschools.com/our_school/administration',
-		'https://fairfieldes.vbschools.com/our_school/calendar',
-		'https://fairfieldes.vbschools.com/our_school/contact_us',
-		'https://fairfieldes.vbschools.com/our_school',
-		'https://fairfieldes.vbschools.com/our_school/our_staff',
-		'https://fairfieldes.vbschools.com/students/student_resources',
+		'https://glenwoodes.vbschools.com/parents',
+		'https://glenwoodes.vbschools.com/students/supplylist',
+		'https://glenwoodes.vbschools.com/students',
+		'https://glenwoodes.vbschools.com/students/school_counselor',
+		'https://glenwoodes.vbschools.com/students/library',
+		'https://glenwoodes.vbschools.com/our_school/administration',
+		'https://glenwoodes.vbschools.com/our_school/calendar',
+		'https://glenwoodes.vbschools.com/our_school/contact_us',
+		'https://glenwoodes.vbschools.com/our_school',
+		'https://glenwoodes.vbschools.com/our_school/our_staff',
+		'https://glenwoodes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
 	school_name = 'fairfieldes'

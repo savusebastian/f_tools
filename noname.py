@@ -119,21 +119,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://lynnhavenes.vbschools.com/parents',
-		'https://lynnhavenes.vbschools.com/parents/title_1_parent_information',
-		'https://lynnhavenes.vbschools.com/students/supplies',
-		'https://lynnhavenes.vbschools.com/students',
-		'https://lynnhavenes.vbschools.com/students/school_counseling',
-		'https://lynnhavenes.vbschools.com/students/library',
-		'https://lynnhavenes.vbschools.com/our_school/administration',
-		'https://lynnhavenes.vbschools.com/our_school/calendar',
-		'https://lynnhavenes.vbschools.com/our_school/contact_us',
-		'https://lynnhavenes.vbschools.com/our_school',
-		'https://lynnhavenes.vbschools.com/our_school/our_staff',
-		'https://lynnhavenes.vbschools.com/students/student_resources',
+		'https://malibues.vbschools.com/students',
+		'https://malibues.vbschools.com/students/guidance',
+		'https://malibues.vbschools.com/students/library',
+		'https://malibues.vbschools.com/our_school/administration',
+		'https://malibues.vbschools.com/our_school/calendar',
+		'https://malibues.vbschools.com/our_school/contact_us',
+		'https://malibues.vbschools.com/our_school',
+		'https://malibues.vbschools.com/our_school/our_staff',
+		'https://malibues.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'lynnhavenes'
+	school_name = 'malibues'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

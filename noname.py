@@ -119,20 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://rosemontes.vbschools.com/parents',
-		'https://rosemontes.vbschools.com/parents/title_i_parent_information',
-		'https://rosemontes.vbschools.com/students',
-		'https://rosemontes.vbschools.com/students/school_counselor',
-		'https://rosemontes.vbschools.com/students/library',
-		'https://rosemontes.vbschools.com/our_school/administration',
-		'https://rosemontes.vbschools.com/our_school/calendar',
-		'https://rosemontes.vbschools.com/cms/One.aspx?portalId=107430&pageId=297888',
-		'https://rosemontes.vbschools.com/our_school',
-		'https://rosemontes.vbschools.com/cms/One.aspx?portalId=107430&pageId=297903',
-		'https://rosemontes.vbschools.com/students/student_resources',
+		'https://rosemontforestes.vbschools.com/parents',
+		'https://rosemontforestes.vbschools.com/parents/school_supplies',
+		'https://rosemontforestes.vbschools.com/parents/watch_dog_program',
+		'https://rosemontforestes.vbschools.com/students',
+		'https://rosemontforestes.vbschools.com/students/guidance',
+		'https://rosemontforestes.vbschools.com/students/library',
+		'https://rosemontforestes.vbschools.com/our_school/administration',
+		'https://rosemontforestes.vbschools.com/our_school/calendar',
+		'https://rosemontforestes.vbschools.com/cms/One.aspx?portalId=107628&pageId=298042',
+		'https://rosemontforestes.vbschools.com/our_school',
+		'https://rosemontforestes.vbschools.com/cms/One.aspx?portalId=107628&pageId=298061',
+		'https://rosemontforestes.vbschools.com/our_school/p_b_i_s',
+		'https://rosemontforestes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'rosemontes'
+	school_name = 'rosemontforestes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

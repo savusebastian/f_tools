@@ -119,11 +119,26 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.mustangps.org/TrailsOfficeStaff.aspx',
-		'https://www.mustangps.org/TammyBrown.aspx',
-		'https://www.mustangps.org/mediacenter0713.aspx',
-		'https://www.mustangps.org/MustangTrailsPTA.aspx',
-		'https://www.mustangps.org/WatchDOGS1.aspx',
+		'https://www.mustangps.org/MustangValleyCreed.aspx',
+		'https://www.mustangps.org/GreatExpectationsStudentExpectations.aspx',
+		'https://www.mustangps.org/Parents.aspx',
+		'https://www.mustangps.org/SchoolSchedule.aspx',
+		'https://www.mustangps.org/MustangValleyMediaCenter.aspx',
+		'https://www.mustangps.org/TheReferenceDesk.aspx',
+		'https://www.mustangps.org/12PowerfulWordsforAcademicSuccess.aspx',
+		'https://www.mustangps.org/LearningBeyondBorders.aspx',
+		'https://www.mustangps.org/ConferencePresentations.aspx',
+		'https://www.mustangps.org/ExciteStudentLiteracywithGreatGlobalResources.aspx',
+		'https://www.mustangps.org/LearningBeyondBorders.aspx',
+		'https://www.mustangps.org/LiteracyandLearningBeyondBorders.aspx',
+		'https://www.mustangps.org/LynnTilleysResourceList.aspx',
+		'https://www.mustangps.org/BookList.aspx',
+		'https://www.mustangps.org/LinksList.aspx',
+		'https://www.mustangps.org/VideoconferencingLinks.aspx',
+		'https://www.mustangps.org/EverydayMath.aspx',
+		'https://www.mustangps.org/ReadingGoal.aspx',
+		'https://www.mustangps.org/GreatExpectationsModelSchool.aspx',
+		'https://www.mustangps.org/Parent-TeacherConferences.aspx',
 	]
 	mainfolder = 'mustangps'
 	school_name = 'mustangps'

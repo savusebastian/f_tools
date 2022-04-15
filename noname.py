@@ -119,19 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://pembrokemeadowses.vbschools.com/parents',
-		'https://pembrokemeadowses.vbschools.com/students/student_resources/supply_list',
-		'https://pembrokemeadowses.vbschools.com/students',
-		'https://pembrokemeadowses.vbschools.com/students/school_counselor',
-		'https://pembrokemeadowses.vbschools.com/our_school/administration',
-		'https://pembrokemeadowses.vbschools.com/our_school/calendar',
-		'https://pembrokemeadowses.vbschools.com/our_school/contact_us',
-		'https://pembrokemeadowses.vbschools.com/our_school',
-		'https://pembrokemeadowses.vbschools.com/our_school/our_staff',
-		'https://pembrokemeadowses.vbschools.com/students/student_resources',
+		'https://pointoviewes.vbschools.com/parents',
+		'https://pointoviewes.vbschools.com/parents/title_i_parent_information',
+		'https://pointoviewes.vbschools.com/students/student_resources/student_supply_list',
+		'https://pointoviewes.vbschools.com/students',
+		'https://pointoviewes.vbschools.com/students/school_counseling',
+		'https://pointoviewes.vbschools.com/students/library',
+		'https://pointoviewes.vbschools.com/our_school/administration',
+		'https://pointoviewes.vbschools.com/our_school/calendar',
+		'https://pointoviewes.vbschools.com/cms/One.aspx?portalId=106071&pageId=296802',
+		'https://pointoviewes.vbschools.com/our_school',
+		'https://pointoviewes.vbschools.com/cms/One.aspx?portalId=106071&pageId=296817',
+		'https://pointoviewes.vbschools.com/Students/Student_Resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'pembrokemeadowses'
+	school_name = 'pointoviewes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

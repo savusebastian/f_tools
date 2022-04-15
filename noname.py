@@ -119,17 +119,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://cookees.vbschools.com/parents',
-		'https://cookees.vbschools.com/students/student_resources/school_supply_list',
-		'https://cookees.vbschools.com/students',
-		'https://cookees.vbschools.com/students/school_counseling_',
-		'https://cookees.vbschools.com/students/library',
-		'https://cookees.vbschools.com/our_school/administration',
-		'https://cookees.vbschools.com/our_school/calendar',
-		'https://cookees.vbschools.com/our_school/contact_us',
-		'https://cookees.vbschools.com/our_school',
-		'https://cookees.vbschools.com/our_school/our_staff',
-		'https://cookees.vbschools.com/students/student_resources',
+		'https://corporatelandinges.vbschools.com/parents',
+		'https://corporatelandinges.vbschools.com/parents/school_supply_lists',
+		'https://corporatelandinges.vbschools.com/students',
+		'https://corporatelandinges.vbschools.com/students/guidance',
+		'https://corporatelandinges.vbschools.com/students/library',
+		'https://corporatelandinges.vbschools.com/our_school/administration',
+		'https://corporatelandinges.vbschools.com/our_school/calendar',
+		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301193',
+		'https://corporatelandinges.vbschools.com/our_school',
+		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301210',
+		'https://corporatelandinges.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
 	school_name = 'cookees'

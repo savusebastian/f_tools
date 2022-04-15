@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://corporatelandinges.vbschools.com/parents',
-		'https://corporatelandinges.vbschools.com/parents/school_supply_lists',
-		'https://corporatelandinges.vbschools.com/students',
-		'https://corporatelandinges.vbschools.com/students/guidance',
-		'https://corporatelandinges.vbschools.com/students/library',
-		'https://corporatelandinges.vbschools.com/our_school/administration',
-		'https://corporatelandinges.vbschools.com/our_school/calendar',
-		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301193',
-		'https://corporatelandinges.vbschools.com/our_school',
-		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301210',
-		'https://corporatelandinges.vbschools.com/students/student_resources',
+		'https://creedses.vbschools.com/parents',
+		'https://creedses.vbschools.com/parents/school_supply_list',
+		'https://creedses.vbschools.com/students',
+		'https://creedses.vbschools.com/students/guidance',
+		'https://creedses.vbschools.com/students/library',
+		'https://creedses.vbschools.com/our_school/administration',
+		'https://creedses.vbschools.com/our_school/calendar',
+		'https://creedses.vbschools.com/our_school/contact_us',
+		'https://creedses.vbschools.com/our_school',
+		'https://creedses.vbschools.com/our_school/our_staff',
+		'https://creedses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'cookees'
+	school_name = 'creedses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

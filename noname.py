@@ -119,15 +119,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.mustangps.org/MMSAdministrationandLeadership.aspx',
-		'https://www.mustangps.org/MMSBellSchedule.aspx',
-		'https://www.mustangps.org/CounselingOffice.aspx',
-		'https://www.mustangps.org/mediacenter3165.aspx',
-		'https://www.mustangps.org/referencedesk.aspx',
-		'https://www.mustangps.org/Nurses.aspx',
-		'https://www.mustangps.org/canvasforstudentsandparents8957.aspx',
-		'https://www.mustangps.org/MMSAthletics.aspx',
-		'https://www.mustangps.org/Clubs1.aspx',
+		'https://www.mustangps.org/administration2094.aspx',
+		'https://www.mustangps.org/MCMSCounseling.aspx',
+		'https://www.mustangps.org/mediacenter7898.aspx',
+		'https://www.mustangps.org/MCMSAthleticDepartment.aspx',
+		'https://www.mustangps.org/clubs8266.aspx',
+		'https://www.mustangps.org/LegalInformation.aspx',
+		'https://www.mustangps.org/AnonymousReporting.aspx',
 	]
 	mainfolder = 'mustangps'
 	school_name = 'mustangps'

@@ -119,29 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://princessannems.vbschools.com/parents',
-		'https://princessannems.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://princessannems.vbschools.com/parents/supply_lists',
-		'https://princessannems.vbschools.com/students',
-		'https://princessannems.vbschools.com/parents/a_v_i_d',
-		'https://princessannems.vbschools.com/parents/sports',
-		'https://princessannems.vbschools.com/parents/activity_bus_routes',
-		'https://princessannems.vbschools.com/students/counselors',
-		'https://princessannems.vbschools.com/parents/clubs_and_intramurals',
-		'https://princessannems.vbschools.com/parents/tutoring',
-		'https://princessannems.vbschools.com/students/library',
-		'https://princessannems.vbschools.com/our_school/administration',
-		'https://princessannems.vbschools.com/our_school/calendar',
-		'https://princessannems.vbschools.com/our_school/clinic',
-		'https://princessannems.vbschools.com/our_school/contact_us',
-		'https://princessannems.vbschools.com/our_school',
-		'https://princessannems.vbschools.com/our_school/our_staff',
-		'https://princessannems.vbschools.com/our_school/p_a_m_s_news',
-		'https://princessannems.vbschools.com/our_school/rising_6th_grade_info',
-		'https://plazams.vbschools.com/students/student_resources',
+		'https://salemms.vbschools.com/parents',
+		'https://salemms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://salemms.vbschools.com/students/student_resources/school_supply_list',
+		'https://salemms.vbschools.com/students',
+		'https://salemms.vbschools.com/our_school/student_activities',
+		'https://salemms.vbschools.com/students/guidance_department',
+		'https://salemms.vbschools.com/students/library',
+		'https://salemms.vbschools.com/our_school/administration',
+		'https://salemms.vbschools.com/our_school/calendar',
+		'https://salemms.vbschools.com/our_school/contact_us',
+		'https://salemms.vbschools.com/our_school',
+		'https://salemms.vbschools.com/our_school/our_staff',
+		'https://salemms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'princessannems'
+	school_name = 'salemms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

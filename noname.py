@@ -119,20 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://corporatelandinges.vbschools.com/parents',
-		'https://corporatelandinges.vbschools.com/parents/school_supply_lists',
-		'https://corporatelandinges.vbschools.com/students',
-		'https://corporatelandinges.vbschools.com/students/guidance',
-		'https://corporatelandinges.vbschools.com/students/library',
-		'https://corporatelandinges.vbschools.com/our_school/administration',
-		'https://corporatelandinges.vbschools.com/our_school/calendar',
-		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301193',
-		'https://corporatelandinges.vbschools.com/our_school',
-		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301210',
-		'https://corporatelandinges.vbschools.com/students/student_resources',
+		'https://seatackes.vbschools.com/parents',
+		'https://seatackes.vbschools.com/parents/title_i_parent_information',
+		'https://seatackes.vbschools.com/students/student_resources/supply_list',
+		'https://seatackes.vbschools.com/students',
+		'https://seatackes.vbschools.com/students/guidance',
+		'https://seatackes.vbschools.com/students/library',
+		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298286',
+		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=108442',
+		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298271',
+		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298189',
+		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298291',
+		'https://seatackes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'corporatelandinges'
+	school_name = 'seatackes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

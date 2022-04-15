@@ -119,22 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://brandonms.vbschools.com/parents',
-		'https://brandonms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://brandonms.vbschools.com/students',
-		'https://brandonms.vbschools.com/students/SchoolCounseling',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=1943365',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307675',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307700',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=80054',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307690',
-		'https://brandonms.vbschools.com/our_school',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307705',
-		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=22309524',
-		'https://brandonms.vbschools.com/students/student_resources',
+		'https://corporatelandingms.vbschools.com/parents',
+		'https://corporatelandingms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://corporatelandingms.vbschools.com/students',
+		'https://corporatelandingms.vbschools.com/students/avid',
+		'https://corporatelandingms.vbschools.com/students/school_counseling',
+		'https://corporatelandingms.vbschools.com/students/student_activities',
+		'https://corporatelandingms.vbschools.com/students/library',
+		'https://corporatelandingms.vbschools.com/our_school/administration',
+		'https://corporatelandingms.vbschools.com/our_school/calendar',
+		'https://corporatelandingms.vbschools.com/our_school/contact_us',
+		'https://corporatelandingms.vbschools.com/our_school',
+		'https://corporatelandingms.vbschools.com/our_school/our_staff',
+		'https://corporatelandingms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'brandonms'
+	school_name = 'corporatelandingms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

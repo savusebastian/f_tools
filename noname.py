@@ -119,21 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://newtownes.vbschools.com/parents',
-		'https://newtownes.vbschools.com/parents/title_i',
-		'https://newtownes.vbschools.com/students/student_resources/supply_list',
-		'https://newtownes.vbschools.com/students',
-		'https://newtownes.vbschools.com/students/guidance',
-		'https://newtownes.vbschools.com/students/library',
-		'https://newtownes.vbschools.com/our_school/administration',
-		'https://newtownes.vbschools.com/our_school/calendar',
-		'https://newtownes.vbschools.com/our_school/contact_us',
-		'https://newtownes.vbschools.com/our_school',
-		'https://newtownes.vbschools.com/our_school/our_staff',
-		'https://newtownes.vbschools.com/students/student_resources',
+		'https://northlandinges.vbschools.com/parents',
+		'https://northlandinges.vbschools.com/students/student_resources/supply_list',
+		'https://northlandinges.vbschools.com/students',
+		'https://northlandinges.vbschools.com/students/guidance',
+		'https://northlandinges.vbschools.com/students/library',
+		'https://northlandinges.vbschools.com/our_school/administration',
+		'https://northlandinges.vbschools.com/our_school/calendar',
+		'https://northlandinges.vbschools.com/our_school/contact_us',
+		'https://northlandinges.vbschools.com/our_school',
+		'https://northlandinges.vbschools.com/our_school/our_staff',
+		'https://northlandinges.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'newtownes'
+	school_name = 'northlandinges'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

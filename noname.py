@@ -119,20 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://creedses.vbschools.com/parents',
-		'https://creedses.vbschools.com/parents/school_supply_list',
-		'https://creedses.vbschools.com/students',
-		'https://creedses.vbschools.com/students/guidance',
-		'https://creedses.vbschools.com/students/library',
-		'https://creedses.vbschools.com/our_school/administration',
-		'https://creedses.vbschools.com/our_school/calendar',
-		'https://creedses.vbschools.com/our_school/contact_us',
-		'https://creedses.vbschools.com/our_school',
-		'https://creedses.vbschools.com/our_school/our_staff',
-		'https://creedses.vbschools.com/students/student_resources',
+		'https://deyes.vbschools.com/parents',
+		'https://deyes.vbschools.com/students',
+		'https://deyes.vbschools.com/students/guidance',
+		'https://deyes.vbschools.com/students/library',
+		'https://deyes.vbschools.com/our_school/administration',
+		'https://deyes.vbschools.com/our_school/calendar',
+		'https://deyes.vbschools.com/our_school/contact_us',
+		'https://deyes.vbschools.com/our_school',
+		'https://deyes.vbschools.com/our_school/our_staff',
+		'https://deyes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'creedses'
+	school_name = 'deyes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

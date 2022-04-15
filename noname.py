@@ -119,19 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://newcastlees.vbschools.com/parents',
-		'https://newcastlees.vbschools.com/students/student_resources/supply_list',
-		'https://newcastlees.vbschools.com/students',
-		'https://newcastlees.vbschools.com/students/library',
-		'https://newcastlees.vbschools.com/our_school/administration',
-		'https://newcastlees.vbschools.com/our_school/calendar',
-		'https://newcastlees.vbschools.com/our_school/contact_us',
-		'https://newcastlees.vbschools.com/our_school',
-		'https://newcastlees.vbschools.com/our_school/our_staff',
-		'https://newcastlees.vbschools.com/students/student_resources',
+		'https://newtownes.vbschools.com/parents',
+		'https://newtownes.vbschools.com/parents/title_i',
+		'https://newtownes.vbschools.com/students/student_resources/supply_list',
+		'https://newtownes.vbschools.com/students',
+		'https://newtownes.vbschools.com/students/guidance',
+		'https://newtownes.vbschools.com/students/library',
+		'https://newtownes.vbschools.com/our_school/administration',
+		'https://newtownes.vbschools.com/our_school/calendar',
+		'https://newtownes.vbschools.com/our_school/contact_us',
+		'https://newtownes.vbschools.com/our_school',
+		'https://newtownes.vbschools.com/our_school/our_staff',
+		'https://newtownes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'newcastlees'
+	school_name = 'newtownes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

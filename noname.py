@@ -119,19 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://tallwoodes.vbschools.com/parents',
-		'https://tallwoodes.vbschools.com/students',
-		'https://tallwoodes.vbschools.com/students/guidance',
-		'https://tallwoodes.vbschools.com/students/library',
-		'https://tallwoodes.vbschools.com/our_school/administration',
-		'https://tallwoodes.vbschools.com/our_school/calendar',
-		'https://tallwoodes.vbschools.com/cms/One.aspx?portalId=108993&pageId=298624',
-		'https://tallwoodes.vbschools.com/our_school',
-		'https://tallwoodes.vbschools.com/cms/One.aspx?portalId=108993&pageId=298639',
-		'https://tallwoodes.vbschools.com/students/student_resources',
+		'https://thaliaes.vbschools.com/parents',
+		'https://thaliaes.vbschools.com/students/student_resources/supplies',
+		'https://thaliaes.vbschools.com/students',
+		'https://thaliaes.vbschools.com/students/guidance',
+		'https://thaliaes.vbschools.com/students/library',
+		'https://thaliaes.vbschools.com/our_school/administration',
+		'https://thaliaes.vbschools.com/our_school/calendar',
+		'https://thaliaes.vbschools.com/our_school/contact_us',
+		'https://thaliaes.vbschools.com/our_school',
+		'https://thaliaes.vbschools.com/our_school/our_staff',
+		'https://thaliaes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'tallwoodes'
+	school_name = 'thaliaes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

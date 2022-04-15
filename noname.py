@@ -119,20 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://birdneckes.vbschools.com/parents',
-		'https://birdneckes.vbschools.com/parents/title_i_parent_information',
-		'https://birdneckes.vbschools.com/parents/school_supply_lists',
-		'https://birdneckes.vbschools.com/students',
-		'https://birdneckes.vbschools.com/students/school_counselor',
-		'https://birdneckes.vbschools.com/our_school/administration',
-		'https://birdneckes.vbschools.com/our_school/calendar',
-		'https://birdneckes.vbschools.com/cms/One.aspx?portalId=79820&pageId=301966',
-		'https://birdneckes.vbschools.com/our_school',
-		'https://baysidees.vbschools.com/our_school/our_staff',
-		'https://birdneckes.vbschools.com/students/student_resources',
+		'https://brookwoodes.vbschools.com/parents',
+		'https://brookwoodes.vbschools.com/parents/title_i_parent_information',
+		'https://brookwoodes.vbschools.com/parents/school_supplies',
+		'https://brookwoodes.vbschools.com/students',
+		'https://brookwoodes.vbschools.com/students/guidance',
+		'https://brookwoodes.vbschools.com/students/library',
+		'https://brookwoodes.vbschools.com/our_school/administration',
+		'https://brookwoodes.vbschools.com/our_school/calendar',
+		'https://brookwoodes.vbschools.com/our_school/contact_us',
+		'https://brookwoodes.vbschools.com/our_school',
+		'https://brookwoodes.vbschools.com/our_school/our_staff',
+		'https://brookwoodes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'birdneckes'
+	school_name = 'brookwoodes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

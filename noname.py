@@ -119,18 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://arrowheades.vbschools.com/parents',
+		'https://baysidees.vbschools.com/parents',
+		'https://baysidees.vbschools.com/parents/title_i_parent_information',
 		'https://arrowheades.vbschools.com/parents/school_supply_lists',
-		'https://arrowheades.vbschools.com/students',
-		'https://arrowheades.vbschools.com/our_school/administration',
-		'https://arrowheades.vbschools.com/our_school/calendar',
-		'https://arrowheades.vbschools.com/our_school/contact_us',
-		'https://arrowheades.vbschools.com/our_school',
-		'https://arrowheades.vbschools.com/our_school/our_staff',
-		'https://arrowheades.vbschools.com/students/student_resources',
+		'https://baysidees.vbschools.com/students',
+		'https://baysidees.vbschools.com/students/guidance',
+		'https://baysidees.vbschools.com/students/library',
+		'https://baysidees.vbschools.com/our_school/administration',
+		'https://baysidees.vbschools.com/our_school/calendar',
+		'https://baysidees.vbschools.com/our_school/contact_us',
+		'https://baysidees.vbschools.com/our_school',
+		'https://baysidees.vbschools.com/our_school/our_staff',
+		'https://baysidees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'arrowheades'
+	school_name = 'baysidees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

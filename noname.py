@@ -119,21 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://brookwoodes.vbschools.com/parents',
-		'https://brookwoodes.vbschools.com/parents/title_i_parent_information',
-		'https://brookwoodes.vbschools.com/parents/school_supplies',
-		'https://brookwoodes.vbschools.com/students',
-		'https://brookwoodes.vbschools.com/students/guidance',
-		'https://brookwoodes.vbschools.com/students/library',
-		'https://brookwoodes.vbschools.com/our_school/administration',
-		'https://brookwoodes.vbschools.com/our_school/calendar',
-		'https://brookwoodes.vbschools.com/our_school/contact_us',
-		'https://brookwoodes.vbschools.com/our_school',
-		'https://brookwoodes.vbschools.com/our_school/our_staff',
-		'https://brookwoodes.vbschools.com/students/student_resources',
+		'https://centervillees.vbschools.com/parents',
+		'https://centervillees.vbschools.com/students/student_resources/school_supply_lists',
+		'https://centervillees.vbschools.com/students',
+		'https://centervillees.vbschools.com/students/guidance',
+		'https://centervillees.vbschools.com/students/library',
+		'https://centervillees.vbschools.com/our_school/administration',
+		'https://centervillees.vbschools.com/our_school/calendar',
+		'https://centervillees.vbschools.com/cms/One.aspx?portalId=80420&pageId=301689',
+		'https://centervillees.vbschools.com/our_school',
+		'https://centervillees.vbschools.com/cms/One.aspx?portalId=80420&pageId=301704',
+		'https://centervillees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'brookwoodes'
+	school_name = 'centervillees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

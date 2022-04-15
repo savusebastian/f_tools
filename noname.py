@@ -119,23 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://williamses.vbschools.com/parents',
-		'https://williamses.vbschools.com/parents/title_i_parent_information',
-		'https://williamses.vbschools.com/students/student_resources/school_supply_lists',
-		'https://williamses.vbschools.com/students',
-		'https://williamses.vbschools.com/students/guidance',
-		'https://williamses.vbschools.com/students/library',
-		'https://williamses.vbschools.com/our_school/administration',
-		'https://williamses.vbschools.com/our_school/calendar',
-		'https://williamses.vbschools.com/cms/One.aspx?portalId=110724&pageId=300502',
-		'https://williamses.vbschools.com/our_school',
-		'https://williamses.vbschools.com/cms/One.aspx?portalId=110724&pageId=300520',
-		'https://williamses.vbschools.com/parents/tips',
-		'https://williamses.vbschools.com/parents/activities',
-		'https://williamses.vbschools.com/students/student_resources',
+		'https://windsoroakses.vbschools.com/parents',
+		'https://windsoroakses.vbschools.com/students',
+		'https://windsoroakses.vbschools.com/students/school_counseling',
+		'https://windsoroakses.vbschools.com/students/library',
+		'https://windsoroakses.vbschools.com/our_schools/administration',
+		'https://windsoroakses.vbschools.com/our_schools/calendar',
+		'https://windsoroakses.vbschools.com/our_schools/contact_us',
+		'https://windsoroakses.vbschools.com/our_schools',
+		'https://windsoroakses.vbschools.com/our_schools/our_staff',
+		'https://windsoroakses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'williamses'
+	school_name = 'windsoroakses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

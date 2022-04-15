@@ -119,20 +119,27 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://renaissanceacademy.vbschools.com/parents',
+		'https://techcenter.vbschools.com/parents',
 		'https://kellamhs.vbschools.com/parents/grading_guidelines/related_policies_and_regulations',
-		'https://renaissanceacademy.vbschools.com/students',
-		'https://renaissanceacademy.vbschools.com/students/school_counseling',
-		'https://renaissanceacademy.vbschools.com/students/library',
-		'https://renaissanceacademy.vbschools.com/our_school/administration',
-		'https://renaissanceacademy.vbschools.com/our_school/calendar',
-		'https://renaissanceacademy.vbschools.com/our_school/contact_us',
-		'https://renaissanceacademy.vbschools.com/our_school',
-		'https://renaissanceacademy.vbschools.com/our_school/our_staff',
-		'https://renaissanceacademy.vbschools.com/students/student_resources',
+		'https://techcenter.vbschools.com/students/military_family_resources',
+		'https://techcenter.vbschools.com/our_school/programs',
+		'https://techcenter.vbschools.com/students',
+		'https://techcenter.vbschools.com/our_school/how_to_apply',
+		'https://techcenter.vbschools.com/students/school_counseling',
+		'https://techcenter.vbschools.com/our_school/administration',
+		'https://techcenter.vbschools.com/our_school/calendar',
+		'https://techcenter.vbschools.com/our_school/contact_us',
+		'https://techcenter.vbschools.com/our_school',
+		'https://techcenter.vbschools.com/our_school/our_staff',
+		'https://techcenter.vbschools.com/our_school/school_to_work_program',
+		'https://techcenter.vbschools.com/our_school/preschool_program',
+		'https://techcenter.vbschools.com/our_school/programs',
+		'https://techcenter.vbschools.com/our_school/vocational_evaluation',
+		'https://techcenter.vbschools.com/our_school/how_to_apply',
+		'https://techcenter.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'renaissanceacademy'
+	school_name = 'techcenter'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

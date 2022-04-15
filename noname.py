@@ -119,26 +119,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.mustangps.org/SchoolInfo.aspx',
-		'https://www.mustangps.org/calendar2467.aspx',
-		'https://www.mustangps.org/CampusInfo.aspx',
-		'https://www.mustangps.org/nursescorner8540.aspx',
-		'https://www.mustangps.org/VolunteerBackgroundCheck.aspx',
-		'https://www.mustangps.org/CanvasforStudentsandParents.aspx',
-		'https://www.mustangps.org/ClubsandOrganizations.aspx',
-		'https://www.mustangps.org/Counseling.aspx',
-		'https://www.mustangps.org/ACTInfo.aspx',
-		'https://www.mustangps.org/ICAP.aspx',
-		'https://www.mustangps.org/CollegeVisits.aspx',
-		'https://www.mustangps.org/ConcurrentEnrollment.aspx',
-		'https://www.mustangps.org/EmotionalSupportMentalHealth.aspx',
-		'https://www.mustangps.org/EnrollmentInformation.aspx',
-		'https://www.mustangps.org/NCAA.aspx',
-		'https://www.mustangps.org/Scholarships.aspx',
-		'https://www.mustangps.org/SeniorSeminarInformation.aspx',
-		'https://www.mustangps.org/CommunityVolunteerOpportunities.aspx',
-		'https://www.mustangps.org/SeniorInformation.aspx',
-		'https://www.mustangps.org/YearbookandPictureDays.aspx',
+		'https://www.mustangps.org/Administration1.aspx',
+		'https://www.mustangps.org/BellSchedule.aspx',
+		'https://www.mustangps.org/calendar2651.aspx',
+		'https://www.mustangps.org/Resources.aspx',
+		'https://www.mustangps.org/mediacenter8585.aspx',
+		'https://www.mustangps.org/MediaCenterInformation.aspx',
+		'https://www.mustangps.org/CanvasforStudentsandParents1.aspx',
+		'https://www.mustangps.org/athletics7200.aspx',
+		'https://www.mustangps.org/Clubs.aspx',
+		'https://www.mustangps.org/MonthlyParentNewsletters.aspx',
+		'https://www.mustangps.org/StayInformed.aspx',
 	]
 	mainfolder = 'mustangps'
 	school_name = 'mustangps'

@@ -119,22 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://larkspurms.vbschools.com/parents',
-		'https://larkspurms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://larkspurms.vbschools.com/parents/supply_list',
-		'https://larkspurms.vbschools.com/students',
-		'https://larkspurms.vbschools.com/students/schoolcounseling',
-		'https://larkspurms.vbschools.com/students/student_activities',
-		'https://larkspurms.vbschools.com/students/library',
-		'https://larkspurms.vbschools.com/our_school/administration',
-		'https://larkspurms.vbschools.com/our_school/calendar',
-		'https://larkspurms.vbschools.com/our_school/contact_us',
-		'https://larkspurms.vbschools.com/our_school',
-		'https://larkspurms.vbschools.com/our_school/our_staff',
-		'https://larkspurms.vbschools.com/our_school/news',
+		'https://lynnhavenms.vbschools.com/parents',
+		'https://lynnhavenms.vbschools.com/students',
+		'https://lynnhavenms.vbschools.com/students/school_counseling',
+		'https://lynnhavenms.vbschools.com/students/student_activities',
+		'https://lynnhavenms.vbschools.com/students/tutoring',
+		'https://lynnhavenms.vbschools.com/students/library',
+		'https://lynnhavenms.vbschools.com/our_school/administration',
+		'https://lynnhavenms.vbschools.com/our_school/calendar',
+		'https://lynnhavenms.vbschools.com/our_school/contact_us',
+		'https://lynnhavenms.vbschools.com/our_school',
+		'https://lynnhavenms.vbschools.com/our_school/our_staff',
+		'https://lynnhavenms.vbschools.com/our_school/news___events',
+		'https://lynnhavenms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'larkspurms'
+	school_name = 'lynnhavenms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

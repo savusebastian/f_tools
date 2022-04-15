@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://thoroughgoodes.vbschools.com/parents',
-		'https://thoroughgoodes.vbschools.com/students/student_resources/supply_list',
-		'https://thoroughgoodes.vbschools.com/students',
-		'https://thoroughgoodes.vbschools.com/students/school_counselor',
-		'https://thoroughgoodes.vbschools.com/students/library',
-		'https://thoroughgoodes.vbschools.com/our_school/administration',
-		'https://thoroughgoodes.vbschools.com/our_school/calendar',
-		'https://thoroughgoodes.vbschools.com/our_school/contact_us',
-		'https://thoroughgoodes.vbschools.com/our_school',
-		'https://thoroughgoodes.vbschools.com/our_school/our_staff',
-		'https://thoroughgoodes.vbschools.com/students/student_resources',
+		'https://threeoakses.vbschools.com/parents',
+		'https://threeoakses.vbschools.com/students/student_resources/supply_list',
+		'https://threeoakses.vbschools.com/students',
+		'https://threeoakses.vbschools.com/students/guidance',
+		'https://threeoakses.vbschools.com/students/library',
+		'https://threeoakses.vbschools.com/our_school/administration',
+		'https://threeoakses.vbschools.com/our_school/calendar',
+		'https://threeoakses.vbschools.com/our_school/contact_us',
+		'https://threeoakses.vbschools.com/our_school',
+		'https://threeoakses.vbschools.com/our_school/our_staff',
+		'https://threeoakses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'thoroughgoodes'
+	school_name = 'threeoakses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

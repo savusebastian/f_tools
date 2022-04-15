@@ -119,23 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://independencems.vbschools.com/parents',
-		'https://landstownms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://independencems.vbschools.com/students/school_supplies',
-		'https://independencems.vbschools.com/students',
-		'https://independencems.vbschools.com/students/a_v_i_d',
-		'https://independencems.vbschools.com/students/counseling',
-		'https://independencems.vbschools.com/students/activities',
-		'https://independencems.vbschools.com/students/library',
-		'https://independencems.vbschools.com/our_school/administration',
-		'https://independencems.vbschools.com/our_school/calendar',
-		'https://independencems.vbschools.com/our_school/contact_us',
-		'https://independencems.vbschools.com/our_school',
-		'https://independencems.vbschools.com/our_school/our_staff',
-		'https://independencems.vbschools.com/students/student_resources',
+		'https://kempsvillems.vbschools.com/parents',
+		'https://kempsvillems.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://kempsvillems.vbschools.com/students',
+		'https://kempsvillems.vbschools.com/parents/school_improvement',
+		'https://kempsvillems.vbschools.com/students/school_counseling',
+		'https://kempsvillems.vbschools.com/students/activities',
+		'https://kempsvillems.vbschools.com/students/library',
+		'https://kempsvillems.vbschools.com/our_school/administration',
+		'https://kempsvillems.vbschools.com/our_school/calendar',
+		'https://kempsvillems.vbschools.com/our_school/contact_us',
+		'https://kempsvillems.vbschools.com/our_school',
+		'https://kempsvillems.vbschools.com/our_school/our_staff',
+		'https://kempsvillems.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'independencems'
+	school_name = 'kempsvillems'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

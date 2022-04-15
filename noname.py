@@ -119,18 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://malibues.vbschools.com/students',
-		'https://malibues.vbschools.com/students/guidance',
-		'https://malibues.vbschools.com/students/library',
-		'https://malibues.vbschools.com/our_school/administration',
-		'https://malibues.vbschools.com/our_school/calendar',
-		'https://malibues.vbschools.com/our_school/contact_us',
-		'https://malibues.vbschools.com/our_school',
-		'https://malibues.vbschools.com/our_school/our_staff',
-		'https://malibues.vbschools.com/students/student_resources',
+		'https://newcastlees.vbschools.com/parents',
+		'https://newcastlees.vbschools.com/students/student_resources/supply_list',
+		'https://newcastlees.vbschools.com/students',
+		'https://newcastlees.vbschools.com/students/library',
+		'https://newcastlees.vbschools.com/our_school/administration',
+		'https://newcastlees.vbschools.com/our_school/calendar',
+		'https://newcastlees.vbschools.com/our_school/contact_us',
+		'https://newcastlees.vbschools.com/our_school',
+		'https://newcastlees.vbschools.com/our_school/our_staff',
+		'https://newcastlees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'malibues'
+	school_name = 'newcastlees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

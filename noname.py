@@ -119,18 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://indianlakeses.vbschools.com/parents',
-		'https://indianlakeses.vbschools.com/students',
-		'https://indianlakeses.vbschools.com/students/guidance',
-		'https://indianlakeses.vbschools.com/students/library',
-		'https://indianlakeses.vbschools.com/our_school/administration',
-		'https://indianlakeses.vbschools.com/our_school/calendar',
-		'https://indianlakeses.vbschools.com/cms/One.aspx?portalId=89070&pageId=267926',
-		'https://indianlakeses.vbschools.com/our_school',
-		'https://indianlakeses.vbschools.com/cms/One.aspx?portalId=89070&pageId=267946',
+		'https://kempsvillees.vbschools.com/parents',
+		'https://kempsvillees.vbschools.com/cms/one.aspx?pageId=865122',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=89545',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268341',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268346',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268398',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=89531',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268383',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268377',
+		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268403',
+		'https://kempsvillees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'indianlakeses'
+	school_name = 'kempsvillees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

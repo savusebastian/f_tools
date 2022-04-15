@@ -119,22 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kempsvillems.vbschools.com/parents',
-		'https://kempsvillems.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://kempsvillems.vbschools.com/students',
-		'https://kempsvillems.vbschools.com/parents/school_improvement',
-		'https://kempsvillems.vbschools.com/students/school_counseling',
-		'https://kempsvillems.vbschools.com/students/activities',
-		'https://kempsvillems.vbschools.com/students/library',
-		'https://kempsvillems.vbschools.com/our_school/administration',
-		'https://kempsvillems.vbschools.com/our_school/calendar',
-		'https://kempsvillems.vbschools.com/our_school/contact_us',
-		'https://kempsvillems.vbschools.com/our_school',
-		'https://kempsvillems.vbschools.com/our_school/our_staff',
-		'https://kempsvillems.vbschools.com/students/student_resources',
+		'https://landstownms.vbschools.com/parents',
+		'https://landstownms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://landstownms.vbschools.com/parents/supply_list',
+		'https://landstownms.vbschools.com/students',
+		'https://landstownms.vbschools.com/students/school_counseling',
+		'https://landstownms.vbschools.com/students/library',
+		'https://landstownms.vbschools.com/our_school/administration',
+		'https://landstownms.vbschools.com/our_school/calendar',
+		'https://landstownms.vbschools.com/our_school/contact_us',
+		'https://landstownms.vbschools.com/our_school',
+		'https://landstownms.vbschools.com/our_school/our_staff',
+		'https://landstownms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'kempsvillems'
+	school_name = 'landstownms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,20 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kempsvillees.vbschools.com/parents',
-		'https://kempsvillees.vbschools.com/cms/one.aspx?pageId=865122',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=89545',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268341',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268346',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268398',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=89531',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268383',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268377',
-		'https://kempsvillees.vbschools.com/cms/One.aspx?portalId=89499&pageId=268403',
-		'https://kempsvillees.vbschools.com/students/student_resources',
+		'https://kempsvillemeadowses.vbschools.com/parents',
+		'https://kempsvillemeadowses.vbschools.com/parents/student_supply_list',
+		'https://kempsvillemeadowses.vbschools.com/students',
+		'https://kempsvillemeadowses.vbschools.com/students/library',
+		'https://kempsvillemeadowses.vbschools.com/our_school/administration',
+		'https://kempsvillemeadowses.vbschools.com/our_school/calendar',
+		'https://kempsvillemeadowses.vbschools.com/our_school/contact_us',
+		'https://kempsvillemeadowses.vbschools.com/our_school',
+		'https://kempsvillemeadowses.vbschools.com/our_school/our_staff',
+		'https://kempsvillemeadowses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'kempsvillees'
+	school_name = 'kempsvillemeadowses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

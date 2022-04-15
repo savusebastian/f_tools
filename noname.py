@@ -119,21 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://seatackes.vbschools.com/parents',
-		'https://seatackes.vbschools.com/parents/title_i_parent_information',
-		'https://seatackes.vbschools.com/students/student_resources/supply_list',
-		'https://seatackes.vbschools.com/students',
-		'https://seatackes.vbschools.com/students/guidance',
-		'https://seatackes.vbschools.com/students/library',
-		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298286',
-		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=108442',
-		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298271',
-		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298189',
-		'https://seatackes.vbschools.com/cms/One.aspx?portalId=108410&pageId=298291',
-		'https://seatackes.vbschools.com/students/student_resources',
+		'https://renaissanceacademy.vbschools.com/parents',
+		'https://kellamhs.vbschools.com/parents/grading_guidelines/related_policies_and_regulations',
+		'https://renaissanceacademy.vbschools.com/students',
+		'https://renaissanceacademy.vbschools.com/students/school_counseling',
+		'https://renaissanceacademy.vbschools.com/students/library',
+		'https://renaissanceacademy.vbschools.com/our_school/administration',
+		'https://renaissanceacademy.vbschools.com/our_school/calendar',
+		'https://renaissanceacademy.vbschools.com/our_school/contact_us',
+		'https://renaissanceacademy.vbschools.com/our_school',
+		'https://renaissanceacademy.vbschools.com/our_school/our_staff',
+		'https://renaissanceacademy.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'seatackes'
+	school_name = 'renaissanceacademy'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

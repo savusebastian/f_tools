@@ -119,21 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://landstownms.vbschools.com/parents',
-		'https://landstownms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://landstownms.vbschools.com/parents/supply_list',
-		'https://landstownms.vbschools.com/students',
-		'https://landstownms.vbschools.com/students/school_counseling',
-		'https://landstownms.vbschools.com/students/library',
-		'https://landstownms.vbschools.com/our_school/administration',
-		'https://landstownms.vbschools.com/our_school/calendar',
-		'https://landstownms.vbschools.com/our_school/contact_us',
-		'https://landstownms.vbschools.com/our_school',
-		'https://landstownms.vbschools.com/our_school/our_staff',
-		'https://landstownms.vbschools.com/students/student_resources',
+		'https://larkspurms.vbschools.com/parents',
+		'https://larkspurms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://larkspurms.vbschools.com/parents/supply_list',
+		'https://larkspurms.vbschools.com/students',
+		'https://larkspurms.vbschools.com/students/schoolcounseling',
+		'https://larkspurms.vbschools.com/students/student_activities',
+		'https://larkspurms.vbschools.com/students/library',
+		'https://larkspurms.vbschools.com/our_school/administration',
+		'https://larkspurms.vbschools.com/our_school/calendar',
+		'https://larkspurms.vbschools.com/our_school/contact_us',
+		'https://larkspurms.vbschools.com/our_school',
+		'https://larkspurms.vbschools.com/our_school/our_staff',
+		'https://larkspurms.vbschools.com/our_school/news',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'landstownms'
+	school_name = 'larkspurms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

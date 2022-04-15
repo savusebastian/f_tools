@@ -119,20 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://northlandinges.vbschools.com/parents',
-		'https://northlandinges.vbschools.com/students/student_resources/supply_list',
-		'https://northlandinges.vbschools.com/students',
-		'https://northlandinges.vbschools.com/students/guidance',
-		'https://northlandinges.vbschools.com/students/library',
-		'https://northlandinges.vbschools.com/our_school/administration',
-		'https://northlandinges.vbschools.com/our_school/calendar',
-		'https://northlandinges.vbschools.com/our_school/contact_us',
-		'https://northlandinges.vbschools.com/our_school',
-		'https://northlandinges.vbschools.com/our_school/our_staff',
-		'https://northlandinges.vbschools.com/students/student_resources',
+		'https://oceanlakeses.vbschools.com/parents',
+		'https://oceanlakeses.vbschools.com/parents/school_supply_lists',
+		'https://oceanlakeses.vbschools.com/students',
+		'https://oceanlakeses.vbschools.com/students/guidance',
+		'https://oceanlakeses.vbschools.com/students/library',
+		'https://oceanlakeses.vbschools.com/our_school/administration',
+		'https://oceanlakeses.vbschools.com/our_school/calendar',
+		'https://oceanlakeses.vbschools.com/our_school/contact_us',
+		'https://oceanlakeses.vbschools.com/our_school',
+		'https://oceanlakeses.vbschools.com/our_school/our_staff',
+		'https://oceanlakeses.vbschools.com/students/student_resources',
+		'https://oceanlakeses.vbschools.com/students/Clubs',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'northlandinges'
+	school_name = 'oceanlakeses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

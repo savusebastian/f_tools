@@ -119,22 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://princessannees.vbschools.com/parents',
-		'https://princessannees.vbschools.com/students/student_resources/supply_list',
-		'https://www.artsonia.com/schools/school.asp?id=79092',
-		'https://princessannees.vbschools.com/parents/arrival_dismissal_policy',
-		'https://princessannees.vbschools.com/students',
-		'https://princessannees.vbschools.com/students/school_counselor',
-		'https://princessannees.vbschools.com/students/library',
-		'https://princessannees.vbschools.com/our_school/administration',
-		'https://princessannees.vbschools.com/our_school/calendar',
-		'https://princessannees.vbschools.com/our_school/contact_us',
-		'https://princessannees.vbschools.com/our_school',
-		'https://princessannees.vbschools.com/our_school/our_staff',
-		'https://princessannees.vbschools.com/students/student_resources',
+		'https://providencees.vbschools.com/parents',
+		'https://providencees.vbschools.com/parents/providence_supply_list_2021-2022',
+		'https://providencees.vbschools.com/students',
+		'https://providencees.vbschools.com/students/school_counselor',
+		'https://providencees.vbschools.com/students/library',
+		'https://providencees.vbschools.com/our_school/administration',
+		'https://providencees.vbschools.com/our_school/calendar',
+		'https://providencees.vbschools.com/cms/One.aspx?portalId=106845&pageId=297628',
+		'https://providencees.vbschools.com/our_school',
+		'https://providencees.vbschools.com/cms/One.aspx?portalId=106845&pageId=297650',
+		'https://providencees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'princessannees'
+	school_name = 'providencees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

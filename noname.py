@@ -119,24 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://greatneckms.vbschools.com/parents',
-		'https://corporatelandingms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://greatneckms.vbschools.com/students/student_resources/supply_list_',
-		'https://greatneckms.vbschools.com/students',
-		'https://greatneckms.vbschools.com/parents/a_v_i_d',
-		'https://greatneckms.vbschools.com/students/n_j_h_s',
-		'https://greatneckms.vbschools.com/students/guidance',
-		'https://greatneckms.vbschools.com/students/student_resources/student_activities',
-		'https://greatneckms.vbschools.com/students/library',
-		'https://greatneckms.vbschools.com/our_school/administration',
-		'https://greatneckms.vbschools.com/our_school/calendar',
-		'https://greatneckms.vbschools.com/cms/One.aspx?portalId=87720&pageId=282965',
-		'https://greatneckms.vbschools.com/our_school',
-		'https://greatneckms.vbschools.com/cms/One.aspx?portalId=87720&pageId=282985',
-		'https://greatneckms.vbschools.com/students/student_resources',
+		'https://independencems.vbschools.com/parents',
+		'https://landstownms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://independencems.vbschools.com/students/school_supplies',
+		'https://independencems.vbschools.com/students',
+		'https://independencems.vbschools.com/students/a_v_i_d',
+		'https://independencems.vbschools.com/students/counseling',
+		'https://independencems.vbschools.com/students/activities',
+		'https://independencems.vbschools.com/students/library',
+		'https://independencems.vbschools.com/our_school/administration',
+		'https://independencems.vbschools.com/our_school/calendar',
+		'https://independencems.vbschools.com/our_school/contact_us',
+		'https://independencems.vbschools.com/our_school',
+		'https://independencems.vbschools.com/our_school/our_staff',
+		'https://independencems.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'greatneckms'
+	school_name = 'independencems'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

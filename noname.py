@@ -119,20 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://diamondspringses.vbschools.com/parents',
-		'https://diamondspringses.vbschools.com/parents/title_i_parent_information',
-		'https://diamondspringses.vbschools.com/students',
-		'https://diamondspringses.vbschools.com/students/guidance',
-		'https://diamondspringses.vbschools.com/students/library',
-		'https://diamondspringses.vbschools.com/our_school/administration',
-		'https://diamondspringses.vbschools.com/our_school/calendar',
-		'https://diamondspringses.vbschools.com/cms/One.aspx?portalId=84436&pageId=267103',
-		'https://diamondspringses.vbschools.com/cms/One.aspx?portalId=84436&pageId=267098',
-		'https://diamondspringses.vbschools.com/cms/One.aspx?portalId=84436&pageId=267118',
-		'https://diamondspringses.vbschools.com/students/student_resources',
+		'https://fairfieldes.vbschools.com/parents',
+		'https://fairfieldes.vbschools.com/parents/tips',
+		'https://fairfieldes.vbschools.com/students',
+		'https://fairfieldes.vbschools.com/students/school_counseling',
+		'https://fairfieldes.vbschools.com/our_school/administration',
+		'https://fairfieldes.vbschools.com/our_school/calendar',
+		'https://fairfieldes.vbschools.com/our_school/contact_us',
+		'https://fairfieldes.vbschools.com/our_school',
+		'https://fairfieldes.vbschools.com/our_school/our_staff',
+		'https://fairfieldes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'diamondspringses'
+	school_name = 'fairfieldes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

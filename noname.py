@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://centervillees.vbschools.com/parents',
-		'https://centervillees.vbschools.com/students/student_resources/school_supply_lists',
-		'https://centervillees.vbschools.com/students',
-		'https://centervillees.vbschools.com/students/guidance',
-		'https://centervillees.vbschools.com/students/library',
-		'https://centervillees.vbschools.com/our_school/administration',
-		'https://centervillees.vbschools.com/our_school/calendar',
-		'https://centervillees.vbschools.com/cms/One.aspx?portalId=80420&pageId=301689',
-		'https://centervillees.vbschools.com/our_school',
-		'https://centervillees.vbschools.com/cms/One.aspx?portalId=80420&pageId=301704',
-		'https://centervillees.vbschools.com/students/student_resources',
+		'https://christopherfarmses.vbschools.com/parents',
+		'https://christopherfarmses.vbschools.com/parents/2019-2020_supply_list',
+		'https://christopherfarmses.vbschools.com/students',
+		'https://christopherfarmses.vbschools.com/students/school_counselor',
+		'https://christopherfarmses.vbschools.com/students/library',
+		'https://christopherfarmses.vbschools.com/our_school/administration',
+		'https://christopherfarmses.vbschools.com/our_school/calendar',
+		'https://christopherfarmses.vbschools.com/our_school/contact_us',
+		'https://christopherfarmses.vbschools.com/our_school',
+		'https://christopherfarmses.vbschools.com/our_school/our_staff',
+		'https://christopherfarmses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'centervillees'
+	school_name = 'christopherfarmses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

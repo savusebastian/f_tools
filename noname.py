@@ -119,29 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://oceanlakeshs.vbschools.com/parents',
-		'https://oceanlakeshs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://oceanlakeshs.vbschools.com/parents/attendance',
-		'https://oceanlakeshs.vbschools.com/students',
-		'https://oceanlakeshs.vbschools.com/students/athletics_and_clubs',
-		'https://oceanlakeshs.vbschools.com/students/school_counseling',
-		'https://oceanlakeshs.vbschools.com/students/library',
-		'https://oceanlakeshs.vbschools.com/cms/one.aspx?pageId=28953602',
-		'https://oceanlakeshs.vbschools.com/cms/One.aspx?portalId=104899&pageId=1934359',
-		'https://oceanlakeshs.vbschools.com/students/parking_information',
-		'https://oceanlakeshs.vbschools.com/our_school/administration',
-		'https://oceanlakeshs.vbschools.com/our_school/calendar',
-		'https://oceanlakeshs.vbschools.com/our_school/contact_us',
-		'https://oceanlakeshs.vbschools.com/our_school',
-		'https://oceanlakeshs.vbschools.com/our_school/our_staff',
-		'https://olhscurrent.org/',
-		'https://oceanlakeshs.vbschools.com/our_school/dolphin_news',
-		'https://oceanlakeshs.vbschools.com/our_school/math_and_science_academy',
-		'https://oceanlakeshs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/8/',
+		'https://princessannehs.vbschools.com/parents',
+		'https://princessannehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://princessannehs.vbschools.com/students',
+		'https://princessannehs.vbschools.com/students/athletics__student_activities',
+		'https://princessannehs.vbschools.com/students/school_counseling',
+		'https://princessannehs.vbschools.com/students/library',
+		'https://princessannehs.vbschools.com/our_school/administration',
+		'https://princessannehs.vbschools.com/our_school/calendar',
+		'https://princessannehs.vbschools.com/our_school/contact_us',
+		'https://princessannehs.vbschools.com/our_school',
+		'https://princessannehs.vbschools.com/our_school/our_staff',
+		'https://princessannehs.vbschools.com/parents/p_a_parent_communications',
+		'https://princessannehs.vbschools.com/students/IB_MYP',
+		'https://princessannehs.vbschools.com/students/student_resources',
+		'https://princessanneva.rschoolteams.com/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'oceanlakeshs'
+	school_name = 'princessannehs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

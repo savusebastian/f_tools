@@ -119,24 +119,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://virginiabeachms.vbschools.com/parents',
-		'https://virginiabeachms.vbschools.com/parents/grading_practices',
-		'https://virginiabeachms.vbschools.com/students/student_resources/student_supply_list',
-		'https://virginiabeachms.vbschools.com/our_school/gifted_visual_arts_program',
-		'https://virginiabeachms.vbschools.com/students',
-		'https://virginiabeachms.vbschools.com/students/guidance',
-		'https://virginiabeachms.vbschools.com/students/student_activities',
-		'https://virginiabeachms.vbschools.com/students/library',
-		'https://virginiabeachms.vbschools.com/our_school/administration',
-		'https://virginiabeachms.vbschools.com/our_school/calendar',
-		'https://virginiabeachms.vbschools.com/cms/One.aspx?portalId=110340&pageId=307444',
-		'https://virginiabeachms.vbschools.com/our_school',
-		'https://virginiabeachms.vbschools.com/cms/One.aspx?portalId=110340&pageId=307459',
-		'https://virginiabeachms.vbschools.com/our_school/b_r_a_t_s_club_and_deployment_kits',
-		'https://virginiabeachms.vbschools.com/students/student_resources',
+		'https://baysidehs.vbschools.com/parents',
+		'https://baysidehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://baysidehs.vbschools.com/students',
+		'https://baysidehs.vbschools.com/students/a_v_i_d',
+		'https://baysidehs.vbschools.com/students/school_counseling',
+		'https://baysidehs.vbschools.com/students/student_activities',
+		'https://baysidehs.vbschools.com/students/a_p_testing_info',
+		'https://baysidehs.vbschools.com/our_school/administration',
+		'https://baysidehs.vbschools.com/our_school/calendar',
+		'https://baysidehs.vbschools.com/our_school/contact_us',
+		'https://baysidehs.vbschools.com/our_school',
+		'https://baysidehs.vbschools.com/our_school/our_staff',
+		'https://baysidehs.vbschools.com/our_school/health_sciences_academy',
+		'https://www.vbschools.com/academic_programs/academies_and_advanced_academic_programs/health_sciences_academy',
+		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/program_of_study_for_h_s_a',
+		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/f_a_q',
+		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/academy_teacher_bios',
+		'https://baysidehs.vbschools.com/students/student_resources',
+		'https://baysidehs.vbschools.com',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'virginiabeachms'
+	school_name = 'baysidehs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

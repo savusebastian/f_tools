@@ -119,20 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://pembrokees.vbschools.com/parents',
-		'https://pembrokees.vbschools.com/parents/school_supply_lists',
-		'https://pembrokees.vbschools.com/students',
-		'https://pembrokees.vbschools.com/students/guidance',
-		'https://pembrokees.vbschools.com/students/library',
-		'https://pembrokees.vbschools.com/our_school/administration',
-		'https://pembrokees.vbschools.com/our_school/calendar',
-		'https://pembrokees.vbschools.com/our_school/contact_us',
-		'https://pembrokees.vbschools.com/our_school',
-		'https://pembrokees.vbschools.com/our_school/our_staff',
-		'https://pembrokees.vbschools.com/students/student_resources',
+		'https://pembrokemeadowses.vbschools.com/parents',
+		'https://pembrokemeadowses.vbschools.com/students/student_resources/supply_list',
+		'https://pembrokemeadowses.vbschools.com/students',
+		'https://pembrokemeadowses.vbschools.com/students/school_counselor',
+		'https://pembrokemeadowses.vbschools.com/our_school/administration',
+		'https://pembrokemeadowses.vbschools.com/our_school/calendar',
+		'https://pembrokemeadowses.vbschools.com/our_school/contact_us',
+		'https://pembrokemeadowses.vbschools.com/our_school',
+		'https://pembrokemeadowses.vbschools.com/our_school/our_staff',
+		'https://pembrokemeadowses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'pembrokees'
+	school_name = 'pembrokemeadowses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

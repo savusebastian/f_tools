@@ -119,24 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://salemhs.vbschools.com/parents',
-		'https://salemhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://salemhs.vbschools.com/students',
-		'https://salemhs.vbschools.com/students/student_activities',
-		'https://salemhs.vbschools.com/students/guidance',
-		'https://salemhs.vbschools.com/students/library',
-		'https://salemhs.vbschools.com/our_school/administration',
-		'https://salemhs.vbschools.com/our_school/calendar',
-		'https://salemhs.vbschools.com/our_school/contact_us',
-		'https://salemhs.vbschools.com/our_school',
-		'https://salemhs.vbschools.com/our_school/our_staff',
-		'https://salemhs.vbschools.com/our_school/salem_hs_news',
-		'https://salemhs.vbschools.com/our_school/vpaa',
-		'https://salemhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/301/',
+		'https://tallwoodhs.vbschools.com/parents',
+		'https://tallwoodhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=109232',
+		'https://tallwoodhs.vbschools.com/students/school_counseling',
+		'https://tallwoodhs.vbschools.com/students/library',
+		'https://tallwoodhs.vbschools.com/our_school/administration',
+		'https://tallwoodhs.vbschools.com/our_school/calendar',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=290587',
+		'https://tallwoodhs.vbschools.com/our_school',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=290603',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=1114467',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=28134962',
+		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=1398436',
+		'https://tallwoodhs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/11/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'salemhs'
+	school_name = 'tallwoodhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

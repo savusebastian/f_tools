@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://glenwoodes.vbschools.com/parents',
-		'https://glenwoodes.vbschools.com/students/supplylist',
-		'https://glenwoodes.vbschools.com/students',
-		'https://glenwoodes.vbschools.com/students/school_counselor',
-		'https://glenwoodes.vbschools.com/students/library',
-		'https://glenwoodes.vbschools.com/our_school/administration',
-		'https://glenwoodes.vbschools.com/our_school/calendar',
-		'https://glenwoodes.vbschools.com/our_school/contact_us',
-		'https://glenwoodes.vbschools.com/our_school',
-		'https://glenwoodes.vbschools.com/our_school/our_staff',
-		'https://glenwoodes.vbschools.com/students/student_resources',
+		'https://greenrunes.vbschools.com/parents',
+		'https://greenrunes.vbschools.com/parents/title_1_parent_information',
+		'https://greenrunes.vbschools.com/students/supplies',
+		'https://greenrunes.vbschools.com/students',
+		'https://greenrunes.vbschools.com/students/library',
+		'https://greenrunes.vbschools.com/our_school/administration',
+		'https://greenrunes.vbschools.com/our_school/calendar',
+		'https://greenrunes.vbschools.com/our_school/contact_us',
+		'https://greenrunes.vbschools.com/our_school',
+		'https://greenrunes.vbschools.com/our_school/our_staff',
+		'https://greenrunes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'glenwoodes'
+	school_name = 'greenrunes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

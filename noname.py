@@ -119,17 +119,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://alantones.vbschools.com/parents',
-		'https://alantones.vbschools.com/students',
-		'https://alantones.vbschools.com/our_school/administration',
-		'https://alantones.vbschools.com/our_school/calendar',
-		'https://alantones.vbschools.com/our_school/contact_us',
-		'https://alantones.vbschools.com/our_school',
-		'https://alantones.vbschools.com/our_school/our_staff',
-		'https://alantones.vbschools.com/students/student_resources',
+		'https://arrowheades.vbschools.com/parents',
+		'https://arrowheades.vbschools.com/parents/school_supply_lists',
+		'https://arrowheades.vbschools.com/students',
+		'https://arrowheades.vbschools.com/our_school/administration',
+		'https://arrowheades.vbschools.com/our_school/calendar',
+		'https://arrowheades.vbschools.com/our_school/contact_us',
+		'https://arrowheades.vbschools.com/our_school',
+		'https://arrowheades.vbschools.com/our_school/our_staff',
+		'https://arrowheades.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'alantones'
+	school_name = 'arrowheades'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

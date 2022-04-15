@@ -41,22 +41,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='pnlContent').find_all('form') != []:
+		if web_soup.find(class_='ptl_page').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='pnlContent').find_all('embed') != []:
+		if web_soup.find(class_='ptl_page').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='pnlContent').find_all('iframe') != []:
+		if web_soup.find(class_='ptl_page').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='pnlContent').find_all(class_='calendar') != []:
+		if web_soup.find(class_='ptl_page').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='pnlContent').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='ptl_page').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='pnlContent').find_all(class_='news') != []:
+		if web_soup.find(class_='ptl_page').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -65,8 +65,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='pnlContent') != None and web_soup.find(id='pnlContent') != '':
-			col1 = web_soup.find(id='pnlContent')
+		if web_soup.find(class_='ptl_page') != None and web_soup.find(class_='ptl_page') != '':
+			col1 = web_soup.find(class_='ptl_page')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -119,13 +119,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.mustangps.org/TITLEI1.aspx',
-		'https://www.mustangps.org/meettheprincipals2393.aspx',
-		'https://www.mustangps.org/mediacenter0713_2018817101025799.aspx',
-		'https://www.mustangps.org/PTSO1.aspx',
+		'https://alantones.vbschools.com/parents',
+		'https://alantones.vbschools.com/students',
+		'https://alantones.vbschools.com/our_school/administration',
+		'https://alantones.vbschools.com/our_school/calendar',
+		'https://alantones.vbschools.com/our_school/contact_us',
+		'https://alantones.vbschools.com/our_school',
+		'https://alantones.vbschools.com/our_school/our_staff',
+		'https://alantones.vbschools.com/students/student_resources',
 	]
-	mainfolder = 'mustangps'
-	school_name = 'mustangps'
+	mainfolder = 'vbschools'
+	school_name = 'alantones'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

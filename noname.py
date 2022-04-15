@@ -119,20 +119,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hollandes.vbschools.com/parents',
-		'https://hollandes.vbschools.com/parents/title_i_parent_information',
-		'https://hollandes.vbschools.com/students',
-		'https://hollandes.vbschools.com/students/guidance',
-		'https://hollandes.vbschools.com/students/library',
-		'https://hollandes.vbschools.com/our_school/administration',
-		'https://hollandes.vbschools.com/our_school/calendar',
-		'https://hollandes.vbschools.com/our_school/contact_us',
-		'https://greenrunes.vbschools.com/our_school',
-		'https://hollandes.vbschools.com/our_school/our_staff',
-		'https://hollandes.vbschools.com/students/student_resources',
+		'https://indianlakeses.vbschools.com/parents',
+		'https://indianlakeses.vbschools.com/students',
+		'https://indianlakeses.vbschools.com/students/guidance',
+		'https://indianlakeses.vbschools.com/students/library',
+		'https://indianlakeses.vbschools.com/our_school/administration',
+		'https://indianlakeses.vbschools.com/our_school/calendar',
+		'https://indianlakeses.vbschools.com/cms/One.aspx?portalId=89070&pageId=267926',
+		'https://indianlakeses.vbschools.com/our_school',
+		'https://indianlakeses.vbschools.com/cms/One.aspx?portalId=89070&pageId=267946',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'hollandes'
+	school_name = 'indianlakeses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

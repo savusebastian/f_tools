@@ -119,19 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://landstownes.vbschools.com/parents',
-		'https://landstownes.vbschools.com/students/student_resources/supply_list_2021-22',
-		'https://landstownes.vbschools.com/students',
-		'https://landstownes.vbschools.com/students/library',
-		'https://landstownes.vbschools.com/our_school/administration',
-		'https://landstownes.vbschools.com/our_school/calendar',
-		'https://landstownes.vbschools.com/our_school/contact_us',
-		'https://landstownes.vbschools.com/our_school',
-		'https://landstownes.vbschools.com/our_school/our_staff',
-		'https://landstownes.vbschools.com/students/student_resources',
+		'https://linkhornparkes.vbschools.com/parents',
+		'https://linkhornparkes.vbschools.com/parents/school_supply_list',
+		'https://linkhornparkes.vbschools.com/students',
+		'https://linkhornparkes.vbschools.com/students/school_counseling',
+		'https://linkhornparkes.vbschools.com/students/library',
+		'https://linkhornparkes.vbschools.com/our_school/administration',
+		'https://linkhornparkes.vbschools.com/our_school/calendar',
+		'https://linkhornparkes.vbschools.com/our_school/contact_us',
+		'https://linkhornparkes.vbschools.com/our_school',
+		'https://linkhornparkes.vbschools.com/our_school/our_staff',
+		'https://linkhornparkes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'landstownes'
+	school_name = 'linkhornparkes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

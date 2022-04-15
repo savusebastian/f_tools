@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://salemes.vbschools.com/parents',
-		'https://salemes.vbschools.com/students/student_resources/school_supplies',
-		'https://salemes.vbschools.com/students',
-		'https://salemes.vbschools.com/students/school_counseling',
-		'https://salemes.vbschools.com/students/Learning%20Commons',
-		'https://salemes.vbschools.com/our_school/administration',
-		'https://salemes.vbschools.com/our_school/calendar',
-		'https://salemes.vbschools.com/our_school/contact_us',
-		'https://salemes.vbschools.com/our_school',
-		'https://salemes.vbschools.com/our_school/our_staff',
-		'https://salemes.vbschools.com/students/student_resources',
+		'https://sheltonparkes.vbschools.com/parents',
+		'https://sheltonparkes.vbschools.com/students/student_resources/school_supply_list',
+		'https://sheltonparkes.vbschools.com/students',
+		'https://sheltonparkes.vbschools.com/students/school_counselor',
+		'https://sheltonparkes.vbschools.com/students/library',
+		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298412',
+		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=108638',
+		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298397',
+		'https://sheltonparkes.vbschools.com/our_school',
+		'https://sheltonparkes.vbschools.com/cms/One.aspx?portalId=108606&pageId=298417',
+		'https://sheltonparkes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'salemes'
+	school_name = 'sheltonparkes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

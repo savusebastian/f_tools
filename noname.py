@@ -119,22 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://corporatelandingms.vbschools.com/parents',
+		'https://greatneckms.vbschools.com/parents',
 		'https://corporatelandingms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://corporatelandingms.vbschools.com/students',
-		'https://corporatelandingms.vbschools.com/students/avid',
-		'https://corporatelandingms.vbschools.com/students/school_counseling',
-		'https://corporatelandingms.vbschools.com/students/student_activities',
-		'https://corporatelandingms.vbschools.com/students/library',
-		'https://corporatelandingms.vbschools.com/our_school/administration',
-		'https://corporatelandingms.vbschools.com/our_school/calendar',
-		'https://corporatelandingms.vbschools.com/our_school/contact_us',
-		'https://corporatelandingms.vbschools.com/our_school',
-		'https://corporatelandingms.vbschools.com/our_school/our_staff',
-		'https://corporatelandingms.vbschools.com/students/student_resources',
+		'https://greatneckms.vbschools.com/students/student_resources/supply_list_',
+		'https://greatneckms.vbschools.com/students',
+		'https://greatneckms.vbschools.com/parents/a_v_i_d',
+		'https://greatneckms.vbschools.com/students/n_j_h_s',
+		'https://greatneckms.vbschools.com/students/guidance',
+		'https://greatneckms.vbschools.com/students/student_resources/student_activities',
+		'https://greatneckms.vbschools.com/students/library',
+		'https://greatneckms.vbschools.com/our_school/administration',
+		'https://greatneckms.vbschools.com/our_school/calendar',
+		'https://greatneckms.vbschools.com/cms/One.aspx?portalId=87720&pageId=282965',
+		'https://greatneckms.vbschools.com/our_school',
+		'https://greatneckms.vbschools.com/cms/One.aspx?portalId=87720&pageId=282985',
+		'https://greatneckms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'corporatelandingms'
+	school_name = 'greatneckms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

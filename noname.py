@@ -119,22 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://olddonationschool.vbschools.com/parents',
-		'https://olddonationschool.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://olddonationschool.vbschools.com/students',
-		'https://olddonationschool.vbschools.com/students/guidance',
-		'https://olddonationschool.vbschools.com/students/p_v_s_a_information',
-		'https://olddonationschool.vbschools.com/students/library',
-		'https://olddonationschool.vbschools.com/our_school/administration',
-		'https://olddonationschool.vbschools.com/our_school/calendar',
-		'https://olddonationschool.vbschools.com/cms/One.aspx?portalId=105097&pageId=306868',
-		'https://olddonationschool.vbschools.com/our_school',
-		'https://olddonationschool.vbschools.com/cms/One.aspx?portalId=105097&pageId=306883',
-		'https://www.wunderground.com/dashboard/pws/KVAVIRGI2376',
-		'https://olddonationschool.vbschools.com/students/student_resources',
+		'https://plazams.vbschools.com/parents',
+		'https://plazams.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://plazams.vbschools.com/our_school/ibmyp',
+		'https://plazams.vbschools.com/students',
+		'https://plazams.vbschools.com/students/school_counselor',
+		'https://plazams.vbschools.com/students/student_activities',
+		'https://plazams.vbschools.com/students/library',
+		'https://plazams.vbschools.com/our_school/administration',
+		'https://plazams.vbschools.com/our_school/calendar',
+		'https://plazams.vbschools.com/our_school/contact_us',
+		'https://plazams.vbschools.com/our_school',
+		'https://plazams.vbschools.com/our_school/our_staff',
+		'https://plazams.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'olddonationschool'
+	school_name = 'plazams'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

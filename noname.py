@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hermitagees.vbschools.com/parents',
-		'https://hermitagees.vbschools.com/students/student_resources/supply_list',
-		'https://hermitagees.vbschools.com/students',
-		'https://hermitagees.vbschools.com/students/school_counseling',
-		'https://hermitagees.vbschools.com/students/library',
-		'https://hermitagees.vbschools.com/our_school/administration',
-		'https://hermitagees.vbschools.com/our_school/calendar',
-		'https://hermitagees.vbschools.com/our_school/contact_us',
-		'https://hermitagees.vbschools.com/our_school',
-		'https://hermitagees.vbschools.com/our_school/our_staff',
-		'https://hermitagees.vbschools.com/students/student_resources',
+		'https://hollandes.vbschools.com/parents',
+		'https://hollandes.vbschools.com/parents/title_i_parent_information',
+		'https://hollandes.vbschools.com/students',
+		'https://hollandes.vbschools.com/students/guidance',
+		'https://hollandes.vbschools.com/students/library',
+		'https://hollandes.vbschools.com/our_school/administration',
+		'https://hollandes.vbschools.com/our_school/calendar',
+		'https://hollandes.vbschools.com/our_school/contact_us',
+		'https://greenrunes.vbschools.com/our_school',
+		'https://hollandes.vbschools.com/our_school/our_staff',
+		'https://hollandes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'hermitagees'
+	school_name = 'hollandes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

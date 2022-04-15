@@ -119,25 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://baysidems.vbschools.com/for_parents',
-		'https://baysidems.vbschools.com/for_parents/grading_practices/school_grading_practices',
-		'https://baysidems.vbschools.com/for_parents/title_i_parent_information',
-		'https://baysidems.vbschools.com/students',
-		'https://baysidems.vbschools.com/students/counseling',
-		'https://baysidems.vbschools.com/students/library',
-		'https://baysidems.vbschools.com/students/clinic',
-		'https://baysidems.vbschools.com/our_school/administration',
-		'https://baysidems.vbschools.com/our_school/calendar',
-		'https://baysidems.vbschools.com/our_school/contact_us',
-		'https://baysidems.vbschools.com/our_school/communities_in_schools',
-		'https://baysidems.vbschools.com/our_school',
-		'https://baysidems.vbschools.com/our_school/our_staff',
-		'https://baysidems.vbschools.com/our_school/partners_in_education',
-		'https://baysidems.vbschools.com/our_school/school_planning_council',
-		'https://baysidems.vbschools.com/students/student_resources',
+		'https://bayside6ms.vbschools.com/parents',
+		'https://bayside6ms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=24859001',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=748341',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=79666',
+		'https://bayside6ms.vbschools.com/students/guidance',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307760',
+		'https://bayside6ms.vbschools.com/our_school/administration',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=79652',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307775',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307722',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307790',
+		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307780',
+		'https://bayside6ms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'baysidems'
+	school_name = 'bayside6ms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

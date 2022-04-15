@@ -119,25 +119,29 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://landstownhs.vbschools.com/parents',
-		'https://landstownhs.vbschools.com/parents/attendance',
-		'https://landstownhs.vbschools.com/students',
-		'https://landstownhs.vbschools.com/our_school/eagle_athletics',
-		'https://landstownhs.vbschools.com/students/guidance',
-		'https://landstownhs.vbschools.com/students/library',
-		'https://landstownhs.vbschools.com/students/APStudentInformation',
-		'https://landstownhs.vbschools.com/our_school/administration',
-		'https://landstownhs.vbschools.com/our_school/calendar',
-		'https://landstownhs.vbschools.com/our_school/contact_us',
-		'https://landstownhs.vbschools.com/our_school',
-		'https://landstownhs.vbschools.com/our_school',
-		'https://landstownhs.vbschools.com/our_school/eagle_news',
-		'https://landstownhs.vbschools.com/our_school/governor_s_s_t_e_m_and_technology_academies',
-		'https://landstownhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/7/',
+		'https://oceanlakeshs.vbschools.com/parents',
+		'https://oceanlakeshs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://oceanlakeshs.vbschools.com/parents/attendance',
+		'https://oceanlakeshs.vbschools.com/students',
+		'https://oceanlakeshs.vbschools.com/students/athletics_and_clubs',
+		'https://oceanlakeshs.vbschools.com/students/school_counseling',
+		'https://oceanlakeshs.vbschools.com/students/library',
+		'https://oceanlakeshs.vbschools.com/cms/one.aspx?pageId=28953602',
+		'https://oceanlakeshs.vbschools.com/cms/One.aspx?portalId=104899&pageId=1934359',
+		'https://oceanlakeshs.vbschools.com/students/parking_information',
+		'https://oceanlakeshs.vbschools.com/our_school/administration',
+		'https://oceanlakeshs.vbschools.com/our_school/calendar',
+		'https://oceanlakeshs.vbschools.com/our_school/contact_us',
+		'https://oceanlakeshs.vbschools.com/our_school',
+		'https://oceanlakeshs.vbschools.com/our_school/our_staff',
+		'https://olhscurrent.org/',
+		'https://oceanlakeshs.vbschools.com/our_school/dolphin_news',
+		'https://oceanlakeshs.vbschools.com/our_school/math_and_science_academy',
+		'https://oceanlakeshs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/8/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'landstownhs'
+	school_name = 'oceanlakeshs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

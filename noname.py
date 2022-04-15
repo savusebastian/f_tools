@@ -119,24 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://tallwoodhs.vbschools.com/parents',
-		'https://tallwoodhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=109232',
-		'https://tallwoodhs.vbschools.com/students/school_counseling',
-		'https://tallwoodhs.vbschools.com/students/library',
-		'https://tallwoodhs.vbschools.com/our_school/administration',
-		'https://tallwoodhs.vbschools.com/our_school/calendar',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=290587',
-		'https://tallwoodhs.vbschools.com/our_school',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=290603',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=1114467',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=28134962',
-		'https://tallwoodhs.vbschools.com/cms/One.aspx?portalId=109186&pageId=1398436',
-		'https://tallwoodhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/11/',
+		'https://adultlearning.vbschools.com/parents',
+		'https://adultlearning.vbschools.com/parents/career',
+		'https://adultlearning.vbschools.com/parents/community',
+		'https://ged.com/life_after_ged/',
+		'https://adultlearning.vbschools.com/students',
+		'https://adultlearning.vbschools.com/students/student_resources',
+		'https://adultlearning.vbschools.com/students/resources',
+		'https://adultlearning.vbschools.com/our_school/administration',
+		'https://adultlearning.vbschools.com/our_school/calendar',
+		'https://adultlearning.vbschools.com/our_school/contact_us',
+		'https://adultlearning.vbschools.com/our_school',
+		'https://adultlearning.vbschools.com/our_school/our_staff',
+		'https://adultlearning.vbschools.com/our_school/employment',
+		'https://adultlearning.vbschools.com/students/resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'tallwoodhs'
+	school_name = 'adultlearning'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

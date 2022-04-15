@@ -119,17 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://strawbridgees.vbschools.com/parents',
-		'https://strawbridgees.vbschools.com/students/student_resources/school_supply_lists',
-		'https://strawbridgees.vbschools.com/students',
-		'https://strawbridgees.vbschools.com/our_school/administration',
-		'https://strawbridgees.vbschools.com/our_school/calendar',
-		'https://strawbridgees.vbschools.com/cms/One.aspx?portalId=108800&pageId=298531',
-		'https://strawbridgees.vbschools.com/cms/One.aspx?portalId=108800&pageId=298546',
-		'https://strawbridgees.vbschools.com/students/student_resources',
+		'https://tallwoodes.vbschools.com/parents',
+		'https://tallwoodes.vbschools.com/students',
+		'https://tallwoodes.vbschools.com/students/guidance',
+		'https://tallwoodes.vbschools.com/students/library',
+		'https://tallwoodes.vbschools.com/our_school/administration',
+		'https://tallwoodes.vbschools.com/our_school/calendar',
+		'https://tallwoodes.vbschools.com/cms/One.aspx?portalId=108993&pageId=298624',
+		'https://tallwoodes.vbschools.com/our_school',
+		'https://tallwoodes.vbschools.com/cms/One.aspx?portalId=108993&pageId=298639',
+		'https://tallwoodes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'strawbridgees'
+	school_name = 'tallwoodes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

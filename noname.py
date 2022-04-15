@@ -119,24 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://princessannehs.vbschools.com/parents',
-		'https://princessannehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://princessannehs.vbschools.com/students',
-		'https://princessannehs.vbschools.com/students/athletics__student_activities',
-		'https://princessannehs.vbschools.com/students/school_counseling',
-		'https://princessannehs.vbschools.com/students/library',
-		'https://princessannehs.vbschools.com/our_school/administration',
-		'https://princessannehs.vbschools.com/our_school/calendar',
-		'https://princessannehs.vbschools.com/our_school/contact_us',
-		'https://princessannehs.vbschools.com/our_school',
-		'https://princessannehs.vbschools.com/our_school/our_staff',
-		'https://princessannehs.vbschools.com/parents/p_a_parent_communications',
-		'https://princessannehs.vbschools.com/students/IB_MYP',
-		'https://princessannehs.vbschools.com/students/student_resources',
-		'https://princessanneva.rschoolteams.com/',
+		'https://salemhs.vbschools.com/parents',
+		'https://salemhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://salemhs.vbschools.com/students',
+		'https://salemhs.vbschools.com/students/student_activities',
+		'https://salemhs.vbschools.com/students/guidance',
+		'https://salemhs.vbschools.com/students/library',
+		'https://salemhs.vbschools.com/our_school/administration',
+		'https://salemhs.vbschools.com/our_school/calendar',
+		'https://salemhs.vbschools.com/our_school/contact_us',
+		'https://salemhs.vbschools.com/our_school',
+		'https://salemhs.vbschools.com/our_school/our_staff',
+		'https://salemhs.vbschools.com/our_school/salem_hs_news',
+		'https://salemhs.vbschools.com/our_school/vpaa',
+		'https://salemhs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/301/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'princessannehs'
+	school_name = 'salemhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

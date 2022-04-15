@@ -119,25 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://firstcolonialhs.vbschools.com/parents',
-		'https://firstcolonialhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://firstcolonialhs.vbschools.com/students/student_activities/athletics/booster_club',
-		'https://firstcolonialhs.vbschools.com/students',
-		'https://firstcolonialhs.vbschools.com/students/student_activities/athletics',
-		'https://firstcolonialhs.vbschools.com/students/guidance',
-		'https://firstcolonialhs.vbschools.com/students/student_activities/clubs_and_activities',
-		'https://user.totalregistration.net/AP/472290',
-		'https://firstcolonialhs.vbschools.com/students/library',
-		'https://firstcolonialhs.vbschools.com/our_school/administration',
-		'https://firstcolonialhs.vbschools.com/our_school/calendar',
-		'https://firstcolonialhs.vbschools.com/our_school/contact_us',
-		'https://firstcolonialhs.vbschools.com/our_school',
-		'https://firstcolonialhs.vbschools.com/our_school/our_staff',
-		'https://firstcolonialhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/2/',
+		'https://greenruncollegiate.vbschools.com/parents',
+		'https://greenruncollegiate.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://greenruncollegiate.vbschools.com/our_school/why_g_r_c',
+		'https://greenruncollegiate.vbschools.com/students',
+		'https://greenruncollegiate.vbschools.com/students/School_Counseling',
+		'https://greenruncollegiate.vbschools.com/students/library',
+		'https://greenruncollegiate.vbschools.com/our_school/administration',
+		'https://greenruncollegiate.vbschools.com/our_school/calendar',
+		'https://greenruncollegiate.vbschools.com/our_school/contact_us',
+		'https://greenruncollegiate.vbschools.com/our_school',
+		'https://greenruncollegiate.vbschools.com/our_school/our_staff',
+		'https://greenruncollegiate.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'firstcolonialhs'
+	school_name = 'greenruncollegiate'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

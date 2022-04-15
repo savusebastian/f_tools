@@ -119,22 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://salemms.vbschools.com/parents',
-		'https://salemms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://salemms.vbschools.com/students/student_resources/school_supply_list',
-		'https://salemms.vbschools.com/students',
-		'https://salemms.vbschools.com/our_school/student_activities',
-		'https://salemms.vbschools.com/students/guidance_department',
-		'https://salemms.vbschools.com/students/library',
-		'https://salemms.vbschools.com/our_school/administration',
-		'https://salemms.vbschools.com/our_school/calendar',
-		'https://salemms.vbschools.com/our_school/contact_us',
-		'https://salemms.vbschools.com/our_school',
-		'https://salemms.vbschools.com/our_school/our_staff',
-		'https://salemms.vbschools.com/students/student_resources',
+		'https://virginiabeachms.vbschools.com/parents',
+		'https://virginiabeachms.vbschools.com/parents/grading_practices',
+		'https://virginiabeachms.vbschools.com/students/student_resources/student_supply_list',
+		'https://virginiabeachms.vbschools.com/our_school/gifted_visual_arts_program',
+		'https://virginiabeachms.vbschools.com/students',
+		'https://virginiabeachms.vbschools.com/students/guidance',
+		'https://virginiabeachms.vbschools.com/students/student_activities',
+		'https://virginiabeachms.vbschools.com/students/library',
+		'https://virginiabeachms.vbschools.com/our_school/administration',
+		'https://virginiabeachms.vbschools.com/our_school/calendar',
+		'https://virginiabeachms.vbschools.com/cms/One.aspx?portalId=110340&pageId=307444',
+		'https://virginiabeachms.vbschools.com/our_school',
+		'https://virginiabeachms.vbschools.com/cms/One.aspx?portalId=110340&pageId=307459',
+		'https://virginiabeachms.vbschools.com/our_school/b_r_a_t_s_club_and_deployment_kits',
+		'https://virginiabeachms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'salemms'
+	school_name = 'virginiabeachms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

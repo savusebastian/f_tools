@@ -119,23 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://adultlearning.vbschools.com/parents',
-		'https://adultlearning.vbschools.com/parents/career',
-		'https://adultlearning.vbschools.com/parents/community',
-		'https://ged.com/life_after_ged/',
-		'https://adultlearning.vbschools.com/students',
-		'https://adultlearning.vbschools.com/students/student_resources',
-		'https://adultlearning.vbschools.com/students/resources',
-		'https://adultlearning.vbschools.com/our_school/administration',
-		'https://adultlearning.vbschools.com/our_school/calendar',
-		'https://adultlearning.vbschools.com/our_school/contact_us',
-		'https://adultlearning.vbschools.com/our_school',
-		'https://adultlearning.vbschools.com/our_school/our_staff',
-		'https://adultlearning.vbschools.com/our_school/employment',
-		'https://adultlearning.vbschools.com/students/resources',
+		'https://advancedtechnologycenter.vbschools.com/parents',
+		'https://advancedtechnologycenter.vbschools.com/students',
+		'https://atcapplication.vbcps.com/Login.aspx?ReturnUrl=%2f',
+		'https://advancedtechnologycenter.vbschools.com/students/continuity_of_learning_student_support',
+		'https://advancedtechnologycenter.vbschools.com/students/skills_u_s_a_student_info',
+		'https://advancedtechnologycenter.vbschools.com/students/s_o_l_schedule',
+		'https://advancedtechnologycenter.vbschools.com/our_school/our_programs',
+		'https://advancedtechnologycenter.vbschools.com/our_school/calendar',
+		'https://advancedtechnologycenter.vbschools.com/our_school/contact_us',
+		'https://advancedtechnologycenter.vbschools.com/our_school',
+		'https://advancedtechnologycenter.vbschools.com/our_school/our_staff',
+		'https://advancedtechnologycenter.vbschools.com/our_school/___of_the_year',
+		'https://advancedtechnologycenter.vbschools.com/our_school/atc_news',
+		'https://www.troxellmedia.com/imaginecon/atcimaginecon/index.html',
+		'https://advancedtechnologycenter.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'adultlearning'
+	school_name = 'advancedtechnologycenter'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

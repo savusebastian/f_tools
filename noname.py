@@ -119,22 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://lynnhavenms.vbschools.com/parents',
-		'https://lynnhavenms.vbschools.com/students',
-		'https://lynnhavenms.vbschools.com/students/school_counseling',
-		'https://lynnhavenms.vbschools.com/students/student_activities',
-		'https://lynnhavenms.vbschools.com/students/tutoring',
-		'https://lynnhavenms.vbschools.com/students/library',
-		'https://lynnhavenms.vbschools.com/our_school/administration',
-		'https://lynnhavenms.vbschools.com/our_school/calendar',
-		'https://lynnhavenms.vbschools.com/our_school/contact_us',
-		'https://lynnhavenms.vbschools.com/our_school',
-		'https://lynnhavenms.vbschools.com/our_school/our_staff',
-		'https://lynnhavenms.vbschools.com/our_school/news___events',
-		'https://lynnhavenms.vbschools.com/students/student_resources',
+		'https://olddonationschool.vbschools.com/parents',
+		'https://olddonationschool.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://olddonationschool.vbschools.com/students',
+		'https://olddonationschool.vbschools.com/students/guidance',
+		'https://olddonationschool.vbschools.com/students/p_v_s_a_information',
+		'https://olddonationschool.vbschools.com/students/library',
+		'https://olddonationschool.vbschools.com/our_school/administration',
+		'https://olddonationschool.vbschools.com/our_school/calendar',
+		'https://olddonationschool.vbschools.com/cms/One.aspx?portalId=105097&pageId=306868',
+		'https://olddonationschool.vbschools.com/our_school',
+		'https://olddonationschool.vbschools.com/cms/One.aspx?portalId=105097&pageId=306883',
+		'https://www.wunderground.com/dashboard/pws/KVAVIRGI2376',
+		'https://olddonationschool.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'lynnhavenms'
+	school_name = 'olddonationschool'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

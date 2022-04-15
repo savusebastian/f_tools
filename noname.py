@@ -119,19 +119,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://woodstockes.vbschools.com/parents',
-		'https://woodstockes.vbschools.com/students/student_resources/2021-2022_school_supply_list',
-		'https://woodstockes.vbschools.com/students',
-		'https://woodstockes.vbschools.com/students/school_counselor',
-		'https://woodstockes.vbschools.com/students/library',
-		'https://woodstockes.vbschools.com/our_school/administration',
-		'https://woodstockes.vbschools.com/our_school/calendar',
-		'https://woodstockes.vbschools.com/our_school/contact_us',
-		'https://woodstockes.vbschools.com/our_school',
-		'https://woodstockes.vbschools.com/our_school/our_staff',
+		'https://baysidems.vbschools.com/for_parents',
+		'https://baysidems.vbschools.com/for_parents/grading_practices/school_grading_practices',
+		'https://baysidems.vbschools.com/for_parents/title_i_parent_information',
+		'https://baysidems.vbschools.com/students',
+		'https://baysidems.vbschools.com/students/counseling',
+		'https://baysidems.vbschools.com/students/library',
+		'https://baysidems.vbschools.com/students/clinic',
+		'https://baysidems.vbschools.com/our_school/administration',
+		'https://baysidems.vbschools.com/our_school/calendar',
+		'https://baysidems.vbschools.com/our_school/contact_us',
+		'https://baysidems.vbschools.com/our_school/communities_in_schools',
+		'https://baysidems.vbschools.com/our_school',
+		'https://baysidems.vbschools.com/our_school/our_staff',
+		'https://baysidems.vbschools.com/our_school/partners_in_education',
+		'https://baysidems.vbschools.com/our_school/school_planning_council',
+		'https://baysidems.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'woodstockes'
+	school_name = 'baysidems'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

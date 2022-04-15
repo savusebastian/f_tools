@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://thaliaes.vbschools.com/parents',
-		'https://thaliaes.vbschools.com/students/student_resources/supplies',
-		'https://thaliaes.vbschools.com/students',
-		'https://thaliaes.vbschools.com/students/guidance',
-		'https://thaliaes.vbschools.com/students/library',
-		'https://thaliaes.vbschools.com/our_school/administration',
-		'https://thaliaes.vbschools.com/our_school/calendar',
-		'https://thaliaes.vbschools.com/our_school/contact_us',
-		'https://thaliaes.vbschools.com/our_school',
-		'https://thaliaes.vbschools.com/our_school/our_staff',
-		'https://thaliaes.vbschools.com/students/student_resources',
+		'https://thoroughgoodes.vbschools.com/parents',
+		'https://thoroughgoodes.vbschools.com/students/student_resources/supply_list',
+		'https://thoroughgoodes.vbschools.com/students',
+		'https://thoroughgoodes.vbschools.com/students/school_counselor',
+		'https://thoroughgoodes.vbschools.com/students/library',
+		'https://thoroughgoodes.vbschools.com/our_school/administration',
+		'https://thoroughgoodes.vbschools.com/our_school/calendar',
+		'https://thoroughgoodes.vbschools.com/our_school/contact_us',
+		'https://thoroughgoodes.vbschools.com/our_school',
+		'https://thoroughgoodes.vbschools.com/our_school/our_staff',
+		'https://thoroughgoodes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'thaliaes'
+	school_name = 'thoroughgoodes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

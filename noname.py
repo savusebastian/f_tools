@@ -119,22 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://rosemontforestes.vbschools.com/parents',
-		'https://rosemontforestes.vbschools.com/parents/school_supplies',
-		'https://rosemontforestes.vbschools.com/parents/watch_dog_program',
-		'https://rosemontforestes.vbschools.com/students',
-		'https://rosemontforestes.vbschools.com/students/guidance',
-		'https://rosemontforestes.vbschools.com/students/library',
-		'https://rosemontforestes.vbschools.com/our_school/administration',
-		'https://rosemontforestes.vbschools.com/our_school/calendar',
-		'https://rosemontforestes.vbschools.com/cms/One.aspx?portalId=107628&pageId=298042',
-		'https://rosemontforestes.vbschools.com/our_school',
-		'https://rosemontforestes.vbschools.com/cms/One.aspx?portalId=107628&pageId=298061',
-		'https://rosemontforestes.vbschools.com/our_school/p_b_i_s',
-		'https://rosemontforestes.vbschools.com/students/student_resources',
+		'https://salemes.vbschools.com/parents',
+		'https://salemes.vbschools.com/students/student_resources/school_supplies',
+		'https://salemes.vbschools.com/students',
+		'https://salemes.vbschools.com/students/school_counseling',
+		'https://salemes.vbschools.com/students/Learning%20Commons',
+		'https://salemes.vbschools.com/our_school/administration',
+		'https://salemes.vbschools.com/our_school/calendar',
+		'https://salemes.vbschools.com/our_school/contact_us',
+		'https://salemes.vbschools.com/our_school',
+		'https://salemes.vbschools.com/our_school/our_staff',
+		'https://salemes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'rosemontforestes'
+	school_name = 'salemes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

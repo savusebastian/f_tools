@@ -119,21 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://baysidees.vbschools.com/parents',
-		'https://baysidees.vbschools.com/parents/title_i_parent_information',
-		'https://arrowheades.vbschools.com/parents/school_supply_lists',
-		'https://baysidees.vbschools.com/students',
-		'https://baysidees.vbschools.com/students/guidance',
-		'https://baysidees.vbschools.com/students/library',
-		'https://baysidees.vbschools.com/our_school/administration',
-		'https://baysidees.vbschools.com/our_school/calendar',
-		'https://baysidees.vbschools.com/our_school/contact_us',
-		'https://baysidees.vbschools.com/our_school',
+		'https://birdneckes.vbschools.com/parents',
+		'https://birdneckes.vbschools.com/parents/title_i_parent_information',
+		'https://birdneckes.vbschools.com/parents/school_supply_lists',
+		'https://birdneckes.vbschools.com/students',
+		'https://birdneckes.vbschools.com/students/school_counselor',
+		'https://birdneckes.vbschools.com/our_school/administration',
+		'https://birdneckes.vbschools.com/our_school/calendar',
+		'https://birdneckes.vbschools.com/cms/One.aspx?portalId=79820&pageId=301966',
+		'https://birdneckes.vbschools.com/our_school',
 		'https://baysidees.vbschools.com/our_school/our_staff',
-		'https://baysidees.vbschools.com/students/student_resources',
+		'https://birdneckes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'baysidees'
+	school_name = 'birdneckes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

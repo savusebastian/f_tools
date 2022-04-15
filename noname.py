@@ -119,24 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://advancedtechnologycenter.vbschools.com/parents',
-		'https://advancedtechnologycenter.vbschools.com/students',
-		'https://atcapplication.vbcps.com/Login.aspx?ReturnUrl=%2f',
-		'https://advancedtechnologycenter.vbschools.com/students/continuity_of_learning_student_support',
-		'https://advancedtechnologycenter.vbschools.com/students/skills_u_s_a_student_info',
-		'https://advancedtechnologycenter.vbschools.com/students/s_o_l_schedule',
-		'https://advancedtechnologycenter.vbschools.com/our_school/our_programs',
-		'https://advancedtechnologycenter.vbschools.com/our_school/calendar',
-		'https://advancedtechnologycenter.vbschools.com/our_school/contact_us',
-		'https://advancedtechnologycenter.vbschools.com/our_school',
-		'https://advancedtechnologycenter.vbschools.com/our_school/our_staff',
-		'https://advancedtechnologycenter.vbschools.com/our_school/___of_the_year',
-		'https://advancedtechnologycenter.vbschools.com/our_school/atc_news',
-		'https://www.troxellmedia.com/imaginecon/atcimaginecon/index.html',
-		'https://advancedtechnologycenter.vbschools.com/students/student_resources',
+		'https://renaissanceacademy.vbschools.com/parents',
+		'https://kellamhs.vbschools.com/parents/grading_guidelines/related_policies_and_regulations',
+		'https://renaissanceacademy.vbschools.com/students',
+		'https://renaissanceacademy.vbschools.com/students/school_counseling',
+		'https://renaissanceacademy.vbschools.com/students/library',
+		'https://renaissanceacademy.vbschools.com/our_school/administration',
+		'https://renaissanceacademy.vbschools.com/our_school/calendar',
+		'https://renaissanceacademy.vbschools.com/our_school/contact_us',
+		'https://renaissanceacademy.vbschools.com/our_school',
+		'https://renaissanceacademy.vbschools.com/our_school/our_staff',
+		'https://renaissanceacademy.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'advancedtechnologycenter'
+	school_name = 'renaissanceacademy'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

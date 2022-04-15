@@ -119,21 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://pointoviewes.vbschools.com/parents',
-		'https://pointoviewes.vbschools.com/parents/title_i_parent_information',
-		'https://pointoviewes.vbschools.com/students/student_resources/student_supply_list',
-		'https://pointoviewes.vbschools.com/students',
-		'https://pointoviewes.vbschools.com/students/school_counseling',
-		'https://pointoviewes.vbschools.com/students/library',
-		'https://pointoviewes.vbschools.com/our_school/administration',
-		'https://pointoviewes.vbschools.com/our_school/calendar',
-		'https://pointoviewes.vbschools.com/cms/One.aspx?portalId=106071&pageId=296802',
-		'https://pointoviewes.vbschools.com/our_school',
-		'https://pointoviewes.vbschools.com/cms/One.aspx?portalId=106071&pageId=296817',
-		'https://pointoviewes.vbschools.com/Students/Student_Resources',
+		'https://princessannees.vbschools.com/parents',
+		'https://princessannees.vbschools.com/students/student_resources/supply_list',
+		'https://www.artsonia.com/schools/school.asp?id=79092',
+		'https://princessannees.vbschools.com/parents/arrival_dismissal_policy',
+		'https://princessannees.vbschools.com/students',
+		'https://princessannees.vbschools.com/students/school_counselor',
+		'https://princessannees.vbschools.com/students/library',
+		'https://princessannees.vbschools.com/our_school/administration',
+		'https://princessannees.vbschools.com/our_school/calendar',
+		'https://princessannees.vbschools.com/our_school/contact_us',
+		'https://princessannees.vbschools.com/our_school',
+		'https://princessannees.vbschools.com/our_school/our_staff',
+		'https://princessannees.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'pointoviewes'
+	school_name = 'princessannees'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

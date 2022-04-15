@@ -119,27 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://techcenter.vbschools.com/parents',
-		'https://kellamhs.vbschools.com/parents/grading_guidelines/related_policies_and_regulations',
-		'https://techcenter.vbschools.com/students/military_family_resources',
-		'https://techcenter.vbschools.com/our_school/programs',
-		'https://techcenter.vbschools.com/students',
-		'https://techcenter.vbschools.com/our_school/how_to_apply',
-		'https://techcenter.vbschools.com/students/school_counseling',
-		'https://techcenter.vbschools.com/our_school/administration',
-		'https://techcenter.vbschools.com/our_school/calendar',
-		'https://techcenter.vbschools.com/our_school/contact_us',
-		'https://techcenter.vbschools.com/our_school',
-		'https://techcenter.vbschools.com/our_school/our_staff',
-		'https://techcenter.vbschools.com/our_school/school_to_work_program',
-		'https://techcenter.vbschools.com/our_school/preschool_program',
-		'https://techcenter.vbschools.com/our_school/programs',
-		'https://techcenter.vbschools.com/our_school/vocational_evaluation',
-		'https://techcenter.vbschools.com/our_school/how_to_apply',
-		'https://techcenter.vbschools.com/students/student_resources',
+		'https://corporatelandinges.vbschools.com/parents',
+		'https://corporatelandinges.vbschools.com/parents/school_supply_lists',
+		'https://corporatelandinges.vbschools.com/students',
+		'https://corporatelandinges.vbschools.com/students/guidance',
+		'https://corporatelandinges.vbschools.com/students/library',
+		'https://corporatelandinges.vbschools.com/our_school/administration',
+		'https://corporatelandinges.vbschools.com/our_school/calendar',
+		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301193',
+		'https://corporatelandinges.vbschools.com/our_school',
+		'https://corporatelandinges.vbschools.com/cms/One.aspx?portalId=81769&pageId=301210',
+		'https://corporatelandinges.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'techcenter'
+	school_name = 'corporatelandinges'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

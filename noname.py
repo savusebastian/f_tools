@@ -119,23 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://bayside6ms.vbschools.com/parents',
-		'https://bayside6ms.vbschools.com/parents/grading_practices/school_grading_practices',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=24859001',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=748341',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=79666',
-		'https://bayside6ms.vbschools.com/students/guidance',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307760',
-		'https://bayside6ms.vbschools.com/our_school/administration',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=79652',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307775',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307722',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307790',
-		'https://bayside6ms.vbschools.com/cms/One.aspx?portalId=79620&pageId=307780',
-		'https://bayside6ms.vbschools.com/students/student_resources',
+		'https://brandonms.vbschools.com/parents',
+		'https://brandonms.vbschools.com/parents/grading_practices/school_grading_practices',
+		'https://brandonms.vbschools.com/students',
+		'https://brandonms.vbschools.com/students/SchoolCounseling',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=1943365',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307675',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307700',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=80054',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307690',
+		'https://brandonms.vbschools.com/our_school',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=307705',
+		'https://brandonms.vbschools.com/cms/One.aspx?portalId=80022&pageId=22309524',
+		'https://brandonms.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'bayside6ms'
+	school_name = 'brandonms'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

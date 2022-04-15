@@ -119,18 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://trantwoodes.vbschools.com/parents',
-		'https://trantwoodes.vbschools.com/students/student_resources/supply_list',
-		'https://trantwoodes.vbschools.com/students',
-		'https://trantwoodes.vbschools.com/students/library',
-		'https://trantwoodes.vbschools.com/our_school/administration',
-		'https://trantwoodes.vbschools.com/our_school/calendar',
-		'https://trantwoodes.vbschools.com/our_school/contact_us',
-		'https://trantwoodes.vbschools.com/our_school',
-		'https://trantwoodes.vbschools.com/our_school/our_staff',
+		'https://whiteoakses.vbschools.com/parents',
+		'https://whiteoakses.vbschools.com/students/student_resources/supply_list',
+		'https://whiteoakses.vbschools.com/students',
+		'https://whiteoakses.vbschools.com/students/school_counselor_',
+		'https://whiteoakses.vbschools.com/students/library',
+		'https://whiteoakses.vbschools.com/our_school/administration',
+		'https://whiteoakses.vbschools.com/our_school/calendar',
+		'https://whiteoakses.vbschools.com/our_school/contact_us',
+		'https://whiteoakses.vbschools.com/our_school',
+		'https://whiteoakses.vbschools.com/our_school/our_staff',
+		'https://whiteoakses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'trantwoodes'
+	school_name = 'whiteoakses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

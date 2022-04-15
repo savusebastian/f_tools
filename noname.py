@@ -119,21 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://luxfordes.vbschools.com/parents',
-		'https://luxfordes.vbschools.com/parents/title_i_parent_information',
-		'https://luxfordes.vbschools.com/students/student_resources/supply_lists',
-		'https://luxfordes.vbschools.com/students',
-		'https://luxfordes.vbschools.com/students/school_counseling',
-		'https://luxfordes.vbschools.com/students/library',
-		'https://luxfordes.vbschools.com/our_school/administration',
-		'https://luxfordes.vbschools.com/our_school/calendar',
-		'https://luxfordes.vbschools.com/our_school/contact_us',
-		'https://luxfordes.vbschools.com/our_school',
-		'https://luxfordes.vbschools.com/our_school/our_staff',
-		'https://luxfordes.vbschools.com/students/student_resources',
+		'https://lynnhavenes.vbschools.com/parents',
+		'https://lynnhavenes.vbschools.com/parents/title_1_parent_information',
+		'https://lynnhavenes.vbschools.com/students/supplies',
+		'https://lynnhavenes.vbschools.com/students',
+		'https://lynnhavenes.vbschools.com/students/school_counseling',
+		'https://lynnhavenes.vbschools.com/students/library',
+		'https://lynnhavenes.vbschools.com/our_school/administration',
+		'https://lynnhavenes.vbschools.com/our_school/calendar',
+		'https://lynnhavenes.vbschools.com/our_school/contact_us',
+		'https://lynnhavenes.vbschools.com/our_school',
+		'https://lynnhavenes.vbschools.com/our_school/our_staff',
+		'https://lynnhavenes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'luxfordes'
+	school_name = 'lynnhavenes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

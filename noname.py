@@ -119,20 +119,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://windsorwoodses.vbschools.com/parents',
-		'https://windsorwoodses.vbschools.com/students/student_resources/student_supply_list',
-		'https://windsorwoodses.vbschools.com/students',
-		'https://windsorwoodses.vbschools.com/students/guidance',
-		'https://windsorwoodses.vbschools.com/students/library',
-		'https://windsorwoodses.vbschools.com/our_school/administration',
-		'https://windsorwoodses.vbschools.com/cms/One.aspx?portalId=111110&pageId=111142',
-		'https://windsorwoodses.vbschools.com/cms/One.aspx?portalId=111110&pageId=300994',
-		'https://windsorwoodses.vbschools.com/our_school',
-		'https://windsorwoodses.vbschools.com/cms/One.aspx?portalId=111110&pageId=301009',
-		'https://windsorwoodses.vbschools.com/students/student_resources',
+		'https://woodstockes.vbschools.com/parents',
+		'https://woodstockes.vbschools.com/students/student_resources/2021-2022_school_supply_list',
+		'https://woodstockes.vbschools.com/students',
+		'https://woodstockes.vbschools.com/students/school_counselor',
+		'https://woodstockes.vbschools.com/students/library',
+		'https://woodstockes.vbschools.com/our_school/administration',
+		'https://woodstockes.vbschools.com/our_school/calendar',
+		'https://woodstockes.vbschools.com/our_school/contact_us',
+		'https://woodstockes.vbschools.com/our_school',
+		'https://woodstockes.vbschools.com/our_school/our_staff',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'windsorwoodses'
+	school_name = 'woodstockes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

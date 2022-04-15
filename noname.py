@@ -119,30 +119,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://coxhs.vbschools.com/parents',
-		'https://coxhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://coxhs.vbschools.com/cms/one.aspx?pageId=1562610',
-		'https://coxhs.vbschools.com/cms/One.aspx?portalId=82740&pageId=257888',
-		'https://coxhs.vbschools.com/students/student_activities/athletics',
-		'https://coxhs.vbschools.com/cms/One.aspx?portalId=82740&pageId=28385236',
-		'https://coxhs.vbschools.com/students/student_activities',
-		'https://coxhs.vbschools.com/parents/a_p_test_registration',
-		'https://coxhs.vbschools.com/students/library',
-		'https://coxhs.vbschools.com/our_school/administration',
-		'https://coxhs.vbschools.com/our_school/calendar',
-		'https://coxhs.vbschools.com/our_school/contact_us',
-		'https://coxhs.vbschools.com/our_school',
-		'https://coxhs.vbschools.com/our_school/our_staff',
-		'https://coxhs.vbschools.com/our_school/cox_h_s_news',
-		'https://coxhs.vbschools.com/our_school/PCI',
-		'https://schoolstore.jostens.com/collections/frank-w-cox-falcons-1593100079591?referrer=jostens.com',
-		'https://falconpressnews.org/',
-		'https://coxhs.vbschools.com/students/student_resources/student_applications_and_documents',
-		'https://coxhs.vbschools.com/students/student_resources',
-		'https://www.beachdistrictva.org/public/genie/356/school/4/',
+		'https://firstcolonialhs.vbschools.com/parents',
+		'https://firstcolonialhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://firstcolonialhs.vbschools.com/students/student_activities/athletics/booster_club',
+		'https://firstcolonialhs.vbschools.com/students',
+		'https://firstcolonialhs.vbschools.com/students/student_activities/athletics',
+		'https://firstcolonialhs.vbschools.com/students/guidance',
+		'https://firstcolonialhs.vbschools.com/students/student_activities/clubs_and_activities',
+		'https://user.totalregistration.net/AP/472290',
+		'https://firstcolonialhs.vbschools.com/students/library',
+		'https://firstcolonialhs.vbschools.com/our_school/administration',
+		'https://firstcolonialhs.vbschools.com/our_school/calendar',
+		'https://firstcolonialhs.vbschools.com/our_school/contact_us',
+		'https://firstcolonialhs.vbschools.com/our_school',
+		'https://firstcolonialhs.vbschools.com/our_school/our_staff',
+		'https://firstcolonialhs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/2/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'coxhs'
+	school_name = 'firstcolonialhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

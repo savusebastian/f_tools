@@ -119,20 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://whiteoakses.vbschools.com/parents',
-		'https://whiteoakses.vbschools.com/students/student_resources/supply_list',
-		'https://whiteoakses.vbschools.com/students',
-		'https://whiteoakses.vbschools.com/students/school_counselor_',
-		'https://whiteoakses.vbschools.com/students/library',
-		'https://whiteoakses.vbschools.com/our_school/administration',
-		'https://whiteoakses.vbschools.com/our_school/calendar',
-		'https://whiteoakses.vbschools.com/our_school/contact_us',
-		'https://whiteoakses.vbschools.com/our_school',
-		'https://whiteoakses.vbschools.com/our_school/our_staff',
-		'https://whiteoakses.vbschools.com/students/student_resources',
+		'https://williamses.vbschools.com/parents',
+		'https://williamses.vbschools.com/parents/title_i_parent_information',
+		'https://williamses.vbschools.com/students/student_resources/school_supply_lists',
+		'https://williamses.vbschools.com/students',
+		'https://williamses.vbschools.com/students/guidance',
+		'https://williamses.vbschools.com/students/library',
+		'https://williamses.vbschools.com/our_school/administration',
+		'https://williamses.vbschools.com/our_school/calendar',
+		'https://williamses.vbschools.com/cms/One.aspx?portalId=110724&pageId=300502',
+		'https://williamses.vbschools.com/our_school',
+		'https://williamses.vbschools.com/cms/One.aspx?portalId=110724&pageId=300520',
+		'https://williamses.vbschools.com/parents/tips',
+		'https://williamses.vbschools.com/parents/activities',
+		'https://williamses.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'whiteoakses'
+	school_name = 'williamses'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

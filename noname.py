@@ -119,28 +119,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://baysidehs.vbschools.com/parents',
-		'https://baysidehs.vbschools.com/parents/grading_guidelines/school_grading_practices',
-		'https://baysidehs.vbschools.com/students',
-		'https://baysidehs.vbschools.com/students/a_v_i_d',
-		'https://baysidehs.vbschools.com/students/school_counseling',
-		'https://baysidehs.vbschools.com/students/student_activities',
-		'https://baysidehs.vbschools.com/students/a_p_testing_info',
-		'https://baysidehs.vbschools.com/our_school/administration',
-		'https://baysidehs.vbschools.com/our_school/calendar',
-		'https://baysidehs.vbschools.com/our_school/contact_us',
-		'https://baysidehs.vbschools.com/our_school',
-		'https://baysidehs.vbschools.com/our_school/our_staff',
-		'https://baysidehs.vbschools.com/our_school/health_sciences_academy',
-		'https://www.vbschools.com/academic_programs/academies_and_advanced_academic_programs/health_sciences_academy',
-		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/program_of_study_for_h_s_a',
-		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/f_a_q',
-		'https://baysidehs.vbschools.com/our_school/health_sciences_academy/academy_teacher_bios',
-		'https://baysidehs.vbschools.com/students/student_resources',
-		'https://baysidehs.vbschools.com',
+		'https://coxhs.vbschools.com/parents',
+		'https://coxhs.vbschools.com/parents/grading_guidelines/school_grading_practices',
+		'https://coxhs.vbschools.com/cms/one.aspx?pageId=1562610',
+		'https://coxhs.vbschools.com/cms/One.aspx?portalId=82740&pageId=257888',
+		'https://coxhs.vbschools.com/students/student_activities/athletics',
+		'https://coxhs.vbschools.com/cms/One.aspx?portalId=82740&pageId=28385236',
+		'https://coxhs.vbschools.com/students/student_activities',
+		'https://coxhs.vbschools.com/parents/a_p_test_registration',
+		'https://coxhs.vbschools.com/students/library',
+		'https://coxhs.vbschools.com/our_school/administration',
+		'https://coxhs.vbschools.com/our_school/calendar',
+		'https://coxhs.vbschools.com/our_school/contact_us',
+		'https://coxhs.vbschools.com/our_school',
+		'https://coxhs.vbschools.com/our_school/our_staff',
+		'https://coxhs.vbschools.com/our_school/cox_h_s_news',
+		'https://coxhs.vbschools.com/our_school/PCI',
+		'https://schoolstore.jostens.com/collections/frank-w-cox-falcons-1593100079591?referrer=jostens.com',
+		'https://falconpressnews.org/',
+		'https://coxhs.vbschools.com/students/student_resources/student_applications_and_documents',
+		'https://coxhs.vbschools.com/students/student_resources',
+		'https://www.beachdistrictva.org/public/genie/356/school/4/',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'baysidehs'
+	school_name = 'coxhs'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

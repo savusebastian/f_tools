@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://kingsgrantes.vbschools.com/parents',
-		'https://kingsgrantes.vbschools.com/parents/2021-22_school_supply_lists',
-		'https://kingsgrantes.vbschools.com/students',
-		'https://kingsgrantes.vbschools.com/students/school_counselor',
-		'https://kingsgrantes.vbschools.com/students/library',
-		'https://kingsgrantes.vbschools.com/our_school/administration',
-		'https://kingsgrantes.vbschools.com/our_school/calendar',
-		'https://kingsgrantes.vbschools.com/our_school/contact_us',
-		'https://kingsgrantes.vbschools.com/our_school',
-		'https://kingsgrantes.vbschools.com/our_school/our_staff',
-		'https://kingsgrantes.vbschools.com/students/student_resources',
+		'https://kingstones.vbschools.com/parents',
+		'https://kingstones.vbschools.com/students/school_supplies',
+		'https://kingstones.vbschools.com/students',
+		'https://kingstones.vbschools.com/students/school_counseling',
+		'https://kingstones.vbschools.com/students/library',
+		'https://kingstones.vbschools.com/our_school/administration',
+		'https://kingstones.vbschools.com/our_school/calendar',
+		'https://kingstones.vbschools.com/our_school/contact_us',
+		'https://kingstones.vbschools.com/our_school',
+		'https://kingstones.vbschools.com/our_school/our_staff',
+		'https://kingstones.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'kingsgrantes'
+	school_name = 'kingstones'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,20 +119,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://redmilles.vbschools.com/parents',
-		'https://redmilles.vbschools.com/students/student_resources/school_supplies',
-		'https://redmilles.vbschools.com/students',
-		'https://redmilles.vbschools.com/students/school_counseling',
-		'https://redmilles.vbschools.com/students/library',
-		'https://redmilles.vbschools.com/our_school/administration',
-		'https://redmilles.vbschools.com/our_school/calendar',
-		'https://redmilles.vbschools.com/cms/One.aspx?portalId=107037&pageId=297761',
-		'https://redmilles.vbschools.com/our_school',
-		'https://redmilles.vbschools.com/cms/One.aspx?portalId=107037&pageId=297781',
-		'https://redmilles.vbschools.com/students/student_resources',
+		'https://rosemontes.vbschools.com/parents',
+		'https://rosemontes.vbschools.com/parents/title_i_parent_information',
+		'https://rosemontes.vbschools.com/students',
+		'https://rosemontes.vbschools.com/students/school_counselor',
+		'https://rosemontes.vbschools.com/students/library',
+		'https://rosemontes.vbschools.com/our_school/administration',
+		'https://rosemontes.vbschools.com/our_school/calendar',
+		'https://rosemontes.vbschools.com/cms/One.aspx?portalId=107430&pageId=297888',
+		'https://rosemontes.vbschools.com/our_school',
+		'https://rosemontes.vbschools.com/cms/One.aspx?portalId=107430&pageId=297903',
+		'https://rosemontes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'redmilles'
+	school_name = 'rosemontes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

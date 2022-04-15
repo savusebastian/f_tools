@@ -119,20 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://linkhornparkes.vbschools.com/parents',
-		'https://linkhornparkes.vbschools.com/parents/school_supply_list',
-		'https://linkhornparkes.vbschools.com/students',
-		'https://linkhornparkes.vbschools.com/students/school_counseling',
-		'https://linkhornparkes.vbschools.com/students/library',
-		'https://linkhornparkes.vbschools.com/our_school/administration',
-		'https://linkhornparkes.vbschools.com/our_school/calendar',
-		'https://linkhornparkes.vbschools.com/our_school/contact_us',
-		'https://linkhornparkes.vbschools.com/our_school',
-		'https://linkhornparkes.vbschools.com/our_school/our_staff',
-		'https://linkhornparkes.vbschools.com/students/student_resources',
+		'https://luxfordes.vbschools.com/parents',
+		'https://luxfordes.vbschools.com/parents/title_i_parent_information',
+		'https://luxfordes.vbschools.com/students/student_resources/supply_lists',
+		'https://luxfordes.vbschools.com/students',
+		'https://luxfordes.vbschools.com/students/school_counseling',
+		'https://luxfordes.vbschools.com/students/library',
+		'https://luxfordes.vbschools.com/our_school/administration',
+		'https://luxfordes.vbschools.com/our_school/calendar',
+		'https://luxfordes.vbschools.com/our_school/contact_us',
+		'https://luxfordes.vbschools.com/our_school',
+		'https://luxfordes.vbschools.com/our_school/our_staff',
+		'https://luxfordes.vbschools.com/students/student_resources',
 	]
 	mainfolder = 'vbschools'
-	school_name = 'linkhornparkes'
+	school_name = 'luxfordes'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -23,7 +23,7 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	# print(web_page)
+	print(web_page)
 
 	# if web_page != '#':
 	try:
@@ -186,10 +186,9 @@ if __name__ == '__main__':
 
 				for i, item in enumerate(list_items):
 					group_links = item.find_all('a')
-					print(group_links)
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links[1:]:
+					for link in group_links:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 

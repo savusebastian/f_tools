@@ -192,7 +192,6 @@ if __name__ == '__main__':
 					for link in group_links[1:]:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
-						print(href)
 
 						if len(href) > 1 and href[:2] == '//':
 							page_link = f'{split_slash[0]}{href}'

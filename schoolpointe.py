@@ -23,7 +23,7 @@ def get_content(web_page):
 	staff = ''
 	news = ''
 	issue_pages_counter = 0
-	print(web_page)
+	# print(web_page)
 
 	# if web_page != '#':
 	try:
@@ -191,6 +191,7 @@ if __name__ == '__main__':
 					for link in group_links[1:]:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
+						print(href)
 
 						if len(href) > 1 and href[:2] == '//':
 							page_link = f'{split_slash[0]}{href}'
@@ -212,7 +213,6 @@ if __name__ == '__main__':
 									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
 								else:
 									page_counter += 1
-									print(href)
 									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 									issue_pages_counter += content_ipc
 

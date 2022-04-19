@@ -66,7 +66,7 @@ def get_content(web_page):
 		if web_soup.find(class_='maincontentsection') != None and web_soup.find(class_='maincontentsection') != '':
 			col1 = web_soup.find(class_='maincontentsection')
 			col1 = get_column(col1)
-		else if web_soup.find(class_='content') != None and web_soup.find(class_='content') != '':
+		elif web_soup.find(class_='content') != None and web_soup.find(class_='content') != '':
 			col1 = web_soup.find(class_='content')
 			col1 = get_column(col1)
 		else:

@@ -170,8 +170,7 @@ if __name__ == '__main__':
 				soup = BeautifulSoup(page, 'html.parser')
 				sitemap = soup.find(id='bs-example-navbar-collapse-1')
 				list_items = sitemap.select('ul > li')
-				print(list_items)
-				break
+				# print(list_items)
 
 				# sitemap2 = soup.find(class_='footer-nav')
 				# list_items2 = sitemap2.select('ul > li')
@@ -213,6 +212,7 @@ if __name__ == '__main__':
 									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
 								else:
 									page_counter += 1
+									print(href)
 									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
 									issue_pages_counter += content_ipc
 

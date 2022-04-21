@@ -119,37 +119,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://sites.google.com/stamfordpublicschools.org/frankrodriguez/home',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/strawberry_communication_sheet_2021-2022.pptx.pdf',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/arrival-dismissal',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us/pages/ib-middle-years-program-myp-information',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us/pages/ib-primary-years-program-pyp-information',
-'https://docs.google.com/document/d/1kzTFX-XsnE2XEN6YB_uZnn9C8xTUShbt/edit?usp=sharing&ouid=104199702382722931603&rtpof=true&sd=true',
-'https://drive.google.com/file/d/1m0tXXMTBFDMApF36qQNoc7DE8Oau7h-T/view',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/magnet-lottery-information',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/policies',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/strawberry_hill_school_strategic_improvement_plan.pdf',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/parents/pages/diversity-equity-inclusion',
-'https://docs.google.com/document/d/1H67lXp3BbHR7kz16IGnCC2dJsnsLdfFqCM5REYhbe6s/edit',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/parents/pages/resources',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/parent_handbook_21-22_9.30.21_0.pdf',
+		'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/principals-page',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/about-us/pages/mission-statement-and-vision-statement',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/toquam-magnet-elementary-school-2021',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/building-information-and-schedule',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/students/pages/teaching-and-learning-resources',
 'https://www.roscco.org',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us/slideshows/strawberry-hill-gallery',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/about-us/pages/strawberry-hill-videos',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/back-school-documents-2021-2022',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/dress-code-and-spirit-wear',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/parent_handbook_21-22_9.30.21_0.pdf',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/parents/pages/resources',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/information/pages/attendance',
-'https://www.stamfordpublicschools.org/strawberry-hill-school/pages/strawberry-hill-school-staff-directory',
-'https://strawberryhillpto.membershiptoolkit.com',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/information/pages/attendance-policy',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/pages/toquam-magnet-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/intervention-and-student-support/school-registration',
+'https://www.stamfordpublicschools.org/district/human-resources/pages/volunteer-opportunities',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/about-us/pages/follow-us-twitter',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/parents/pages/family-school-compact',
+'https://www.stamfordpublicschools.org/toquam-magnet-elementary-school/pto-toquamptogmailcom',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'strawberryhill_elementary'
+	school_name = 'toquam_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

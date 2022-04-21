@@ -119,25 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/roxbury-elementary-school/principals-messages/news/about-principal',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/about-us',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/roxbury_communication_template_11.13.18_1.pdf',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/governance-council/files/answers-frequently-asked-questions-bringing-your',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/important-information/pages/arrival-and-dismissal',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/about-us/pages/directions-roxbury',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/library-media',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/pages/roxbury-elementary-school-staff-directory-2021-22',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/academic-program',
-'https://user-xhtcbfi.cld.bz/Roxbury-Family-Handbook-2019-20',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/important-information/pages/and-after-school-programs',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/pages/roxbury-elementary-school-staff-directory-2021-22',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school',
-'https://www.stamfordpublicschools.org/roxbury-elementary-school/news/kindergarten-orientation-summary',
-'https://docs.google.com/presentation/d/1FlFpMVUz1_ltboUZnMcw6tEvcwDSworljyfI-7Bc7RE/edit#slide=id.ge77257aba8_0_0',
+		'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/principals-messagemensaje-de-la-directora',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/mission-statement',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/slideshows/photo-gallery',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/springdale-elementary-school',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/news/school-bus-routes',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/directions',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/students/pages/student-resources',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/school-supply-lists',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/school-programs',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/after-school-programs',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/pages/springdale-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/parent-handbook-2021-2022',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/information/pages/have-you-moved',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/volunteer-forms',
+'https://www.stamfordpublicschools.org/springdale-elementary-school/pto',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'roxbury_elementary'
+	school_name = 'springdale_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -119,25 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/stark-elementary-school/principals-page',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/stark-elementary-school-2021',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/stark-school-hours',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/arrival-dismissal',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/emergency-plan',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/files/stark-school-strategic-improvement-plan',
-'https://www.stamfordpublicschools.org/stark-elementary-school/parents/pages/title-1-information',
-'https://www.stamfordpublicschools.org/stark-elementary-school/about-us/pages/directions',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/back-school-documents',
-'https://www.stamfordpublicschools.org/stark-elementary-school/students/pages/teaching-and-learning-resources',
+		'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/administration-office-support-staff',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/kt-murphy-elementary-school-2021',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/about-us/pages/responsive-classroom',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/about-us/pages/sps-mission-vision-kt-murphy-mission-statement',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/school-governance-council',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/kt_murphy_school_strategic_improvement_plan.pdf',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/parents/pages/title-i-information',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/parents/pages/resources',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/students/pages/teaching-and-learning-resources',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/students/pages/student-supplies-back-school',
 'https://www.roscco.org',
-'https://www.stamfordpublicschools.org/stark-elementary-school/news/stark-supply-list-2021-22',
-'https://www.sbhc1.com/ ',
-'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/attendance',
-'https://www.stamfordpublicschools.org/stark-elementary-school/pages/stark-elementary-school-staff-directory',
-'https://www.stamfordpublicschools.org/stark-elementary-school/pfo',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/information/pages/health-insurance-info',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/pages/kt-murphy-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/kt-murphy-elementary-school/pto',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'juliastark_elementary'
+	school_name = 'ktmurphy_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

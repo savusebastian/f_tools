@@ -119,24 +119,37 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/principals-messagemensaje-de-la-directora',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/mission-statement',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/slideshows/photo-gallery',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/springdale-elementary-school',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/news/school-bus-routes',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/about-us/pages/directions',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/students/pages/student-resources',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/school-supply-lists',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/school-programs',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/after-school-programs',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/pages/springdale-elementary-school-staff-directory',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/parent-handbook-2021-2022',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/information/pages/have-you-moved',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/parent-resources/pages/volunteer-forms',
-'https://www.stamfordpublicschools.org/springdale-elementary-school/pto',
+		'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/about-us/pages/principals-page',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/about-us/pages/mission-statement',
+'https://drive.google.com/file/d/1SHgSQE0Dq8_lgg9J-qcv2gogaGiy-tCF/view?usp=sharing',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/about-us/pages/stillmeadow-bill-responsibilities',
+'https://docs.google.com/document/d/e/2PACX-1vRT1yfhkkXvn_hXBDOLZburreHk06dotAQUOJ3h0_85D4-hgnKTrZAamYE1g2iSNFPqkj5ES0qgPqQj/pub',
+'https://docs.google.com/document/d/1APZpcJKwmKnNea9qFYlR1xL-2YHj6vwE-GHVimIkTWE/edit?usp=sharing   (place holder)',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/stillmeadow_school_strategic_improvement_plan.pdf',
+'https://docs.google.com/document/d/1VSxoo4XTD1N4FbuJMmPNqM7Ftj1_cEvKSR0_jBaGXBc/edit',
+'https://docs.google.com/document/d/1hhKjAQ_ESG-33sSBGJTHPrifikc9mTrSygNL1T7LQkk/edit?usp=sharing  (place holder)',
+'https://docs.google.com/document/d/e/2PACX-1vQPUfWNFqb9jp48k8SHVERTUhnLj6xhoHJ0FyjFA08w23BzZCaKWIJhzQl0rGbCtCEDjmuyAVi0FBYN/pub',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/about-us/pages/directions',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/parents/pages/parent-involvement-policy',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/a_handbook_for_families_2021-2022.pdf',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/parents/pages/title-i-family-school-compact',
+'https://docs.google.com/document/d/1qOt43ReHXy5yllURfEzCiLCPpEkzk3XMAQJzVPf_ltY/edit?usp=sharing',
+'https://drive.google.com/file/d/1Yu7Z8oAUkBBIKr4qR-CyLRQKUSbF6u_9/view?usp=sharing  (place holder)',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/parents/pages/literacy-resources',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/parents/pages/math-resources',
+'https://drive.google.com/file/d/1ZIzNkXZSn3pZqiOz9pkzdiGC3esqA6yZ/view?usp=sharing',
+'http://www.roscco.org/splash_roscco.php?ID=2225',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/information/pages/stillmeadow-handbook',
+'https://docs.google.com/spreadsheets/d/1GxmaIawkt_alhSCxf3jFG1VGH9Zcxqt-tn6L0kP39T0/edit#gid=0',
+'https://forms.gle/PWCiTFKNghp32vSs9 ',
+'https://docs.google.com/presentation/d/11b7OUnJDnZsrkDSwaYpPIkgLqT5X3dUg_0BOkwDMK10/edit#slide=id.p1',
+'https://www.stamfordpublicschools.org/stillmeadow-elementary-school/pages/stillmeadow-elementary-school-staff-directory',
+'https://docs.google.com/presentation/d/1L4tletMgMnYZdPf7VTnSD23F3gbp_2uv_fcXA2CHLLA/edit?usp=sharing',
+'https://docs.google.com/document/d/e/2PACX-1vTOn9Fv0-tWhyBTuAR-8buHiQUzXhk4nDatHWO2NM2yrzmyUKHnECUq-46Zy4KgIsnLA17Pp_r1HN_X/pub',
+'https://stillmeadowpfo.org',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'springdale_elementary'
+	school_name = 'stillmeadow_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

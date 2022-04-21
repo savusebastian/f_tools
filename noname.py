@@ -119,32 +119,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/principals-column',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/principals-weekly-update',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/why-davenport-ridge',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/davenport-ridge-elementary-school-2021 ',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/parents/pages/title-1-information',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/information/pages/davenport-ridge-family-school-compact',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/davenport_school_strategic_improvement_plan_0.pdf',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/school-governance-council',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/directions',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/kindergarten',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/1st-grade',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/2nd-grade',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/3rd-grade',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/4th-grade',
+		'https://www.stamfordpublicschools.org/hart-elementary-school/news/hart-magnet-school%E2%80%99s-recorded-virtual-open-house',
+'https://www.stamfordpublicschools.org/hart-elementary-school/about-us/pages/mission-statement-dear-parents',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/hart-magnet-elementary-school-2021',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/hart-magnet-elementary-school-2021',
+'https://www.stamfordpublicschools.org/hart-elementary-school/media-center/news/chromebook-help',
+'https://www.stamfordpublicschools.org/hart-elementary-school/kindergarten',
+'https://www.stamfordpublicschools.org/hart-elementary-school/first-grade',
+'https://www.stamfordpublicschools.org/hart-elementary-school/second-grade',
+'https://www.stamfordpublicschools.org/hart-elementary-school/third-grade',
+'https://www.stamfordpublicschools.org/hart-elementary-school/fourth-grade',
 'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/5th-grade',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/support-staff',
-'https://www.roscco.org',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/pages/davenport-ridge-elementary-school-staff-directory',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/webforms/submit-online-comments-davenport-ridge-elementary-school',
-'https://davenportridgepto.membershiptoolkit.com/home',
+'https://www.stamfordpublicschools.org/hart-elementary-school/fifth-grade',
+'https://www.stamfordpublicschools.org/hart-elementary-school/pages/hart-magnet-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/hart-elementary-school/information/pages/student-registration',
+'https://hartmagnet.wixsite.com/hartpto',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'davenport_elementary'
+	school_name = 'hart_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

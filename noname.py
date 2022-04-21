@@ -119,24 +119,35 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/rippowam-middle-school/about-us/pages/administration',
-'https://docs.google.com/spreadsheets/d/1R9nCQ94A-YkTFMBdSZo9ZI4gxlPFhARPI2COwm_M2vM/edit?usp=sharing',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/about-us/pages/mission-vision-and-beliefs',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/rippowam-middle-school-2021',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/about-us/pages/general-information',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/support-services/pages/technical-support',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/support-services/pages/health-center',
-'https://www.stamfordpublicschools.org/rippowam-middle-school/support-services',
+		'https://sites.google.com/view/scofieldprincipalscorner',
+'https://www.stamfordpublicschools.org/scofield-middle-school/about-us/pages/administration',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/scofield_poster_mission_statement.pdf',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/scofield_poster_our_philosophy_copy_2.pdf',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/webelieve.pdf',
+'https://www.stamfordpublicschools.org/scofield-middle-school/about-us',
+'https://www.google.com/maps/place/641+Scofieldtown+Rd,+Stamford,+CT+06903/@41.1374761,-73.5598531,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2a6a7c1733b2f:0xc2787ce033c560a2!8m2!3d41.1374761!4d-73.5576644',
+'https://www.stamfordpublicschools.org/scofield-middle-school/students',
+'https://www.stamfordpublicschools.org/scofield-middle-school/information/pages/academics',
+'https://www.stamfordpublicschools.org/scofield-middle-school/eighth-grade-exhibition',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/scofield_student_handbook_2021-22.pdf',
+'https://www.stamfordpublicschools.org/scofield-middle-school/news/scofield-2021-2022-supply-lists',
+'https://www.stamfordpublicschools.org/scofield-middle-school/students/pages/intramural-information',
+'https://www.stamfordpublicschools.org/scofield-middle-school/news/registration-closed-after-school-club-sign-ups',
+'https://sites.google.com/site/benensonschoolcounselor',
 'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/naviance-student',
 'https://www.stamfordpublicschools.org/distance-teaching-learning-resources/high-school/pages/hs-opportunities-stamford-8th-graders',
 'https://drive.google.com/file/d/1L-lWRvgSHAqCE6ZqkAMPk7pEEyvtTSmp/view',
 'https://www.stamfordpublicschools.org/district/curriculum-instruction/pages/high-school-program-studies',
-'https://www.stamfordpublicschools.org/turn-river-middle-school/parents/webforms/child-illness',
-'https://sites.google.com/stamfordpublicschools.org/rippowammiddleschool/home',
+'https://www.stamfordpublicschools.org/scofield-middle-school',
+'https://www.stamfordpublicschools.org/scofield-middle-school/pages/scofield-middle-school-staff-directory',
+'https://twitter.com/scofieldmagnet?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Ascofieldmagnet%7Ctwgr%5EeyJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2hvcml6b25fdHdlZXRfZW1iZWRfOTU1NSI6eyJidWNrZXQiOiJodGUiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3NrZWxldG9uX2xvYWRpbmdfMTMzOTgiOnsiYnVja2V0IjoiY3RhIiwidmVyc2lvbiI6bnVsbH0sInRmd19zcGFjZV9jYXJkIjp7ImJ1Y2tldCI6Im9mZiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&ref_url=https%3A%2F%2Fwww.stamfordpublicschools.org%2Fscofield-middle-school',
+'https://www.stamfordpublicschools.org/scofield-middle-school',
+'https://www.stamfordpublicschools.org/scofield-middle-school/about-us/pages/orientation-presentation',
+'https://forms.pabbly.com/form/share/v09w-304051',
+'https://www.stamfordpublicschools.org/scofield-middle-school/ptp/pages/ptp-contact-information',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'ripowam_middle'
+	school_name = 'scofield_middle'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

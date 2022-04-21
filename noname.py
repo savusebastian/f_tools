@@ -119,23 +119,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://docs.google.com/document/d/1zUwY22ge0MTeEO-TKiree73WvK-CAGxoCWZCDICZHNE/edit',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/about-us/pages/our-philosophy-mission',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/about-us/pages/apples-brochure ',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/about-us ',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/parents/pages/general-education-application-2022-2023',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/parents/pages/sps-school-readiness-application',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/about-us/pages/special-education-referrals',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/parents/pages/school-supplies',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/information/pages/educational-opportunities',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/information/pages/attendance-policy',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/staff',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/information/pages/orientation-video',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/parents/pages/transitioning-kindergarten',
-'https://www.stamfordpublicschools.org/apples-early-childhood-educational-center/parents/pages/pta-parent-teacher-association',
+		'https://www.stamfordpublicschools.org/anchor/about-us/pages/anchor-students',
+'https://www.stamfordpublicschools.org/anchor/about-us/pages/what-we-do',
+'https://www.stamfordpublicschools.org/anchor/about-us',
+'https://docs.google.com/document/d/1MzCo5lzMjDTVap0cUHhSymNhJodXi8jb/edit?usp=sharing&ouid=104199702382722931603&rtpof=true&sd=true',
+'https://drive.google.com/file/d/1lDiNLkxPUZTRVx0wSc5FYUHbv0tJbNsk/view?usp=sharing',
+'https://www.stamfordpublicschools.org/anchor/information/pages/locations',
+'https://www.stamfordpublicschools.org/anchor/information/pages/hours-operation',
+'https://www.stamfordpublicschools.org/anchor/information/pages/community-video',
+'https://www.stamfordpublicschools.org/anchor/information/pages/distance-teaching-and-learning-plan',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/anchor_handbook.pdf',
+'https://www.stamfordpublicschools.org/anchor/information/slideshows/activities',
+'https://www.stamfordpublicschools.org/anchor/staff/pages/staff-directory',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'apples_pre_k'
+	school_name = 'anchor'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

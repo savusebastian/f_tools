@@ -119,21 +119,32 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/anchor/about-us/pages/anchor-students',
-'https://www.stamfordpublicschools.org/anchor/about-us/pages/what-we-do',
-'https://www.stamfordpublicschools.org/anchor/about-us',
-'https://docs.google.com/document/d/1MzCo5lzMjDTVap0cUHhSymNhJodXi8jb/edit?usp=sharing&ouid=104199702382722931603&rtpof=true&sd=true',
-'https://drive.google.com/file/d/1lDiNLkxPUZTRVx0wSc5FYUHbv0tJbNsk/view?usp=sharing',
-'https://www.stamfordpublicschools.org/anchor/information/pages/locations',
-'https://www.stamfordpublicschools.org/anchor/information/pages/hours-operation',
-'https://www.stamfordpublicschools.org/anchor/information/pages/community-video',
-'https://www.stamfordpublicschools.org/anchor/information/pages/distance-teaching-and-learning-plan',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/anchor_handbook.pdf',
-'https://www.stamfordpublicschools.org/anchor/information/slideshows/activities',
-'https://www.stamfordpublicschools.org/anchor/staff/pages/staff-directory',
+		'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/principals-column',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/principals-weekly-update',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/why-davenport-ridge',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/davenport-ridge-elementary-school-2021 ',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/parents/pages/title-1-information',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/information/pages/davenport-ridge-family-school-compact',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/davenport_school_strategic_improvement_plan_0.pdf',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/school-governance-council',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/about-us/pages/directions',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/students/pages/teaching-and-learning-resources',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/kindergarten',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/1st-grade',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/2nd-grade',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/3rd-grade',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/4th-grade',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/5th-grade',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/support-staff',
+'https://www.roscco.org',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/pages/davenport-ridge-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/webforms/submit-online-comments-davenport-ridge-elementary-school',
+'https://davenportridgepto.membershiptoolkit.com/home',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'anchor'
+	school_name = 'davenport_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

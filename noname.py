@@ -119,24 +119,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/hart-elementary-school/news/hart-magnet-school%E2%80%99s-recorded-virtual-open-house',
-'https://www.stamfordpublicschools.org/hart-elementary-school/about-us/pages/mission-statement-dear-parents',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/hart-magnet-elementary-school-2021',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/hart-magnet-elementary-school-2021',
-'https://www.stamfordpublicschools.org/hart-elementary-school/media-center/news/chromebook-help',
-'https://www.stamfordpublicschools.org/hart-elementary-school/kindergarten',
-'https://www.stamfordpublicschools.org/hart-elementary-school/first-grade',
-'https://www.stamfordpublicschools.org/hart-elementary-school/second-grade',
-'https://www.stamfordpublicschools.org/hart-elementary-school/third-grade',
-'https://www.stamfordpublicschools.org/hart-elementary-school/fourth-grade',
-'https://www.stamfordpublicschools.org/davenport-ridge-elementary-school/media-center/pages/5th-grade',
-'https://www.stamfordpublicschools.org/hart-elementary-school/fifth-grade',
-'https://www.stamfordpublicschools.org/hart-elementary-school/pages/hart-magnet-elementary-school-staff-directory',
-'https://www.stamfordpublicschools.org/hart-elementary-school/information/pages/student-registration',
-'https://hartmagnet.wixsite.com/hartpto',
+		'https://www.stamfordpublicschools.org/stark-elementary-school/principals-page',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/stark-elementary-school-2021',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/stark-school-hours',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/arrival-dismissal',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/emergency-plan',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/files/stark-school-strategic-improvement-plan',
+'https://www.stamfordpublicschools.org/stark-elementary-school/parents/pages/title-1-information',
+'https://www.stamfordpublicschools.org/stark-elementary-school/about-us/pages/directions',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/back-school-documents',
+'https://www.stamfordpublicschools.org/stark-elementary-school/students/pages/teaching-and-learning-resources',
+'https://www.roscco.org',
+'https://www.stamfordpublicschools.org/stark-elementary-school/news/stark-supply-list-2021-22',
+'https://www.sbhc1.com/ ',
+'https://www.stamfordpublicschools.org/stark-elementary-school/information/pages/attendance',
+'https://www.stamfordpublicschools.org/stark-elementary-school/pages/stark-elementary-school-staff-directory',
+'https://www.stamfordpublicschools.org/stark-elementary-school/pfo',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'hart_elementary'
+	school_name = 'juliastark_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

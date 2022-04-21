@@ -119,30 +119,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/principals-page',
-'https://docs.google.com/presentation/d/1_qUC-Qvr1cUEXQpmRs8sjMJ2Df-3dqSo/edit?usp=sharing&ouid=107265868410634639266&rtpof=true&sd=true',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/our-program/pages/arts-and-problem-solving',
-'https://New Content.com',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/our-program/pages/mastery-learning',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/our-program/pages/talents-unlimited',
-'https://docs.google.com/document/d/1VUdwVO0p5Mov4PP0Cwrv2AQTBs9WhcfQKC_X8csIu-Y/edit?usp=sharing',
-'https://docs.google.com/presentation/d/1MJJcWW0mfi5dbu0U8eRBbhh3_avrnC43MsAMlkZjXY0/edit?usp=sharing',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/about-us/pages/directions',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/westover_school_strategic_improvement_plan.pdf',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/students',
-'https://docs.google.com/presentation/d/1EpMFDr5EHkx6YEH-sE-R16gHIQplmY8sa7WO3b1LvOs/edit?usp=sharing',
-'https://www.stamfordpublicschools.org/intervention-and-student-support/scientific-research-based-interventions-srbi',
-'https://docs.google.com/document/d/1740bLdlsfw-SWr3WAmaLdPX4JbdIA3Bz/edit?usp=sharing&ouid=107265868410634639266&rtpof=true&sd=true',
-'https://docs.google.com/document/d/1CsLQ6uF9BMaOwJPZE0mFtxCP4EUOQN5rTbXmLCJ8B7g/edit?usp=sharing',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/information/pages/school-home-compact',
-'https://www.stamfordpublicschools.org/westover-magnet-elementary-school/pages/westover-magnet-elementary-school-staff-directory',
-'https://drive.google.com/file/d/1-AUInDtpSt0klGCGuZDBmiz2HdLClzAg/view?usp=sharing',
-'https://www.westoverpto.com/volunteer',
-'https://www.stamfordpublicschools.org/magnet-schools',
-'https://www.westoverpto.com',
+		'https://www.stamfordpublicschools.org/cloonan-middle-school/news/principals-desk-april-8-2022',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/about-us/pages/mission-statement',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/students-pledge',
+'https://www.stamfordpublicschools.org/district/public-affairs/files/cloonan-middle-school-2021',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/teaching-and-learning-resources',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/information/pages/departments',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/resources',
+'https://cloonancounselors.weebly.com',
+'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/naviance-student',
+'https://www.stamfordpublicschools.org/distance-teaching-learning-resources/high-school/pages/hs-opportunities-stamford-8th-graders',
+'https://drive.google.com/file/d/1L-lWRvgSHAqCE6ZqkAMPk7pEEyvtTSmp/view',
+'https://www.stamfordpublicschools.org/district/curriculum-instruction/pages/high-school-program-studies',
+'https://www.stamfordpublicschools.org/turn-river-middle-school/parents/webforms/child-illness',
+'https://www.stamfordpublicschools.org/cloonan-middle-school/cloonan-pto',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'westover_elementary'
+	school_name = 'cloonan_middle'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

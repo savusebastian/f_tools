@@ -119,16 +119,33 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/newfield-elementary-school/news/principals-message',
-'https://www.stamfordpublicschools.org/newfield-elementary-school/about-us',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/newfield-elementary-school-2021',
-'https://www.stamfordpublicschools.org/newfield-elementary-school/about-us/pages/responsive-classroom',
-'https://www.stamfordpublicschools.org/newfield-elementary-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/newfield-elementary-school/pages/newfield-elementary-school-staff-directory',
-'https://www.newfieldpfo.com',
+		'https://www.stamfordpublicschools.org/northeast-elementary-school/about-us/pages/welcome-letter',
+'https://docs.google.com/document/d/1A4Wp-uXTcIKz2O9v6Nw59HKi1Px4Om37VMzB92yzRGQ/edit',
+'https://docs.google.com/presentation/d/1XkzUhjN7yglvv_NVv1ePtdUQ4iccJ2j_/edit#slide=id.p1',
+'https://www.stamfordpublicschools.org/northeast-elementary-school/information/pages/hours-arrival-dismissal-visitors',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/northeast_school_strategic_improvement_plan.pdf',
+'https://www.stamfordpublicschools.org/northeast-elementary-school/news/message-dr-marinello-47',
+'https://www.stamfordpublicschools.org/northeast-elementary-school/information/pages/technology-and-media',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://docs.google.com/document/d/1ilMzpBfd2RQ1IfWsNYDMEwspDIpZE6dJXGjVs4bKagA/edit',
+'https://acrobat.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A1e2370b6-1911-4e87-bd97-7f4c1f8f51f4#pageNum=1',
+'https://acrobat.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A319f6b63-629b-48d0-a035-5817777a1b49',
+'https://docs.google.com/document/d/1MGTXyV-3SCqzN4naHMM3n3daV9Sw87Dn/edit',
+'https://docs.google.com/document/d/1hG9_AOuPB_cXQ74qNfLnZZwd0DPp9cwV/edit',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/student_parent_teacher_principal_compact_agreement_english.pdf',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/student_parent_teacher_principal_compact_agreement_spanish.pdf',
+'https://docs.google.com/presentation/d/1-XdXJESziEHea3bXUbbwa6HzxKRGMW79s3o1nMoXKXk/edit?usp=sharing                      ',
+'https://docs.google.com/document/d/10E6KXbyRhxB9MVYliS5rI3tVO_-mP2SoaPXlhgifWCY/edit?usp=sharing',
+'https://docs.google.com/document/d/1ikMF6zPiJFQ7B-mDSpea9zToB_FehLYHw0cO-XFXrDk/edit   ',
+'https://www.stamfordpublicschools.org/northeast-elementary-school/pages/northeast-elementary-school-staff-directory',
+'https://northeastpto.digitalpto.com',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'newfield_elementary'
+	school_name = 'northeast_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

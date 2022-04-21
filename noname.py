@@ -119,23 +119,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/cloonan-middle-school/news/principals-desk-april-8-2022',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/about-us/pages/mission-statement',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/students-pledge',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/cloonan-middle-school-2021',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/information/pages/departments',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/students/pages/resources',
-'https://cloonancounselors.weebly.com',
+		'https://www.stamfordpublicschools.org/district/public-affairs/files/dolan-middle-school-2021',
+'https://docs.google.com/document/d/1ZGgP0eGwdA8fQoHKOEufcumNF4pYl1NY3lJjrbUW3t8/edit',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/files/bell-schedule',
+'https://www.stamfordpublicschools.org/dolan-middle-school/news/daily-rotation-calendar',
+'https://www.stamfordpublicschools.org/dolan-middle-school/news/dolan-bus-routes',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/files/dolan-school-strategic-improvement-plan',
+'https://www.stamfordpublicschools.org/dolan-middle-school/students/pages/teaching-and-learning-resources',
+'https://www.stamfordpublicschools.org/dolan-middle-school/student-support-services',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/pages/student-handbook',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/pages/after-school-program',
+'https://www.stamfordpublicschools.org/dolan-middle-school/athletics',
+'https://www.stamfordpublicschools.org/dolan-middle-school/school-based-health-center',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/pages/photo-galleries-videos',
+'https://www.stamfordpublicschools.org/dolan-middle-school/student-support-services',
 'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/naviance-student',
 'https://www.stamfordpublicschools.org/distance-teaching-learning-resources/high-school/pages/hs-opportunities-stamford-8th-graders',
 'https://drive.google.com/file/d/1L-lWRvgSHAqCE6ZqkAMPk7pEEyvtTSmp/view',
 'https://www.stamfordpublicschools.org/district/curriculum-instruction/pages/high-school-program-studies',
 'https://www.stamfordpublicschools.org/turn-river-middle-school/parents/webforms/child-illness',
-'https://www.stamfordpublicschools.org/cloonan-middle-school/cloonan-pto',
+'https://www.stamfordpublicschools.org/dolan-middle-school/information/pages/forms-permission-slips',
+'https://dolan-pfo.square.site',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'cloonan_middle'
+	school_name = 'dolan_middle'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

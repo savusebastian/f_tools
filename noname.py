@@ -119,30 +119,25 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/rogers-international-school/about-us/pages/welcome',
-'https://www.stamfordpublicschools.org/rogers-international-school/about-us/pages/about-ris-video',
-'https://www.stamfordpublicschools.org/district/public-affairs/files/rogers-international-school-2021',
-'https://www.stamfordpublicschools.org/rogers-international-school/information/pages/ib-program',
-'https://www.stamfordpublicschools.org/rogers-international-school/information/pages/ris-assessment-recording-and-reporting-policies-and',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/2021-2022_ris_ssip.pdf',
-'https://www.stamfordpublicschools.org/rogers-international-school/information',
-'https://www.stamfordpublicschools.org/rogers-international-school/information/pages/directions-map',
-'https://www.stamfordpublicschools.org/rogers-international-school/students/pages/teaching-and-learning-resources',
-'https://www.stamfordpublicschools.org/rogers-international-school/students/pages/resources',
-'https://www.stamfordpublicschools.org/rogers-international-school/students/pages/ibcouncil',
-'https://www.stamfordpublicschools.org/rogers-international-school/students/pages/drama',
-'https://www.stamfordpublicschools.org/rogers-international-school/students/pages/athletics',
-'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/pages/ris_code_of_conduct_2021-2022.pdf',
-'https://www.stamfordpublicschools.org/rogers-international-school/information/pages/roscco',
-'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/naviance-student',
-'https://www.stamfordpublicschools.org/distance-teaching-learning-resources/high-school/pages/hs-opportunities-stamford-8th-graders',
-'https://drive.google.com/file/d/1L-lWRvgSHAqCE6ZqkAMPk7pEEyvtTSmp/view',
-'https://www.stamfordpublicschools.org/district/curriculum-instruction/pages/high-school-program-studies',
-'https://www.stamfordpublicschools.org/rogers-international-school/pages/rogers-international-school-staff-directory',
-'https://www.rispto.org',
+		'https://www.stamfordpublicschools.org/roxbury-elementary-school/principals-messages/news/about-principal',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/about-us',
+'https://www.stamfordpublicschools.org/sites/g/files/vyhlif3841/f/uploads/roxbury_communication_template_11.13.18_1.pdf',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/governance-council/files/answers-frequently-asked-questions-bringing-your',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/important-information/pages/arrival-and-dismissal',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/about-us/pages/directions-roxbury',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/library-media',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/pages/roxbury-elementary-school-staff-directory-2021-22',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/academic-program',
+'https://user-xhtcbfi.cld.bz/Roxbury-Family-Handbook-2019-20',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/important-information/pages/and-after-school-programs',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/pages/roxbury-elementary-school-staff-directory-2021-22',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school',
+'https://www.stamfordpublicschools.org/roxbury-elementary-school/news/kindergarten-orientation-summary',
+'https://docs.google.com/presentation/d/1FlFpMVUz1_ltboUZnMcw6tEvcwDSworljyfI-7Bc7RE/edit#slide=id.ge77257aba8_0_0',
 	]
 	mainfolder = 'stamfordpublicschools'
-	school_name = 'rogersk8_elementary'
+	school_name = 'roxbury_elementary'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

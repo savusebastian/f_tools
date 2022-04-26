@@ -117,12 +117,12 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=6',
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=6',
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=6',
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=6',
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=11&DirectoryType=6&SectionMax=6',
-		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=12&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=11&DirectoryType=6&SectionMax=6',
+		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=12&DirectoryType=6&SectionMax=6',
 		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=13&DirectoryType=6&SectionMax=6',
 		'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=15&DirectoryType=6&SectionMax=6',
 	]

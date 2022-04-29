@@ -117,21 +117,37 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'http://www.lewiscentral.org'
+	district = 'https://www.bsd7.org'
 	all_sites = [
 		f'{district}',
-		f'http://lckr.lewiscentral.org',
-		f'http://lcth.lewiscentral.org',
-		f'http://lcms.lewiscentral.org',
-		f'http://lchs.lewiscentral.org',
+		f'https://ed.bsd7.org',
+		f'https://ha.bsd7.org',
+		f'https://hy.bsd7.org',
+		f'https://lo.bsd7.org',
+		f'https://ml.bsd7.org',
+		f'https://ms.bsd7.org',
+		f'https://wh.bsd7.org',
+		f'https://cjms.bsd7.org',
+		f'https://sms.bsd7.org',
+		f'https://bhs.bsd7.org',
+		f'https://bridger.bsd7.org',
+		f'https://ghs.bsd7.org',
 	]
 
 	schools = [
 		'district',
-		'lckr',
-		'lcth',
-		'lcms',
-		'lchs',
+		'ed',
+		'ha',
+		'hy',
+		'lo',
+		'ml',
+		'ms',
+		'wh',
+		'cjms',
+		'sms',
+		'bhs',
+		'bridger',
+		'ghs',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]

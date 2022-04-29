@@ -169,10 +169,10 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='ctl00_ContentPlaceHolder1_ctl01_radmenu')
+			sitemap = soup.find(id='mMenuCMS')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='quick-links')
+			sitemap2 = soup.find(class_='quicklinks-container')
 
 			if sitemap2:
 				list_items2 = sitemap2.find_all('a')

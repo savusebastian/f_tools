@@ -106,9 +106,11 @@ def get_column(col, link):
 				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 					anchor.string = f'INTERNAL LINK {anchor.string}'
+
+				anchor['href'] = f'{link}{anchor["href"].replace("/..", "")}'
 			else:
 				anchor.attrs.clear()
-				anchor['href'] = f'{link}{anchor["href"].replace("/..", "")}'
+				anchor['href'] = f'{link}{anchor["href"].replace("..", "")}'
 
 		except:
 			pass

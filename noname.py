@@ -41,22 +41,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='main').find_all('form') != []:
+		if web_soup.find(class_='main_body_size').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='main').find_all('embed') != []:
+		if web_soup.find(class_='main_body_size').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='main').find_all('iframe') != []:
+		if web_soup.find(class_='main_body_size').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='main').find_all(class_='calendar') != []:
+		if web_soup.find(class_='main_body_size').find_all(class_='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='main').find_all(class_='staff-directory') != []:
+		if web_soup.find(class_='main_body_size').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='main').find_all(class_='news') != []:
+		if web_soup.find(class_='main_body_size').find_all(class_='news') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='hidden-xs show-on-olc col-sm-4 col-md-3 col-lg-3 backgroundcolor leftColumn') != None:
@@ -65,8 +65,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='main') != None and web_soup.find(id='main') != '':
-			col1 = web_soup.find(id='main')
+		if web_soup.find(class_='main_body_size') != None and web_soup.find(class_='main_body_size') != '':
+			col1 = web_soup.find(class_='main_body_size')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -119,30 +119,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.stamfordpublicschools.org/information/academics/pages/merge-visual-and-performing-arts',
-'https://www.stamfordpublicschools.org/information/academics/pages/merge-world-language',
-'https://www.stamfordpublicschools.org/district/news/sps-adopts-seal-biliteracy-recognizing-students-proficient-two-or-more-languages',
-'https://www.stamfordpublicschools.org/stamford-high-school/information/pages/merge-college-programming-shs-students',
-'https://docs.google.com/forms/d/e/1FAIpQLSfgUc8kQAFePmCmYqbk8ZKGCZAi8_G7DvQfNvV-eXzneXKPkA/viewform',
-'https://www.stamfordpublicschools.org/information/academics/pages/merge-school-counseling-center',
-'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/college-career-center',
-'https://www.stamfordpublicschools.org/stamford-high-school/guidance/pages/college-process-senior-packet',
-'https://www.stamfordpublicschools.org/westhill-high-school/guidance-department/pages/college-applications',
-'https://www.stamfordpublicschools.org/stamford-high-school/guidance/pages/college-bound-athletes',
-'https://www.stamfordpublicschools.org/westhill-high-school/whs-school-counseling-department/pages/financial-aid-fafsa',
-'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/financial-aid-scholarship-information',
-'https://www.stamfordpublicschools.org/westhill-high-school/guidance-department/pages/guidance-video-series',
-'https://www.stamfordpublicschools.org/westhill-high-school/guidance-department/pages/military-information',
-'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/naviance-student',
-'https://www.stamfordpublicschools.org/stamford-high-school/school-counseling/pages/shs-graduation-requirements-profile',
-'https://www.stamfordpublicschools.org/westhill-high-school/whs-school-counseling-department/pages/working-papers-form-ed-301',
-'https://www.stamfordpublicschools.org/stamford-high-school/news/shs-attendance-matters-absence-documentation-form',
-'https://www.stamfordpublicschools.org/stamford-high-school/pages/stamford-high-school-staff-directory',
-'https://www.stamfordpublicschools.org/stamford-high-school/parent-teacher-organization-friends-stamford-high',
-'https://foshpto.com',
+		'https://www.waunakee.k12.wi.us/district/B0E.cfm',
+'https://www.waunakee.k12.wi.us/district/Policies.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_100.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_200.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_300.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_400.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_500.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_600.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_700.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_800.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_policy_900.cfm',
+'https://www.waunakee.k12.wi.us/district/wcsd-board-of-education-resolutions.cfm',
+'https://www.waunakee.k12.wi.us/district/covid-19-related-policies.cfm',
+'https://www.waunakee.k12.wi.us/district/boe_job_descriptions.cfm',
+'https://www.waunakee.k12.wi.us/district/BOE_Committees.cfm',
+'https://www.waunakee.k12.wi.us/district/BOE.cfm',
+'https://www.waunakee.k12.wi.us/district/June_2008.cfm',
+'https://www.waunakee.k12.wi.us/district/Agendas.cfm',
+'https://www.waunakee.k12.wi.us/district/Minutes.cfm',
 	]
-	mainfolder = 'stamfordpublicschools'
-	school_name = 'stamford_high'
+	mainfolder = 'waunakee'
+	school_name = 'waunakee'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

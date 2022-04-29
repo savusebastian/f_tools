@@ -108,7 +108,7 @@ def get_column(col, link):
 					anchor.string = f'INTERNAL LINK {anchor.string}'
 			else:
 				anchor.attrs.clear()
-				anchor['href'] = f'{link}{anchor['href'].replace('/..', '')}'
+				anchor['href'] = f'{link}{anchor["href"].replace('/..', '')}'
 
 		except:
 			pass

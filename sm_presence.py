@@ -216,7 +216,7 @@ if __name__ == '__main__':
 			sitemap = soup.find(class_='megamenu')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='PO-quickLinks')
+			sitemap2 = soup.find(class_='portal-links')
 
 			if sitemap2:
 				list_items2 = sitemap2.find_all('a')

@@ -67,7 +67,7 @@ def get_content(web_page):
 		# Content
 		if web_soup.find(class_='main_body_size') != None and web_soup.find(class_='main_body_size') != '':
 			col1 = web_soup.find(class_='main_body_size')
-			col1 = get_column(col1, 'https://www.waunakee.k12.wi.us')
+			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
 

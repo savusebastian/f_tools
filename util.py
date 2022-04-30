@@ -43,7 +43,7 @@ def clean_src(src):
 	return out
 
 
-def get_column(col, link):
+def get_column(col):
 	col_images = col.find_all('img')
 	col_anchors = col.find_all('a')
 	col_tags = col.find_all(['article', 'b', 'button', 'col', 'colgroup', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'ul', 'ol', 'li', 'p', 'table', 'td', 'th', 'tr', 'strong', 'input', 'label', 'legend', 'fieldset'])
@@ -107,10 +107,10 @@ def get_column(col, link):
 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 					anchor.string = f'INTERNAL LINK {anchor.string}'
 
-				anchor['href'] = f'{link}{anchor["href"].replace("/..", "")}'
+				anchor['href'].replace('/..', '')
 			else:
 				anchor.attrs.clear()
-				anchor['href'] = f'{link}{anchor["href"].replace("..", "")}'
+				anchor['href'].replace('..', '')
 
 		except:
 			pass

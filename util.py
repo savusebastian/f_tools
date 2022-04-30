@@ -97,8 +97,12 @@ def get_column(col):
 				anchor.attrs.clear()
 
 				if href[0] != '/' and href[:4] != 'http':
+					href.replace('/..', '')
+					href.replace('..', '')
 					anchor['href'] = f'/{href}'
 				else:
+					href.replace('/..', '')
+					href.replace('..', '')
 					anchor['href'] = href
 
 				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
@@ -107,10 +111,8 @@ def get_column(col):
 				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 					anchor.string = f'INTERNAL LINK {anchor.string}'
 
-				anchor['href'].replace('/..', '')
 			else:
 				anchor.attrs.clear()
-				anchor['href'].replace('..', '')
 
 		except:
 			pass

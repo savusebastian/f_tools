@@ -99,7 +99,7 @@ def get_column(col):
 				if href[0] != '/' and href[:4] != 'http':
 					href.replace('/..', '')
 					href.replace('..', '')
-					anchor['href'] = f'/{href}'
+					# anchor['href'] = f'/{href}'
 				else:
 					href.replace('/..', '')
 					href.replace('..', '')

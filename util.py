@@ -72,6 +72,9 @@ def get_column(col):
 					image['alt'] = 'alt-text'
 
 				if src[0] != '/' and src[:4] != 'http':
+					src.replace('/..', '')
+					src.replace('../', '')
+					src.replace('..', '')
 					image['src'] = f'/{src}'
 				elif src[:4] == 'http':
 					image['src'] = clean_src(src)
@@ -98,10 +101,12 @@ def get_column(col):
 
 				if href[0] != '/' and href[:4] != 'http':
 					href.replace('/..', '')
+					href.replace('../', '')
 					href.replace('..', '')
-					# anchor['href'] = f'/{href}'
+					anchor['href'] = f'/{href}'
 				else:
 					href.replace('/..', '')
+					href.replace('../', '')
 					href.replace('..', '')
 					anchor['href'] = href
 

@@ -117,14 +117,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=6',
-		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=6',
-		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=6',
-		# 'https://www.normandysc.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=6',
+		'https://www.district31.net/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=15',
+		'https://www.district31.net/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=15',
+		'https://www.district31.net/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=15',
 		# 'https://d86.hinsdale86.org/site/default.aspx?pagetype=15&SiteID=4&DirectoryType=6&SectionMax=15',
 		# 'https://d86.hinsdale86.org/site/default.aspx?pagetype=15&SiteID=8&DirectoryType=6&SectionMax=15',
 		# 'https://d86.hinsdale86.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=15',
-		'https://d86.hinsdale86.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=15',
+		# 'https://d86.hinsdale86.org/site/default.aspx?pagetype=15&SiteID=10&DirectoryType=6&SectionMax=15',
 	]
 	mainfolder = all_sites[0].split('.')[1]
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')

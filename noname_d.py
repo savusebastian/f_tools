@@ -232,10 +232,9 @@ if __name__ == '__main__':
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
+									print(nav_sec)
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
-										print(nav_sec)
 										for nav_link in nav_sec:
-											print(type(nav_link))
 											href = nav_link.get('href')
 
 											if len(href) > 1 and href[:2] == '//':

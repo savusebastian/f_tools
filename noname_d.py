@@ -59,6 +59,7 @@ def get_content(web_page):
 
 		if web_soup.find(class_='menu-level-0') != None:
 			page_nav = web_soup.find(class_='menu-level-0').find_all('a')
+			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 

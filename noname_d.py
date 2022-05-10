@@ -28,8 +28,8 @@ def get_content(web_page):
 	# if web_page != '#':
 	try:
 		web_link = requests.get(web_page, timeout=5).content
-		print(1)
 		web_soup = BeautifulSoup(web_link, 'html.parser')
+		print(1)
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))

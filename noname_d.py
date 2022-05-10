@@ -65,7 +65,9 @@ def get_content(web_page):
 		# Content
 		if web_soup.find(id='main') != None and web_soup.find(id='main') != '':
 			col1 = web_soup.find(id='main')
+			print(col1)
 			col1 = get_column(col1)
+			print(col1)
 		else:
 			issue_pages_counter = 1
 

@@ -59,6 +59,7 @@ def get_content(web_page):
 
 		if web_soup.find(class_='menu-level-0') != None:
 			page_nav = web_soup.find(class_='menu-level-0').find_all('a')
+			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
@@ -105,6 +106,7 @@ def get_content(web_page):
 		elif len(col4) > 0:
 			col_num = '4'
 		print(page_nav)
+
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
 	# else:
@@ -232,7 +234,6 @@ if __name__ == '__main__':
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-									print(nav_sec)
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
 										for nav_link in nav_sec:
 											href = nav_link.get('href')

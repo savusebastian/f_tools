@@ -59,7 +59,6 @@ def get_content(web_page):
 
 		if web_soup.find(class_='menu-level-0') != None:
 			page_nav = web_soup.find(class_='menu-level-0').find_all('a')
-			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
@@ -234,6 +233,7 @@ if __name__ == '__main__':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										print(nav_sec)
 										for nav_link in nav_sec:
 											print(type(nav_link))
 											href = nav_link.get('href')

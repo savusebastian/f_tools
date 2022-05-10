@@ -64,9 +64,9 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
+		print(1)
 		col1 = content
 		col1 = get_column(col1)
-		print(1)
 		# if content != None and content != '':
 		# 	col1 = content
 		# 	col1 = get_column(col1)

@@ -27,7 +27,7 @@ def get_content(web_page):
 
 	# if web_page != '#':
 	try:
-		web_link = requests.get(web_page, timeout=10).content
+		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -39,22 +39,22 @@ def get_content(web_page):
 		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
 			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find(id='content').find_all('form') != []:
+		if web_soup.find(id='main').find_all('form') != []:
 			form = 'form'
 
-		if web_soup.find(id='content').find_all('embed') != []:
+		if web_soup.find(id='main').find_all('embed') != []:
 			embed = 'embed'
 
-		if web_soup.find(id='content').find_all('iframe') != []:
+		if web_soup.find(id='main').find_all('iframe') != []:
 			iframe = 'iframe'
 
-		if web_soup.find(id='content').find_all(id='calendar') != []:
+		if web_soup.find(id='main').find_all(id='calendar') != []:
 			calendar = 'calendar'
 
-		if web_soup.find(id='content').find_all(class_='staff-directory') != []:
+		if web_soup.find(id='main').find_all(class_='staff-directory') != []:
 			staff = 'staff'
 
-		if web_soup.find(id='content').find_all(id='news-list') != []:
+		if web_soup.find(id='main').find_all(id='news-list') != []:
 			news = 'news'
 
 		# if web_soup.find(class_='menu-level-0') != None:
@@ -63,8 +63,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='content') != None and web_soup.find(id='content') != '':
-			col1 = web_soup.find(id='content')
+		if web_soup.find(id='main') != None and web_soup.find(id='main') != '':
+			col1 = web_soup.find(id='main')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1

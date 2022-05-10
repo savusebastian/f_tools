@@ -60,10 +60,8 @@ def get_content(web_page):
 
 		if web_soup.find(class_='menu-level-0') != None:
 			page_nav = web_soup.find(class_='menu-level-0').find_all('a')
-			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
-		page_nav2 = page_nav
 
 		# Content
 		if web_soup.find(id='content') != None and web_soup.find(id='content') != '':
@@ -71,7 +69,7 @@ def get_content(web_page):
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
-		print(page_nav, page_nav2)
+		print(page_nav)
 
 		col1 = str(col1)
 

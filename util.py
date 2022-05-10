@@ -40,7 +40,6 @@ def clean_src(src):
 	for x in split:
 		out += f'/{x}'
 
-	print(out)
 	return out
 
 
@@ -94,35 +93,35 @@ def get_column(col):
 			pass
 			# print('Image:', image)
 
-	for anchor in col_anchors:
-		try:
-			if anchor.get('href') != None and anchor.get('href') != '':
-				href = anchor['href']
-				anchor.attrs.clear()
-
-				if href[0] != '/' and href[:4] != 'http':
-					href.replace('/..', '')
-					href.replace('../', '')
-					href.replace('..', '')
-					anchor['href'] = f'/{href}'
-				else:
-					href.replace('/..', '')
-					href.replace('../', '')
-					href.replace('..', '')
-					anchor['href'] = href
-
-				if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
-				and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
-				and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
-				and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
-					anchor.string = f'INTERNAL LINK {anchor.string}'
-
-			else:
-				anchor.attrs.clear()
-
-		except:
-			pass
-			# print('Anchor:', anchor)
+	# for anchor in col_anchors:
+	# 	try:
+	# 		if anchor.get('href') != None and anchor.get('href') != '':
+	# 			href = anchor['href']
+	# 			anchor.attrs.clear()
+	#
+	# 			if href[0] != '/' and href[:4] != 'http':
+	# 				href.replace('/..', '')
+	# 				href.replace('../', '')
+	# 				href.replace('..', '')
+	# 				anchor['href'] = f'/{href}'
+	# 			else:
+	# 				href.replace('/..', '')
+	# 				href.replace('../', '')
+	# 				href.replace('..', '')
+	# 				anchor['href'] = href
+	#
+	# 			if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
+	# 			and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
+	# 			and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
+	# 			and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
+	# 				anchor.string = f'INTERNAL LINK {anchor.string}'
+	#
+	# 		else:
+	# 			anchor.attrs.clear()
+	#
+	# 	except:
+	# 		pass
+	# 		# print('Anchor:', anchor)
 
 	col = remove_tags(str(col))
 

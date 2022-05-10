@@ -29,7 +29,6 @@ def get_content(web_page):
 	try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
-		print(1)
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -57,6 +56,7 @@ def get_content(web_page):
 
 		if web_soup.find(id='main').find_all(id='news-list') != []:
 			news = 'news'
+		print(1)
 
 		# if web_soup.find(class_='menu-level-0') != None:
 		# 	page_nav = web_soup.find(class_='menu-level-0').find_all('a')

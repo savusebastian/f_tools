@@ -31,33 +31,32 @@ def get_content(web_page):
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 		content = web_soup.find(id='main')
 
-		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
-			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
+		# if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
+		# 	meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
+		#
+		# if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
+		# 	meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
+		#
+		# if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
+		# 	meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
 
-		if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
-			meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
-
-		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
-			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
-
-		if content.find_all('form') != []:
-			form = 'form'
-
-		if content.find_all('embed') != []:
-			embed = 'embed'
-
-		if content.find_all('iframe') != []:
-			iframe = 'iframe'
-
-		if content.find_all(id='calendar') != []:
-			calendar = 'calendar'
-
-		if content.find_all(class_='staff-directory') != []:
-			staff = 'staff'
-
-		if content.find_all(id='news-list') != []:
-			news = 'news'
-		print(1)
+		# if content.find_all('form') != []:
+		# 	form = 'form'
+		#
+		# if content.find_all('embed') != []:
+		# 	embed = 'embed'
+		#
+		# if content.find_all('iframe') != []:
+		# 	iframe = 'iframe'
+		#
+		# if content.find_all(id='calendar') != []:
+		# 	calendar = 'calendar'
+		#
+		# if content.find_all(class_='staff-directory') != []:
+		# 	staff = 'staff'
+		#
+		# if content.find_all(id='news-list') != []:
+		# 	news = 'news'
 
 		# if web_soup.find(class_='menu-level-0') != None:
 		# 	page_nav = web_soup.find(class_='menu-level-0').find_all('a')
@@ -67,6 +66,7 @@ def get_content(web_page):
 		# Content
 		col1 = content
 		col1 = get_column(col1)
+		print(1)
 		# if content != None and content != '':
 		# 	col1 = content
 		# 	col1 = get_column(col1)

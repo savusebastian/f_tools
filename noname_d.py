@@ -62,13 +62,13 @@ def get_content(web_page):
 			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
-		print(page_nav)
 		# Content
 		if web_soup.find(id='content') != None and web_soup.find(id='content') != '':
 			col1 = web_soup.find(id='content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
+		print(page_nav)
 
 		col1 = str(col1)
 

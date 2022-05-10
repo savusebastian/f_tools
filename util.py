@@ -40,6 +40,7 @@ def clean_src(src):
 	for x in split:
 		out += f'/{x}'
 
+	print(out)
 	return out
 
 

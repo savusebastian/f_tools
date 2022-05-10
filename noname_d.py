@@ -13,6 +13,7 @@ def get_content(web_page):
 	col2, col3, col4 = '', '', ''
 	col_num = '1'
 	page_nav = None
+	page_nav2 = None
 	meta_title = ''
 	meta_keywords = ''
 	meta_desc = ''
@@ -62,13 +63,15 @@ def get_content(web_page):
 			print(page_nav)
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
+		page_nav2 = page_nav
+
 		# Content
 		if web_soup.find(id='content') != None and web_soup.find(id='content') != '':
 			col1 = web_soup.find(id='content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
-		print(page_nav)
+		print(page_nav, page_nav2)
 
 		col1 = str(col1)
 
@@ -105,7 +108,6 @@ def get_content(web_page):
 			issue_pages_counter = 1
 		elif len(col4) > 0:
 			col_num = '4'
-		print(page_nav)
 
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 

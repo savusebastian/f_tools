@@ -28,6 +28,7 @@ def get_content(web_page):
 	# if web_page != '#':
 	try:
 		web_link = requests.get(web_page, timeout=5).content
+		print(1)
 		web_soup = BeautifulSoup(web_link, 'html.parser')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -64,7 +65,6 @@ def get_content(web_page):
 
 		# Content
 		col1 = web_soup.find(id='main')
-		print(col1)
 		col1 = get_column(col1)
 		# if web_soup.find(id='main') != None and web_soup.find(id='main') != '':
 		# 	col1 = web_soup.find(id='main')

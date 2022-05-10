@@ -13,7 +13,6 @@ def get_content(web_page):
 	col2, col3, col4 = '', '', ''
 	col_num = '1'
 	page_nav = None
-	page_nav2 = None
 	meta_title = ''
 	meta_keywords = ''
 	meta_desc = ''

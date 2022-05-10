@@ -235,7 +235,7 @@ if __name__ == '__main__':
 
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
 										for nav_link in nav_sec:
-											print(nav_link)
+											print(type(nav_link))
 											href = nav_link.get('href')
 
 											if len(href) > 1 and href[:2] == '//':

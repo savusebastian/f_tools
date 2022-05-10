@@ -69,7 +69,6 @@ def get_content(web_page):
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
-		print(page_nav)
 
 		col1 = str(col1)
 

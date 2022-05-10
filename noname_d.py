@@ -104,7 +104,7 @@ def get_content(web_page):
 			issue_pages_counter = 1
 		elif len(col4) > 0:
 			col_num = '4'
-
+		print(page_nav)
 		return col1, col2, col3, col4, col_num, page_nav, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, issue_pages_counter
 
 	# else:

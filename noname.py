@@ -149,8 +149,8 @@ if __name__ == '__main__':
 'https://www.bsd7.org/our_district/long_range_strategic_plan/l_r_s_p_2012-2013/l_r_s_p_implementation_framework_2012-2013_update',
 'https://www.bsd7.org/our_district/long_range_strategic_plan/l_r_s_p_2011-2012',
 	]
-	mainfolder = 'compton'
-	school_name = 'compton'
+	mainfolder = 'bsd7'
+	school_name = 'bsd7'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

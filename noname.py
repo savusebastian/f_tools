@@ -101,30 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://audubon.smfcsd.net/about-audubon/principals-message.html',
-'https://audubon.smfcsd.net/contact/contact-us.html',
-'https://audubon.smfcsd.net/contact/staff-directory.html',
-'https://audubon.smfcsd.net/about-audubon/school-mission.html',
-'https://audubon.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://audubon.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://audubon.smfcsd.net/about-audubon/parent-resources/audubon-school-handbook.html',
-'https://audubon.smfcsd.net/about-audubon/pbis.html',
-'https://audubon.smfcsd.net/academic-services/library.html',
-'https://audubon.smfcsd.net/classroom-pages.html',
-'https://audubon.smfcsd.net/classroom-pages/transitional-kindergarten.html',
-'https://audubon.smfcsd.net/classroom-pages/kindergarten.html',
-'https://audubon.smfcsd.net/classroom-pages/first-grade.html',
-'https://audubon.smfcsd.net/classroom-pages/second-grade.html',
-'https://audubon.smfcsd.net/classroom-pages/third-grade.html',
-'https://audubon.smfcsd.net/classroom-pages/fourth-grade.html',
-'https://audubon.smfcsd.net/classroom-pages/fifth-grade.html',
-'https://audubon.smfcsd.net/community/education-foundation.html',
-'https://audubon.smfcsd.net/pta/welcome.html',
-'https://audubon.smfcsd.net/pta/executive-board.html',
-'https://audubon.smfcsd.net/community/school-site-council.html',
+		'https://baywood.smfcsd.net/principals-newsletter.html',
+'https://baywood.smfcsd.net/contact.html',
+'https://baywood.smfcsd.net/about-baywood/school-mission.html',
+'https://baywood.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://baywood.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://baywood.smfcsd.net/pta/baywood-pta.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'audubon'
+	school_name = 'baywood'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -101,29 +101,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://fiesta-gardens.smfcsd.net/contact-us.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/school-mission.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/program-description.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/common-dress-policy.html',
-'https://fiesta-gardens.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/bell-schedules.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/general-information.html',
-'https://fiesta-gardens.smfcsd.net/about-fgis/pbis.html',
-'https://fiesta-gardens.smfcsd.net/media-center-6/library.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/preschool.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/kinder.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/first-grade.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/second-grade.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/third-grade.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/fourth-grade.html',
-'https://fiesta-gardens.smfcsd.net/classroom-pages/fifth-grade.html',
-'https://fiesta-gardens.smfcsd.net/community/english-language-advisory-committee.html',
-'https://fiesta-gardens.smfcsd.net/community/school-site-council.html',
-'https://fiesta-gardens.smfcsd.net/news-and-announcements/parent-bulletin.html',
+		'https://foster-city.smfcsd.net/contact/contact-us.html',
+'https://foster-city.smfcsd.net/contact/staff-directory.html',
+'https://foster-city.smfcsd.net/about-foster-city-elementary/school-mission.html',
+'https://foster-city.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://foster-city.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://foster-city.smfcsd.net/health-and-safety/drop-off-and-pick-up-procedures.html',
+'https://foster-city.smfcsd.net/about-foster-city-elementary/pbis.html',
+'https://foster-city.smfcsd.net/classroom-pages.html',
+'https://foster-city.smfcsd.net/classroom-pages/transitional-kindergarten/transitional-kindergarten-information.html',
+'https://foster-city.smfcsd.net/classroom-pages/kindergarten/kindergarten-information.html',
+'https://foster-city.smfcsd.net/classroom-pages/first-grade.html',
+'https://foster-city.smfcsd.net/classroom-pages/second-grade.html',
+'https://foster-city.smfcsd.net/classroom-pages/third-grade.html',
+'https://foster-city.smfcsd.net/classroom-pages/fourth-grade.html',
+'https://foster-city.smfcsd.net/classroom-pages/fifth-grade.html',
+'https://foster-city.smfcsd.net/community/education-foundation.html',
+'https://foster-city.smfcsd.net/pta.html',
+'https://foster-city.smfcsd.net/community/school-site-council.html',
+'https://foster-city.smfcsd.net/news-and-announcements/news.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'fiesta-gardens'
+	school_name = 'foster-city'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

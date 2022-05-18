@@ -101,24 +101,29 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://north-shoreview.smfcsd.net/about-north-shoreview/the-montessori-method.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/features-and-traditions.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/about-north-shoreview-montessori.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/public-montessori.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/montessori-expansion.html',
-'https://north-shoreview.smfcsd.net/contact/contact-us.html',
-'https://north-shoreview.smfcsd.net/contact/staff-directory.html',
-'https://north-shoreview.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://north-shoreview.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/parent-handbook.html',
-'https://north-shoreview.smfcsd.net/classroom-pages/library.html',
-'https://north-shoreview.smfcsd.net/support-north-shoreview/volunteer-information.html',
-'https://north-shoreview.smfcsd.net/pta/visit-the-pta-website.html',
-'https://north-shoreview.smfcsd.net/academic-services/preschool.html',
-'https://north-shoreview.smfcsd.net/academic-services/middle-school-information.html',
+		'https://bayside.smfcsd.net/contact/contact-us.html',
+'https://bayside.smfcsd.net/contact/staff-directory.html',
+'https://bayside.smfcsd.net/about-bayside-stem/academic-services/academic-overview.html',
+'https://bayside.smfcsd.net/about-bayside-steam/school-uniform.html',
+'https://bayside.smfcsd.net/about-bayside-stem/school-uniform.html',
+'https://bayside.smfcsd.net/about-bayside-steam/steam-handbook.html',
+'https://bayside.smfcsd.net/about-bayside-stem/bayside-handbook.html',
+'https://bayside.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://bayside.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
+'https://bayside.smfcsd.net/community/parent-involvement-workshops.html',
+'https://bayside.smfcsd.net/about-bayside-stem/counseling/school-counselors.html',
+'https://bayside.smfcsd.net/about-bayside-stem/student-activities/athletics.html',
+'https://bayside.smfcsd.net/about-bayside-stem/student-life-at-bayside-stem.html',
+'https://bayside.smfcsd.net/about-bayside-stem/academic-services/electives.html',
+'https://bayside.smfcsd.net/about-bayside-stem/academic-services/music.html',
+'https://bayside.smfcsd.net/about-bayside-stem/library.html',
+'https://bayside.smfcsd.net/community/education-foundation.html',
+'https://bayside.smfcsd.net/community/english-language-advisory-committee.html',
+'https://bayside.smfcsd.net/community/parent-meetings/pta.html',
+'https://bayside.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'north-shoreview'
+	school_name = 'bayside'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

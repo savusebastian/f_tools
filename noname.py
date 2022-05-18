@@ -101,23 +101,37 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://bowditch.smfcsd.net/about-bowditch/bowditch-administration.html',
-'https://bowditch.smfcsd.net/contact/contact-us.html',
-'https://bowditch.smfcsd.net/contact/staff-directory.html',
-'https://bowditch.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://bowditch.smfcsd.net/about-bowditch/attendance.html',
-'https://bowditch.smfcsd.net/health-and-safety/counseling.html',
-'https://bowditch.smfcsd.net/student-activities/after-school-sports.html',
-'https://bowditch.smfcsd.net/student-activities/bowditch-theater.html',
-'https://bowditch.smfcsd.net/academic-services/library-learning--center.html',
-'https://bowditch.smfcsd.net/news-and-announcements/bowditch-news.html',
-'https://bowditch.smfcsd.net/news-and-announcements/the-sail.html',
-'https://bowditch.smfcsd.net/community/education-foundation.html',
-'https://bowditch.smfcsd.net/ptsa/ptsa.html',
-'https://bowditch.smfcsd.net/student-activities/student-council.html',
+		'https://parkside.smfcsd.net/about-parkside/principals-messsage.html',
+'https://parkside.smfcsd.net/about-parkside/about-montessori.html',
+'https://parkside.smfcsd.net/about-parkside/traditional-vs-montessori-classroom.html',
+'https://parkside.smfcsd.net/about-parkside/features-of-a-montessori-classroom.html',
+'https://parkside.smfcsd.net/contact/contact-us.html',
+'https://parkside.smfcsd.net/about-parkside/program-overview.html',
+'https://parkside.smfcsd.net/contact/staff-directory.html',
+'https://parkside.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://parkside.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://parkside.smfcsd.net/health-and-safety/arrival-and-dismissal-procedures.html',
+'https://parkside.smfcsd.net/academic-services/academic-overview.html',
+'https://parkside.smfcsd.net/academic-services/adolescent-program.html',
+'https://parkside.smfcsd.net/academic-services/additional-school-programs.html',
+'https://parkside.smfcsd.net/academic-services/student-support-programs.html',
+'https://docs.google.com/document/d/1ssh_kYqwZzYj3LVv9wrkovGrEFIxqHdmOiCBQGzDwSw/edit?usp=sharing',
+'https://docs.google.com/document/d/1I53_kLISwAPayhLg39kgZHyMVYPSZuYcmdg7IzeCkxU/edit?usp=sharing',
+'https://parkside.smfcsd.net/pta-and-parent-volunteering/volunteering-information.html',
+'https://parkside.smfcsd.net/pta-and-parent-volunteering/parents-as-classroom-assistants--program.html',
+'https://parkside.smfcsd.net/about-parkside/school-site-council.html',
+'https://parkside.smfcsd.net/pta-and-parent-volunteering/parkside-montessori-pta.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms/preschool.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms/primary-tk-and-kindergarten.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms/lower-elementary-1-3.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms/upper-elementary-4-6.html',
+'https://parkside.smfcsd.net/our-teachers-and-classrooms/special-day-classes.html',
+'https://parkside.smfcsd.net/news-and-announcements/principal-newsletters.html',
+'https://parkside.smfcsd.net/news-and-announcements/how-information-is-communicated.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'bowditch'
+	school_name = 'parkside'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

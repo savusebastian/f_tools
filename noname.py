@@ -101,29 +101,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://bayside.smfcsd.net/contact/contact-us.html',
-'https://bayside.smfcsd.net/contact/staff-directory.html',
-'https://bayside.smfcsd.net/about-bayside-stem/academic-services/academic-overview.html',
-'https://bayside.smfcsd.net/about-bayside-steam/school-uniform.html',
-'https://bayside.smfcsd.net/about-bayside-stem/school-uniform.html',
-'https://bayside.smfcsd.net/about-bayside-steam/steam-handbook.html',
-'https://bayside.smfcsd.net/about-bayside-stem/bayside-handbook.html',
-'https://bayside.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://bayside.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://bayside.smfcsd.net/community/parent-involvement-workshops.html',
-'https://bayside.smfcsd.net/about-bayside-stem/counseling/school-counselors.html',
-'https://bayside.smfcsd.net/about-bayside-stem/student-activities/athletics.html',
-'https://bayside.smfcsd.net/about-bayside-stem/student-life-at-bayside-stem.html',
-'https://bayside.smfcsd.net/about-bayside-stem/academic-services/electives.html',
-'https://bayside.smfcsd.net/about-bayside-stem/academic-services/music.html',
-'https://bayside.smfcsd.net/about-bayside-stem/library.html',
-'https://bayside.smfcsd.net/community/education-foundation.html',
-'https://bayside.smfcsd.net/community/english-language-advisory-committee.html',
-'https://bayside.smfcsd.net/community/parent-meetings/pta.html',
-'https://bayside.smfcsd.net/community/school-site-council.html',
+		'https://audubon.smfcsd.net/about-audubon/principals-message.html',
+'https://audubon.smfcsd.net/contact/contact-us.html',
+'https://audubon.smfcsd.net/contact/staff-directory.html',
+'https://audubon.smfcsd.net/about-audubon/school-mission.html',
+'https://audubon.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://audubon.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://audubon.smfcsd.net/about-audubon/parent-resources/audubon-school-handbook.html',
+'https://audubon.smfcsd.net/about-audubon/pbis.html',
+'https://audubon.smfcsd.net/academic-services/library.html',
+'https://audubon.smfcsd.net/classroom-pages.html',
+'https://audubon.smfcsd.net/classroom-pages/transitional-kindergarten.html',
+'https://audubon.smfcsd.net/classroom-pages/kindergarten.html',
+'https://audubon.smfcsd.net/classroom-pages/first-grade.html',
+'https://audubon.smfcsd.net/classroom-pages/second-grade.html',
+'https://audubon.smfcsd.net/classroom-pages/third-grade.html',
+'https://audubon.smfcsd.net/classroom-pages/fourth-grade.html',
+'https://audubon.smfcsd.net/classroom-pages/fifth-grade.html',
+'https://audubon.smfcsd.net/community/education-foundation.html',
+'https://audubon.smfcsd.net/pta/welcome.html',
+'https://audubon.smfcsd.net/pta/executive-board.html',
+'https://audubon.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'bayside'
+	school_name = 'audubon'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -101,17 +101,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://brewer-island.smfcsd.net/contact/staff-directory.html',
-'https://brewer-island.smfcsd.net/about-brewer-island/school-mission-and-vision.html',
-'https://brewer-island.smfcsd.net/calendar-and-menu/district-school-monthly-calendar.html',
-'https://brewer-island.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://brewer-island.smfcsd.net/academic-services-and-student-learning/library.html',
-'https://brewer-island.smfcsd.net/pta.html',
-'https://brewer-island.smfcsd.net/about-brewer-island/school-site-council.html',
-'https://brewer-island.smfcsd.net/news-and-announcements/principals-newsletter.html',
+		'https://college-park.smfcsd.net/contact/contact-us.html',
+'https://college-park.smfcsd.net/contact/staff-directory.html',
+'https://college-park.smfcsd.net/about-college-park/mission-and-vision.html',
+'https://college-park.smfcsd.net/academic-services/mandarin-immersion.html',
+'https://college-park.smfcsd.net/community/mandarin-immersion-preschool.html',
+'https://college-park.smfcsd.net/new-family-welcome-packet.html',
+'https://college-park.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://college-park.smfcsd.net/about-college-park/school-uniforms.html',
+'https://college-park.smfcsd.net/about-college-park/bell-schedule-and-school-hours.html',
+'https://college-park.smfcsd.net/parent-organizations/friends-of-mandarin-scholars.html',
+'https://college-park.smfcsd.net/parent-organizations/college-park-pta.html',
+'https://college-park.smfcsd.net/community/school-site-council.html',
+'https://college-park.smfcsd.net/about-college-park/panda-press-newsletter.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'brewer-island'
+	school_name = 'college-park'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

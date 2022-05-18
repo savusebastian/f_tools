@@ -101,31 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://lead.smfcsd.net/about-lead/principals-message.html',
-'https://lead.smfcsd.net/contact/contact-us.html',
-'https://lead.smfcsd.net/contact/staff-directory.html',
-'https://lead.smfcsd.net/about-lead/school-mission-and-vision.html',
-'https://lead.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://lead.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://lead.smfcsd.net/student-support/school-counseling.html',
-'https://lead.smfcsd.net/about-lead/safe-driving.html',
-'https://lead.smfcsd.net/about-lead/core-four-+-pbis.html',
-'https://lead.smfcsd.net/academic-services/library.html',
-'https://lead.smfcsd.net/academic-services/resources.html',
-'https://lead.smfcsd.net/classroom-pages/preschool/preschool-sdc-overview.html',
-'https://lead.smfcsd.net/classroom-pages/tk/tk-overview.html',
-'https://lead.smfcsd.net/classroom-pages/kindergarten/kindergarten-overview.html',
-'https://lead.smfcsd.net/classroom-pages/1st-grade/1st-grade-overview.html',
-'https://lead.smfcsd.net/classroom-pages/2nd-grade/2nd-grade-overview.html',
-'https://lead.smfcsd.net/classroom-pages/3rd-grade/3rd-grade-overview.html',
-'https://lead.smfcsd.net/classroom-pages/4th-grade/4th-grade-overview.html',
-'https://lead.smfcsd.net/classroom-pages/5th-grade/5th-grade-overview.html',
-'https://lead.smfcsd.net/pta/pta-website.html',
-'https://lead.smfcsd.net/community/school-site-council.html',
-'https://lead.smfcsd.net/about-lead/weekly-newsletter.html',
+		'https://meadow-heights.smfcsd.net/contact/contact-us.html',
+'https://meadow-heights.smfcsd.net/contact/staff-directory.html',
+'https://meadow-heights.smfcsd.net/about-meadow-heights/school-mission.html',
+'https://meadow-heights.smfcsd.net/meadow-heights--and-district-event-calendar-and-school-meal-menu/event-calendar.html',
+'https://meadow-heights.smfcsd.net/about-meadow-heights/meadow-heights-----2019-2020-handbook.html',
+'https://meadow-heights.smfcsd.net/health-and-safety/school-parking.html',
+'https://meadow-heights.smfcsd.net/pta/meadow-heights-pta.html',
+'https://meadow-heights.smfcsd.net/community/school-site-council.html',
+'https://meadow-heights.smfcsd.net/communications-2021-2022-school-year.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'lead'
+	school_name = 'meadow-heights'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

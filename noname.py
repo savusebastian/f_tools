@@ -101,17 +101,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://beresford.smfcsd.net/contact-us/staff-directory.html',
-'https://beresford.smfcsd.net/about-us/calendar.html',
-'https://beresford.smfcsd.net/about-us/bell-schedule.html',
-'https://beresford.smfcsd.net/attendance.html',
-'https://beresford.smfcsd.net/about-us/pbis.html',
-'https://beresford.smfcsd.net/get-involved/beresford-pta.html',
-'https://beresford.smfcsd.net/get-involved/school-site-council.html',
-'https://beresford.smfcsd.net/principal-weekly-newsletter.html',
+		'https://brewer-island.smfcsd.net/contact/staff-directory.html',
+'https://brewer-island.smfcsd.net/about-brewer-island/school-mission-and-vision.html',
+'https://brewer-island.smfcsd.net/calendar-and-menu/district-school-monthly-calendar.html',
+'https://brewer-island.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
+'https://brewer-island.smfcsd.net/academic-services-and-student-learning/library.html',
+'https://brewer-island.smfcsd.net/pta.html',
+'https://brewer-island.smfcsd.net/about-brewer-island/school-site-council.html',
+'https://brewer-island.smfcsd.net/news-and-announcements/principals-newsletter.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'beresford'
+	school_name = 'brewer-island'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

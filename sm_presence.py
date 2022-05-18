@@ -117,81 +117,39 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.puyallup.k12.wa.us'
+	district = 'https://www.bsd7.org'
 	all_sites = [
 		f'{district}',
-		f'https://bro.puyallup.k12.wa.us',
-		f'https://car.puyallup.k12.wa.us',
-		f'https://eva.puyallup.k12.wa.us',
-		f'https://fir.puyallup.k12.wa.us',
-		f'https://fru.puyallup.k12.wa.us',
-		f'https://edg.puyallup.k12.wa.us',
-		f'https://hun.puyallup.k12.wa.us',
-		f'https://kar.puyallup.k12.wa.us',
-		f'https://map.puyallup.k12.wa.us',
-		f'https://mee.puyallup.k12.wa.us',
-		f'https://mtv.puyallup.k12.wa.us',
-		f'https://nor.puyallup.k12.wa.us',
-		f'https://pop.puyallup.k12.wa.us',
-		f'https://rid.puyallup.k12.wa.us',
-		f'https://sha.puyallup.k12.wa.us',
-		f'https://spi.puyallup.k12.wa.us',
-		f'https://ste.puyallup.k12.wa.us',
-		f'https://sun.puyallup.k12.wa.us',
-		f'https://wal.puyallup.k12.wa.us',
-		f'https://wil.puyallup.k12.wa.us',
-		f'https://woo.puyallup.k12.wa.us',
-		f'https://zei.puyallup.k12.wa.us',
-		f'https://ajh.puyallup.k12.wa.us',
-		f'https://bjh.puyallup.k12.wa.us',
-		f'https://ejh.puyallup.k12.wa.us',
-		f'https://fjh.puyallup.k12.wa.us',
-		f'https://gvjh.puyallup.k12.wa.us',
-		f'https://kjh.puyallup.k12.wa.us',
-		f'https://sjh.puyallup.k12.wa.us',
-		f'https://erhs.puyallup.k12.wa.us',
-		f'https://pdl.puyallup.k12.wa.us',
-		f'https://phs.puyallup.k12.wa.us',
-		f'https://rhs.puyallup.k12.wa.us',
-		f'https://whs.puyallup.k12.wa.us',
+		f'https://ed.bsd7.org',
+		f'https://ha.bsd7.org',
+		f'https://hy.bsd7.org',
+		f'https://ir.bsd7.org',
+		f'https://lo.bsd7.org',
+		f'https://ml.bsd7.org',
+		f'https://ms.bsd7.org',
+		f'https://wh.bsd7.org',
+		f'https://cjms.bsd7.org',
+		f'https://sms.bsd7.org',
+		f'https://bhs.bsd7.org',
+		f'https://bridger.bsd7.org',
+		f'https://ghs.bsd7.org',
 	]
 
 	schools = [
 		'district',
-		'bro',
-		'car',
-		'eva',
-		'fir',
-		'fru',
-		'edg',
-		'hun',
-		'kar',
-		'map',
-		'mee',
-		'mtv',
-		'nor',
-		'pop',
-		'rid',
-		'sha',
-		'spi',
-		'ste',
-		'sun',
-		'wal',
-		'wil',
-		'woo',
-		'zei',
-		'ajh',
-		'bjh',
-		'ejh',
-		'fjh',
-		'gvjh',
-		'kjh',
-		'sjh',
-		'erhs',
-		'pdl',
-		'phs',
-		'rhs',
-		'whs',
+		'ed',
+		'ha',
+		'hy',
+		'ir',
+		'lo',
+		'ml',
+		'ms',
+		'wh',
+		'cjms',
+		'sms',
+		'bhs',
+		'bridger',
+		'ghs',
 	]
 
 	mainfolder = all_sites[0].split('.')[1]
@@ -213,10 +171,10 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(class_='megamenu')
+			sitemap = soup.find(id='mMenuCMS')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='portal-links')
+			sitemap2 = soup.find(class_='quicklinks-container')
 
 			if sitemap2:
 				list_items2 = sitemap2.find_all('a')

@@ -101,26 +101,23 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://borel.smfcsd.net/about-borel/school-vision.html',
-'https://borel.smfcsd.net/contact/contact-us.html',
-'https://borel.smfcsd.net/contact/staff-directory.html',
-'https://borel.smfcsd.net/about-borel/parent-handbook.html',
-'https://borel.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://borel.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://borel.smfcsd.net/academic-services/outdoor-ed.html',
-'https://borel.smfcsd.net/borel-counseling-team.html',
-'https://borel.smfcsd.net/student-activities/athletics/athletics-overview---forms.html',
-'https://borel.smfcsd.net/student-activities/borel-clubs.html',
-'https://borel.smfcsd.net/student-activities/block-b.html',
-'https://borel.smfcsd.net/student-activities/drama.html',
-'https://borel.smfcsd.net/news-and-announcements/email-signup.html',
-'https://borel.smfcsd.net/news-and-announcements/bobcat-blast.html',
-'https://borel.smfcsd.net/student-activities/borel-cultural-fair.html',
-'https://borel.smfcsd.net/community/school-site-council.html',
-'https://borel.smfcsd.net/parent-teacher-associate-pta.html',
+		'https://bowditch.smfcsd.net/about-bowditch/bowditch-administration.html',
+'https://bowditch.smfcsd.net/contact/contact-us.html',
+'https://bowditch.smfcsd.net/contact/staff-directory.html',
+'https://bowditch.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://bowditch.smfcsd.net/about-bowditch/attendance.html',
+'https://bowditch.smfcsd.net/health-and-safety/counseling.html',
+'https://bowditch.smfcsd.net/student-activities/after-school-sports.html',
+'https://bowditch.smfcsd.net/student-activities/bowditch-theater.html',
+'https://bowditch.smfcsd.net/academic-services/library-learning--center.html',
+'https://bowditch.smfcsd.net/news-and-announcements/bowditch-news.html',
+'https://bowditch.smfcsd.net/news-and-announcements/the-sail.html',
+'https://bowditch.smfcsd.net/community/education-foundation.html',
+'https://bowditch.smfcsd.net/ptsa/ptsa.html',
+'https://bowditch.smfcsd.net/student-activities/student-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'borel'
+	school_name = 'bowditch'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

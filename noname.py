@@ -101,32 +101,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://sunnybrae.smfcsd.net/about/principals-corner.html',
-'https://sunnybrae.smfcsd.net/contact-us/staff-directory.html',
-'https://sunnybrae.smfcsd.net/about/mission-and-vision.html',
-'https://sunnybrae.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://sunnybrae.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://sunnybrae.smfcsd.net/about/school-handbook.html',
-'https://sunnybrae.smfcsd.net/health-and-safety/drop-off-pick-up.html',
-'https://sunnybrae.smfcsd.net/academic-services/pbis.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mrs-arlene-mateo-sdc-moderate-severe-k-5.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/ms-a-transitional-kindergarten.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mrs-jessica-laura-k.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/ms-laura-castro1st.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/ms-tina-kwan-1st.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mrs-suzanne-deardorff-2nd.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/ms-robin-york-2nd.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/ms-shannon-herkert-3rd.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mrs-leticia-contreras3rd.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mrs-zahra-nadeem-4th.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mr-gabriel-alegre-5th.html',
-'https://sunnybrae.smfcsd.net/classroom-pages/mr-ryan-murray-5th.html',
-'https://sunnybrae.smfcsd.net/parent-organizations/volunteering.html',
-'https://sunnybrae.smfcsd.net/parent-organizations/sunnybrae-pta.html',
-'https://sunnybrae.smfcsd.net/community/school-site-council.html',
+		'https://abbott.smfcsd.net/news-and-announcements/from-the-principal.html',
+'https://abbott.smfcsd.net/news-and-announcements/stay-informed.html',
+'https://abbott.smfcsd.net/about-abbott/school-mission-and-vision.html',
+'https://abbott.smfcsd.net/contact/staff-directory.html',
+'https://abbott.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://abbott.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://abbott.smfcsd.net/about-abbott/attendance.html',
+'https://abbott.smfcsd.net/academic-services/materials-and-textbooks.html',
+'https://abbott.smfcsd.net/counseling-support/wellness-resources.html',
+'https://abbott.smfcsd.net/student-activities-after-school-sports-after-school-sports-overview-3.html',
+'https://abbott.smfcsd.net/student-activities/associated-student-body-asb.html',
+'https://abbott.smfcsd.net/student-activities/student-clubs.html',
+'https://abbott.smfcsd.net/student-activities/falcon-news.html',
+'https://abbott.smfcsd.net/student-activities/abbott-musical.html',
+'https://abbott.smfcsd.net/academic-services/library-services.html',
+'https://abbott.smfcsd.net/community/education-foundation.html',
+'https://abbott.smfcsd.net/community/english-learners-advisory-council.html',
+'https://abbott.smfcsd.net/community/parent-teacher-association.html',
+'https://abbott.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'sunnybrae'
+	school_name = 'abbott'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

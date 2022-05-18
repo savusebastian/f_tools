@@ -101,37 +101,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://parkside.smfcsd.net/about-parkside/principals-messsage.html',
-'https://parkside.smfcsd.net/about-parkside/about-montessori.html',
-'https://parkside.smfcsd.net/about-parkside/traditional-vs-montessori-classroom.html',
-'https://parkside.smfcsd.net/about-parkside/features-of-a-montessori-classroom.html',
-'https://parkside.smfcsd.net/contact/contact-us.html',
-'https://parkside.smfcsd.net/about-parkside/program-overview.html',
-'https://parkside.smfcsd.net/contact/staff-directory.html',
-'https://parkside.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://parkside.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://parkside.smfcsd.net/health-and-safety/arrival-and-dismissal-procedures.html',
-'https://parkside.smfcsd.net/academic-services/academic-overview.html',
-'https://parkside.smfcsd.net/academic-services/adolescent-program.html',
-'https://parkside.smfcsd.net/academic-services/additional-school-programs.html',
-'https://parkside.smfcsd.net/academic-services/student-support-programs.html',
-'https://docs.google.com/document/d/1ssh_kYqwZzYj3LVv9wrkovGrEFIxqHdmOiCBQGzDwSw/edit?usp=sharing',
-'https://docs.google.com/document/d/1I53_kLISwAPayhLg39kgZHyMVYPSZuYcmdg7IzeCkxU/edit?usp=sharing',
-'https://parkside.smfcsd.net/pta-and-parent-volunteering/volunteering-information.html',
-'https://parkside.smfcsd.net/pta-and-parent-volunteering/parents-as-classroom-assistants--program.html',
-'https://parkside.smfcsd.net/about-parkside/school-site-council.html',
-'https://parkside.smfcsd.net/pta-and-parent-volunteering/parkside-montessori-pta.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms/preschool.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms/primary-tk-and-kindergarten.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms/lower-elementary-1-3.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms/upper-elementary-4-6.html',
-'https://parkside.smfcsd.net/our-teachers-and-classrooms/special-day-classes.html',
-'https://parkside.smfcsd.net/news-and-announcements/principal-newsletters.html',
-'https://parkside.smfcsd.net/news-and-announcements/how-information-is-communicated.html',
+		'https://north-shoreview.smfcsd.net/about-north-shoreview/the-montessori-method.html',
+'https://north-shoreview.smfcsd.net/about-north-shoreview/features-and-traditions.html',
+'https://north-shoreview.smfcsd.net/about-north-shoreview/about-north-shoreview-montessori.html',
+'https://north-shoreview.smfcsd.net/about-north-shoreview/public-montessori.html',
+'https://north-shoreview.smfcsd.net/about-north-shoreview/montessori-expansion.html',
+'https://north-shoreview.smfcsd.net/contact/contact-us.html',
+'https://north-shoreview.smfcsd.net/contact/staff-directory.html',
+'https://north-shoreview.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://north-shoreview.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://north-shoreview.smfcsd.net/about-north-shoreview/parent-handbook.html',
+'https://north-shoreview.smfcsd.net/classroom-pages/library.html',
+'https://north-shoreview.smfcsd.net/support-north-shoreview/volunteer-information.html',
+'https://north-shoreview.smfcsd.net/pta/visit-the-pta-website.html',
+'https://north-shoreview.smfcsd.net/academic-services/preschool.html',
+'https://north-shoreview.smfcsd.net/academic-services/middle-school-information.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'parkside'
+	school_name = 'north-shoreview'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

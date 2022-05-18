@@ -101,22 +101,29 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://college-park.smfcsd.net/contact/contact-us.html',
-'https://college-park.smfcsd.net/contact/staff-directory.html',
-'https://college-park.smfcsd.net/about-college-park/mission-and-vision.html',
-'https://college-park.smfcsd.net/academic-services/mandarin-immersion.html',
-'https://college-park.smfcsd.net/community/mandarin-immersion-preschool.html',
-'https://college-park.smfcsd.net/new-family-welcome-packet.html',
-'https://college-park.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://college-park.smfcsd.net/about-college-park/school-uniforms.html',
-'https://college-park.smfcsd.net/about-college-park/bell-schedule-and-school-hours.html',
-'https://college-park.smfcsd.net/parent-organizations/friends-of-mandarin-scholars.html',
-'https://college-park.smfcsd.net/parent-organizations/college-park-pta.html',
-'https://college-park.smfcsd.net/community/school-site-council.html',
-'https://college-park.smfcsd.net/about-college-park/panda-press-newsletter.html',
+		'https://fiesta-gardens.smfcsd.net/contact-us.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/school-mission.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/program-description.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/common-dress-policy.html',
+'https://fiesta-gardens.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/bell-schedules.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/general-information.html',
+'https://fiesta-gardens.smfcsd.net/about-fgis/pbis.html',
+'https://fiesta-gardens.smfcsd.net/media-center-6/library.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/preschool.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/kinder.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/first-grade.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/second-grade.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/third-grade.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/fourth-grade.html',
+'https://fiesta-gardens.smfcsd.net/classroom-pages/fifth-grade.html',
+'https://fiesta-gardens.smfcsd.net/community/english-language-advisory-committee.html',
+'https://fiesta-gardens.smfcsd.net/community/school-site-council.html',
+'https://fiesta-gardens.smfcsd.net/news-and-announcements/parent-bulletin.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'college-park'
+	school_name = 'fiesta-gardens'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

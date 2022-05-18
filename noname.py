@@ -101,15 +101,22 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://baywood.smfcsd.net/principals-newsletter.html',
-'https://baywood.smfcsd.net/contact.html',
-'https://baywood.smfcsd.net/about-baywood/school-mission.html',
-'https://baywood.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://baywood.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://baywood.smfcsd.net/pta/baywood-pta.html',
+		'https://beach-park.smfcsd.net/about--beach-park/principals-welcome.html',
+'https://beach-park.smfcsd.net/contact/contact-us.html',
+'https://beach-park.smfcsd.net/contact/staff-directory.html',
+'https://beach-park.smfcsd.net/about--beach-park/vision-and-mission.html',
+'https://beach-park.smfcsd.net/about--beach-park/motto.html',
+'https://beach-park.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://beach-park.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
+'https://beach-park.smfcsd.net/about--beach-park/handbook.html',
+'https://beach-park.smfcsd.net/health-and-safety/drop-off-and-pick-up-procedures.html',
+'https://beach-park.smfcsd.net/wellness/pbis.html',
+'https://beach-park.smfcsd.net/community/ed-foundation.html',
+'https://beach-park.smfcsd.net/beach-park-pta.html',
+'https://beach-park.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'baywood'
+	school_name = 'beach-park'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

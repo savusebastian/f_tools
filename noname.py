@@ -101,28 +101,30 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://foster-city.smfcsd.net/contact/contact-us.html',
-'https://foster-city.smfcsd.net/contact/staff-directory.html',
-'https://foster-city.smfcsd.net/about-foster-city-elementary/school-mission.html',
-'https://foster-city.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://foster-city.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://foster-city.smfcsd.net/health-and-safety/drop-off-and-pick-up-procedures.html',
-'https://foster-city.smfcsd.net/about-foster-city-elementary/pbis.html',
-'https://foster-city.smfcsd.net/classroom-pages.html',
-'https://foster-city.smfcsd.net/classroom-pages/transitional-kindergarten/transitional-kindergarten-information.html',
-'https://foster-city.smfcsd.net/classroom-pages/kindergarten/kindergarten-information.html',
-'https://foster-city.smfcsd.net/classroom-pages/first-grade.html',
-'https://foster-city.smfcsd.net/classroom-pages/second-grade.html',
-'https://foster-city.smfcsd.net/classroom-pages/third-grade.html',
-'https://foster-city.smfcsd.net/classroom-pages/fourth-grade.html',
-'https://foster-city.smfcsd.net/classroom-pages/fifth-grade.html',
-'https://foster-city.smfcsd.net/community/education-foundation.html',
-'https://foster-city.smfcsd.net/pta.html',
-'https://foster-city.smfcsd.net/community/school-site-council.html',
-'https://foster-city.smfcsd.net/news-and-announcements/news.html',
+		'https://george-hall.smfcsd.net/about-george-hall/principalandrsquo;s-message.html',
+'https://george-hall.smfcsd.net/contact/contact-us.html',
+'https://george-hall.smfcsd.net/contact/staff-directory.html',
+'https://george-hall.smfcsd.net/about-george-hall/school-mission-and-vision.html',
+'https://george-hall.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://george-hall.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
+'https://george-hall.smfcsd.net/student-support/counseling-corner-with-ms-vang.html',
+'https://george-hall.smfcsd.net/health-and-safety/traffic-and-parking.html',
+'https://george-hall.smfcsd.net/academic-services/library.html',
+'https://george-hall.smfcsd.net/classroom-pages.html',
+'https://george-hall.smfcsd.net/classroom-pages/transitional-kindergarten-tk.html',
+'https://george-hall.smfcsd.net/classroom-pages/kindergarten.html',
+'https://george-hall.smfcsd.net/classroom-pages/first-grade.html',
+'https://george-hall.smfcsd.net/classroom-pages/second-grade.html',
+'https://george-hall.smfcsd.net/classroom-pages/third-grade.html',
+'https://george-hall.smfcsd.net/classroom-pages/fourth-grade.html',
+'https://george-hall.smfcsd.net/classroom-pages/fifth-grade.html',
+'https://george-hall.smfcsd.net/pta/pta-information.html',
+'https://george-hall.smfcsd.net/pta/parent-volunteer-hours.html',
+'https://george-hall.smfcsd.net/school-site-council.html',
+'https://george-hall.smfcsd.net/about-george-hall/family-communication.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'foster-city'
+	school_name = 'george-hall'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

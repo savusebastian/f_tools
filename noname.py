@@ -101,24 +101,32 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://san-mateo-park.smfcsd.net/about-san-mateo-park/principals-message.html',
-'https://san-mateo-park.smfcsd.net/contact/contact-us.html',
-'https://san-mateo-park.smfcsd.net/contact/staff-directory.html',
-'https://san-mateo-park.smfcsd.net/about-san-mateo-park/mission-statement.html',
-'https://san-mateo-park.smfcsd.net/about-san-mateo-park/our-vision.html',
-'https://san-mateo-park.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://san-mateo-park.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://san-mateo-park.smfcsd.net/about-san-mateo-park/absence-policy.html',
-'https://san-mateo-park.smfcsd.net/about-san-mateo-park/pbis.html',
-'https://san-mateo-park.smfcsd.net/about-san-mateo-park/library.html',
-'https://san-mateo-park.smfcsd.net/community/san-mateo-park-preschool.html',
-'https://san-mateo-park.smfcsd.net/community/our-garden.html',
-'https://san-mateo-park.smfcsd.net/parent-organizations/elac.html',
-'https://san-mateo-park.smfcsd.net/parent-organizations/park-school-pta.html',
-'https://san-mateo-park.smfcsd.net/community/school-site-council.html',
+		'https://sunnybrae.smfcsd.net/about/principals-corner.html',
+'https://sunnybrae.smfcsd.net/contact-us/staff-directory.html',
+'https://sunnybrae.smfcsd.net/about/mission-and-vision.html',
+'https://sunnybrae.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://sunnybrae.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://sunnybrae.smfcsd.net/about/school-handbook.html',
+'https://sunnybrae.smfcsd.net/health-and-safety/drop-off-pick-up.html',
+'https://sunnybrae.smfcsd.net/academic-services/pbis.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mrs-arlene-mateo-sdc-moderate-severe-k-5.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/ms-a-transitional-kindergarten.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mrs-jessica-laura-k.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/ms-laura-castro1st.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/ms-tina-kwan-1st.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mrs-suzanne-deardorff-2nd.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/ms-robin-york-2nd.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/ms-shannon-herkert-3rd.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mrs-leticia-contreras3rd.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mrs-zahra-nadeem-4th.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mr-gabriel-alegre-5th.html',
+'https://sunnybrae.smfcsd.net/classroom-pages/mr-ryan-murray-5th.html',
+'https://sunnybrae.smfcsd.net/parent-organizations/volunteering.html',
+'https://sunnybrae.smfcsd.net/parent-organizations/sunnybrae-pta.html',
+'https://sunnybrae.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'san-mateo-park'
+	school_name = 'sunnybrae'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

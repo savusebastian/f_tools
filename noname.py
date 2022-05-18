@@ -101,30 +101,28 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://george-hall.smfcsd.net/about-george-hall/principalandrsquo;s-message.html',
-'https://george-hall.smfcsd.net/contact/contact-us.html',
-'https://george-hall.smfcsd.net/contact/staff-directory.html',
-'https://george-hall.smfcsd.net/about-george-hall/school-mission-and-vision.html',
-'https://george-hall.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://george-hall.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://george-hall.smfcsd.net/student-support/counseling-corner-with-ms-vang.html',
-'https://george-hall.smfcsd.net/health-and-safety/traffic-and-parking.html',
-'https://george-hall.smfcsd.net/academic-services/library.html',
-'https://george-hall.smfcsd.net/classroom-pages.html',
-'https://george-hall.smfcsd.net/classroom-pages/transitional-kindergarten-tk.html',
-'https://george-hall.smfcsd.net/classroom-pages/kindergarten.html',
-'https://george-hall.smfcsd.net/classroom-pages/first-grade.html',
-'https://george-hall.smfcsd.net/classroom-pages/second-grade.html',
-'https://george-hall.smfcsd.net/classroom-pages/third-grade.html',
-'https://george-hall.smfcsd.net/classroom-pages/fourth-grade.html',
-'https://george-hall.smfcsd.net/classroom-pages/fifth-grade.html',
-'https://george-hall.smfcsd.net/pta/pta-information.html',
-'https://george-hall.smfcsd.net/pta/parent-volunteer-hours.html',
-'https://george-hall.smfcsd.net/school-site-council.html',
-'https://george-hall.smfcsd.net/about-george-hall/family-communication.html',
+		'https://highlands.smfcsd.net/principals-corner.html',
+'https://highlands.smfcsd.net/contact--us.html',
+'https://highlands.smfcsd.net/about/mission-and-vision.html',
+'https://highlands.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://highlands.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://highlands.smfcsd.net/smfcsd-handbook.html',
+'https://highlands.smfcsd.net/reporting-a-student-absence.html',
+'https://highlands.smfcsd.net/about/library.html',
+'https://highlands.smfcsd.net/classroom-pages.html',
+'https://highlands.smfcsd.net/classroom-pages/transitional-kindergarten.html',
+'https://highlands.smfcsd.net/classroom-pages/kindergarten.html',
+'https://highlands.smfcsd.net/classroom-pages/first-grade.html',
+'https://highlands.smfcsd.net/classroom-pages/second-grade.html',
+'https://highlands.smfcsd.net/classroom-pages/third-grade.html',
+'https://highlands.smfcsd.net/classroom-pages/fourth-grade.html',
+'https://highlands.smfcsd.net/classroom-pages/fifth-grade.html',
+'https://highlands.smfcsd.net/community/education-foundation.html',
+'https://highlands.smfcsd.net/highlands-pta/bear-bytes-newsletter.html',
+'https://highlands.smfcsd.net/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'george-hall'
+	school_name = 'highlands'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

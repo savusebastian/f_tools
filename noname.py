@@ -101,28 +101,26 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://abbott.smfcsd.net/news-and-announcements/from-the-principal.html',
-'https://abbott.smfcsd.net/news-and-announcements/stay-informed.html',
-'https://abbott.smfcsd.net/about-abbott/school-mission-and-vision.html',
-'https://abbott.smfcsd.net/contact/staff-directory.html',
-'https://abbott.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://abbott.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://abbott.smfcsd.net/about-abbott/attendance.html',
-'https://abbott.smfcsd.net/academic-services/materials-and-textbooks.html',
-'https://abbott.smfcsd.net/counseling-support/wellness-resources.html',
-'https://abbott.smfcsd.net/student-activities-after-school-sports-after-school-sports-overview-3.html',
-'https://abbott.smfcsd.net/student-activities/associated-student-body-asb.html',
-'https://abbott.smfcsd.net/student-activities/student-clubs.html',
-'https://abbott.smfcsd.net/student-activities/falcon-news.html',
-'https://abbott.smfcsd.net/student-activities/abbott-musical.html',
-'https://abbott.smfcsd.net/academic-services/library-services.html',
-'https://abbott.smfcsd.net/community/education-foundation.html',
-'https://abbott.smfcsd.net/community/english-learners-advisory-council.html',
-'https://abbott.smfcsd.net/community/parent-teacher-association.html',
-'https://abbott.smfcsd.net/community/school-site-council.html',
+		'https://borel.smfcsd.net/about-borel/school-vision.html',
+'https://borel.smfcsd.net/contact/contact-us.html',
+'https://borel.smfcsd.net/contact/staff-directory.html',
+'https://borel.smfcsd.net/about-borel/parent-handbook.html',
+'https://borel.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://borel.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://borel.smfcsd.net/academic-services/outdoor-ed.html',
+'https://borel.smfcsd.net/borel-counseling-team.html',
+'https://borel.smfcsd.net/student-activities/athletics/athletics-overview---forms.html',
+'https://borel.smfcsd.net/student-activities/borel-clubs.html',
+'https://borel.smfcsd.net/student-activities/block-b.html',
+'https://borel.smfcsd.net/student-activities/drama.html',
+'https://borel.smfcsd.net/news-and-announcements/email-signup.html',
+'https://borel.smfcsd.net/news-and-announcements/bobcat-blast.html',
+'https://borel.smfcsd.net/student-activities/borel-cultural-fair.html',
+'https://borel.smfcsd.net/community/school-site-council.html',
+'https://borel.smfcsd.net/parent-teacher-associate-pta.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'abbott'
+	school_name = 'borel'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

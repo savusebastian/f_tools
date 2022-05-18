@@ -101,28 +101,20 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://highlands.smfcsd.net/principals-corner.html',
-'https://highlands.smfcsd.net/contact--us.html',
-'https://highlands.smfcsd.net/about/mission-and-vision.html',
-'https://highlands.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://highlands.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://highlands.smfcsd.net/smfcsd-handbook.html',
-'https://highlands.smfcsd.net/reporting-a-student-absence.html',
-'https://highlands.smfcsd.net/about/library.html',
-'https://highlands.smfcsd.net/classroom-pages.html',
-'https://highlands.smfcsd.net/classroom-pages/transitional-kindergarten.html',
-'https://highlands.smfcsd.net/classroom-pages/kindergarten.html',
-'https://highlands.smfcsd.net/classroom-pages/first-grade.html',
-'https://highlands.smfcsd.net/classroom-pages/second-grade.html',
-'https://highlands.smfcsd.net/classroom-pages/third-grade.html',
-'https://highlands.smfcsd.net/classroom-pages/fourth-grade.html',
-'https://highlands.smfcsd.net/classroom-pages/fifth-grade.html',
-'https://highlands.smfcsd.net/community/education-foundation.html',
-'https://highlands.smfcsd.net/highlands-pta/bear-bytes-newsletter.html',
-'https://highlands.smfcsd.net/school-site-council.html',
+		'https://laurel.smfcsd.net/contact/contact-us.html',
+'https://laurel.smfcsd.net/contact/staff-directory.html',
+'https://laurel.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://laurel.smfcsd.net/calendar-and-menu/bell-schedule.html',
+'https://laurel.smfcsd.net/community/parent-student-handbook.html',
+'https://laurel.smfcsd.net/health-and-safety/drop-off-and-pick-up-procedures.html',
+'https://laurel.smfcsd.net/academic-services/library.html',
+'https://laurel.smfcsd.net/support-laurel/volunteer-information.html',
+'https://laurel.smfcsd.net/parent-organizations/laurel-pta.html',
+'https://laurel.smfcsd.net/community/school-site-council.html',
+'https://laurel.smfcsd.net/about-laurel/principals-corner.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'highlands'
+	school_name = 'laurel'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

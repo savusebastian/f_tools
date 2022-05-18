@@ -101,22 +101,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://beach-park.smfcsd.net/about--beach-park/principals-welcome.html',
-'https://beach-park.smfcsd.net/contact/contact-us.html',
-'https://beach-park.smfcsd.net/contact/staff-directory.html',
-'https://beach-park.smfcsd.net/about--beach-park/vision-and-mission.html',
-'https://beach-park.smfcsd.net/about--beach-park/motto.html',
-'https://beach-park.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://beach-park.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
-'https://beach-park.smfcsd.net/about--beach-park/handbook.html',
-'https://beach-park.smfcsd.net/health-and-safety/drop-off-and-pick-up-procedures.html',
-'https://beach-park.smfcsd.net/wellness/pbis.html',
-'https://beach-park.smfcsd.net/community/ed-foundation.html',
-'https://beach-park.smfcsd.net/beach-park-pta.html',
-'https://beach-park.smfcsd.net/community/school-site-council.html',
+		'https://beresford.smfcsd.net/contact-us/staff-directory.html',
+'https://beresford.smfcsd.net/about-us/calendar.html',
+'https://beresford.smfcsd.net/about-us/bell-schedule.html',
+'https://beresford.smfcsd.net/attendance.html',
+'https://beresford.smfcsd.net/about-us/pbis.html',
+'https://beresford.smfcsd.net/get-involved/beresford-pta.html',
+'https://beresford.smfcsd.net/get-involved/school-site-council.html',
+'https://beresford.smfcsd.net/principal-weekly-newsletter.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'beach-park'
+	school_name = 'beresford'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

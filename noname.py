@@ -101,18 +101,24 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://meadow-heights.smfcsd.net/contact/contact-us.html',
-'https://meadow-heights.smfcsd.net/contact/staff-directory.html',
-'https://meadow-heights.smfcsd.net/about-meadow-heights/school-mission.html',
-'https://meadow-heights.smfcsd.net/meadow-heights--and-district-event-calendar-and-school-meal-menu/event-calendar.html',
-'https://meadow-heights.smfcsd.net/about-meadow-heights/meadow-heights-----2019-2020-handbook.html',
-'https://meadow-heights.smfcsd.net/health-and-safety/school-parking.html',
-'https://meadow-heights.smfcsd.net/pta/meadow-heights-pta.html',
-'https://meadow-heights.smfcsd.net/community/school-site-council.html',
-'https://meadow-heights.smfcsd.net/communications-2021-2022-school-year.html',
+		'https://san-mateo-park.smfcsd.net/about-san-mateo-park/principals-message.html',
+'https://san-mateo-park.smfcsd.net/contact/contact-us.html',
+'https://san-mateo-park.smfcsd.net/contact/staff-directory.html',
+'https://san-mateo-park.smfcsd.net/about-san-mateo-park/mission-statement.html',
+'https://san-mateo-park.smfcsd.net/about-san-mateo-park/our-vision.html',
+'https://san-mateo-park.smfcsd.net/calendar-and-menu/school-calendar.html',
+'https://san-mateo-park.smfcsd.net/calendar-and-menu/bell-schedule-and-school-hours.html',
+'https://san-mateo-park.smfcsd.net/about-san-mateo-park/absence-policy.html',
+'https://san-mateo-park.smfcsd.net/about-san-mateo-park/pbis.html',
+'https://san-mateo-park.smfcsd.net/about-san-mateo-park/library.html',
+'https://san-mateo-park.smfcsd.net/community/san-mateo-park-preschool.html',
+'https://san-mateo-park.smfcsd.net/community/our-garden.html',
+'https://san-mateo-park.smfcsd.net/parent-organizations/elac.html',
+'https://san-mateo-park.smfcsd.net/parent-organizations/park-school-pta.html',
+'https://san-mateo-park.smfcsd.net/community/school-site-council.html',
 	]
 	mainfolder = 'smfcsd'
-	school_name = 'meadow-heights'
+	school_name = 'san-mateo-park'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

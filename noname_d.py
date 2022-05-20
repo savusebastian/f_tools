@@ -214,6 +214,7 @@ if __name__ == '__main__':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										print(nav_sec)
 										for nav_link in nav_sec:
 											href = nav_link.get('href')
 									

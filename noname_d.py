@@ -182,7 +182,7 @@ if __name__ == '__main__':
 					group_links = item.find_all('a')
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links[1:]:
+					for link in group_links:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 									if nav_sec != None and nav_sec != '' and nav_sec != []:
-										for nav_link in nav_sec[1:]:
+										for nav_link in nav_sec:
 											href = nav_link.get('href')
 									
 											if len(href) > 1 and href[:2] == '//':

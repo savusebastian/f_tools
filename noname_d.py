@@ -102,18 +102,18 @@ if __name__ == '__main__':
 	district = 'https://www.mcoe.org'
 	all_sites = [
 		# f'{district}',
-		# f'https://distancelearning.mcoe.org',
-		# f'https://lgbtq.mcoe.org',
-		# f'https://caass.mcoe.org',
+		f'https://distancelearning.mcoe.org',
+		f'https://lgbtq.mcoe.org',
+		f'https://caass.mcoe.org',
 		f'https://cgm.mcoe.org',
 		# f'https://soit-pps-nj.schoolloop.com',
 		# f'https://gopa-pps-nj.schoolloop.com',
 	]
 	schools = [
 		# 'district',
-		# 'distancelearning',
-		# 'lgbtq',
-		# 'caass',
+		'distancelearning',
+		'lgbtq',
+		'caass',
 		'cgm',
 		# 'soit',
 		# 'gopa',

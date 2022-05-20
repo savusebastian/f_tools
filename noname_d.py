@@ -102,18 +102,18 @@ if __name__ == '__main__':
 	district = 'https://www.mcoe.org'
 	all_sites = [
 		# f'{district}',
-		f'https://distancelearning.mcoe.org',
-		f'https://lgbtq.mcoe.org',
-		f'https://caass.mcoe.org',
+		# f'https://distancelearning.mcoe.org',
+		# f'https://lgbtq.mcoe.org',
+		# f'https://caass.mcoe.org',
 		f'https://cgm.mcoe.org',
 		# f'https://soit-pps-nj.schoolloop.com',
 		# f'https://gopa-pps-nj.schoolloop.com',
 	]
 	schools = [
 		# 'district',
-		'distancelearning',
-		'lgbtq',
-		'caass',
+		# 'distancelearning',
+		# 'lgbtq',
+		# 'caass',
 		'cgm',
 		# 'soit',
 		# 'gopa',
@@ -182,7 +182,7 @@ if __name__ == '__main__':
 					group_links = item.find_all('a')
 					t1 = str(group_links[0].get_text()) if len(group_links) > 0 and len(group_links[0].get_text()) > 0 else f'No tier {i}'
 
-					for link in group_links:
+					for link in group_links[1:]:
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 

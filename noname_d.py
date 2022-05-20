@@ -142,12 +142,11 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='DeltaTopNavgation')
-				print(sitemap)
-				list_items = sitemap.select('ul > li')
+				sitemap = soup.find_all(class_='navbar-nav')
+				list_items = sitemap[0].select('ul > li')
 
 				# sitemap2 = soup.find(class_='top-links')
-				# list_items2 = sitemap2.select('ul > li')
+				list_items2 = sitemap[1].select('ul > li')
 				#
 				# sitemap3 = soup.find(id='bullying')
 				# list_items3 = sitemap3.select('ul > li')
@@ -167,7 +166,7 @@ if __name__ == '__main__':
 				# sitemap8 = soup.find(id='dropmenu5')
 				# list_items8 = sitemap8.select('ul > li')
 				#
-				# list_items.extend(list_items2)
+				list_items.extend(list_items2)
 				# list_items.extend(list_items3)
 				# list_items.extend(list_items4)
 				# list_items.extend(list_items5)

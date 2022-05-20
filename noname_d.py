@@ -142,8 +142,8 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				print(soup)
 				sitemap = soup.find(id='DeltaTopNavgation')
+				print(sitemap)
 				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(class_='top-links')

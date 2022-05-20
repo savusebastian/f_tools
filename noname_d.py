@@ -186,61 +186,63 @@ if __name__ == '__main__':
 						href = link.get('href')
 						t2 = str(link.get_text()) if group_links[0].get_text() != link.get_text() else ''
 
-						if len(href) > 1 and href[:2] == '//':
-							page_link = f'{split_slash[0]}{href}'
-						elif len(href) > 0 and href[0] == '/':
-							page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
-						elif len(href) > 4 and href[:4] == 'http':
-							page_link = href
-						else:
-							page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
-
-						if page_link not in all_links:
-							all_links.append(page_link)
-
-							if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
-							or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-								csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
+						if href != None:
+							if len(href) > 1 and href[:2] == '//':
+								page_link = f'{split_slash[0]}{href}'
+							elif len(href) > 0 and href[0] == '/':
+								page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+							elif len(href) > 4 and href[:4] == 'http':
+								page_link = href
 							else:
-								if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+								page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+
+							if page_link not in all_links:
+								all_links.append(page_link)
+
+								if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+								or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked file', '', '', '', '', '', ''])
 								else:
-									page_counter += 1
-									col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-									issue_pages_counter += content_ipc
+									if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+										csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', '1', 'Linked page', '', '', '', '', '', ''])
+									else:
+										page_counter += 1
+										col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+										issue_pages_counter += content_ipc
 
-									csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
+										csv_writer.writerow([str(page_link), schools[s - 1], t1, t2, '', col_num, col1, col2, col3, col4, meta_title, meta_keywords, meta_desc])
 
-									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+										if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+											csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-									if nav_sec != None and nav_sec != '' and nav_sec != []:
-										for nav_link in nav_sec:
-											href = nav_link.get('href')
-									
-											if len(href) > 1 and href[:2] == '//':
-												page_link = f'{split_slash[0]}{href}'
-											elif len(href) > 0 and href[0] == '/':
-												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
-											elif len(href) > 4 and href[:4] == 'http':
-												page_link = href
-											else:
-												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
-									
-											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
-											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
-											else:
-												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
-												else:
-													page_counter += 1
-													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-													issue_pages_counter += content_ipc
-													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-									
-													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+										if nav_sec != None and nav_sec != '' and nav_sec != []:
+											for nav_link in nav_sec:
+												if href != None:
+													href = nav_link.get('href')
+											
+													if len(href) > 1 and href[:2] == '//':
+														page_link = f'{split_slash[0]}{href}'
+													elif len(href) > 0 and href[0] == '/':
+														page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+													elif len(href) > 4 and href[:4] == 'http':
+														page_link = href
+													else:
+														page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+											
+													if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+													or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+														csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+													else:
+														if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+															csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+														else:
+															page_counter += 1
+															nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+															issue_pages_counter += content_ipc
+															csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+											
+															if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+																csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

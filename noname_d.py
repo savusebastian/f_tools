@@ -29,7 +29,7 @@ def get_content(web_page):
 	try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
-		content = web_soup.find(id='DeltaPlaceHolderMain')
+		content = web_soup.find(class_='elementor-inner')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 	start_time = time()
 	district = 'https://www.mcoe.org'
 	all_sites = [
-		f'{district}',
+		# f'{district}',
 		f'https://distancelearning.mcoe.org',
 		f'https://lgbtq.mcoe.org',
 		f'https://caass.mcoe.org',
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 		# f'https://gopa-pps-nj.schoolloop.com',
 	]
 	schools = [
-		'district',
+		# 'district',
 		'distancelearning',
 		'lgbtq',
 		'caass',
@@ -119,7 +119,8 @@ if __name__ == '__main__':
 		# 'gopa',
 	]
 
-	mainfolder = all_sites[0].split('.')[1]
+	# mainfolder = all_sites[0].split('.')[1]
+	mainfolder = 'mcoe'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 	s = 0
@@ -142,11 +143,11 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find_all(class_='navbar-nav')
-				list_items = sitemap[0].select('ul > li')
+				sitemap = soup.find(class_='elementor-nav-menu--main')
+				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(class_='top-links')
-				list_items2 = sitemap[1].select('ul > li')
+				# list_items2 = sitemap[1].select('ul > li')
 				#
 				# sitemap3 = soup.find(id='bullying')
 				# list_items3 = sitemap3.select('ul > li')
@@ -166,7 +167,7 @@ if __name__ == '__main__':
 				# sitemap8 = soup.find(id='dropmenu5')
 				# list_items8 = sitemap8.select('ul > li')
 				#
-				list_items.extend(list_items2)
+				# list_items.extend(list_items2)
 				# list_items.extend(list_items3)
 				# list_items.extend(list_items4)
 				# list_items.extend(list_items5)

@@ -29,49 +29,28 @@ def get_content(web_page):
 	try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
-		content = web_soup.find(id='main')
+		content = web_soup.find(id='DeltaPlaceHolderMain')
 
-		# if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
-		# 	meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
-		#
-		# if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
-		# 	meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
-		#
-		# if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
-		# 	meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
+		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
+			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
 
-		# if content.find_all('form') != []:
-		# 	form = 'form'
-		#
-		# if content.find_all('embed') != []:
-		# 	embed = 'embed'
-		#
-		# if content.find_all('iframe') != []:
-		# 	iframe = 'iframe'
-		#
-		# if content.find_all(id='calendar') != []:
-		# 	calendar = 'calendar'
-		#
-		# if content.find_all(class_='staff-directory') != []:
-		# 	staff = 'staff'
-		#
-		# if content.find_all(id='news-list') != []:
-		# 	news = 'news'
+		if web_soup.find_all('meta', attrs={'name': 'keywords'}) != []:
+			meta_keywords = str(web_soup.find_all('meta', attrs={'name': 'keywords'}))
 
-		# if web_soup.find(class_='menu-level-0') != None:
-		# 	page_nav = web_soup.find(class_='menu-level-0').find_all('a')
+		if web_soup.find_all('meta', attrs={'name': 'description'}) != []:
+			meta_desc = str(web_soup.find_all('meta', attrs={'name': 'description'}))
+
+		if web_soup.find(id='sideNavBox') != None:
+			page_nav = web_soup.find(id='sideNavBox').find_all('a')
 		# elif web_soup.find(id='quicklinks') != None:
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		# col1 = content
-		col1 = get_column(content)
-		print(1)
-		# if content != None and content != '':
-		# 	col1 = content
-		# 	col1 = get_column(col1)
-		# else:
-		# 	issue_pages_counter = 1
+		if content != None and content != '':
+			col1 = content
+			col1 = get_column(col1)
+		else:
+			issue_pages_counter = 1
 
 		col1 = str(col1)
 
@@ -120,24 +99,22 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.athol-ma.gov'
+	district = 'https://www.mcoe.org'
 	all_sites = [
 		f'{district}',
-		# f'https://act-pps-nj.schoolloop.com',
-		# f'https://ps09-pps-nj.schoolloop.com',
-		# f'https://stem-pps-nj.schoolloop.com',
-		# f'https://ehs-pps-nj.schoolloop.com',
+		f'https://distancelearning.mcoe.org',
+		f'https://lgbtq.mcoe.org',
+		f'https://caass.mcoe.org',
+		f'https://cgm.mcoe.org',
 		# f'https://soit-pps-nj.schoolloop.com',
 		# f'https://gopa-pps-nj.schoolloop.com',
 	]
-	# stem nu se incarca (science technology ...)
-	# ps04 nu se incarca (public school no 4)
 	schools = [
 		'district',
-		# 'act',
-		# 'ps09',
-		# 'stem',
-		# 'ehs',
+		'distancelearning',
+		'lgbtq',
+		'caass',
+		'cgm',
 		# 'soit',
 		# 'gopa',
 	]
@@ -165,10 +142,10 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(id='navigation')
+				sitemap = soup.find(class_='DeltaTopNavgation')
 				list_items = sitemap.select('ul > li')
 
-				# sitemap2 = soup.find(id='quicklinks')
+				# sitemap2 = soup.find(class_='top-links')
 				# list_items2 = sitemap2.select('ul > li')
 				#
 				# sitemap3 = soup.find(id='bullying')
@@ -236,33 +213,33 @@ if __name__ == '__main__':
 									if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
 										csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
-									# if nav_sec != None and nav_sec != '' and nav_sec != []:
-									# 	for nav_link in nav_sec:
-									# 		href = nav_link.get('href')
-									#
-									# 		if len(href) > 1 and href[:2] == '//':
-									# 			page_link = f'{split_slash[0]}{href}'
-									# 		elif len(href) > 0 and href[0] == '/':
-									# 			page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
-									# 		elif len(href) > 4 and href[:4] == 'http':
-									# 			page_link = href
-									# 		else:
-									# 			page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
-									#
-									# 		if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
-									# 		or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
-									# 			csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
-									# 		else:
-									# 			if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
-									# 				csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
-									# 			else:
-									# 				page_counter += 1
-									# 				nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
-									# 				issue_pages_counter += content_ipc
-									# 				csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
-									#
-									# 				if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
-									# 					csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
+									if nav_sec != None and nav_sec != '' and nav_sec != []:
+										for nav_link in nav_sec:
+											href = nav_link.get('href')
+									
+											if len(href) > 1 and href[:2] == '//':
+												page_link = f'{split_slash[0]}{href}'
+											elif len(href) > 0 and href[0] == '/':
+												page_link = f'{split_slash[0]}//{split_slash[2]}{href}'
+											elif len(href) > 4 and href[:4] == 'http':
+												page_link = href
+											else:
+												page_link = f'{split_slash[0]}//{split_slash[2]}/{href}'
+									
+											if href.find('.pdf') > -1 or href.find('.mp3') > -1 or href.find('.wmv') > -1 or href.find('.mp4') > -1 or href.find('.docx') > -1 or href.find('.xlsx') > -1 or href.find('.pptx') > -1\
+											or href.find('.doc') > -1 or href.find('.xls') > -1 or href.find('.ppt') > -1 or href.find('.jsp') > -1 or href.find('.m4v') > -1 or href.find('.mkv') > -1:
+												csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked file', '', '', '', '', '', ''])
+											else:
+												if href.find('http') > -1 and href.split('/')[2].find(split_dot[1]) == -1:
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), '', '', '1', 'Linked page', '', '', '', '', '', ''])
+												else:
+													page_counter += 1
+													nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link)
+													issue_pages_counter += content_ipc
+													csv_writer.writerow([str(page_link), t1, str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
+									
+													if form != '' or embed != '' or iframe != '' or calendar != '' or staff != '' or news != '':
+														csv_report.writerow([str(page_link), form, embed, iframe, calendar, staff, news])
 
 				csv_report.writerow([])
 				csv_report.writerow(['Pages scraped', page_counter])

@@ -101,13 +101,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://rocky.adams12.org/about',
-'https://rocky.adams12.org/questions',
-'https://rocky.adams12.org/family-and-community-outreach',
-'https://rocky.adams12.org/our-principal',
+		'https://silvercreek.adams12.org/about',
+'https://silvercreek.adams12.org/questions',
+'https://silvercreek.adams12.org/gifted-talented',
+'https://silvercreek.adams12.org/positive-behavior-intervention-support',
+'https://silvercreek.adams12.org/activities',
+'https://silvercreek.adams12.org/base-program',
+'https://silvercreek.adams12.org/silver-creek-pto',
+'https://silvercreek.adams12.org/standards-based-grading',
 	]
 	mainfolder = 'adams12'
-	school_name = 'rocky'
+	school_name = 'silvercreek'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

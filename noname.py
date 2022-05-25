@@ -101,15 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hunters.adams12.org/about',
-'https://hunters.adams12.org/questions',
-'https://hunters.adams12.org/gifted-talented',
-'https://hunters.adams12.org/classrooms/216',
-'https://hunters.adams12.org/curriculum',
-'https://hunters.adams12.org/classrooms/4301',
+		'https://leroy.adams12.org/about',
+'https://leroy.adams12.org/questions',
+'https://leroy.adams12.org/our-principal',
+'https://leroy.adams12.org/classrooms/5111',
+'https://leroy.adams12.org/activities/arts/choir',
+'https://leroy.adams12.org/activities/academics/gifted-talented-adams-12-five-star-schools',
+'https://leroy.adams12.org/activities/health/jump-rope-club',
 	]
 	mainfolder = 'adams12'
-	school_name = 'hunters'
+	school_name = 'leroy'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

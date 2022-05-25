@@ -101,18 +101,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://silverhills.adams12.org/about-our-school',
-'https://silverhills.adams12.org/virtual-school-tour',
-'https://silverhills.adams12.org/bell-schedules',
-'https://silverhills.adams12.org/gifted-and-talented',
-'https://silverhills.adams12.org/classrooms/186',
-'https://silverhills.adams12.org/classrooms/course-registration-information',
-'https://silverhills.adams12.org/classrooms/186/sources-strength',
-'https://silverhills.adams12.org/classrooms/virtual-calming-rooms',
-'https://silverhills.adams12.org/clubs-and-activities',
+		'https://thorntonm.adams12.org/about-our-school',
+'https://thorntonm.adams12.org/questions',
+'https://thorntonm.adams12.org/our-principal',
+'https://thorntonm.adams12.org/enrollment',
+'https://thorntonm.adams12.org/activities',
+'https://thorntonm.adams12.org/classrooms/165',
+'https://thorntonm.adams12.org/classrooms/241',
+'https://thorntonm.adams12.org/gifted-talented',
 	]
 	mainfolder = 'adams12'
-	school_name = 'silverhills'
+	school_name = 'thorntonm'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

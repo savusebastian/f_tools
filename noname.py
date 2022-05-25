@@ -101,17 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hulstrom.adams12.org/schedules',
-'https://hulstrom.adams12.org/application-and-admission-information',
-'https://hulstrom.adams12.org/about',
-'https://hulstrom.adams12.org/attendance',
-'https://hulstrom.adams12.org/our-principal',
-'https://hulstrom.adams12.org/questions',
-'https://hulstrom.adams12.org/high-school-pathway',
-'https://hulstrom.adams12.org/grading-and-assessments',
+		'https://stem.adams12.org/about',
+'https://stem.adams12.org/stem-model',
+'https://stem.adams12.org/questions',
+'https://stem.adams12.org/gifted-talented',
+'https://stem.adams12.org/classrooms/7981',
+'https://stem.adams12.org/stem-pto',
 	]
 	mainfolder = 'adams12'
-	school_name = 'hulstrom'
+	school_name = 'stem'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

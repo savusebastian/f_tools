@@ -101,15 +101,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://vantage.adams12.org/about-our-school',
-'https://vantage.adams12.org/our-principal',
-'https://vantage.adams12.org/discovery-program',
-'https://vantage.adams12.org/classrooms/146',
-'https://vantage.adams12.org/classrooms/146/community-resources',
-'https://vantage.adams12.org/how-apply',
+		'https://fivestaronline.adams12.org/about-our-school',
+'https://fivestaronline.adams12.org/about-clubs-and-programs',
+'https://fivestaronline.adams12.org/classrooms/71',
+'https://fivestaronline.adams12.org/classrooms/1151',
 	]
 	mainfolder = 'adams12'
-	school_name = 'vantage'
+	school_name = 'fivestaronline'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

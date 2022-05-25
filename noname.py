@@ -101,13 +101,26 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://fivestaronline.adams12.org/about-our-school',
-'https://fivestaronline.adams12.org/about-clubs-and-programs',
-'https://fivestaronline.adams12.org/classrooms/71',
-'https://fivestaronline.adams12.org/classrooms/1151',
+		'https://futureforward.adams12.org/about',
+'https://futureforward.adams12.org/registration-guide',
+'https://futureforward.adams12.org/classrooms/registration',
+'https://futureforward.adams12.org/classrooms/college-creditconcurrent-enrollment',
+'https://futureforward.adams12.org/classrooms/scholarship-information',
+'https://futureforward.adams12.org/classrooms/service-learning-volunteer-credit',
+'https://futureforward.adams12.org/classrooms/work-based-learning-aka-hire-ed',
+'https://futureforward.adams12.org/classrooms/job-and-opportunity-board',
+'https://futureforward.adams12.org/automotive-opportunities',
+'https://futureforward.adams12.org/construction-welding',
+'https://futureforward.adams12.org/education-teaching',
+'https://futureforward.adams12.org/government-opportunities',
+'https://futureforward.adams12.org/hospitality-restaurant-opportunities',
+'https://futureforward.adams12.org/nursing-medical-opportunities',
+'https://futureforward.adams12.org/retail-opportunities',
+'https://futureforward.adams12.org/support-job-fairs-volunteer-opportunities',
+'https://futureforward.adams12.org/summer-jobs-miscellaneous',
 	]
 	mainfolder = 'adams12'
-	school_name = 'fivestaronline'
+	school_name = 'futureforward'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

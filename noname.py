@@ -101,17 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://meridian.adams12.org/about',
-'https://meridian.adams12.org/mr-gooding',
-'https://meridian.adams12.org/questions',
-'https://meridian.adams12.org/positive-behavior-interventions-and-supports',
-'https://meridian.adams12.org/get-involved',
-'https://meridian.adams12.org/pto/contacts',
-'https://meridian.adams12.org/news/general/2020-12-17-132248/afw-school-rewards-program-earn-2-meridian',
-'https://meridian.adams12.org/standards-based-grading',
+		'https://mountain.adams12.org/deaf-and-hard-hearing',
+'https://mountain.adams12.org/about',
+'https://mountain.adams12.org/questions',
+'https://mountain.adams12.org/our-principal',
+'https://mountain.adams12.org/parentteacher-organization-pto',
+'https://mountain.adams12.org/classrooms/genius-lab',
+'https://mountain.adams12.org/classrooms/news/2020-03-16-202939/reading-challenge-guidelines',
 	]
 	mainfolder = 'adams12'
-	school_name = 'meridian'
+	school_name = 'mountain'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

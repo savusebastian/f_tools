@@ -101,19 +101,27 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://pathways.adams12.org/about',
-'https://pathways.adams12.org/questions',
-'https://pathways.adams12.org/enrollment',
-'https://pathways.adams12.org/our-principal',
-'https://pathways.adams12.org/classrooms/202',
-'https://pathways.adams12.org/classrooms/201',
-'https://pathways.adams12.org/our-programs',
-'https://pathways.adams12.org/classrooms/177',
-'https://pathways.adams12.org/classrooms/195',
-'https://pathways.adams12.org/classrooms/195/resources',
+		'https://www.adams12.org/curriculum-instruction/health-education-curriculum',
+'https://www.adams12.org/curriculum-instruction/district-provided-devices',
+'https://www.adams12.org/human-resources/2021-22-employees-year',
+'https://www.adams12.org/human-resources/employees-year-profiles-2021-22',
+'https://www.adams12.org/administrative-job-descriptions',
+'https://www.adams12.org/classified-job-descriptions',
+'https://www.adams12.org/human-resources/documents/classroom-teacher',
+'https://www.adams12.org/programs/summer-school',
+'https://www.adams12.org/admissions/choice-schools',
+'https://www.adams12.org/baselineschool',
+'https://www.adams12.org/health-services/arp-esser-iii',
+'https://www.adams12.org/health-services/esser-iii-engagement-summary',
+'https://www.adams12.org/health-services/2021-2022-health-and-safety-protocols',
+'https://www.adams12.org/health-services/what-do-if-your-child-sick',
+'https://www.adams12.org/health-services/covid-cases-quarantine-tracker',
+'https://www.adams12.org/health-services/covid-19-testing-information',
+'https://www.adams12.org/health-services/covid-19-vaccine-information',
+'https://www.adams12.org/health-services/safe-return-schools-plan',
 	]
 	mainfolder = 'adams12'
-	school_name = 'pathways'
+	school_name = 'adams12'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

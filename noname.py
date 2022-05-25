@@ -101,13 +101,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://thorntone.adams12.org/about',
-'https://thorntone.adams12.org/questions',
-'https://thorntone.adams12.org/our-principal',
-'https://thorntone.adams12.org/news/general/2021-04-05-092519/thornton-hub',
+		'https://westview.adams12.org/about',
+'https://westview.adams12.org/questions',
+'https://westview.adams12.org/social-emotional-learning-sel',
+'https://westview.adams12.org/classrooms/7391',
 	]
 	mainfolder = 'adams12'
-	school_name = 'thorntone'
+	school_name = 'westview'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

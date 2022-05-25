@@ -101,15 +101,21 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://coronado.adams12.org/about',
-'https://coronado.adams12.org/questions',
-'https://coronado.adams12.org/our-principal',
-'https://coronado.adams12.org/gifted-talented',
-'https://coronado.adams12.org/classrooms/218',
-'https://coronado.adams12.org/classrooms/218/library-policies',
+		'https://cotton.adams12.org/our-principal',
+'https://cotton.adams12.org/about',
+'https://cotton.adams12.org/questions',
+'https://cotton.adams12.org/sls',
+'https://cotton.adams12.org/ssn',
+'https://cotton.adams12.org/classrooms/736',
+'https://cotton.adams12.org/care',
+'https://cotton.adams12.org/activities',
+'https://cotton.adams12.org/gifted-talented',
+'https://cotton.adams12.org/classrooms/735',
+'https://cotton.adams12.org/english-language-development',
+'https://cotton.adams12.org/school-accountability-committee',
 	]
 	mainfolder = 'adams12'
-	school_name = 'coronado'
+	school_name = 'cotton'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

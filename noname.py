@@ -101,16 +101,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://malley.adams12.org/about',
-'https://malley.adams12.org/our-principal',
-'https://malley.adams12.org/questions',
-'https://malley.adams12.org/positive-behavior-intervention-support',
-'https://malley.adams12.org/classrooms/2696',
-'https://malley.adams12.org/gifted-talented',
-'https://malley.adams12.org/english-language-development',
+		'https://mcelwain.adams12.org/about',
+'https://mcelwain.adams12.org/questions',
+'https://mcelwain.adams12.org/our-principal',
+'https://mcelwain.adams12.org/JurassicJournal',
 	]
 	mainfolder = 'adams12'
-	school_name = 'malley'
+	school_name = 'mcelwain'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

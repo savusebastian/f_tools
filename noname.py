@@ -101,15 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://stem.adams12.org/about',
-'https://stem.adams12.org/stem-model',
-'https://stem.adams12.org/questions',
-'https://stem.adams12.org/gifted-talented',
-'https://stem.adams12.org/classrooms/7981',
-'https://stem.adams12.org/stem-pto',
+		'https://stemlaunch.adams12.org/frequently-asked-questions',
+'https://stemlaunch.adams12.org/counseling',
+'https://stemlaunch.adams12.org/school-tours',
+'https://stemlaunch.adams12.org/classrooms/57',
+'https://stemlaunch.adams12.org/partnerships',
+'https://stemlaunch.adams12.org/atoms-family-resource-center',
+'https://stemlaunch.adams12.org/enroll',
+'https://stemlaunch.adams12.org/social-emotional-learning',
+'https://stemlaunch.adams12.org/pto',
 	]
 	mainfolder = 'adams12'
-	school_name = 'stem'
+	school_name = 'stemlaunch'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

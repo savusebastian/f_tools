@@ -101,16 +101,14 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://horizon.adams12.org/about-our-school',
-'https://horizon.adams12.org/deans-office',
-'https://horizon.adams12.org/our-principal',
-'https://horizon.adams12.org/classrooms/486',
-'https://horizon.adams12.org/senior-page',
-'https://horizon.adams12.org/big-idea-project',
-'https://horizon.adams12.org/yearbook',
+		'https://legacy.adams12.org/questions',
+'https://legacy.adams12.org/school-vision',
+'https://legacy.adams12.org/teachers-and-webpages',
+'https://legacy.adams12.org/gifted-talented',
+'https://legacy.adams12.org/clubs-activities',
 	]
 	mainfolder = 'adams12'
-	school_name = 'horizon'
+	school_name = 'legacy'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

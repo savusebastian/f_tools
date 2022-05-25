@@ -101,19 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://rockytop.adams12.org/classrooms/problems-school',
-'https://rockytop.adams12.org/classrooms/resources-students',
-'https://rockytop.adams12.org/classrooms/5641',
-'https://rockytop.adams12.org/registration',
-'https://rockytop.adams12.org/virtual-tour',
-'https://rockytop.adams12.org/classrooms/resources',
-'https://rockytop.adams12.org/about-our-school',
-'https://rockytop.adams12.org/standards-based-grading',
-'https://rockytop.adams12.org/news/general/2021-08-27-173424/helpful-how-tos-infinite-campus',
-'https://rockytop.adams12.org/classrooms/links/academic-support-students',
+		'https://shadowridge.adams12.org/about-our-school',
+'https://shadowridge.adams12.org/frequently-asked-questions',
+'https://shadowridge.adams12.org/our-principal',
+'https://shadowridge.adams12.org/bell-schedules',
+'https://shadowridge.adams12.org/activities',
+'https://shadowridge.adams12.org/registrar-0',
+'https://shadowridge.adams12.org/staff-links',
 	]
 	mainfolder = 'adams12'
-	school_name = 'rockytop'
+	school_name = 'shadowridge'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

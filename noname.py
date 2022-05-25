@@ -101,18 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://skyview.adams12.org/about',
-'https://skyview.adams12.org/our-principal',
-'https://skyview.adams12.org/classrooms/chromebook-care',
-'https://skyview.adams12.org/skyview-pto',
-'https://skyview.adams12.org/questions',
-'https://skyview.adams12.org/classrooms/612',
-'https://skyview.adams12.org/classrooms/parent-resources',
-'https://skyview.adams12.org/classrooms/second-step',
-'https://skyview.adams12.org/classrooms/links/5th-grade-riding-waves-0',
+		'https://stellar.adams12.org/about',
+'https://stellar.adams12.org/our-principal',
+'https://stellar.adams12.org/questions',
+'https://stellar.adams12.org/activities',
+'https://stellar.adams12.org/base-program',
+'https://stellar.adams12.org/classrooms/186',
 	]
 	mainfolder = 'adams12'
-	school_name = 'skyview'
+	school_name = 'stellar'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

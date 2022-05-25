@@ -101,15 +101,14 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://stellar.adams12.org/about',
-'https://stellar.adams12.org/our-principal',
-'https://stellar.adams12.org/questions',
-'https://stellar.adams12.org/activities',
-'https://stellar.adams12.org/base-program',
-'https://stellar.adams12.org/classrooms/186',
+		'https://studioschool.adams12.org/about-our-school',
+'https://studioschool.adams12.org/frequently-asked-questions',
+'https://studioschool.adams12.org/apply-and-enroll',
+'https://century.adams12.org/activities',
+'https://studioschool.adams12.org/parent-teacher-organization',
 	]
 	mainfolder = 'adams12'
-	school_name = 'stellar'
+	school_name = 'studioschool'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

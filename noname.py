@@ -101,11 +101,19 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://independence.adams12.org/about-our-school',
-'https://independence.adams12.org/bell-schedule',
+		'https://pathways.adams12.org/about',
+'https://pathways.adams12.org/questions',
+'https://pathways.adams12.org/enrollment',
+'https://pathways.adams12.org/our-principal',
+'https://pathways.adams12.org/classrooms/202',
+'https://pathways.adams12.org/classrooms/201',
+'https://pathways.adams12.org/our-programs',
+'https://pathways.adams12.org/classrooms/177',
+'https://pathways.adams12.org/classrooms/195',
+'https://pathways.adams12.org/classrooms/195/resources',
 	]
 	mainfolder = 'adams12'
-	school_name = 'independence'
+	school_name = 'pathways'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

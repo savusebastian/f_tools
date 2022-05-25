@@ -47,8 +47,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(id='main') != None and web_soup.find(id='main') != '':
-			col1 = web_soup.find(id='main')
+		if web_soup.find(class_='panel-display') != None and web_soup.find(class_='panel-display') != '':
+			col1 = web_soup.find(class_='panel-display')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1
@@ -101,24 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://north-shoreview.smfcsd.net/about-north-shoreview/the-montessori-method.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/features-and-traditions.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/about-north-shoreview-montessori.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/public-montessori.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/montessori-expansion.html',
-'https://north-shoreview.smfcsd.net/contact/contact-us.html',
-'https://north-shoreview.smfcsd.net/contact/staff-directory.html',
-'https://north-shoreview.smfcsd.net/calendar-and-menu/school-calendar.html',
-'https://north-shoreview.smfcsd.net/calendar-and-menu/bell-schedule.html',
-'https://north-shoreview.smfcsd.net/about-north-shoreview/parent-handbook.html',
-'https://north-shoreview.smfcsd.net/classroom-pages/library.html',
-'https://north-shoreview.smfcsd.net/support-north-shoreview/volunteer-information.html',
-'https://north-shoreview.smfcsd.net/pta/visit-the-pta-website.html',
-'https://north-shoreview.smfcsd.net/academic-services/preschool.html',
-'https://north-shoreview.smfcsd.net/academic-services/middle-school-information.html',
+		'https://arapahoe.adams12.org/about',
+'https://arapahoe.adams12.org/our-principal',
+'https://arapahoe.adams12.org/arapahoe-ridge-parent-teacher-organization-pto',
+'https://arapahoe.adams12.org/classrooms/chromebook-care',
+'https://arapahoe.adams12.org/activities',
+'https://arapahoe.adams12.org/questions',
+'https://arapahoe.adams12.org/classrooms/3316',
+'https://arapahoe.adams12.org/positive-behavior-support',
+'https://arapahoe.adams12.org/classrooms/second-step',
 	]
-	mainfolder = 'smfcsd'
-	school_name = 'north-shoreview'
+	mainfolder = 'adams12'
+	school_name = 'arapahoe'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

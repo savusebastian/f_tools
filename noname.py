@@ -101,18 +101,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://tarver.adams12.org/about',
-'https://tarver.adams12.org/questions',
-'https://tarver.adams12.org/news/general/2022-02-25-134549/makeup-work-policy',
-'https://tarver.adams12.org/our-principal',
-'https://tarver.adams12.org/news/newsletter/2019-09-11-122712/ongoing-pto-fundraiser-opportunities',
-'https://tarver.adams12.org/tarver-pto',
-'https://tarver.adams12.org/news/general/2021-10-07-095435/artsonia',
-'https://tarver.adams12.org/news/general/2019-05-03-095356/king-soopers-rewards-program-signing-easy',
-'https://tarver.adams12.org/specials-schedule',
+		'https://thorntone.adams12.org/about',
+'https://thorntone.adams12.org/questions',
+'https://thorntone.adams12.org/our-principal',
+'https://thorntone.adams12.org/news/general/2021-04-05-092519/thornton-hub',
 	]
 	mainfolder = 'adams12'
-	school_name = 'tarver'
+	school_name = 'thorntone'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

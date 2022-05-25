@@ -101,15 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://eagleview.adams12.org/about',
-'https://eagleview.adams12.org/questions',
-'https://eagleview.adams12.org/random-acts-kindness',
-'https://eagleview.adams12.org/our-principal',
-'https://eagleview.adams12.org/playworks',
-'https://eagleview.adams12.org/eagleview-parent-teacher-partnership',
+		'https://federal.adams12.org/about',
+'https://federal.adams12.org/questions',
+'https://federal.adams12.org/panther-parentspadres-panteras',
+'https://federal.adams12.org/classrooms/311',
+'https://federal.adams12.org/gifted-talented-0',
+'https://federal.adams12.org/our-principal',
 	]
 	mainfolder = 'adams12'
-	school_name = 'eagleview'
+	school_name = 'federal'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

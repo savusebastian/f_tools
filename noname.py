@@ -101,16 +101,10 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://mountain.adams12.org/deaf-and-hard-hearing',
-'https://mountain.adams12.org/about',
-'https://mountain.adams12.org/questions',
-'https://mountain.adams12.org/our-principal',
-'https://mountain.adams12.org/parentteacher-organization-pto',
-'https://mountain.adams12.org/classrooms/genius-lab',
-'https://mountain.adams12.org/classrooms/news/2020-03-16-202939/reading-challenge-guidelines',
+		'https://northmor.adams12.org/our-principal',
 	]
 	mainfolder = 'adams12'
-	school_name = 'mountain'
+	school_name = 'northmor'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

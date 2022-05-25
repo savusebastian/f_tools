@@ -101,26 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://cherry.adams12.org/about',
-'https://cherry.adams12.org/questions',
-'https://cherry.adams12.org/classrooms/176',
-'https://cherry.adams12.org/our-principal',
-'https://cherry.adams12.org/activities',
-'https://cherry.adams12.org/gifted-talented',
-'https://cherry.adams12.org/pbis',
-'https://cherry.adams12.org/programs',
-'https://cherry.adams12.org/classrooms/254',
-'https://cherry.adams12.org/activities/arts/art-club',
-'https://cherry.adams12.org/activities/sports/cheetah-running-club',
-'https://cherry.adams12.org/activities/community/earth-club',
-'https://cherry.adams12.org/activities/sports/futsal',
-'https://cherry.adams12.org/activities/leadership/girls-who-code',
-'https://cherry.adams12.org/activities/academics/spelling-bee-0',
-'https://cherry.adams12.org/activities/leadership/student-council',
-'https://cherry.adams12.org/activities/sports/tae-kwon-do',
+		'https://coronado.adams12.org/about',
+'https://coronado.adams12.org/questions',
+'https://coronado.adams12.org/our-principal',
+'https://coronado.adams12.org/gifted-talented',
+'https://coronado.adams12.org/classrooms/218',
+'https://coronado.adams12.org/classrooms/218/library-policies',
 	]
 	mainfolder = 'adams12'
-	school_name = 'cherry'
+	school_name = 'coronado'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

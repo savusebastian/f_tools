@@ -101,10 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://vantage.adams12.org/VistaView',
+		'https://stukey.adams12.org/about',
+		'https://stukey.adams12.org/principal-letter',
+		'https://stukey.adams12.org/class-dojo',
+		'https://stukey.adams12.org/questions',
+		'https://stukey.adams12.org/classrooms/4916',
+		'https://stukey.adams12.org/classrooms/library-policies',
 	]
 	mainfolder = 'adams12'
-	school_name = 'vista'
+	school_name = 'stukey'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

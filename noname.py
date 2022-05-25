@@ -101,10 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://northmor.adams12.org/our-principal',
+		'https://northstar.adams12.org/about',
+'https://northstar.adams12.org/questions',
+'https://northstar.adams12.org/our-principal',
+'https://northstar.adams12.org/programs',
+'https://northstar.adams12.org/north-star-apparel',
+'https://northstar.adams12.org/peak',
 	]
 	mainfolder = 'adams12'
-	school_name = 'northmor'
+	school_name = 'northstar'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

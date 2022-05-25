@@ -101,13 +101,15 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://hillcrest.adams12.org/about',
-'https://hillcrest.adams12.org/questions',
-'https://hillcrest.adams12.org/hornet-hive-resource-closet',
-'https://hillcrest.adams12.org/positive-behavior-support',
+		'https://hunters.adams12.org/about',
+'https://hunters.adams12.org/questions',
+'https://hunters.adams12.org/gifted-talented',
+'https://hunters.adams12.org/classrooms/216',
+'https://hunters.adams12.org/curriculum',
+'https://hunters.adams12.org/classrooms/4301',
 	]
 	mainfolder = 'adams12'
-	school_name = 'hillcrest'
+	school_name = 'hunters'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -101,15 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://northstar.adams12.org/about',
-'https://northstar.adams12.org/questions',
-'https://northstar.adams12.org/our-principal',
-'https://northstar.adams12.org/programs',
-'https://northstar.adams12.org/north-star-apparel',
-'https://northstar.adams12.org/peak',
+		'https://prairie.adams12.org/pto',
+'https://prairie.adams12.org/questions',
+'https://prairie.adams12.org/news/general/2021-09-08-151103/social-emotional-learning-second-step',
+'https://prairie.adams12.org/news/general/2019-08-16-163644/got-lark-pride',
+'https://prairie.adams12.org/news/general/2021-04-08-135756/meadowlark-messenger',
+'https://prairie.adams12.org/classrooms/189',
+'https://prairie.adams12.org/classrooms/189/3d-printer',
 	]
 	mainfolder = 'adams12'
-	school_name = 'northstar'
+	school_name = 'prairie'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

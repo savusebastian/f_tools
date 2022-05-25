@@ -101,16 +101,17 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://woodglen.adams12.org/about',
-'https://woodglen.adams12.org/questions',
-'https://woodglen.adams12.org/our-principal',
-'https://woodglen.adams12.org/wildcat-wardrobe',
-'https://woodglen.adams12.org/pto',
-'https://woodglen.adams12.org/gifted-talented',
-'https://woodglen.adams12.org/our-library',
+		'https://hulstrom.adams12.org/schedules',
+'https://hulstrom.adams12.org/application-and-admission-information',
+'https://hulstrom.adams12.org/about',
+'https://hulstrom.adams12.org/attendance',
+'https://hulstrom.adams12.org/our-principal',
+'https://hulstrom.adams12.org/questions',
+'https://hulstrom.adams12.org/high-school-pathway',
+'https://hulstrom.adams12.org/grading-and-assessments',
 	]
 	mainfolder = 'adams12'
-	school_name = 'woodglen'
+	school_name = 'hulstrom'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -101,13 +101,13 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://riverdale.adams12.org/razs-resource-closet',
-'https://riverdale.adams12.org/riverdale-pto',
-'https://riverdale.adams12.org/digital-literacy',
-'https://riverdale.adams12.org/questions',
+		'https://rocky.adams12.org/about',
+'https://rocky.adams12.org/questions',
+'https://rocky.adams12.org/family-and-community-outreach',
+'https://rocky.adams12.org/our-principal',
 	]
 	mainfolder = 'adams12'
-	school_name = 'riverdale'
+	school_name = 'rocky'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

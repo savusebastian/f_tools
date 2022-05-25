@@ -101,17 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://silvercreek.adams12.org/about',
-'https://silvercreek.adams12.org/questions',
-'https://silvercreek.adams12.org/gifted-talented',
-'https://silvercreek.adams12.org/positive-behavior-intervention-support',
-'https://silvercreek.adams12.org/activities',
-'https://silvercreek.adams12.org/base-program',
-'https://silvercreek.adams12.org/silver-creek-pto',
-'https://silvercreek.adams12.org/standards-based-grading',
+		'https://skyview.adams12.org/about',
+'https://skyview.adams12.org/our-principal',
+'https://skyview.adams12.org/classrooms/chromebook-care',
+'https://skyview.adams12.org/skyview-pto',
+'https://skyview.adams12.org/questions',
+'https://skyview.adams12.org/classrooms/612',
+'https://skyview.adams12.org/classrooms/parent-resources',
+'https://skyview.adams12.org/classrooms/second-step',
+'https://skyview.adams12.org/classrooms/links/5th-grade-riding-waves-0',
 	]
 	mainfolder = 'adams12'
-	school_name = 'silvercreek'
+	school_name = 'skyview'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

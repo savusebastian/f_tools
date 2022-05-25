@@ -101,15 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://westlake.adams12.org/about',
-'https://westlake.adams12.org/deaf-and-hard-hearing',
-'https://westlake.adams12.org/gifted-talented',
-'https://westlake.adams12.org/our-principal',
-'https://westlake.adams12.org/activities',
-'https://westlake.adams12.org/classrooms/43',
+		'https://horizon.adams12.org/about-our-school',
+'https://horizon.adams12.org/deans-office',
+'https://horizon.adams12.org/our-principal',
+'https://horizon.adams12.org/classrooms/486',
+'https://horizon.adams12.org/senior-page',
+'https://horizon.adams12.org/big-idea-project',
+'https://horizon.adams12.org/yearbook',
 	]
 	mainfolder = 'adams12'
-	school_name = 'westlake'
+	school_name = 'horizon'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

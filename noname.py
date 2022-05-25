@@ -101,13 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://crossroads.adams12.org/about-our-school',
-'https://crossroads.adams12.org/expectations',
-'https://crossroads.adams12.org/mission-values',
-'https://crossroads.adams12.org/discovery-program',
+		'https://northglennm.adams12.org/title-i-school',
+'https://northglennm.adams12.org/free-reduced-lunch',
+'https://northglennm.adams12.org/our-principal',
+'https://northglennm.adams12.org/dress-code',
+'https://northglennm.adams12.org/activities',
+'https://northglennm.adams12.org/registration-information',
+'https://northglennm.adams12.org/bell-schedules',
 	]
 	mainfolder = 'adams12'
-	school_name = 'crossroads'
+	school_name = 'northglennm'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

@@ -101,27 +101,10 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://www.adams12.org/curriculum-instruction/health-education-curriculum',
-'https://www.adams12.org/curriculum-instruction/district-provided-devices',
-'https://www.adams12.org/human-resources/2021-22-employees-year',
-'https://www.adams12.org/human-resources/employees-year-profiles-2021-22',
-'https://www.adams12.org/administrative-job-descriptions',
-'https://www.adams12.org/classified-job-descriptions',
-'https://www.adams12.org/human-resources/documents/classroom-teacher',
-'https://www.adams12.org/programs/summer-school',
-'https://www.adams12.org/admissions/choice-schools',
-'https://www.adams12.org/baselineschool',
-'https://www.adams12.org/health-services/arp-esser-iii',
-'https://www.adams12.org/health-services/esser-iii-engagement-summary',
-'https://www.adams12.org/health-services/2021-2022-health-and-safety-protocols',
-'https://www.adams12.org/health-services/what-do-if-your-child-sick',
-'https://www.adams12.org/health-services/covid-cases-quarantine-tracker',
-'https://www.adams12.org/health-services/covid-19-testing-information',
-'https://www.adams12.org/health-services/covid-19-vaccine-information',
-'https://www.adams12.org/health-services/safe-return-schools-plan',
+		'https://vantage.adams12.org/VistaView',
 	]
 	mainfolder = 'adams12'
-	school_name = 'adams12'
+	school_name = 'vista'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

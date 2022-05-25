@@ -101,15 +101,16 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://federal.adams12.org/about',
-'https://federal.adams12.org/questions',
-'https://federal.adams12.org/panther-parentspadres-panteras',
-'https://federal.adams12.org/classrooms/311',
-'https://federal.adams12.org/gifted-talented-0',
-'https://federal.adams12.org/our-principal',
+		'https://glacier.adams12.org/about',
+'https://glacier.adams12.org/questions',
+'https://glacier.adams12.org/our-principal',
+'https://glacier.adams12.org/activities',
+'https://glacier.adams12.org/news/transportation/2014-01-30-111641/our-traffic-loops',
+'https://glacier.adams12.org/news/general/2020-04-07-095719/news-glacier-peak',
+'https://glacier.adams12.org/gifted-talented',
 	]
 	mainfolder = 'adams12'
-	school_name = 'federal'
+	school_name = 'glacier'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

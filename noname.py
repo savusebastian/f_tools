@@ -101,15 +101,12 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://arapahoe.adams12.org/about',
-'https://arapahoe.adams12.org/our-principal',
-'https://arapahoe.adams12.org/arapahoe-ridge-parent-teacher-organization-pto',
-'https://arapahoe.adams12.org/classrooms/chromebook-care',
-'https://arapahoe.adams12.org/activities',
-'https://arapahoe.adams12.org/questions',
-'https://arapahoe.adams12.org/classrooms/3316',
-'https://arapahoe.adams12.org/positive-behavior-support',
-'https://arapahoe.adams12.org/classrooms/second-step',
+		'https://centennial.adams12.org/about',
+'https://centennial.adams12.org/questions',
+'https://centennial.adams12.org/our-principal',
+'https://centennial.adams12.org/social-emotional-learning',
+'https://centennial.adams12.org/and-after-school-program',
+'https://centennial.adams12.org/student-links',
 	]
 	mainfolder = 'adams12'
 	school_name = 'arapahoe'

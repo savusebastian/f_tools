@@ -101,16 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://thundervista.adams12.org/about',
-'https://thundervista.adams12.org/questions',
-'https://thundervista.adams12.org/gifted-talented',
-'https://thundervista.adams12.org/classrooms/751',
-'https://thundervista.adams12.org/after-school-program',
-'https://thundervista.adams12.org/parent-teacher-organization',
-'https://thundervista.adams12.org/middle-school-bell-schedule',
+		'https://century.adams12.org/about',
+'https://century.adams12.org/questions',
+'https://century.adams12.org/classrooms/367',
+'https://century.adams12.org/our-principal',
+'https://century.adams12.org/activities',
+'https://century.adams12.org/halleys-corner',
+'https://century.adams12.org/classrooms/welcome-future-6th-graders',
+'https://century.adams12.org/classrooms/367/ib-myp-grading-information',
+'https://century.adams12.org/classrooms/367/learner-profile',
 	]
 	mainfolder = 'adams12'
-	school_name = 'thundervista'
+	school_name = 'century'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

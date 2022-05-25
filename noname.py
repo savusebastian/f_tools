@@ -120,7 +120,7 @@ if __name__ == '__main__':
 'https://cherry.adams12.org/activities/sports/tae-kwon-do',
 	]
 	mainfolder = 'adams12'
-	school_name = 'centennial'
+	school_name = 'cherry'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

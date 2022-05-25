@@ -101,21 +101,18 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://cotton.adams12.org/our-principal',
-'https://cotton.adams12.org/about',
-'https://cotton.adams12.org/questions',
-'https://cotton.adams12.org/sls',
-'https://cotton.adams12.org/ssn',
-'https://cotton.adams12.org/classrooms/736',
-'https://cotton.adams12.org/care',
-'https://cotton.adams12.org/activities',
-'https://cotton.adams12.org/gifted-talented',
-'https://cotton.adams12.org/classrooms/735',
-'https://cotton.adams12.org/english-language-development',
-'https://cotton.adams12.org/school-accountability-committee',
+		'https://coyote.adams12.org/about',
+'https://coyote.adams12.org/questions',
+'https://coyote.adams12.org/michael-keppler-edd',
+'https://coyote.adams12.org/activities',
+'https://coyote.adams12.org/news/pto/2014-10-16-143103/golden-paw',
+'https://coyote.adams12.org/mwebaza-foundation',
+'https://coyote.adams12.org/news/newsletter/2020-10-06-092238/morning-announcements',
+'https://coyote.adams12.org/multi-tiered-systems-support-mtss',
+'https://coyote.adams12.org/classrooms/8206',
 	]
 	mainfolder = 'adams12'
-	school_name = 'cotton'
+	school_name = 'coyote'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

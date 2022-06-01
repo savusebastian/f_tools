@@ -47,8 +47,8 @@ def get_content(web_page):
 		# 	page_nav = web_soup.find(id='quicklinks').find_all('a')
 
 		# Content
-		if web_soup.find(class_='panel-display') != None and web_soup.find(class_='panel-display') != '':
-			col1 = web_soup.find(class_='panel-display')
+		if web_soup.find(class_='wh-content') != None and web_soup.find(class_='wh-content') != '':
+			col1 = web_soup.find(class_='wh-content')
 			col1 = get_column(col1)
 		else:
 			issue_pages_counter = 1

@@ -130,31 +130,31 @@ if __name__ == '__main__':
 'https://ths.gpusd.net',
 'https://drive.google.com/file/d/1uKp-bxaKPyqFH-cDIfcfW-C6WKeAC6o7/view?usp=sharing,
 'https://www.gpusd.org/department-services',
-https://www.gpusd.org/department-services/academic-services
-https://sites.google.com/gpusd.org/cantua-elementary/adult-education
-https://www.gpusd.org/department-services/business-services
-https://www.gpusd.org/department-services/business-services/post-3663
-https://www.gpusd.org/department-services/food-services
-https://drive.google.com/file/d/1UCpJDiOihyTGAESC6adPRitwgNorpabc/view?usp=sharing
-https://www.gpusd.org/department-services/human-resources
-https://www.gpusd.org/covid-19-information
-https://www.gpusd.org/department-services/maintenance-operations-and-transportation
-https://www.gpusd.org/department-services/special-education
-https://www.gpusd.org/department-services/technology
-https://www.gpusd.org/parentsquare
-https://app.mytechdesk.org/signin
-https://www.gpusd.org/department-services-technology-technology-resources
-https://www.gpusd.org/department-services/superintendents-office
-https://www.gpusd.org/resources
-https://www.gpusd.org/anti-bullying-resources
-https://www.gpusd.org/resources/for-parents
-https://www.gpusd.org/resources/for-students
-https://www.gpusd.org/resources/for-staff
-https://www.gpusd.org/resources/policies-form
-https://www.gpusd.org/contact
+'https://www.gpusd.org/department-services/academic-services',
+'https://sites.google.com/gpusd.org/cantua-elementary/adult-education',
+'https://www.gpusd.org/department-services/business-services',
+'https://www.gpusd.org/department-services/business-services/post-3663',
+'https://www.gpusd.org/department-services/food-services',
+'https://drive.google.com/file/d/1UCpJDiOihyTGAESC6adPRitwgNorpabc/view?usp=sharing',
+'https://www.gpusd.org/department-services/human-resources',
+'https://www.gpusd.org/covid-19-information',
+'https://www.gpusd.org/department-services/maintenance-operations-and-transportation',
+'https://www.gpusd.org/department-services/special-education',
+'https://www.gpusd.org/department-services/technology',
+'https://www.gpusd.org/parentsquare',
+'https://app.mytechdesk.org/signin',
+'https://www.gpusd.org/department-services-technology-technology-resources',
+'https://www.gpusd.org/department-services/superintendents-office',
+'https://www.gpusd.org/resources',
+'https://www.gpusd.org/anti-bullying-resources',
+'https://www.gpusd.org/resources/for-parents',
+'https://www.gpusd.org/resources/for-students',
+'https://www.gpusd.org/resources/for-staff',
+'https://www.gpusd.org/resources/policies-form',
+'https://www.gpusd.org/contact',
 	]
-	mainfolder = 'adams12'
-	school_name = 'stukey'
+	mainfolder = 'gpusd'
+	school_name = 'gpusd'
 	filepath = Path(f'../f_web_interface/static/files/{mainfolder}')
 	filepath.mkdir(parents=True, exist_ok=True)
 

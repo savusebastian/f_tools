@@ -101,12 +101,57 @@ def get_content(web_page):
 if __name__ == '__main__':
 	start_time = time()
 	all_sites = [
-		'https://stukey.adams12.org/about',
-		'https://stukey.adams12.org/principal-letter',
-		'https://stukey.adams12.org/class-dojo',
-		'https://stukey.adams12.org/questions',
-		'https://stukey.adams12.org/classrooms/4916',
-		'https://stukey.adams12.org/classrooms/library-policies',
+		'https://www.gpusd.org',
+'https://www.gpusd.org/district',
+'https://www.gpusd.org/district/about-us',
+'https://www.gpusd.org/district/calendars',
+'https://www.gpusd.org/district/contact-us',
+'https://www.gpusd.org/district/district-school-boundaries-map',
+'https://www.gpusd.org/district/lcap-local-control-accountability-plan',
+'https://www.gpusd.org/school-accountability-report-card-sarc',
+'https://www.gpusd.org/district/superintendents-message',
+'https://www.gpusd.org/school-board',
+'https://www.gpusd.org/past-board-agendas-and-minutes',
+'https://www.gpusd.org/board-meetings',
+'https://www.gpusd.org/board-members',
+'https://www.gamutonline.net/district/goldenplains/',
+'https://www.gpusd.org/trustee-area-maps',
+'https://www.gpusd.org/board-meetings-special-announcements',
+'https://www.gpusd.org/schools',
+'https://sites.google.com/gpusd.org/cantua-elementary/home',
+'https://drive.google.com/file/d/1cg2UDDaUjJeezQ42lRePSZmgo43_qKvq/view?usp=sharing',
+'https://helm.gpusd.net/',
+'https://drive.google.com/file/d/1yj3Pxg15NZVaBV2SO-o4jx7TC6FRf2Ub/view?usp=sharing',
+'https://rdr.gpusd.net',
+'https://sjes.gpusd.net',
+'https://drive.google.com/file/d/1WG76iUVv0wW6tydaNAzXykA7KND2rHBT/view?usp=sharing',
+'https://tes.gpusd.net',
+'https://drive.google.com/file/d/15hfcpmoUZmqJZOZ1xUvapQOQdEzvzE5z/view?usp=sharing',
+'https://ths.gpusd.net',
+'https://drive.google.com/file/d/1uKp-bxaKPyqFH-cDIfcfW-C6WKeAC6o7/view?usp=sharing,
+'https://www.gpusd.org/department-services',
+https://www.gpusd.org/department-services/academic-services
+https://sites.google.com/gpusd.org/cantua-elementary/adult-education
+https://www.gpusd.org/department-services/business-services
+https://www.gpusd.org/department-services/business-services/post-3663
+https://www.gpusd.org/department-services/food-services
+https://drive.google.com/file/d/1UCpJDiOihyTGAESC6adPRitwgNorpabc/view?usp=sharing
+https://www.gpusd.org/department-services/human-resources
+https://www.gpusd.org/covid-19-information
+https://www.gpusd.org/department-services/maintenance-operations-and-transportation
+https://www.gpusd.org/department-services/special-education
+https://www.gpusd.org/department-services/technology
+https://www.gpusd.org/parentsquare
+https://app.mytechdesk.org/signin
+https://www.gpusd.org/department-services-technology-technology-resources
+https://www.gpusd.org/department-services/superintendents-office
+https://www.gpusd.org/resources
+https://www.gpusd.org/anti-bullying-resources
+https://www.gpusd.org/resources/for-parents
+https://www.gpusd.org/resources/for-students
+https://www.gpusd.org/resources/for-staff
+https://www.gpusd.org/resources/policies-form
+https://www.gpusd.org/contact
 	]
 	mainfolder = 'adams12'
 	school_name = 'stukey'

@@ -128,7 +128,7 @@ if __name__ == '__main__':
 'https://tes.gpusd.net',
 'https://drive.google.com/file/d/15hfcpmoUZmqJZOZ1xUvapQOQdEzvzE5z/view?usp=sharing',
 'https://ths.gpusd.net',
-'https://drive.google.com/file/d/1uKp-bxaKPyqFH-cDIfcfW-C6WKeAC6o7/view?usp=sharing,
+'https://drive.google.com/file/d/1uKp-bxaKPyqFH-cDIfcfW-C6WKeAC6o7/view?usp=sharing',
 'https://www.gpusd.org/department-services',
 'https://www.gpusd.org/department-services/academic-services',
 'https://sites.google.com/gpusd.org/cantua-elementary/adult-education',

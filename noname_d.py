@@ -29,7 +29,7 @@ def get_content(web_page):
 	try:
 		web_link = requests.get(web_page, timeout=5).content
 		web_soup = BeautifulSoup(web_link, 'html.parser')
-		content = web_soup.find(class_='elementor-inner')
+		content = web_soup.find(class_='wh-content')
 
 		if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 			meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
@@ -99,23 +99,23 @@ def get_content(web_page):
 
 if __name__ == '__main__':
 	start_time = time()
-	district = 'https://www.mcoe.org'
+	district = 'https://www.gpusd.org'
 	all_sites = [
-		# f'{district}',
-		f'https://distancelearning.mcoe.org',
-		f'https://lgbtq.mcoe.org',
-		f'https://caass.mcoe.org',
-		f'https://cgm.mcoe.org',
-		# f'https://soit-pps-nj.schoolloop.com',
+		f'{district}',
+		f'https://rdr.gpusd.net',
+		f'https://sjes.gpusd.net',
+		f'https://tes.gpusd.net',
+		f'https://ths.gpusd.net',
+		f'https://helm.gpusd.net',
 		# f'https://gopa-pps-nj.schoolloop.com',
 	]
 	schools = [
-		# 'district',
-		'distancelearning',
-		'lgbtq',
-		'caass',
-		'cgm',
-		# 'soit',
+		'district',
+		'rdr',
+		'sjes',
+		'tes',
+		'ths',
+		'helm',
 		# 'gopa',
 	]
 
@@ -143,7 +143,7 @@ if __name__ == '__main__':
 
 				page = requests.get(site).content
 				soup = BeautifulSoup(page, 'html.parser')
-				sitemap = soup.find(class_='elementor-nav-menu--main')
+				sitemap = soup.find(id='cbp-menu-main')
 				list_items = sitemap.select('ul > li')
 
 				# sitemap2 = soup.find(class_='top-links')

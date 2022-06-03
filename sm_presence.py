@@ -231,14 +231,14 @@ if __name__ == '__main__':
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
-			sitemap = soup.find(id='mMenuCMS')
+			sitemap = soup.find(class_='mobile-nav-items')
 			list_items = sitemap.select('ul > li')
 
-			sitemap2 = soup.find(class_='quicklinks-container')
+			# sitemap2 = soup.find(class_='quicklinks-container')
 
-			if sitemap2:
-				list_items2 = sitemap2.find_all('a')
-				list_items.extend(list_items2)
+			# if sitemap2:
+			#	list_items2 = sitemap2.find_all('a')
+			#	list_items.extend(list_items2)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])

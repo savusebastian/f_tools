@@ -57,3 +57,6 @@ print('T2:', t2)
 print('T3:', t3)
 print('Pages:', pages - len(files))
 print('Issues:', issues)
+
+# Github Token
+# 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
